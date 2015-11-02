@@ -1,0 +1,19 @@
+# subdirectories to ignore #
+
+# filetypes to ignore #
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.synctex.gz
+*.bbl
+*.blg
+*.Rhistory
+*.vrb
+
+# files to ignore #
+Activities/*.*
+!Activities/*.tex
+!Activities/*.pdf
