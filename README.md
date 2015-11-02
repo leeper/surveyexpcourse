@@ -1,6 +1,6 @@
 # Materials for Survey Experiments Short Course #
 
-This repository holds materials for a short course about Survey Experiments to be taught at the [Barcelona Summer School in Survey Methodology](http://www.upf.edu/survey/Summer/) at Universitat Pompeu Fabra in Barcelona. The front-facing version of the site can be found at [http://www.thomasleeper.com/rrcourse](http://www.thomasleeper.com/surveyexpcourse).
+This repository holds materials for a short course about Survey Experiments to be taught at the [Barcelona Summer School in Survey Methodology](http://www.upf.edu/survey/Summer/) at Universitat Pompeu Fabra in Barcelona. The front-facing version of the site can be found at [http://www.thomasleeper.com/surveyexpcourse](http://www.thomasleeper.com/surveyexpcourse).
 
 
 ## Why GitHub? ##
