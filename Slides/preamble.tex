@@ -1,3 +1,4 @@
+\documentclass[17pt]{beamer}
 %\documentclass[handout]{beamer} %Makes Handouts
 \usetheme{Singapore} %Gray with fade at top
 \useoutertheme[subsection=false]{miniframes} %Supppress subsection in header
@@ -12,19 +13,18 @@
 
 \setbeamertemplate{navigation symbols}{}
 %\setbeamertemplate{mini frames}[default]
-\setbeamercovered{dynamics}
+%\setbeamercovered{dynamics}
 \setbeamerfont*{title}{size=\Large,series=\bfseries}
+\setbeamerfont{footnote}{size=\tiny}
 
 %\setbeameroption{notes on second screen} %Dual-Screen Notes
 %\setbeameroption{show only notes} %Notes Output
 
 \setbeamertemplate{frametitle}{\vspace{.5em}\bfseries\insertframetitle}
 \newcommand{\heading}[1]{\noindent \textbf{#1}\\ \vspace{1em}}
+\newcommand{\questions}{\frame{{\large Questions?}}}
 
-% small footnotes
-\setbeamerfont{footnote}{size=\tiny}
-
-\usepackage{bbding,color,multirow,times,ccaption,tabularx,graphicx,verbatim,booktabs,fixltx2e}
+\usepackage{bbding,color,multirow,times,ccaption,tabularx,graphicx,verbatim,booktabs}
 \usepackage{colortbl} %Table overlays
 \usepackage[english]{babel}
 \usepackage[latin1]{inputenc}
@@ -32,8 +32,11 @@
 \usepackage{lmodern}
 \usepackage{alltt}
 
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,decorations.pathreplacing,calc}
+
+
 \author[]{Thomas J. Leeper}
-\institute[]{
-  \inst{}%
-  Department of Political Science and Government\\Aarhus University
+\institute{
+  Government Department\\London School of Economics and Political Science
 }

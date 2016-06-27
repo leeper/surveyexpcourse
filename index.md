@@ -25,7 +25,7 @@ An outline of the course is given below.
 
 The first session will provide an overview of the course, discuss the history of survey experiments and experiments in general, and provide a conceptual and notational framework for design, analyzing, and discussing experiments.
 
- - Slides
+ - Slides (Coming soon...)
 
 #### Class Schedule
 
@@ -43,7 +43,7 @@ The first session will provide an overview of the course, discuss the history of
 
 While the first session demonstrated the advantages of experimentation as a research design, designing experiments can be challenging without a solid grounding in a relevant theoretical literature. This session will discuss common paradigms for survey experimental research and discuss how to design experiments to test social science theories.
 
- - Slides
+ - Slides (Coming soon...)
 
 #### Class Schedule
 
@@ -66,14 +66,14 @@ While the first session demonstrated the advantages of experimentation as a rese
 
 Experiments are typically performed at one point in time, on a specific sample or set of respondents, on a limited range of issues or topic, using a finite set of measurement techniques. Yet researchers' ambitions are often broader, with aims to make claims that extrapolate beyond the particular study's context, sample, and focus. This session will address various forms of external validity, how to maximize generalizability, and the trade-offs involved with such efforts.
 
- - Slides
+ - Slides (Coming soon...)
 
 #### Class Schedule
 
  - 11:30-12:00 - External Validity
- - 12:00-12:25 - Pretreatment Dynamics
- - 12:35-12:55 - Measuring Behaviors and Behavioral Intentions
- - 12:55-13:30 - Sampling, Respondents, and Representativeness
+ - 12:00-12:25 - Sampling, Respondents, and Representativeness
+ - 12:35-12:55 - Pretreatment Dynamics
+ - 12:55-13:30 - Measuring Behaviors and Behavioral Intentions
  
 #### Readings
 
@@ -87,7 +87,7 @@ Experiments are typically performed at one point in time, on a specific sample o
 
 While most experiments are designed to focus on a sample average treatment effect, researchers are often interested in and/or faced by causal processes that vary across person, contexts, and other factors. This session will cover various sources of treatment effect heterogeneity.
 
- - Slides
+ - Slides (Coming soon...)
 
 #### Class Schedule
 
@@ -105,11 +105,12 @@ While most experiments are designed to focus on a sample average treatment effec
 
 This session will cover a number of remaining issues, especially related to the implementation of survey experiments.
 
- - Slides
+ - Slides (Coming soon...)
 
 #### Class Schedule
 
- - 11:30-12:00 - Issues in Panel Designs
+ - 11:30-12:00 - "Broken Experiments"
+   - Noncompliance
    - Recruitment and Attrition
    - Conditioning
  - 12:00-12:25 - Treatment Self-Selection

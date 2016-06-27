@@ -1,6 +1,6 @@
 \input{preamble}
 
-\title{First}
+\title{Sources of Heterogeneity}
 
 \date[]{}
 
@@ -10,17 +10,155 @@
 
 \frame{\tableofcontents}
 
-\section{Substantive Material}
+
+
+\section{Attention and Satisficing}
+\frame{\tableofcontents[currentsection]}
+
+
+% attention checks
+\frame{
+\frametitle{Attention Checking}
+
+\large 
+\begin{itemize}\itemsep1em
+\item Online mode invites satisficing
+\item Attention checking can help, but is imperfect
+\end{itemize}
+}
+
+% useful for checking attention
+% may have consequences for representativeness and introduce selection biases
+
+\frame{
+\frametitle{Apparent Satisficing}
+\begin{itemize}\itemsep0.5em
+\item Filter out respondents based on response behavior
+\item Some common measures:
+	\begin{itemize}
+	\item ``Straightlining''
+	\item Non-differentiation
+	\item Acquiescence
+	\item Nonresponse
+	\item DK responding
+	\item Speeding
+	\end{itemize}
+\item Difficult to detect
+\item Difficult to distinguish from ``real'' responses
+\end{itemize}
+}
+
+\frame{
+\frametitle{Metadata/Paradata}
+\begin{itemize}\itemsep1em
+\item<1-> Timing
+	\begin{itemize}
+	\item Some survey tools will allow you to time page
+	\item Make a prior rules about dropping participants for speeding
+	\end{itemize}
+\item<2-> Mousetracking or eyetracking
+	\begin{itemize}
+	\item Mousetracking is unobtrusive
+	\item Eyetracking requires participants opt-in
+	\end{itemize}
+\item<3-> Record focus/blur browser events
+\end{itemize}
+}
+
+\frame{
+\frametitle{Direct Measures}
+\begin{itemize}\itemsep2em
+\item How closely have you been paying attention to what the questions on this survey actually mean?
+\item<2-> While taking this survey, did you engage in any of the following behaviors? Please check all that apply.
+	\begin{itemize}
+	\item Use your mobile phone
+	\item Browse the internet
+	\item \dots
+	\end{itemize}
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Substantive Manipulation Check}
+\begin{itemize}\itemsep1em
+\item Two common approaches:
+	\begin{itemize}
+	\item Information recall or understanding
+	\item Measure level of manipulated treatment variable
+	\end{itemize}
+\item Risky to remove cases based on this because it is a form of conditioning on post-treatment variables
+\item May be useful to consider either a mediator of effects
+\end{itemize}
+}
+
+\frame{
+\frametitle{Instructional Manipulation Check}
+
+\only<2>{Do you agree or disagree with the decision to send British forces to fight ISIL in Syria? }We would like to know if you are reading the questions on this survey. If you are reading carefully, please ignore this question, do not select any answer below, and click ``next'' to proceed with the survey.\\
+
+\vspace{1em}
+
+\small
+
+Strongly disagree\\
+Somewhat disagree\\
+Neither agree nor disagree\\
+Somewhat agree\\
+Strongly agree\\
+
+}
+
+
+\frame{
+\frametitle{Attention Checking}
+
+In summary\dots
+
+\begin{itemize}\itemsep1em
+\item Attention checking can be useful
+\item Lots of options
+\item No obvious best metric
+\item Can be analytically consequential
+\end{itemize}
+}
+
+
+
+
+\frame{}
+
+\section[Moderators]{Moderators and Effect Heterogeneity}
+\frame{\tableofcontents[currentsection]}
+
+\subsection{Moderation}
+
+% regression example
 
 \frame{
 
-\begin{itemize}\itemsep1em
+If we have an hypothesis about moderation, what can we do?
 
-\item
-
+\begin{itemize}
+\item Best solution: manipulate the moderator
+\item Next best: block on the moderator and stratify our analysis
+	\begin{itemize}
+	\item Estimate *Conditional* Average Treatment Effects
+	\end{itemize}
+\item Least best: include a treatment-by-covariate interaction in our regression model
 \end{itemize}
-
 }
+
+
+\subsection{Blocking/Block Randomization}
+
+
+
+
+\frame{}
+\section[Factorial Designs]{Factorial and Conjoint Designs}
+\frame{\tableofcontents[currentsection]}
+
 
 
 \appendix
