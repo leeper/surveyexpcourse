@@ -114,12 +114,13 @@ This session will cover a number of remaining issues, especially related to the 
    - Recruitment and Attrition
    - Conditioning
  - 12:00-12:25 - Treatment Self-Selection
- - 12:35-13:30 - Ethics
+ - 12:35-13:00 - Ethics
    - Deception
    - Incentives
    - Recruitment
    - Randomization
    - Publication Bias
+ - 13:00-13:30 - Student "lightning" presentations
 
 #### Readings
 
