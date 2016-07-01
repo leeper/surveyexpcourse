@@ -5,7 +5,7 @@ title: Home
 
 # "Survey Experiments in Practice" Short Course #
 
-This page holds materials for a short course called "Survey Experiments in Practice" to be taught at the [Barcelona Summer School in Survey Methodology](http://www.upf.edu/survey/Summer/) at Universitat Pompeu Fabra in Barcelona. The short course involves five 2-hour sessions, tentatively scheduled to run from 11:30-13:300 each morning July 4-8, 2016. Slides, readings, and materials for each session of the course will be available here shortly.
+This page holds materials for a short course called "Survey Experiments in Practice" to be taught at the [Barcelona Summer School in Survey Methodology](http://www.upf.edu/survey/Summer/) at Universitat Pompeu Fabra in Barcelona. The short course involves five 2-hour sessions, tentatively scheduled to run from 11:30-13:30 each morning July 4-8, 2016. Slides, readings, and materials for each session of the course will be available here shortly.
 
 ## Overview
 
@@ -19,7 +19,7 @@ Students interested in discussing their own research are welcome to make appoint
 
 ## Syllabus and Schedule
 
-An outline of the course is given below.
+An outline of the course is given below. All of the readings [are available here](https://drive.google.com/open?id=0Bwxjj0JIn0KoYkNIUXhtWFp5OTg).
 
 ### Session 1: Survey Experiments in Context (July 4, 11:30-13:30)
 
@@ -51,9 +51,9 @@ While the first session demonstrated the advantages of experimentation as a rese
  - 11:50-12:25 - Question Wording and Vignettes
  - 12:35-13:00 - Measuring Sensitive Items
  - 13:00-13:30 - Quasi-experiments and Field Experiments
-  - Pre-post designs
-  - Unexpected quasi-experiments
-  - Measuring effects of field interventions
+   - Pre-post designs
+   - Unexpected quasi-experiments
+   - Measuring effects of field interventions
 
 #### Readings
 
