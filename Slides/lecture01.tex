@@ -1,6 +1,6 @@
 \input{preamble}
 
-\title{Survey Experiments in Context}
+\title{Session I:\\Survey Experiments in Context}
 
 \date[]{}
 
@@ -56,7 +56,6 @@
 \only<7>{\textit{Group 2}\\ Think about whether the population of Chicago is more or less than 10,000,000 people. What do you think the population of Chicago is?}
 
 }
-
 \frame{}
 
 \frame{
@@ -86,7 +85,7 @@
 	\item An experiment!
 	\item Demonstrates ``anchoring'' heuristic
 	\end{itemize}
-\item<4-> Experiments are easy to analyze, but difficult to design
+\item<4-> Experiments are easy to analyze, but only if designed and implemented well
 \end{itemize}
 
 }
@@ -137,7 +136,9 @@
 \begin{center}
 All material for the course is available at:\\
 
-\url{http://www.thomasleeper.com/surveyexpcourse}
+\vspace{1em}
+
+\url{http://www.thomasleeper.com/surveyexpcourse/}
 \end{center}
 
 }
@@ -186,15 +187,20 @@ By the end of the week, you should be able to\dots
 
 \frametitle{Experiments}
 
-\begin{itemize}
-\item Oxford English Dictionary defines ``experiment'' as:
+Oxford English Dictionary defines ``experiment'' as:
 
 \begin{enumerate}
 \item A scientific procedure undertaken to make a discovery, test a hypothesis, or demonstrate a known fact
 \item A course of action tentatively adopted without being sure of the outcome
 \end{enumerate}
+}
 
-\item Thus, ``experiments'' have a very long history
+\frame{
+
+\frametitle{Experiments}
+
+\begin{itemize}\itemsep0.5em
+\item ``Experiments'' have a very long history
 
 \item Major advances in design and analysis of experiments based on agricultural and later biostatistical research in the 19th century
 	\begin{itemize}
@@ -212,14 +218,16 @@ By the end of the week, you should be able to\dots
 
 \frametitle{In Social Sciences}
 
+\small
+
 \begin{itemize}
 \item ``Experiments'' emerged in psychology 19th century
-	\begin{itemize}
+	\begin{itemize}\footnotesize
 	\item Not randomized -- more like ``What if?'' studies
 	\item Heavily laboratory-based or clinical
 	\end{itemize}
 \item First randomized, controlled trial (RCT) by Peirce and Jastrow in 1884
-\item RCTs actually came much later to medicine (mid-20th century)
+\item RCTs came later to medicine (circa 1950)
 \item And have been a major part of the ``credibility revolution'' in economics
 	\begin{itemize}
 	\item See, especially, LaLonde (1986)
@@ -234,12 +242,11 @@ By the end of the week, you should be able to\dots
 \frametitle{In Political Science I}
 
 \begin{itemize}
-\item American Political Science Association president A. Lawrence Lowell (1922): 
-\begin{quote}
-We are limited by the impossibility of experiment. Politics is an observational, not an experimental science\dots
-\end{quote}
-\item First ``experiment'' by Harold Gosnell (1924)
-\item King, Keohane, and Verba (1994) only mentions experiments once
+\item American Political Science Association president A. Lawrence Lowell (1922):\\
+{\small
+``We are limited by the impossibility of experiment. Politics is an observational, not an experimental science\dots''
+}
+\item First experiment by Gosnell (1924)
 \item Gerber and Green (2000) first major \textit{field} experiment
 \end{itemize}
 
@@ -247,16 +254,49 @@ We are limited by the impossibility of experiment. Politics is an observational,
 
 \frame{
 
-\frametitle{In Political Science II}
+\frametitle{{\large In Political Science II}}
+
+\small
 
 \begin{itemize}
-\item Behavioral revolution of 1940s/1950s brought survey research to prominence
-\item Experiments were being performed in laboratories but not elsewhere
+\item Rise of surveys in the behavioral revolution
 \item Survey research was not experimental because interviewing was still mostly paper-based
-\item 1983: Merrill Shanks and the Berkeley Survey Research Center develop CATI
-\item Paul Sniderman and Tom Piazza performed the first, simple survey experiment\footnote{Sniderman, Paul M., and Thomas Piazza. 1993. The Scar of Race. Cambridge, MA: Harvard University Press.}
-\item They then created the ``first multi-investigator''
-\item Skip Lupia and Diana Mutz used that model to create TESS
+\item<2-> 1983: Merrill Shanks and the Berkeley Survey Research Center develop CATI
+\item<3-> Mid-1980s: Paul Sniderman \& Tom Piazza performed the first survey experiment\footnote{Sniderman, Paul M., and Thomas Piazza. 1993. \textit{The Scar of Race}. Cambridge, MA: Harvard University Press.}
+	\begin{itemize}\footnotesize
+	\item Then: the ``first multi-investigator''
+	\item Later: Skip Lupia and Diana Mutz created TESS
+	\end{itemize}
+
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{TESS}
+
+\small
+
+\begin{itemize}
+\item Time-Sharing Experiments for the Social Sciences
+\item Multi-disciplinary initiative that provides infrastructure for survey experiments on nationally representative samples of the United States population
+\item Funded by the U.S. National Science Foundation
+\item Anyone anywhere in the world can apply
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{TESS-like Projects}
+
+There are some TESS-like initiatives outside the United States:
+
+\begin{itemize}\itemsep1em
+\item Netherlands: \href{https://www.lissdata.nl/lissdata/}{LISS}
+\item Norway: \href{http://www.uib.no/en/citizen}{Bergen's Citizen Panel}
+\item Sweden: \href{http://lore.gu.se/surveys/citizen}{Gothenburg's Citizen Panel}
 \end{itemize}
 
 }
@@ -323,19 +363,19 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 
 \frametitle{Definitions}
 
+\only<2->{\textbf{Unit}: A physical object at a particular point in time}
+
+\only<3->{\textbf{Treatment}: An intervention, whose effects we wish to assess relative to some other (non-)intervention}
+
+\only<4->{
+\textbf{Potential outcomes}: The outcome for each unit that we would observe if that unit received each treatment
 \begin{itemize}
-\item<2-> Unit: A physical object at a particular point in time
-
-\item<3-> Treatment: An intervention, whose effects we wish to assess relative to some other (non-)intervention
-
-\item<4-> Potential outcomes: The outcome for each unit that we would observe if that unit received each treatment
-
-	\begin{itemize}
-	\item Multiple potential outcomes for each unit, but we only observe one of them
-	\end{itemize}
-
-\item<5-> Causal effect: The comparisons between the unit-level potential outcomes under each intervention
+\item Multiple potential outcomes for each unit, but we only observe one of them
 \end{itemize}
+}
+
+\only<5->{\textbf{Causal effect}: The comparisons between the unit-level potential outcomes under each intervention}
+
 }
 
 
@@ -385,8 +425,7 @@ If an instance in which the phenomenon under investigation occurs, and an instan
    		\item Randomization means there are no confounding ($Z$) variables
 	\end{itemize}
 \item Thus experiments are a ``gold standard'' that always provides causal inference
-\item<5-> Basically:\\
-$Y = \beta_0 + \beta_1 X + \epsilon $
+\item<5-> Basically: $Y = \beta_0 + \beta_1 X + \epsilon $
 \end{itemize}
 }
 
@@ -395,11 +434,17 @@ $Y = \beta_0 + \beta_1 X + \epsilon $
 
 \frametitle{Neyman-Rubin Potential Outcomes Framework}
 
-If we are interested in some outcome $Y$, then for every unit $i$, there are numerous ``potential outcomes'' $Y*$ only one of which is visible in a given reality
+If we are interested in some outcome $Y$, then for every unit $i$, there are numerous ``potential outcomes'' $Y*$ only one of which is visible in a given reality. Comparisons of (unobservable) potential outcomes indicate causality.
+
+}
+
+\frame{
+
+\frametitle{Neyman-Rubin Potential Outcomes Framework}
 
 Concisely, we typically discuss two potential outcomes:
 
-\begin{itemize}
+\begin{itemize}\small
 \item $Y_{0i}$, the \textit{potential} outcome that would be \textit{realized} if $X_i = 0$ (assigned to control)
 \item $Y_{1i}$, the \textit{potential} outcome that would be \textit{realized} if $X_i = 1$ (assigned to treatment)
 \end{itemize}
@@ -411,7 +456,9 @@ We are only able to see one of these potential outcomes for each unit.
 
 \frame{
 
-\frametitle{Aside}
+\frametitle{Historical Aside}
+
+\small
 
 \begin{itemize}
 \item The history of the potential outcomes framework is contested
@@ -425,44 +472,6 @@ We are only able to see one of these potential outcomes for each unit.
 
 
 
-\frame{
-	\frametitle{Random Assignment}
-
-\small
-\begin{itemize}\itemsep0.5em
-\item A physical process of randomization
-\item Breaks the ``selection process''
-	\begin{itemize}\small
-	\item Units only take value of $X$ because of assignment
-	\end{itemize}
-\item This means:
-	\begin{itemize}\small
-	\item All covariates are balanced between groups
-	\item Potential outcomes are balanced between groups
-	\item In sum: No confounding
-	\end{itemize}
-\end{itemize}
-
-}
-
-\begin{frame}
-\small 
-\begin{center}
-\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
-    \draw[->] (0,0) node[left] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
-    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
-    \draw[->] (Z) -- (Y);
-    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
-    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
-    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
-    \draw[->] (W) -- (Y);
-    \draw[->, dashed] (E) -- (X);
-    
-    \draw<2->[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Treatment} -- (X);
-    \draw<2->[->, very thick, color=red] (X) -- (Y);
-\end{tikzpicture}
-\end{center}
-\end{frame}
 
 
 
@@ -552,6 +561,45 @@ We are only able to see one of these potential outcomes for each unit.
 	\end{itemize}
 }
 
+\frame{
+	\frametitle{Random Assignment}
+
+\small
+\begin{itemize}\itemsep0.5em
+\item A physical process of randomization
+\item Breaks the ``selection process''
+	\begin{itemize}\footnotesize
+	\item Units only take value of $X$ because of assignment
+	\end{itemize}
+\item This means:
+	\begin{itemize}\footnotesize
+	\item All covariates are balanced between groups
+	\item Potential outcomes are balanced between groups
+	\item In sum: No confounding
+	\end{itemize}
+\end{itemize}
+
+}
+
+\begin{frame}
+\small 
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw[->] (0,0) node[left] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
+    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
+    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
+    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
+    \draw[->] (W) -- (Y);
+    \draw[->, dashed] (E) -- (X);
+    
+    \draw<2->[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Treatment} -- (X);
+    \draw<2->[->, very thick, color=red] (X) -- (Y);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
 
 \frame{
 	\frametitle{``The Perfect Doctor''}
@@ -625,10 +673,73 @@ Unit & $Y_0$ & $Y_1$ \\ \hline
 	\begin{equation}
 	SATE = \frac{1}{n_1}\sum Y_{1i} - \frac{1}{n_0}\sum Y_{0i}
 	\end{equation}
-\item In practice we often estimate this using t-tests, ANOVA, or OLS regression
 \end{itemize}
 }
 
+
+
+\frame{
+
+\frametitle{Computation of Effects I}
+
+\begin{itemize}
+\item In practice we often estimate SATE using t-tests, ANOVA, or OLS regression
+\item These are all basically equivalent
+\item Reasons to choose one procedure over another:
+	\begin{itemize}
+	\item Disciplinary norms
+	\item Ease of interpretation
+	\item Flexibility for >2 treatment conditions
+	\end{itemize}
+\end{itemize}
+
+
+
+}
+
+\frame{
+
+\frametitle{Computation of Effects II}
+
+An experimental data structure looks like:
+
+\small
+
+\begin{center}
+\begin{tabular}{ccc}
+Unit & $treatment$ & $outcome$ \\ \hline 
+1 & 0 & 13 \\
+2 & 0 & 6 \\
+3 & 0 & 4 \\
+4 & 0 & 5 \\
+5 & 1 & 3 \\
+6 & 1 & 1 \\
+7 & 1 & 10 \\
+8 & 1 & 9 \\ \hline
+\end{tabular}
+\end{center}
+
+}
+
+
+\begin{frame}[fragile]
+
+\frametitle{Computation of Effects III}
+
+Stata:\small
+\begin{verbatim}
+ttest outcome treatment
+reg outcome treatment
+\end{verbatim}
+
+
+R:\small
+\begin{verbatim}
+t.test(outcome ~ treatment, data = data)
+lm(outcomes ~ treatment, data = data)
+\end{verbatim}
+
+\end{frame}
 
 
 
@@ -653,7 +764,7 @@ Unit & $Y_0$ & $Y_1$ \\ \hline
 	\small
 \begin{itemize}\itemsep0.5em
 \item Formula for the variance of the SATE is:\\
-$\widehat{Var}(SATE) = \dfrac{\widehat{Var}(Y_0)}{N_0} + \dfrac{\widehat{Var}(Y_1)}{N_1}$
+$\widehat{Var}(SATE) = \dfrac{\widehat{Var}(Y_0)}{n_0} + \dfrac{\widehat{Var}(Y_1)}{n_1}$
 
 	\begin{itemize}
 	\item $\widehat{Var}(Y_0)$ is control group variance
@@ -661,7 +772,7 @@ $\widehat{Var}(SATE) = \dfrac{\widehat{Var}(Y_0)}{N_0} + \dfrac{\widehat{Var}(Y_
 	\end{itemize}
 
 \item We often express this as the \textit{standard error} of the estimate:\\
-$\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{N_0} + \frac{\widehat{Var}(Y_1)}{N_1}}$
+$\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{n_0} + \frac{\widehat{Var}(Y_1)}{n_1}}$
 \end{itemize}
 }
 
@@ -671,8 +782,8 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{N_0} + \frac{\widehat{Var
 \frametitle{Intuition about Variance}
 
 \begin{itemize}
-\item Bigger sample -\textgreater{} smaller SEs
-\item Smaller variance -\textgreater{} smaller SEs
+\item Bigger sample $\rightarrow$ smaller SEs
+\item Smaller variance $\rightarrow$ smaller SEs
 \item Efficient use of sample size:
 	\begin{itemize}
 	\item When treatment group variances equal, equal sample sizes are most efficient
@@ -684,7 +795,9 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{N_0} + \frac{\widehat{Var
 }
 
 
-\frame[fragile]{
+\begin{frame}[fragile]
+
+\tiny
 
 \begin{verbatim}
 # theoretical randomizations
@@ -710,8 +823,7 @@ hist(x1, col=rgb(1,0,0,.5), border='white')
 abline(v=-2, lwd=3, col='red') # true effect
 \end{verbatim}
 
-}
-
+\end{frame}
 
 
 \frame{
@@ -729,12 +841,13 @@ abline(v=-2, lwd=3, col='red') # true effect
 
 \begin{tabular}{lrr}
 \toprule
-& \textbackslash{}(\ H\_0\ \textbackslash{}) True & \textbackslash{}(\ H\_0\ \textbackslash{}) False \\ \midrule
-Reject \textbackslash{}(\ H\_0\ \textbackslash{}) & Type 1 Error & \textbf{True positive} \\
-Accept \textbackslash{}(\ H\_0\ \textbackslash{}) & False negative & Type II error \\ \bottomrule
+& $H_0$ True & $H_0$ False \\ \midrule
+Reject $H_0$ & Type 1 Error & \textbf{True positive} \\
+Accept $H_0$ & False negative & Type II error \\ \bottomrule
 \end{tabular}
 
 }
+
 
 \frame{
 
@@ -754,19 +867,22 @@ $Power = \phi\left( \frac{|\mu_1 - \mu_0|\sqrt{N}}{2\sigma} - \phi^{-1}\left( 1 
 
 
 
-
-
 \frame{
 \frametitle{Intuition about Power}
 
 Minimum detectable effect is the smallest effect we could detect given sample size, ``true'' effect size, variance of outcome, power, and $\alpha$
 
-\begin{center}
-\includegraphics[height=0.85\textheight, trim = 0in 0in 0in 0.5in , clip]{images/power}
-\end{center}
+In essence: some non-zero effect sizes are not detectable by a study of a given sample size.
 
-% Sometimes non-zero effects are not detectable
-% Talk about Gelman and Stern
+}
+
+
+\frame{
+\frametitle{Intuition about Power}
+
+\begin{center}
+\includegraphics[height=0.8\textheight, trim = 0in 0in 0in 0.5in , clip]{images/power}
+\end{center}
 
 }
 
@@ -793,14 +909,16 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 
 \frametitle{Aside: Complex Designs}
 
+\small
+
 \begin{itemize}
 \item An experiment can have any number of conditions
-	\begin{itemize}
+	\begin{itemize}\footnotesize
 	\item Up to the limits of sample size
 	\item More than 8--10 conditions is typically unwieldy
 	\end{itemize}
 \item Typically analyze complex designs using ANOVA or regression, but we are still ultimately interested in pairwise comparisons to estimates SATEs
-	\begin{itemize}
+	\begin{itemize}\footnotesize
 	\item Treatment--treatment, or treatment-control
 	\item Without control group, we don't know which treatment(s) affected the outcome
 	\end{itemize}
@@ -813,7 +931,9 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 
 
 \frame{
-\frametitle{\textit{Survey}-experiments, specifically}
+\frametitle{{\large \textit{Survey}-experiments, specifically}}
+
+\small
 
 \begin{itemize}
 \item Everything so far applies to any kind of experiment
@@ -829,9 +949,11 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 
 \frame{
 
-\frametitle{Combining \textit{Survey Design} and\\ \textit{Experimental Design}}
+\frametitle{{\large Combining Survey Design and\\ Experimental Design}}
 
-\begin{itemize}\itemsep1em
+\small
+
+\begin{itemize}\itemsep0.25em
 \item Sample is representative of population in every respect (in expectation)
 \item Sample Average Treatment Effect (SATE) is the average of the sample's individual-level treatment effects
 	\begin{itemize}
@@ -864,6 +986,7 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 \end{itemize}
 
 }
+
 
 
 \appendix
