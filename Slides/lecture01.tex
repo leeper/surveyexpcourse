@@ -1,6 +1,6 @@
 \input{preamble}
 
-\title{Session I:\\Survey Experiments in Context}
+\title{Session I\\Survey Experiments in Context}
 
 \date[]{}
 
@@ -9,33 +9,7 @@
 \frame{\titlepage}
 
 
-\section{Introductions}
-\frame{\tableofcontents[currentsection]}
-
-\frame{
-\frametitle{Who am I?}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-
-\item Thomas Leeper
-
-\item Assistant Professor in Political Behaviour at London School of Economics
-
-\begin{itemize}
-\item Originally from Minnesota, USA
-\item PhD from Northwestern University (Chicago, USA)
-\item Worked At Aarhus University (Denmark) for 2.5 years
-\end{itemize}
-
-\item Interested in public opinion and political psychology
-
-\item Email: \href{mailto:t.leeper@lse.ac.uk}{t.leeper@lse.ac.uk}
-
-\end{itemize}
-
-}
+\frame{\tableofcontents}
 
 
 \frame{
@@ -90,6 +64,35 @@
 
 }
 
+
+
+\section{Introductions}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+\frametitle{Who am I?}
+
+\small
+
+\begin{itemize}\itemsep0.25em
+
+\item Thomas Leeper
+
+\item Assistant Professor in Political Behaviour at London School of Economics
+
+\begin{itemize}
+\item 2013--15: Aarhus University (Denmark)
+\item 2008--12: PhD from Northwestern University (Chicago, USA)
+\item Birth--2008: Minnesota, USA
+\end{itemize}
+
+\item Interested in public opinion and political psychology
+
+\item Email: \href{mailto:t.leeper@lse.ac.uk}{t.leeper@lse.ac.uk}
+
+\end{itemize}
+
+}
 
 
 \frame{
@@ -199,7 +202,7 @@ Oxford English Dictionary defines ``experiment'' as:
 
 \frametitle{Experiments}
 
-\begin{itemize}\itemsep0.5em
+\begin{itemize}\itemsep0.75em
 \item ``Experiments'' have a very long history
 
 \item Major advances in design and analysis of experiments based on agricultural and later biostatistical research in the 19th century
@@ -226,9 +229,9 @@ Oxford English Dictionary defines ``experiment'' as:
 	\item Not randomized -- more like ``What if?'' studies
 	\item Heavily laboratory-based or clinical
 	\end{itemize}
-\item First randomized, controlled trial (RCT) by Peirce and Jastrow in 1884
-\item RCTs came later to medicine (circa 1950)
-\item And have been a major part of the ``credibility revolution'' in economics
+\item<2-> First randomized, controlled trial (RCT) by Peirce and Jastrow in 1884
+\item<3-> RCTs came later to medicine (circa 1950)
+\item<4-> And have been a major part of the ``credibility revolution'' in economics
 	\begin{itemize}
 	\item See, especially, LaLonde (1986)
 	\end{itemize}
@@ -241,13 +244,13 @@ Oxford English Dictionary defines ``experiment'' as:
 
 \frametitle{In Political Science I}
 
-\begin{itemize}
-\item American Political Science Association president A. Lawrence Lowell (1922):\\
+\begin{itemize}\itemsep0.5em
+\item APSA Pres. A. Lawrence Lowell (1922):\\
 {\small
-``We are limited by the impossibility of experiment. Politics is an observational, not an experimental science\dots''
+\textit{``We are limited by the impossibility of experiment. Politics is an observational, not an experimental science\dots''}
 }
-\item First experiment by Gosnell (1924)
-\item Gerber and Green (2000) first major \textit{field} experiment
+\item<2-> First experiment by Gosnell (1924)
+\item<3-> Gerber and Green (2000) first major \textit{field} experiment
 \end{itemize}
 
 }
@@ -262,7 +265,7 @@ Oxford English Dictionary defines ``experiment'' as:
 \item Rise of surveys in the behavioral revolution
 \item Survey research was not experimental because interviewing was still mostly paper-based
 \item<2-> 1983: Merrill Shanks and the Berkeley Survey Research Center develop CATI
-\item<3-> Mid-1980s: Paul Sniderman \& Tom Piazza performed the first survey experiment\footnote{Sniderman, Paul M., and Thomas Piazza. 1993. \textit{The Scar of Race}. Cambridge, MA: Harvard University Press.}
+\item<3-> Mid-1980s: Paul Sniderman \& Tom Piazza performed the first survey experiment\only<3->{\footnote{Sniderman, Paul M., and Thomas Piazza. 1993. \textit{The Scar of Race}. Cambridge, MA: Harvard University Press.}}
 	\begin{itemize}\footnotesize
 	\item Then: the ``first multi-investigator''
 	\item Later: Skip Lupia and Diana Mutz created TESS
@@ -328,61 +331,11 @@ In observational research\dots
 	\begin{itemize}
 	\item Calculate correlation between $X$ and $Y$ at each combination of levels of \textbf{Z}
 	\end{itemize}
-\item<5-> Basically:\\
-$Y = \beta_0 + \beta_1 X + \beta Z + \epsilon $
+\item<5-> Basically: $Y = \beta_0 + \beta_1 X + \beta Z + \epsilon $
 \end{enumerate}
 
 }
 
-\frame{
-
-\frametitle{Experiments are different}
-
-\begin{enumerate}
-\item<2-> They require us to think carefully about causality
-\item<3-> Draw causal inferences through \textit{design} not \textit{analysis}
-\item<4-> Experiments reveal ``counterfactuals'' or ``potential outcomes''
-\item<5-> We define a ``causal effect'' as the difference between two potential outcomes
-\end{enumerate}
-
-}
-
-
-% Mill's method of difference
-\frame{
-\frametitle{{\normalsize Mill's Method of Difference}}
-
-\small
-
-If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, have every circumstance save one in common, that one occurring only in the former; the circumstance in which alone the two instances differ, is the effect, or cause, or an necessary part of the cause, of the phenomenon.
-}
-
-
-
-\frame{
-
-\frametitle{Definitions}
-
-\only<2->{\textbf{Unit}: A physical object at a particular point in time}
-
-\only<3->{\textbf{Treatment}: An intervention, whose effects we wish to assess relative to some other (non-)intervention}
-
-\only<4->{
-\textbf{Potential outcomes}: The outcome for each unit that we would observe if that unit received each treatment
-\begin{itemize}
-\item Multiple potential outcomes for each unit, but we only observe one of them
-\end{itemize}
-}
-
-\only<5->{\textbf{Causal effect}: The comparisons between the unit-level potential outcomes under each intervention}
-
-}
-
-
-
-
-
-% Causal graphs
 
 \begin{frame}
 \begin{center}
@@ -403,6 +356,57 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 
 
 
+\frame{
+
+\frametitle{Experiments are different}
+
+\begin{enumerate}\itemsep0.75em
+\item<2-> Draw causal inferences through \textit{design} not \textit{analysis}
+\item<3-> Randomization breaks selection bias
+\item<4-> We don't need to ``control'' for anything
+\item<5-> We see ``causal effects'' in the comparison of experimental groups
+\end{enumerate}
+
+}
+
+
+% Mill's method of difference
+\frame{
+\frametitle{{\normalsize Mill's Method of Difference}}
+
+\small
+
+If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, \textbf<2->{have every circumstance save one in common}, that one occurring only in the former; \textbf<2->{the circumstance in which alone the two instances differ, is the} effect, or \textbf<2->{cause}, or an necessary part of the cause, \textbf<2->{of the phenomenon}.
+}
+
+
+
+\frame{
+
+\frametitle{Definitions}
+
+\only<2>{\textbf{Unit}: A physical object at a particular point in time}
+
+\only<3>{\textbf{Treatment}: An intervention, whose effect(s) we wish to assess relative to some other (non-)intervention}
+
+\only<4>{
+\textbf{Potential outcomes}: The outcome for each unit that we would observe if that unit received each treatment
+\begin{itemize}
+\item Multiple potential outcomes for each unit, but we only observe one of them
+\end{itemize}
+}
+
+\only<5>{\textbf{Causal effect}: The comparisons between the unit-level potential outcomes under each intervention}
+
+}
+
+
+
+
+
+
+
+
 % Individual-level effects versus ATEs
 
 
@@ -419,13 +423,13 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 \frame{
 \frametitle{The Experimental Ideal}
 \begin{itemize}\itemsep0.5em
-\item It solves both the temporal ordering and confounding problems
+\item It solves both the temporal ordering and confounding problems of observational causal inference
 	\begin{itemize}
    		\item Treatment ($X$) is applied by the researcher before outcome ($Y$)
    		\item Randomization means there are no confounding ($Z$) variables
 	\end{itemize}
-\item Thus experiments are a ``gold standard'' that always provides causal inference
-\item<5-> Basically: $Y = \beta_0 + \beta_1 X + \epsilon $
+\item<2-> Thus experiments are a ``gold standard'' of causal inference
+\item<3-> Basically: $Y = \beta_0 + \beta_1 X + \epsilon $
 \end{itemize}
 }
 
@@ -434,7 +438,7 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 
 \frametitle{Neyman-Rubin Potential Outcomes Framework}
 
-If we are interested in some outcome $Y$, then for every unit $i$, there are numerous ``potential outcomes'' $Y*$ only one of which is visible in a given reality. Comparisons of (unobservable) potential outcomes indicate causality.
+If we are interested in some outcome $Y$, then for every unit $i$, there are numerous ``potential outcomes'' $Y*$ only one of which is visible in a given reality. Comparisons of (partially unobservable) potential outcomes indicate causality.
 
 }
 
@@ -445,11 +449,9 @@ If we are interested in some outcome $Y$, then for every unit $i$, there are num
 Concisely, we typically discuss two potential outcomes:
 
 \begin{itemize}\small
-\item $Y_{0i}$, the \textit{potential} outcome that would be \textit{realized} if $X_i = 0$ (assigned to control)
-\item $Y_{1i}$, the \textit{potential} outcome that would be \textit{realized} if $X_i = 1$ (assigned to treatment)
+\item $Y_{0i}$, the \textit{potential} outcome \textit{realized} if $X_i = 0$ (b/c $D_i = 0$, assigned to control)
+\item $Y_{1i}$, the \textit{potential} outcome \textit{realized} if $X_i = 1$ (b/c $D_i = 1$, assigned to treatment)
 \end{itemize}
-
-We are only able to see one of these potential outcomes for each unit.
 
 }
 
@@ -480,10 +482,19 @@ We are only able to see one of these potential outcomes for each unit.
 	\frametitle{Experimental Inference I}
 	\small
 	\begin{itemize}\itemsep0.5em
-    	\item<1-> Causal inference is a comparison of two \textit{potential outcomes}
-    	\item<2-> A potential outcome is the value of the outcome (Y) for a given unit (i) after receiving a particular version of the treatment (X)
-    	\item<3-> Each unit has multiple \textit{potential} outcomes, but we only observe one of them
-    	\item<4-> A \textit{causal effect} is the difference between these (e.g., $Y_{X=1} - Y_{X=0}$), all else constant
+    	\item<1-> Each unit has multiple \textit{potential} outcomes, but we only observe one of them, randomly
+    	\item<2-> In this sense, we are sampling potential outcomes from each unit's population of potential outcomes
+		\only<2->{
+			\begin{center}
+			\begin{tabular}{ccccc}
+			unit & low & high & \onslide<3->{control} & \onslide<4->{etc.} \\ \midrule
+			1 & ? & ? & \onslide<3->{?} & \onslide<4->{\dots} \\
+			2 & ? & ? & \onslide<3->{?} & \onslide<4->{\dots} \\
+			3 & ? & ? & \onslide<3->{?} & \onslide<4->{\dots} \\
+			4 & ? & ? & \onslide<3->{?} & \onslide<4->{\dots} \\ \bottomrule
+			\end{tabular}
+			\end{center}
+		}
 	\end{itemize}
 }
 
@@ -505,7 +516,7 @@ We are only able to see one of these potential outcomes for each unit.
 	\small
 	\begin{itemize}\itemsep0.5em
 		\item<1-> We want to know: $TE_i = Y_{1i} - Y_{0i}$ for every $i$ in the population
-		\item<2-> We can average: $ATE = E[Y_{1i} - Y_{0i}] = E[Y_{1i}] - E[Y_{0i}]$
+		\item<2-> We can average: $E[TE_i] = E[Y_{1i} - Y_{0i}] = E[Y_{1i}] - E[Y_{0i}]$
 		\item<3-> But we still only see one potential outcome for each unit:\\ \vspace{1em}
     		$ATE_{naive} = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0]$
     	\item<4-> Is this what we want to know?
@@ -541,7 +552,7 @@ We are only able to see one of these potential outcomes for each unit.
     	E[Y_{0i}] = E[Y_{0i} | X = 1] = E[Y_{0i} | X = 0]
     	\end{align}
     	\item In that case, potential outcomes are \textit{independent} of treatment assignment
-		\item If true, then:
+		\item If true (e.g., due to randomization of $X$), then:
     	\begin{align*}
     	ATE_{naive} & = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0] \tag{5}\\
     	& = E[Y_{1i}] - E[Y_{0i}]\\
@@ -552,34 +563,26 @@ We are only able to see one of these potential outcomes for each unit.
 
 \frame{
 	\frametitle{Experimental Inference VI}
-	\small
+	
+	
+	\normalsize
 	\begin{itemize}\itemsep0.5em
-    	\item This holds in experiments because of randomization
-   		\item Units differ only in what side of coin was up
-  		\item Experiments randomly reveal potential outcomes
-  		\item This means there is no confounding (selection bias)
+    	\item This holds in experiments because of a \textit{physical process of randomization}\footnote{Random means ``known probability of treatment'' not ``haphazard''.}
+   		\item<2-> Units differ only in side of coin that was up
+	   		\begin{itemize}\footnotesize
+	   		\item $X_i = 1$ only because $D_i = 1$
+	   		\end{itemize}
+	   	\item<3-> Implications:
+		   	\begin{itemize}
+		   	\item Covariate balance
+		   	\item Potential outcomes balanced and independent of treatment assignment
+		   	\item No confounding (selection bias)
+		   	\end{itemize}
 	\end{itemize}
 }
 
-\frame{
-	\frametitle{Random Assignment}
 
-\small
-\begin{itemize}\itemsep0.5em
-\item A physical process of randomization
-\item Breaks the ``selection process''
-	\begin{itemize}\footnotesize
-	\item Units only take value of $X$ because of assignment
-	\end{itemize}
-\item This means:
-	\begin{itemize}\footnotesize
-	\item All covariates are balanced between groups
-	\item Potential outcomes are balanced between groups
-	\item In sum: No confounding
-	\end{itemize}
-\end{itemize}
 
-}
 
 \begin{frame}
 \small 
@@ -594,72 +597,15 @@ We are only able to see one of these potential outcomes for each unit.
     \draw[->] (W) -- (Y);
     \draw[->, dashed] (E) -- (X);
     
-    \draw<2->[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Treatment} -- (X);
+    \draw<2->[->, very thick, color=red] (-2.5,1) node[left, color=red, text width=2cm, align=center] (Tr) {Random\\Assignment} -- (X);
     \draw<2->[->, very thick, color=red] (X) -- (Y);
 \end{tikzpicture}
 \end{center}
 \end{frame}
 
 
-\frame{
-	\frametitle{``The Perfect Doctor''}
 
-\small
-\begin{center}
-\begin{tabular}{ccc}
-Unit & $Y_0$ & $Y_1$ \\ \hline 
-1 & ? & ? \\
-2 & ? & ? \\
-3 & ? & ? \\
-4 & ? & ? \\
-5 & ? & ? \\
-6 & ? & ? \\
-7 & ? & ? \\
-8 & ? & ? \\ \hline
-\textbf{Mean} & \textbf{?} & \textbf{?} \\
-\end{tabular}
-\end{center}
-}
-
-\frame{
-	\frametitle{``The Perfect Doctor''}
-
-\small
-\begin{center}
-\begin{tabular}{ccc}
-Unit & $Y_0$ & $Y_1$ \\ \hline 
-1 & ? & 14 \\
-2 & 6 & ? \\
-3 & 4 & ? \\
-4 & 5 & ? \\
-5 & 6 & ? \\
-6 & 6 & ? \\
-7 & ? & 10 \\
-8 & ? & 9 \\ \hline
-\textbf{Mean} & \textbf{5.4} & \textbf{11} \\
-\end{tabular}
-\end{center}
-}
-
-\frame{
-	\frametitle{``The Perfect Doctor''}
-
-\small
-\begin{center}
-\begin{tabular}{ccc}
-Unit & $Y_0$ & $Y_1$ \\ \hline 
-1 & 13 & 14 \\
-2 & 6 & 0 \\
-3 & 4 & 1 \\
-4 & 5 & 2 \\
-5 & 6 & 3 \\
-6 & 6 & 1 \\
-7 & 8 & 10 \\
-8 & 8 & 9 \\ \hline
-\textbf{Mean} & \textbf{7} & \textbf{5} \\
-\end{tabular}
-\end{center}
-}
+\questions
 
 
 
@@ -682,14 +628,14 @@ Unit & $Y_0$ & $Y_1$ \\ \hline
 
 \frametitle{Computation of Effects I}
 
-\begin{itemize}
+\begin{itemize}\itemsep0.5em
 \item In practice we often estimate SATE using t-tests, ANOVA, or OLS regression
 \item These are all basically equivalent
-\item Reasons to choose one procedure over another:
+\item<2-> Reasons to choose one procedure over another:
 	\begin{itemize}
-	\item Disciplinary norms
-	\item Ease of interpretation
-	\item Flexibility for >2 treatment conditions
+	\item<2-> Disciplinary norms
+	\item<3-> Ease of interpretation
+	\item<4-> Flexibility for >2 treatment conditions
 	\end{itemize}
 \end{itemize}
 
@@ -707,7 +653,7 @@ An experimental data structure looks like:
 
 \begin{center}
 \begin{tabular}{ccc}
-Unit & $treatment$ & $outcome$ \\ \hline 
+\texttt{unit} & \texttt{treatment} & \texttt{outcome} \\ \hline 
 1 & 0 & 13 \\
 2 & 0 & 6 \\
 3 & 0 & 4 \\
@@ -729,19 +675,20 @@ Unit & $treatment$ & $outcome$ \\ \hline
 Stata:\small
 \begin{verbatim}
 ttest outcome treatment
-reg outcome treatment
+reg outcome i.treatment
 \end{verbatim}
 
 
 R:\small
 \begin{verbatim}
 t.test(outcome ~ treatment, data = data)
-lm(outcomes ~ treatment, data = data)
+lm(outcome ~ factor(treatment), data = data)
 \end{verbatim}
 
 \end{frame}
 
 
+\questions
 
 
 \frame{
@@ -758,6 +705,7 @@ lm(outcomes ~ treatment, data = data)
 	\end{itemize}
 \end{itemize}
 }
+
 
 \frame{
 \frametitle{Experimental Analysis III}
@@ -781,7 +729,7 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{n_0} + \frac{\widehat{Var
 
 \frametitle{Intuition about Variance}
 
-\begin{itemize}
+\begin{itemize}\itemsep0.5em
 \item Bigger sample $\rightarrow$ smaller SEs
 \item Smaller variance $\rightarrow$ smaller SEs
 \item Efficient use of sample size:
@@ -794,36 +742,6 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{n_0} + \frac{\widehat{Var
 
 }
 
-
-\begin{frame}[fragile]
-
-\tiny
-
-\begin{verbatim}
-# theoretical randomizations
-d <- data.frame(y1 = c(14,0,1,2,3,1,10,9), 
-                y0 = c(13,6,4,5,6,6,8,8) )
-
-onedraw <- function(eff=FALSE, dat = d){
-  r <- replicate(nrow(dat), sample(1:2,1))
-  dat[cbind(1:nrow(dat),r)] <- NA
-  if (eff) {
-    return(mean(dat[,'y1'], na.rm=TRUE) -
-           mean(dat[,'y0'], na.rm=TRUE) )
-  } else {
-    return(dat)
-  }
-
-onedraw() # one randomization
-onedraw(TRUE) # one effect estimate
-
-# simulate 2000 experiments from these data
-x1 <- replicate(2000, onedraw(TRUE))
-hist(x1, col=rgb(1,0,0,.5), border='white')
-abline(v=-2, lwd=3, col='red') # true effect
-\end{verbatim}
-
-\end{frame}
 
 
 \frame{
@@ -870,12 +788,32 @@ $Power = \phi\left( \frac{|\mu_1 - \mu_0|\sqrt{N}}{2\sigma} - \phi^{-1}\left( 1 
 \frame{
 \frametitle{Intuition about Power}
 
-Minimum detectable effect is the smallest effect we could detect given sample size, ``true'' effect size, variance of outcome, power, and $\alpha$
+Minimum detectable effect is the smallest effect we could detect given sample size, ``true'' effect size, variance of outcome, power, and $\alpha$.\\
 
-In essence: some non-zero effect sizes are not detectable by a study of a given sample size.
+\vspace{0.5em}
+
+In essence: some non-zero effect sizes are not detectable by a study of a given sample size.\footnote{Gelman, A. and Weakliem, D. 2009. ``Of Beauty, Sex and Power.'' \textit{American Scientist} 97(4): 310--16}
 
 }
 
+
+\frame{
+
+\frametitle{Intuition about Power}
+
+\begin{itemize}\itemsep0.5em
+\item It can help to think in terms of ``standardized effect sizes''
+\item Cohen's $d$:\\ $d = \frac{\bar{x}_1 - \bar{x}_0}{s}$, where
+$s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
+\item Intuition: How large is the effect in standard deviations of the outcome?
+	\begin{itemize}
+	\item Know if effects are large or small
+	\item Compare effects across studies
+	\end{itemize}
+\item Small: 0.2; Medium: 0.5; Large: 0.8
+\end{itemize}
+
+}
 
 \frame{
 \frametitle{Intuition about Power}
@@ -886,23 +824,6 @@ In essence: some non-zero effect sizes are not detectable by a study of a given 
 
 }
 
-
-\frame{
-
-\frametitle{Substantive effect sizes}
-
-\begin{itemize}
-\item We rarely care only about statistical significance
-	\begin{itemize}
-	\item Know if effects are large or small
-	\item Compare effects across studies
-	\end{itemize}
-\item Cohen's $d$:\\ $d = \frac{\bar{x}_1 - \bar{x}_0}{s}$, where
-$s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
-\item Small: 0.2; Medium: 0.5; Large: 0.8
-\end{itemize}
-
-}
 
 
 \frame{
@@ -991,5 +912,36 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 
 \appendix
 \frame{}
+
+\begin{frame}[fragile]
+
+\frametitle{{\large Randomization Distribution}}
+
+\tiny
+
+\begin{verbatim}
+# theoretical randomizations
+onedraw <- function(eff=FALSE, dat = d) {
+  r <- replicate(nrow(dat), sample(1:2,1))
+  dat[cbind(1:nrow(dat),r)] <- NA
+  if (eff) {
+    return(mean(dat[,'y1'], na.rm=TRUE) -
+           mean(dat[,'y0'], na.rm=TRUE) )
+  } else {
+    return(dat)
+  }
+}
+
+onedraw() # one randomization
+onedraw(TRUE) # one effect estimate
+
+# simulate 2000 experiments from these data
+x1 <- replicate(2000, onedraw(TRUE))
+hist(x1, col=rgb(1,0,0,.5), border='white')
+abline(v=-2, lwd=3, col='red') # true effect
+\end{verbatim}
+
+\end{frame}
+
 
 \end{document}

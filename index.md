@@ -29,9 +29,9 @@ The first session will provide an overview of the course, discuss the history of
 
 #### Class Schedule
 
- - 11:30-12:30 - Introductions and Course Overview
- - 12:30-12:55 - History of the Survey Experiment (and Experiments, generally)
- - 13:00-13:30 - Potential Outcomes Framework of Causality
+ - 11:30-12:00 - Introductions and Course Overview
+ - 12:00-12:25 - History of the Survey Experiment (and Experiments, generally)
+ - 12:30-13:30 - Potential Outcomes Framework of Causality
 
 #### Readings
 
