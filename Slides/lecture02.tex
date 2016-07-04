@@ -78,7 +78,7 @@ KKV's two criteria:
 
 \normalsize
 
-\begin{itemize}
+\begin{itemize}\itemsep0.5em
 \item Forward causal questions
 	\begin{itemize}
 	\item Can X cause Y?
@@ -89,9 +89,8 @@ KKV's two criteria:
 	\item What causes Y?
 	\item How much of Y is attributable to X?
 	\end{itemize}
+\item<3-> Even though answering ``forward'' causal question, we start with an outcome concept
 \end{itemize}
-
-\only<3->{Even though answering ``forward'' causal question, we start with an outcome concept}
 }
 
 
@@ -176,21 +175,6 @@ These days, Democrats and Republicans differ from one another considerably. The 
 
 \frame{
 
-\frametitle{{\normalsize Experiments from ``Big'' Theories}}
-
-We may have a ``big'' theory (like the effect of democratization on economic growth).
-
-This isn't particularly well-suited to experimental intervention for various reasons (cost, ethics, finite population of countries, etc.), but there are possibly causal mechanisms or empirical implications that could be tested.
-
-E.g., we can design an experiment where some citizens are invited to deliberate with authoritarian rulers on a local level (while a control group is not invited to participate) and then compare their economic productivity
-
-
-}
-
-
-
-\frame{
-
 \frametitle{Hypothesis Testing}
 
 \begin{itemize}
@@ -209,7 +193,7 @@ E.g., we can design an experiment where some citizens are invited to deliberate 
 
 \frame{
 
-\frametitle{Ex.: Presence/Absence}
+\frametitle{{\normalsize Ex.: Presence/Absence}}
 
 \small
 
@@ -228,15 +212,15 @@ E.g., we can design an experiment where some citizens are invited to deliberate 
 
 \frame{
 
-\frametitle{Ex.: Levels/doses}
+\frametitle{{\normalsize Ex.: Levels/doses}}
 
 \small
 
-\begin{itemize}
+\begin{itemize}\itemsep-0.2em
 \item Theory: Negative campaigning reduces support for the party described negatively.
 \item Hypothesis: Exposure to higher levels of negative advertising criticizing a party reduces support for that party.
 \item Manipulation:
-	\begin{itemize}\small 
+	\begin{itemize}\footnotesize
 	\item Control group receives no advertisement. 
 	\item Treatment group 1 watches a video containing 1 negative ad describing a party.
 	\item Treatment group 2 watches a video containing 2 negative ads describing a party.
@@ -250,7 +234,7 @@ E.g., we can design an experiment where some citizens are invited to deliberate 
 
 \frame{
 
-\frametitle{Ex.: Qualitative variation}
+\frametitle{{\normalsize Ex.: Qualitative variation}}
 
 \small
 
@@ -258,7 +242,7 @@ E.g., we can design an experiment where some citizens are invited to deliberate 
 \item Theory: Negative campaigning reduces support for the party described negatively.
 \item Hypothesis: Exposure to a negative advertisement criticizing a party reduces support for that party, while a positive advertisement has no effect.
 \item Manipulation:
-	\begin{itemize}\small 
+	\begin{itemize}\footnotesize
 	\item Control group receives no advertisement. 
 	\item Negative treatment group watches a video containing a negative ad describing a party.
 	\item Positive treatment group watches a video containing a positive ad describing a party.
@@ -324,7 +308,7 @@ Protocol is the complete planning document for how to design, implement, and ana
 
 \frametitle{Why bother?}
 
-\begin{itemize}
+\begin{itemize}\itemsep0.5em
 \item<2-> Be clear to yourself what you're trying to do before you do it
 \item<3-> Assess the literature for best practices
 \item<4-> Highlight areas in need of pilot testing
@@ -337,9 +321,10 @@ Protocol is the complete planning document for how to design, implement, and ana
 
 \frame{
 
-\frametitle{How do we know if an experiment is any good?}
+\frametitle{Activity!}
 
-\begin{itemize}
+\begin{itemize}\itemsep0.5em
+\item How do we know if an experiment is any good?
 \item Talk with a partner for about 3 minutes
 \item Try to develop some criteria that allow you to evaluate ``what makes for a good experiment?'' 
 \end{itemize}
@@ -351,21 +336,24 @@ Protocol is the complete planning document for how to design, implement, and ana
 
 \frametitle{Some possible criteria}
 
-\normalsize
+\small
 
-\begin{itemize}
+\begin{itemize}\itemsep-0.2em
+\item Significant results
 \item Face validity
 \item Coherent for respondents
+\item Non-obvious to respondents
 \item Simple
 \item Indirect/unobtrusive
-\item Non-obvious to respondents
 \item Validated by prior work
-\item Innovative
+\item Innovative/creative
 \item \dots
 \end{itemize}
 
 }
 
+
+\questions
 
 \section{Assessing Treatments}
 \frame{\tableofcontents[currentsection]}
@@ -373,7 +361,19 @@ Protocol is the complete planning document for how to design, implement, and ana
 
 \frame{
 
+\begin{quote}\large
+The best criterion for evaluating the quality of an experiment is whether it manipulated the intended independent variable and controlled everything else by design.
+\end{quote}
+\onslide<2->{\small\hspace{5em} --Thomas J. Leeper (5 July 2016)}
+
+}
+
+\frame{
+
 \frametitle{How do we know we manipulated what we think we manipulated?}
+
+\small
+
 \begin{itemize}
 \item<2-> Outcomes are affected consistent with theory
 \item<3-> Before the study using \textit{pilot testing} (or \emph{pretesting})
@@ -399,7 +399,9 @@ Protocol is the complete planning document for how to design, implement, and ana
 
 \frametitle{II. Pilot Testing}
 
-\begin{itemize}\itemsep0.5em
+\small
+
+\begin{itemize}\itemsep0.2em
 \item Goal: establish construct validity of manipulation
 \item Assess whether a set of possible manipulations affect a measure of the \textit{independent} variable
 \item<2-> Example:
@@ -416,14 +418,46 @@ Protocol is the complete planning document for how to design, implement, and ana
 
 \frametitle{III. Manipulation Checks}
 
+\small
+
+\begin{itemize}\itemsep0.2em
+\item Manipulation checks are items added post-treatment, post-outcome that assess whether the \textit{independent} variable was affected by treatment
+\item We typically talk about manipulations as directly setting the value of $X$, but in practice we are typically manipulating something \textit{that we think} strongly modifies $X$
+\item<2-> Example: information manipulations aim to modify knowledge or beliefs, but are necessarily imperfect at doing so
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{\normalsize Manipulation check example\footnote{Leeper \& Slothuus. n.d. ``Can Citizens Be Framed?'' Available from: \url{http://thomasleeper.com/research.html}.}}
+
+\begin{enumerate}
+\item Treatment 1: Supply Information
+\item Manipulation check 1: measure beliefs
+\item Treatment 2: Prime a set of considerations
+\item Outcome: Measure opinion
+\item Manipulation check 2: measure dimension salience
+\end{enumerate}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Some Best Practices}}
+
+
 \begin{itemize}\itemsep0.5em
-\item Measures added post-treatment, post-outcome that assess whether the \textit{independent} variable was affected by treatment
-\item<2-> Example:
+\item<2-> Manipulation checks should be innocuous
 	\begin{itemize}
-	\item Goal: Manipulate whether respondent believes a policy is expensive or not
-	\item Outcome is support for the policy
-	\item Manipulation check comes after opinion question, asking how expensive the respondent believes policy is
-	\item Compare beliefs in treatment and control conditions
+	\item Shouldn't modify independent variable
+	\item Shouldn't modify outcome variable
+	\end{itemize}
+\item<3-> Generally, measure post-outcome
+\item<4-> Measure both what you wanted to manipulate \textit{and} what you didn't want to manipulate
+	\begin{itemize}
+	\item Most treatments are \textit{compound}!
 	\end{itemize}
 \end{itemize}
 
@@ -448,6 +482,8 @@ Protocol is the complete planning document for how to design, implement, and ana
 
 \frametitle{V. Non-equivalent outcomes}
 
+\small
+
 \begin{itemize}\itemsep0.5em
 \item Measures an outcome that \textit{should not} be affected by independent variable
 \item<2-> Example:
@@ -463,14 +499,16 @@ Protocol is the complete planning document for how to design, implement, and ana
 
 \frame{
 
-\frametitle{Aside: Demand Characteristics}
+\frametitle{{\normalsize Aside: Demand Characteristics}}
+
+\small
 
 \begin{itemize}\itemsep0.5em
 \item ``Demand characteristics'' are features of experiments that (unintentionally) imply the purpose of the study and thereby change respondents' behavior (to be consistent with theory)
 \item<2-> Implications:
-	\begin{itemize}
+	\begin{itemize}\footnotesize
 	\item Design experimental treatments that are non-obvious
-	\item Do not disclose the purpose of the study upfront\footnote{But, consider the ethics of not doing so (more Friday)}
+	\item Do not disclose the purpose of the study up front\footnote{But, consider the ethics of not doing so (more Friday)}
 	\end{itemize}
 \end{itemize}
 
@@ -554,9 +592,11 @@ You may have heard about the idea that the world's temperature may have been \te
 
 \frametitle{{\normalsize Another framing example\footnote{Singer \& Couper. 2014. ``The Effect of Question Wording on Attitudes toward Prenatal Testing and Abortion.'' \textit{Public Opinion Quarterly} 78(3): 751--760.}}}
 
-\small
+\footnotesize
 
 Today, tests are being developed that make it possible to detect serious genetic defects \textbf{\only<1>{before a baby is born}\only<2>{in the fetus during pregnancy}}. But so far, it is impossible either to treat or to correct most of them. If (you/your partner) were pregnant, would you want (her) to have a test to find out if the \textbf{\only<1>{baby}\only<2>{fetus}} has any serious genetic defects? (Yes/No)\\
+
+\vspace{0.5em}
 
 Suppose a test shows the \textbf{\only<1>{baby}\only<2>{fetus}} has a serious genetic defect. Would you, yourself, want (your partner) to have an abortion if a test shows the \textbf{\only<1>{baby}\only<2>{fetus}} has a serious genetic defect? (Yes/No)
 
@@ -594,9 +634,30 @@ Use question wording designs to select which survey measures we want to use
 
 }
 
+
 \frame{
 
-\frametitle{Classic example\footnote{Bishop, G.F., Tuchfarber, A. \& Oldendick, R.W. 1986. ``Opinions on Fictitious Issues: The Pressure to Answer Survey Questions.'' \textit{Public Opinion Quarterly} 50(2): 240--250.}}
+\frametitle{{\normalsize Aside: Experimentation vs. Other Pretesting Methods}}
+
+\small
+
+\begin{itemize}\itemsep0.25em
+\item<2-> Experiments are complementary to other pretesting methods
+\item<3-> Specific value added of an experiment: optimize questions or other survey features against a specific criterion, e.g.:
+	\begin{itemize}\footnotesize
+	\item (Non-)Response or drop-off rates
+	\item ``Don't know'' rates
+	\item Item characteristics
+	\item Reading times or response latencies
+	\end{itemize}
+\item<4-> But! Power considerations\dots
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Classic question testing experiment\footnote{Bishop, G.F., Tuchfarber, A. \& Oldendick, R.W. 1986. ``Opinions on Fictitious Issues: The Pressure to Answer Survey Questions.'' \textit{Public Opinion Quarterly} 50(2): 240--250.}}}
 
 Some people feel that The 1975 Public Affairs Act should be repealed-do you agree or disagree with this idea\only<1>{?}\only<2>{, or haven't you thought much about this issue?}
 
@@ -607,32 +668,23 @@ Some people feel that The 1975 Public Affairs Act should be repealed-do you agre
 
 \frametitle{{\normalsize An example\footnote{Holbrook \& Krosnick. 2013. ``A New Question Sequence to Measure Voter Turnout in Telephone Surveys: Results of an Experiment in the 2006 {ANES} Pilot Study.'' \textit{Public Opinion Quarterly} 77: 106--123.}}}
 
-\vspace{-1em}
-\footnotesize
-    \begin{columns}[T]
-    \begin{column}[T]{5cm}
-        \begin{block}{}
-            In talking to people about elections, we often find that a lot of people were not able to vote because they weren't registered, they were sick, or they just didn't have time. How about you--did you vote in the elections this November?
-        \end{block}
-    \end{column}
-    \begin{column}[T]{5cm}
-        \begin{block}{}
-            In talking to people about elections, we often find that a lot of people were not able to vote because they weren't registered, they were sick, or they just didn't have time. Which of the following statements best describes you?
-            \vspace{-1em}
-            \begin{itemize}\itemsep-0.2em\tiny
-            \item One, I did not vote in the November 3 election
-            \item two, I thought about voting this time but didn't
-            \item three, I usually vote but didn't this time
-            \item four, I am sure I voted
-            \end{itemize}
-        \end{block}
-    \end{column}
-    \end{columns}
+\small
+
+In talking to people about elections, we often find that a lot of people were not able to vote because they weren't registered, they were sick, or they just didn't have time. \only<1>{How about you--did you vote in the elections this November?}\only<2>{Which of the following statements best describes you?
+    \begin{itemize}\footnotesize
+    \item One, I did not vote in the November 3 election
+    \item two, I thought about voting this time but didn't
+    \item three, I usually vote but didn't this time
+    \item four, I am sure I voted
+    \end{itemize}}
+
 }
 
 \frame{
 
 \frametitle{{\normalsize An Instructional Manipulation\footnote{Sturgis, Allum \& Smith. 2008. ``An Experiment on the Measurement of Political Knowledge in Surveys.'' \textit{Public Opinion Quarterly} 72(1): 90--102.}}}
+
+\small
 
 For the next few questions, I am going to read out some statements, and for each one, please tell me if it is true or false. If you don't know, \only<1>{just say so and we will skip to the next one}\only<2>{please just give me your best guess}.
 
@@ -649,6 +701,8 @@ For the next few questions, I am going to read out some statements, and for each
 
 \frametitle{{\normalsize An Instructional Manipulation + \footnote{Prior \& Lupia. 2008. ``Money, Time, and Political Knowledge: Distinguishing Quick Recall and Political Learning Skills.'' \textit{American journal of Political Science} 52(1): 169--183.}}}
 
+\small
+
 \only<1>{In the next part of this study, you will be asked 14 questions about politics, public policy, and economics. Many people don't know the answers to these questions, but it is helpful for us if you answer, even if you're not sure what the correct answer is. We encourage you to take a guess on every question. At the end of this study, you will see a summary of how many questions you answered correctly.}\only<2>{We will pay you for answering questions correctly.
 You will earn \$1 for every correct answer you give. So, if you answer 3 of the 14 questions correctly, you will earn \$3. If you answer 7 of the 14 questions correctly, you will earn \$7. The more questions you answer correctly, the more you will earn.}
 
@@ -658,21 +712,23 @@ You will earn \$1 for every correct answer you give. So, if you answer 3 of the 
 
 \frame{
 
-\frametitle{Question Order Designs}
+\frametitle{{\normalsize Question Order Designs}}
+
+\small
 
 \begin{itemize}
-\item Manipulation comes in the order or set of questions before the outcome measure
+\item Manipulation of pre-outcome questionnaire
 \item<2-> Example:
 	\begin{itemize}
 	\item Goal: assess influence of value salience on support for a policy
-	\item Manipulate salience by asking different questions:
+	\item Manipulate by asking different questions:
 		\begin{itemize}
-		\item Battery of 5 ``individual liberties'' questions, or
+		\item Battery of 5 ``rights'' questions, or
 		\item Battery of 5 ``life'' questions
 		\end{itemize}
 	\item Measure support for legalized abortion
 	\end{itemize}
-\item<3-> If answers to manipulated questions are important, can measure rest of battery post-outcome
+\item<3-> If answers to manipulated questions matter, can measure rest post-outcome
 \end{itemize}
 
 }
@@ -693,13 +749,11 @@ You will earn \$1 for every correct answer you give. So, if you answer 3 of the 
 
 \frametitle{{\normalsize Ex.: Knowledge and Political Interest}}
 
-Treatment Group 1
-
 \footnotesize
 
 \begin{enumerate}
-\item Do you happen to remember anything special that your U.S. Representative has done for your district or for the people in your district while he has been in Congress? (IF YES): What was that?
-\item Is there any legislative bill that has come up in the House of Representatives, on which you remember how your congressman has voted in the last couple of years? (IF YES): What bill was that?
+\item Do you happen to remember anything special that your U.S. Representative has done for your district or for the people in your district while he has been in Congress?
+\item Is there any legislative bill that has come up in the House of Representatives, on which you remember how your congressman has voted in the last couple of years?
 \item Now, some people seem to follow what's going on in government and public affairs most of the time, whether there's an election going on or not. Others aren't that interested. Would you say that you follow what's going on in government and public affairs most of the time, some of the time, only now and then, or hardly at all?
 \end{enumerate}
 
@@ -709,14 +763,12 @@ Treatment Group 1
 
 \frametitle{{\normalsize Ex.: Knowledge and Political Interest}}
 
-Treatment Group 2
-
 \footnotesize
 
 \begin{enumerate}
 \item Now, some people seem to follow what's going on in government and public affairs most of the time, whether there's an election going on or not. Others aren't that interested. Would you say that you follow what's going on in government and public affairs most of the time, some of the time, only now and then, or hardly at all?
-\item Do you happen to remember anything special that your U.S. Representative has done for your district or for the people in your district while he has been in Congress? (IF YES): What was that?
-\item Is there any legislative bill that has come up in the House of Representatives, on which you remember how your congressman has voted in the last couple of years? (IF YES): What bill was that?
+\item Do you happen to remember anything special that your U.S. Representative has done for your district or for the people in your district while he has been in Congress?
+\item Is there any legislative bill that has come up in the House of Representatives, on which you remember how your congressman has voted in the last couple of years?
 \end{enumerate}
 
 }
@@ -731,6 +783,7 @@ Treatment Group 2
 \item A ``vignette'' is a short paragraph of text describing a situation
 \item Vignettes are probably the most common survey experimental paradigm, after question wording designs
 \item Take many forms and increasingly encompass non-textual stimuli
+\item Basically limited to web-based mode
 \end{itemize}
 
 }
@@ -748,14 +801,13 @@ Now think about a \textbf{(black/white)} woman in her early thirties. She is a h
 }
 
 
-% informational treatments
-
-
 \frame{
 
 \frametitle{Article-type vignettes}
 
 % articles
+
+% Nelson et al.
 
 }
 
@@ -772,6 +824,59 @@ Now think about a \textbf{(black/white)} woman in her early thirties. She is a h
 % vignette
 % text
 % video
+
+
+\frame{
+
+\frametitle{{\large Some vignette considerations}}
+
+\begin{itemize}\small
+\item<2-> Comparability across conditions
+	\begin{itemize}
+	\item Length
+	\item Readability
+	\end{itemize}
+\item<3-> Language proficiency
+\item<4-> Length
+	\begin{itemize}\small
+	\item Timers
+	\item Forced exposure
+	\item Mouse trackers
+	\end{itemize}
+\item<5-> Devices
+	\begin{itemize}\small
+	\item Browser-specificity
+	\item Device sizes (e.g., mobile)
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\begin{center}
+\includegraphics[height=\textheight]{images/devicesizes.png}
+\end{center}
+}
+
+\frame{
+
+\frametitle{Aside: Unique features of online studies}
+
+\begin{itemize}
+\item<2-> Capacity for audio-visual treatments and measurements
+\item<3-> Paradata collection
+	\begin{itemize}
+	\item Implicit outcomes like response times, answer switching, mouse click behavior, browser focus, eye tracking, etc.
+	\end{itemize}
+\item<4-> Complex randomization (Thursday)
+\item<5-> Panel data (Friday)
+\item<5-> Synchronous, multi-person designs
+\end{itemize}
+
+}
+
 
 
 \frame{
@@ -798,24 +903,7 @@ Now think about a \textbf{(black/white)} woman in her early thirties. She is a h
 
 
 
-
-\frame{
-
-\frametitle{Aside: Unique features of online studies}
-
-\begin{itemize}
-\item<2-> Capacity for audio-visual treatments and measurements
-\item<3-> Paradata collection
-	\begin{itemize}
-	\item Measure implicit outcomes
-	\end{itemize}
-\item<4-> Complex randomization (Thursday)
-\item<5-> Panel data (Friday)
-\item<5-> Synchronous, multi-person designs
-\end{itemize}
-
-}
-
+\questions
 
 
 \frame{
@@ -829,7 +917,6 @@ Now think about a \textbf{(black/white)} woman in her early thirties. She is a h
 	\begin{itemize}
 	\item List experiments
 	\item Endorsement experiments
-	\item Question wording
 	\end{itemize}
 \end{itemize}
 }
@@ -838,13 +925,17 @@ Now think about a \textbf{(black/white)} woman in her early thirties. She is a h
 
 \frametitle{{\normalsize List Experiments \footnote{Kuklinski et al. 1997. ``Racial Prejudice and Attitudes Toward Affirmative Action.'' \textit{American Journal of Political Science} 41(2): 402--419.}}}
 
+\small
+
 Now I'm going to read you three things that sometimes make people angry or upset. After I read all three, just tell me \textit{how many} of them upset you. I don't want to know which ones. just \textit{how many}.
+
+\footnotesize
 
 \begin{enumerate}
 \item the federal government increasing the tax on gasoline
 \item professional athletes getting million-dollar salaries
 \item large corporations polluting the environment
-\item<2-> a black family moving in next door
+\item<2-> \textbf{a black family moving in next door}
 \end{enumerate}
 
 
@@ -852,22 +943,13 @@ Now I'm going to read you three things that sometimes make people angry or upset
 
 \frame{
 
-\frametitle{Sensitive Item Designs II}
+\frametitle{{\normalsize Endorsement experiments\footnote{Lyall, Blair, \& Imai. 2013. ``Explaining Support for Combatants during Wartime: A Survey Experiment in Afghanistan.'' \textit{American Political Science Review} 107(4): 679--705.}}}
 
-Endorsement experiments\footnote{Lyall, Blair, \& Imai. 2013. ``Explaining Support for Combatants during Wartime: A Survey Experiment in Afghanistan.'' \textit{American Political Science Review} 107(4): 679--705.}
+\small
 
-A recent proposal \only<2>{by the Taliban} calls for the sweeping reform of the Afghan prison system, including the construction of new prisons in every district to help alleviate overcrowding in existing facilities. Though expensive, new programs for inmates would also be offered, and new judges and prosecutors would be trained. How do you feel about this proposal?
+A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping reform of the Afghan prison system, including the construction of new prisons in every district to help alleviate overcrowding in existing facilities. Though expensive, new programs for inmates would also be offered, and new judges and prosecutors would be trained. How do you feel about this proposal?
 }
 
-
-\frame{
-
-\frametitle{Sensitive Item Designs III}
-
-Subtle question wording
-
-poor versus poor blacks
-}
 
 
 
@@ -888,15 +970,17 @@ poor versus poor blacks
 \begin{itemize}\itemsep0.5em
 \item Surveys can be used as a measurement instrument for a field treatment
 \item No manipulation in the survey itself
-\item Survey only measures outcomes post-treatment
-\item Common uses:
+\item Survey only measures outcomes
+\item<2-> Common uses:
 	\begin{itemize}
-	\item Randomized treatment
-	\item Quasi-experimental treatment
+	\item Post test only Design
+	\item Pre-post Design
 	\end{itemize}
+\item<3-> Problems? Compliance \& nonresponse
 \end{itemize}
 
 }
+
 
 
 \frame{
@@ -912,14 +996,11 @@ poor versus poor blacks
 	\item<3-> Different local media markets randomly assigned to receive different advertising
 	\end{enumerate}
 \item<4-> Survey is used to measure outcomes, when treatment assignment is already known
-\item<5-> Two big issues with these designs
-	\begin{itemize}
-	\item<6-> Compliance problems
-	\item<7-> Nonresponse problems
-	\end{itemize}
 \end{itemize}
 
 }
+
+
 
 
 \frame{
