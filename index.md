@@ -25,7 +25,11 @@ An outline of the course is given below. All of the readings [are available here
 
 The first session will provide an overview of the course, discuss the history of survey experiments and experiments in general, and provide a conceptual and notational framework for design, analyzing, and discussing experiments.
 
- - Slides (Coming soon...)
+ - [Slides](Slides/lecture01.pdf)
+ - Materials from Anchoring Experiment Activity
+   - [Data](Activities/activity01.tsv) (tab-separated values)
+   - [R script](Activities/activity01.R)
+   - [Stata .do file](Activities/activity01.do)
 
 #### Class Schedule
 
