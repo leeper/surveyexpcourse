@@ -52,8 +52,7 @@ While the first session demonstrated the advantages of experimentation as a rese
 #### Class Schedule
 
  - 11:30-11:50 - Translating Theories into Experiments
- - 11:50-12:25 - Question Wording and Vignettes
- - 12:35-13:00 - Measuring Sensitive Items
+ - 11:50-13:00 - Paradigms (Question Wording, Vignettes, Sensitive items, etc.)
  - 13:00-13:30 - Quasi-experiments and Field Experiments
    - Pre-post designs
    - Unexpected quasi-experiments

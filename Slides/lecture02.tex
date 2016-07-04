@@ -13,29 +13,70 @@
 
 \frame{
 
-\frametitle{Share your TESS Examples}
+\frametitle{Analysis}
 
-With a partner, discuss 1--2 of your TESS examples
+See website for
 \begin{itemize}
-\item What was the researcher's question?
-\item How did they test it experimentally?
-\item What was interesting or surprising about the designs?
+\item Data from yesterday's activity
+\item R code for basic experimental analysis
+\item Stata code for basic experimental analysis
 \end{itemize}
+}
 
-Take about 4--6 minutes.
+
+\frame{
+
+\frametitle{{\normalsize Aside: Complex Designs}}
+
+\small
+
+\begin{itemize}
+\item An experiment can have any number of conditions
+	\begin{itemize}\footnotesize
+	\item Up to the limits of sample size
+	\item More than 8--10 conditions is typically unwieldy
+	\end{itemize}
+\item Still analyze complex designs using regression, but focus on pairwise comparisons to estimates SATEs
+	\begin{itemize}\footnotesize
+	\item Treatment--treatment, or treatment-control
+	\item Without control group, we don't know which treatment(s) affected the outcome
+	\end{itemize}
+\end{itemize}
 
 }
 
 
 
-\section{From Theory to Design}
+
+\section[Theory]{From Theory to Design}
 \frame{\tableofcontents[currentsection]}
 % deriving hypotheses from theory and manipulations from hypotheses
 
 
 \frame{
 
-\frametitle{Experiments are good at answering ``what if'' questions}
+\frametitle{{\large What makes a good research question?}}
+
+\small
+
+KKV's two criteria:
+
+\begin{enumerate}
+\item Politically important
+\item Contribute to scientific literature
+\vspace{0.25em}
+\item<2-> Personally interesting
+\item<2-> Unresolved
+\item<3-> For experiments, \textit{forward} in nature
+\end{enumerate}
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Experiments are good at answering ``what if'' questions}}
+
+\normalsize
 
 \begin{itemize}
 \item Forward causal questions
@@ -49,44 +90,95 @@ Take about 4--6 minutes.
 	\item How much of Y is attributable to X?
 	\end{itemize}
 \end{itemize}
+
+\only<3->{Even though answering ``forward'' causal question, we start with an outcome concept}
 }
+
 
 
 
 \frame{
 
-\frametitle{What makes a good research question?}
+\frametitle{Hypothesis Testing}
 
-KKV's two criteria:
-
-\begin{enumerate}
-\item Politically important
-\item Contribute to scientific understanding/literature
-\vspace{0.5em}
-\item<2-> Personally interesting
-\item<2-> Unresolved
-\item<3-> For experiments, forward in nature
-\end{enumerate}
-}
-
-\frame{
-
-Even though answering ``forward'' causal question, we start with an outcome concept.
-
+\begin{itemize}\itemsep0.5em
+\item From theory, we derive testable hypotheses
 \begin{itemize}
-\item Term/label
-\item Attributes (i.e., definition)
-\item Indicators (i.e., operationalization)
+\item Hypotheses are expectations about differences in outcomes across levels of a putatively causal variable
+\item Hypothesis must be testable by an SATE
+\end{itemize}
+\item Manipulations are developed to create variation in that causal variable
 \end{itemize}
 
-% ACTIVITY
-
 }
 
 
 \frame{
 
-We may have a "big" theory (like the effect of democratization on economic growth).
+\frametitle{{\normalsize Example: News Framing}}
+
+\small
+
+\begin{itemize}
+\item Theory: Presentation of news affects opinion
+\item Hypotheses:
+	\begin{itemize}\footnotesize
+	\item News emphasizing free speech increases support for a hate group rally
+	\item News emphasizing public safety decreases support for a hate group rally
+	\end{itemize}
+\item Manipulation:
+	\begin{itemize}\footnotesize
+	\item Control group: no information
+	\item Free speech group: article emphasizing rights
+	\item Public safety group: article emphasizing safety
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+
+
+\frame{
+
+\frametitle{{\normalsize Example: Partisan Identity}}
+
+\small
+
+\begin{itemize}
+\item Theory: Strength of partisan identity affects tendency to accept party position
+\item Hypotheses:
+	\begin{itemize}\small
+	\item Strong partisans are more likely to accept their party's position on an issue
+	\end{itemize}
+\item Manipulation:
+	\begin{itemize}\small
+	\item Control group: no manipulation
+	\item ``Univalent'' condition
+	\item ``Ambivalent'' condition
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame[label=ambivalentpartisan]{
+
+\frametitle{\textbf{\only<1>{Univalent}\only<2>{Ambivalent}}}
+
+\footnotesize
+
+These days, Democrats and Republicans differ from one another considerably. The two groups seem to be growing further and further apart, not only in terms of their opinions but also their lifestyles. Earlier in the survey, you said you tend to identify as a \textit{Democrat/ Republican}. Please take a few minutes to think about what you like about \textit{Democrats/ Republicans} compared to the \textit{Republicans/ Democrats}. Think of 2 to 3 things you especially like best about \textbf{\only<1>{your party}\only<2>{the other party}}. Then think of 2 to 3 things you especially dislike about \textbf{\only<2>{your party}\only<1>{the other party}}. Now please write those thoughts in the space below.
+
+}
+
+
+
+\frame{
+
+\frametitle{{\normalsize Experiments from ``Big'' Theories}}
+
+We may have a ``big'' theory (like the effect of democratization on economic growth).
 
 This isn't particularly well-suited to experimental intervention for various reasons (cost, ethics, finite population of countries, etc.), but there are possibly causal mechanisms or empirical implications that could be tested.
 
@@ -96,25 +188,13 @@ E.g., we can design an experiment where some citizens are invited to deliberate 
 }
 
 
-\frame{
-
-\frametitle{Hypotheses}
-
-
-\begin{itemize}
-\item From theory, we derive testable hypotheses
-\item Hypotheses are expectations about differences in outcomes across levels of a putatively causal variable
-\item Manipulations are developed to create variation in that causal variable
-\end{itemize}
-
-}
-
 
 \frame{
+
+\frametitle{Hypothesis Testing}
 
 \begin{itemize}
 \item Derive experimental design from hypotheses
-\item We can only test hypotheses by comparing two (or more) experimental conditions
 \item Experimental ``factors'' are expressions of hypotheses as randomized groups
 \item What intervention each group receives depends on hypotheses
 	\begin{itemize}
@@ -129,10 +209,11 @@ E.g., we can design an experiment where some citizens are invited to deliberate 
 
 \frame{
 
-\frametitle{Example: Presence/Absence}
+\frametitle{Ex.: Presence/Absence}
+
+\small
 
 \begin{itemize}
-\item RQ: How do campaign advertisements affect citizens' vote choices?
 \item Theory: Negative campaigning reduces support for the party described negatively.
 \item Hypothesis: Exposure to a negative advertisement criticizing a party reduces support for that party.
 \item Manipulation:
@@ -147,10 +228,11 @@ E.g., we can design an experiment where some citizens are invited to deliberate 
 
 \frame{
 
-\frametitle{Example: Levels/doses}
+\frametitle{Ex.: Levels/doses}
+
+\small
 
 \begin{itemize}
-\item RQ: How do campaign advertisements affect citizens' vote choices?
 \item Theory: Negative campaigning reduces support for the party described negatively.
 \item Hypothesis: Exposure to higher levels of negative advertising criticizing a party reduces support for that party.
 \item Manipulation:
@@ -168,10 +250,11 @@ E.g., we can design an experiment where some citizens are invited to deliberate 
 
 \frame{
 
-\frametitle{Example: Qualitative variation}
+\frametitle{Ex.: Qualitative variation}
+
+\small
 
 \begin{itemize}
-\item RQ: How do campaign advertisements affect citizens' vote choices?
 \item Theory: Negative campaigning reduces support for the party described negatively.
 \item Hypothesis: Exposure to a negative advertisement criticizing a party reduces support for that party, while a positive advertisement has no effect.
 \item Manipulation:
@@ -188,20 +271,20 @@ E.g., we can design an experiment where some citizens are invited to deliberate 
 
 \frame{
 
-\frametitle{Activity!}
+\frametitle{Share your TESS Examples}
 
+In groups of 4--5, share your TESS examples
 \begin{itemize}
-\item Let's try to develop examples of each type of manipulation
-	\begin{itemize}
-	\item presence/absence
-	\item levels/doses
-	\item qualitative variations
-	\end{itemize}
-\item<2-> Theory: 
-\item<3-> Theory: emotional responses to products affect purchasing behavior.
+\item What was the researcher's question?
+\item How did they test it experimentally?
+\item What was interesting or surprising about the designs?
 \end{itemize}
 
+Take about 7--8 minutes.
+
 }
+
+
 
 
 
@@ -211,11 +294,18 @@ E.g., we can design an experiment where some citizens are invited to deliberate 
 
 \frametitle{Protocol}
 
-Protocol\footnote{Thomas J. Leeper. 2011. ``The Use of Protocol in the Design and Reporting of Experiments.'' \textit{The Experimental Political Scientist}.} is the complete planning document for how to design, implement, and analyze an experiment
+Protocol is the complete planning document for how to design, implement, and analyze an experiment.\footnote{Thomas J. Leeper. 2011. ``The Use of Protocol in the Design and Reporting of Experiments.'' \textit{The Experimental Political Scientist}.}
 
-It contains details of:
+}
 
-\begin{enumerate}
+\frame{
+
+\frametitle{{\normalsize Protocol}}
+
+
+\small
+
+\begin{enumerate}\itemsep-0.2em
 \item Theory/hypotheses
 \item Instrumentation
 	\begin{itemize}
@@ -228,6 +318,187 @@ It contains details of:
 \item Implementation
 \item Analysis
 \end{enumerate}
+}
+
+\frame{
+
+\frametitle{Why bother?}
+
+\begin{itemize}
+\item<2-> Be clear to yourself what you're trying to do before you do it
+\item<3-> Assess the literature for best practices
+\item<4-> Highlight areas in need of pilot testing
+\item<5-> Economize questionnaire development
+\item<6-> Study preregistration
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{How do we know if an experiment is any good?}
+
+\begin{itemize}
+\item Talk with a partner for about 3 minutes
+\item Try to develop some criteria that allow you to evaluate ``what makes for a good experiment?'' 
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Some possible criteria}
+
+\normalsize
+
+\begin{itemize}
+\item Face validity
+\item Coherent for respondents
+\item Simple
+\item Indirect/unobtrusive
+\item Non-obvious to respondents
+\item Validated by prior work
+\item Innovative
+\item \dots
+\end{itemize}
+
+}
+
+
+\section{Assessing Treatments}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+
+\frametitle{How do we know we manipulated what we think we manipulated?}
+\begin{itemize}
+\item<2-> Outcomes are affected consistent with theory
+\item<3-> Before the study using \textit{pilot testing} (or \emph{pretesting})
+\item<4-> During the study, using \emph{manipulation checks}
+\item<5-> During the study, using \emph{placebos}
+\item<6-> During the study, using \textit{non-equivalent outcomes}
+\end{itemize}
+}
+
+\frame{
+
+\frametitle{I. Outcomes Affected}
+
+\begin{itemize}\itemsep0.5em
+\item Follows a circular logic!
+\item Doesn't tell us anything if we hypothesize null effects
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{II. Pilot Testing}
+
+\begin{itemize}\itemsep0.5em
+\item Goal: establish construct validity of manipulation
+\item Assess whether a set of possible manipulations affect a measure of the \textit{independent} variable
+\item<2-> Example:
+	\begin{itemize}
+	\item Goal: Manipulate the ``strength'' of an argument
+	\item Write several arguments
+	\item Ask pilot test respondents to report how strong each one was
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{III. Manipulation Checks}
+
+\begin{itemize}\itemsep0.5em
+\item Measures added post-treatment, post-outcome that assess whether the \textit{independent} variable was affected by treatment
+\item<2-> Example:
+	\begin{itemize}
+	\item Goal: Manipulate whether respondent believes a policy is expensive or not
+	\item Outcome is support for the policy
+	\item Manipulation check comes after opinion question, asking how expensive the respondent believes policy is
+	\item Compare beliefs in treatment and control conditions
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{IV. Placebos}
+
+\begin{itemize}\itemsep0.5em
+\item Include an experimental condition that \textit{does not} manipulate the variable of interest (but might affect the outcome)
+\item<2-> Example:
+	\begin{itemize}
+	\item Study whether risk-related arguments about climate change increase support for a climate change policy
+	\item Placebo condition: control article with risk-related arguments about non-environmental issue (e.g., terrorism)
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{V. Non-equivalent outcomes}
+
+\begin{itemize}\itemsep0.5em
+\item Measures an outcome that \textit{should not} be affected by independent variable
+\item<2-> Example:
+	\begin{itemize}
+	\item Assess effect of some treatment on attitudes toward group A
+	\item Focal outcome: attitudes toward group A
+	\item Non-equivalent outcome: attitudes toward group B
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Aside: Demand Characteristics}
+
+\begin{itemize}\itemsep0.5em
+\item ``Demand characteristics'' are features of experiments that (unintentionally) imply the purpose of the study and thereby change respondents' behavior (to be consistent with theory)
+\item<2-> Implications:
+	\begin{itemize}
+	\item Design experimental treatments that are non-obvious
+	\item Do not disclose the purpose of the study upfront\footnote{But, consider the ethics of not doing so (more Friday)}
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+
+
+
+\section[Paradigms]{Common Paradigms and Examples}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+
+\frametitle{Question Wording Designs}
+
+\begin{itemize}
+\item Kahneman and Tversky is a ``question wording'' experiment
+\item Hypothesized difference in outcomes according to the decision being faced
+	\begin{itemize}
+	\item Risky or not risky
+	\item Gains or losses
+	\end{itemize}
+\item Manipulation operationalizes this by asking two different questions
+\item Outcome is the answer to the question
+\end{itemize}
+
 }
 
 \frame{
@@ -249,26 +520,6 @@ It contains details of:
 }
 
 
-\subsection{Question Wording Designs}
-\frame{\tableofcontents[currentsubsection]}
-
-\frame{
-
-\frametitle{Question Wording Designs}
-
-\begin{itemize}
-\item Kahneman and Tversky is ``question wording'' experiment
-\item Hypothesized difference in outcomes according to the decision being faced
-	\begin{itemize}
-	\item Risky or not risky
-	\item Gains or losses
-	\end{itemize}
-\item Manipulation operationalizes this by asking two different questions
-\item Outcome is the answer to the question
-\end{itemize}
-
-}
-
 
 \frame{
 
@@ -284,29 +535,49 @@ What's this study about?
 
 \frame{
 
-\frametitle{Sensitive Item Designs I}
+\small
 
-List experiments
+You may have heard about the idea that the world's temperature may have been \textbf{\only<1>{going up}\only<2>{changing}} over the past 100 years, a phenomenon sometimes called \textbf{\only<1>{global warming}\only<2>{climate change}}. What is your personal opinion regarding whether or not this has been happening?
+	\begin{itemize}\itemsep-0.25em\footnotesize
+	\item Definitely has not been happening
+	\item Probably has not been happening
+	\item Unsure, but leaning toward it has not been happening
+	\item Not sure either way
+	\item Unsure, but leaning toward it has been happening
+	\item Probably has been happening
+	\item Definitely has been happening
+	\end{itemize}
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Another framing example\footnote{Singer \& Couper. 2014. ``The Effect of Question Wording on Attitudes toward Prenatal Testing and Abortion.'' \textit{Public Opinion Quarterly} 78(3): 751--760.}}}
+
+\small
+
+Today, tests are being developed that make it possible to detect serious genetic defects \textbf{\only<1>{before a baby is born}\only<2>{in the fetus during pregnancy}}. But so far, it is impossible either to treat or to correct most of them. If (you/your partner) were pregnant, would you want (her) to have a test to find out if the \textbf{\only<1>{baby}\only<2>{fetus}} has any serious genetic defects? (Yes/No)\\
+
+Suppose a test shows the \textbf{\only<1>{baby}\only<2>{fetus}} has a serious genetic defect. Would you, yourself, want (your partner) to have an abortion if a test shows the \textbf{\only<1>{baby}\only<2>{fetus}} has a serious genetic defect? (Yes/No)
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Another framing example\footnote{Bobo \& Johnson. 2004. ``A Taste for Punishment: Black and White Americans' Views on the Death Penalty and the War on Drugs.'' Du Bois Review 1(1): 151--180.}}}
+
+\only<2>{Blacks are about 12\% of the U.S. population, but they were half of the homicide offenders last year. }Do you favor or oppose the death penalty for persons convicted of murder?
+
 }
 
 \frame{
 
-\frametitle{Sensitive Item Designs II}
+\frametitle{{\normalsize Another framing example\footnote{Haider-Markel \& Joslyn. 2001. ``Gun Policy, Opinion, Tragedy, and Blame Attribution: The Conditional Influence of Issue Frames.'' \textit{Journal of Politics} 63(2): 520--543.}}}
 
-Endorsement experiments
+\only<1>{Concealed handgun laws have recently received national attention. Some people have argued that law-abiding citizens have the right to protect themselves.}\only<2>{Concealed handgun laws have recently received national attention. Some people have argued that laws allowing citizens to carry concealed handguns threaten public safety because they would allow almost anyone to carry a gun almost anywhere, even onto school grounds.} What do you think about concealed handgun laws?
+
 }
-
-
-\frame{
-
-\frametitle{Sensitive Item Designs III}
-
-Subtle question wording
-
-poor versus poor blacks
-}
-
-
 
 
 \frame{
@@ -324,6 +595,17 @@ Use question wording designs to select which survey measures we want to use
 }
 
 \frame{
+
+\frametitle{Classic example\footnote{Bishop, G.F., Tuchfarber, A. \& Oldendick, R.W. 1986. ``Opinions on Fictitious Issues: The Pressure to Answer Survey Questions.'' \textit{Public Opinion Quarterly} 50(2): 240--250.}}
+
+Some people feel that The 1975 Public Affairs Act should be repealed-do you agree or disagree with this idea\only<1>{?}\only<2>{, or haven't you thought much about this issue?}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize An example\footnote{Holbrook \& Krosnick. 2013. ``A New Question Sequence to Measure Voter Turnout in Telephone Surveys: Results of an Experiment in the 2006 {ANES} Pilot Study.'' \textit{Public Opinion Quarterly} 77: 106--123.}}}
 
 \vspace{-1em}
 \footnotesize
@@ -348,11 +630,31 @@ Use question wording designs to select which survey measures we want to use
     \end{columns}
 }
 
+\frame{
+
+\frametitle{{\normalsize An Instructional Manipulation\footnote{Sturgis, Allum \& Smith. 2008. ``An Experiment on the Measurement of Political Knowledge in Surveys.'' \textit{Public Opinion Quarterly} 72(1): 90--102.}}}
+
+For the next few questions, I am going to read out some statements, and for each one, please tell me if it is true or false. If you don't know, \only<1>{just say so and we will skip to the next one}\only<2>{please just give me your best guess}.
+
+\begin{enumerate}\footnotesize
+\item Britain's electoral system is based on proportional representation.
+\item MPs from different parties are on parliamentary committees.
+\item The Conservatives are opposed to the ratification of a constitution for the European Union.
+\end{enumerate}
+
+}
 
 
+\frame{
 
-\subsection{Question Order Designs}
-\frame{\tableofcontents[currentsubsection]}
+\frametitle{{\normalsize An Instructional Manipulation + \footnote{Prior \& Lupia. 2008. ``Money, Time, and Political Knowledge: Distinguishing Quick Recall and Political Learning Skills.'' \textit{American journal of Political Science} 52(1): 169--183.}}}
+
+\only<1>{In the next part of this study, you will be asked 14 questions about politics, public policy, and economics. Many people don't know the answers to these questions, but it is helpful for us if you answer, even if you're not sure what the correct answer is. We encourage you to take a guess on every question. At the end of this study, you will see a summary of how many questions you answered correctly.}\only<2>{We will pay you for answering questions correctly.
+You will earn \$1 for every correct answer you give. So, if you answer 3 of the 14 questions correctly, you will earn \$3. If you answer 7 of the 14 questions correctly, you will earn \$7. The more questions you answer correctly, the more you will earn.}
+
+}
+
+
 
 \frame{
 
@@ -375,10 +677,51 @@ Use question wording designs to select which survey measures we want to use
 
 }
 
+\frame{
+	\frametitle{{\normalsize Ex. Question-as-treatment\footnote{Transue. 2007. ``Identity Salience, Identity Acceptance, and Racial Policy Attitudes: {American} National Identity as a Uniting Force.'' \textit{American Journal of Political Science} 51(1): 78--91.}}}
+	
+
+\begin{itemize}
+\item \only<1,3>{How close do you feel to your ethnic or racial group?}\only<2,4>{How close do you feel to other Americans?}
+\item \only<1-2>{Some people have said that taxes need to be raised to take care of pressing national needs. How willing would you be to have your taxes raised to improve education in public schools?}\only<3-4>{Some people have said that taxes need to be raised to take care of pressing national needs. How willing would you be to have your taxes raised to improve educational opportunities for minorities?}
+\end{itemize}
+	
+}
 
 
-\subsection{Vignette Designs}
-\frame{\tableofcontents[currentsubsection]}
+\frame{
+
+\frametitle{{\normalsize Ex.: Knowledge and Political Interest}}
+
+Treatment Group 1
+
+\footnotesize
+
+\begin{enumerate}
+\item Do you happen to remember anything special that your U.S. Representative has done for your district or for the people in your district while he has been in Congress? (IF YES): What was that?
+\item Is there any legislative bill that has come up in the House of Representatives, on which you remember how your congressman has voted in the last couple of years? (IF YES): What bill was that?
+\item Now, some people seem to follow what's going on in government and public affairs most of the time, whether there's an election going on or not. Others aren't that interested. Would you say that you follow what's going on in government and public affairs most of the time, some of the time, only now and then, or hardly at all?
+\end{enumerate}
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Ex.: Knowledge and Political Interest}}
+
+Treatment Group 2
+
+\footnotesize
+
+\begin{enumerate}
+\item Now, some people seem to follow what's going on in government and public affairs most of the time, whether there's an election going on or not. Others aren't that interested. Would you say that you follow what's going on in government and public affairs most of the time, some of the time, only now and then, or hardly at all?
+\item Do you happen to remember anything special that your U.S. Representative has done for your district or for the people in your district while he has been in Congress? (IF YES): What was that?
+\item Is there any legislative bill that has come up in the House of Representatives, on which you remember how your congressman has voted in the last couple of years? (IF YES): What bill was that?
+\end{enumerate}
+
+}
+
+
 
 \frame{
 
@@ -394,11 +737,14 @@ Use question wording designs to select which survey measures we want to use
 
 \frame{
 
-\frametitle{A classic vignette}
+\frametitle{A classic vignette\footnote{Gilens, M. 1996. ```Race coding' and white opposition to welfare. \textit{American Political Science Review} 90(3): 593--604.}}
 
-% welfare mother experiment
+Now think about a \textbf{(black/white)} woman in her early thirties. She is a high school \textbf{(graduate/drop out)} with a ten-year-old child, and she has been on welfare for the past year.
 
-\footnote{Sniderman and Carmines 1997}
+\begin{itemize}\tiny
+\item How likely is it that she will have more children in order to get a bigger welfare check? (1 = Very likely, \dots, 7 = Not at all likely)
+\item How likely do you think it is that she will really try hard to find a job in the next year? (1 = Very likely, \dots, 7 = Not at all likely)
+\end{itemize}
 }
 
 
@@ -428,11 +774,30 @@ Use question wording designs to select which survey measures we want to use
 % video
 
 
+\frame{
+\frametitle{``Task'' Designs}
+
+\begin{itemize}\itemsep0.5em
+\item Task designs ask respondents to perform a task
+\item Often developed for laboratory settings
+\item<2-> Most common example: writing something
+\item<3-> Can be problematic:
+	\begin{itemize}
+	\item Time-intensive
+	\item Invites drop-off
+	\item Compliance problems
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\againframe{ambivalentpartisan}
 
 
 
 
-\subsection{}
+
 
 \frame{
 
@@ -452,92 +817,61 @@ Use question wording designs to select which survey measures we want to use
 }
 
 
-\questions
-
-\subsection{Assessing Treatments}
-\frame{\tableofcontents[currentsubsection]}
-
 
 \frame{
 
-\frametitle{How do we know we manipulated what we think we manipulated?}
-\begin{itemize}
-\item<2-> Outcomes are affected consistent with theory
-\item<3-> Before the study using \textit{pilot testing} (or \emph{pretesting})
-\item<4-> During the study, using \emph{manipulation checks}
-\item<5-> During the study, using \textit{non-equivalent outcomes}
-\end{itemize}
-}
-
-\frame{
-
-\frametitle{I. Outcomes Affected}
+\frametitle{Sensitive Item Designs}
 
 \begin{itemize}
-\item Tautological!
-\item Doesn't tell us anything if we hypothesize null effects
-\end{itemize}
-
-}
-
-
-\frame{
-
-\frametitle{II. Pilot Testing}
-
-\begin{itemize}
-\item Like question wording, but assess whether a set of possible manipulations affect a measure of the \textit{independent} variable
-\item<2-> Example:
+\item Experiments can also be used to measure something
+\item Goal here is not necessarily causal inference, though the causal insight of the experiment provides \textit{descriptively} useful information
+\item Paradigms
 	\begin{itemize}
-	\item Goal: Manipulate the ``strength'' of an argument
-	\item Write several arguments
-	\item Ask pilot test respondents to report how strong each one was
+	\item List experiments
+	\item Endorsement experiments
+	\item Question wording
 	\end{itemize}
 \end{itemize}
+}
+
+\frame{
+
+\frametitle{{\normalsize List Experiments \footnote{Kuklinski et al. 1997. ``Racial Prejudice and Attitudes Toward Affirmative Action.'' \textit{American Journal of Political Science} 41(2): 402--419.}}}
+
+Now I'm going to read you three things that sometimes make people angry or upset. After I read all three, just tell me \textit{how many} of them upset you. I don't want to know which ones. just \textit{how many}.
+
+\begin{enumerate}
+\item the federal government increasing the tax on gasoline
+\item professional athletes getting million-dollar salaries
+\item large corporations polluting the environment
+\item<2-> a black family moving in next door
+\end{enumerate}
+
 
 }
 
 \frame{
 
-\frametitle{III. Manipulation Checks}
+\frametitle{Sensitive Item Designs II}
 
-\begin{itemize}
-\item Measures added post-treatment, post-outcome that assess whether the \textit{independent} variable was affected by treatment
-\item<2-> Example:
-	\begin{itemize}
-	\item Goal: Manipulate whether respondent believes a policy is expensive or not
-	\item Outcome is support for the policy
-	\item Manipulation check comes after opinion question, asking how expensive the respondent believes policy is
-	\item Compare beliefs in treatment and control conditions
-	\end{itemize}
-\end{itemize}
+Endorsement experiments\footnote{Lyall, Blair, \& Imai. 2013. ``Explaining Support for Combatants during Wartime: A Survey Experiment in Afghanistan.'' \textit{American Political Science Review} 107(4): 679--705.}
 
-}
-
-\frame{
-
-\frametitle{IV. Non-equivalent outcomes}
-
-\begin{itemize}
-\item Measures an outcome that \textit{should not} be affected by independent variable
-\item<2-> Example:
-	\begin{itemize}
-	\item 
-	\end{itemize}
-\end{itemize}
-
+A recent proposal \only<2>{by the Taliban} calls for the sweeping reform of the Afghan prison system, including the construction of new prisons in every district to help alleviate overcrowding in existing facilities. Though expensive, new programs for inmates would also be offered, and new judges and prosecutors would be trained. How do you feel about this proposal?
 }
 
 
 \frame{
 
-\frametitle{An Aside: Demand Characteristics}
+\frametitle{Sensitive Item Designs III}
 
-\begin{itemize}
-\item 
-\end{itemize}
+Subtle question wording
 
+poor versus poor blacks
 }
+
+
+
+
 
 
 
@@ -549,9 +883,9 @@ Use question wording designs to select which survey measures we want to use
 
 \frame{
 
-\frametitle{Field Designs}
+\frametitle{{\normalsize Field Designs}}
 
-\begin{itemize}
+\begin{itemize}\itemsep0.5em
 \item Surveys can be used as a measurement instrument for a field treatment
 \item No manipulation in the survey itself
 \item Survey only measures outcomes post-treatment
@@ -567,9 +901,11 @@ Use question wording designs to select which survey measures we want to use
 
 \frame{
 
-\frametitle{Randomized Treatment}
+\frametitle{{\normalsize Randomized Treatment}}
 
-\begin{itemize}
+\small
+
+\begin{itemize}\itemsep-0.2em
 \item Examples:
 	\begin{enumerate}
 	\item<2-> Citizens randomly sent a letter by post encouraging them to reduce water usage
@@ -588,18 +924,19 @@ Use question wording designs to select which survey measures we want to use
 
 \frame{
 
-\frametitle{Quasi-Experimental Treatment}
+\frametitle{{\normalsize Quasi-Experimental Treatment}}
 
-\begin{itemize}
+\small
+
+\begin{itemize}\itemsep-0.2em
 \item Quasi-Experiments are situations where randomization-like forces influence the values of independent variables
 	\begin{itemize}
-	\item Often these are ``natural'' experiments where boundaries, discontinuities, or interruptions disrupt treatment-assignment
+	\item Often ``natural'' experiments where boundaries, discontinuities, or interruptions disrupt treatment-assignment
 	\end{itemize}
-\item Survey is simply a measurement instrument
-\item Examples:
+\item<2-> Examples:
 	\begin{itemize}
 	\item<2-> Respondents are randomly assigned to be interviewed before or after an event
-	\item<3-> Respondents interviewed before \textit{and} after an event, with within-subjects comparisons
+	\item<3-> Respondents interviewed before \textit{and} after an event that ``randomly'' affects only some, with within-subjects comparisons
 	\end{itemize}
 \end{itemize}
 
@@ -614,10 +951,38 @@ What's this study about? What is their quasi-experimental design?
 }
 
 
+\frame{
+
+\frametitle{Within-Subjects Designs}
+
+
+
+}
+
+
+\frame{
+	\frametitle{Difference-In-Differences}
+	\small
+	\begin{itemize}\itemsep0.5em
+		\item How do we know change in $Y$ wasn't due to something else?
+			\begin{itemize}
+				\item How do we know $Y_{0,t}$ is a good stand-in for $Y_{0,t+1}$?
+			\end{itemize}
+		\item<2-> Use a comparison case (or cases)!
+		\item<3-> Instead of using the pre-post difference in $Y_i$ to estimate the causal effect, use the difference in pre-post differences for two units $i$ and $j$:
+		\begin{align*}
+		(Y_{i,t+1} - Y_{i,t}) - (Y_{j,t+1} - Y_{j,t})
+		\end{align*}
+	\end{itemize}
+}
+
+
 
 \frame{
 
-	\frametitle{Threats to Validity}
+	\frametitle{{\normalsize Threats to Validity}}
+	
+	\small
 	
 	As soon as treatment is not truly random, we have to worry about threats to validity.\footnote{Shadish, Cook, and Campbell (2002)}
 	
@@ -681,62 +1046,21 @@ What's this study about? What is their quasi-experimental design?
 
 
 \frame{
-	\frametitle{What is ``instrumental''?}
-	\begin{itemize}\itemsep1em
-		\item $W$ must be a crucial cause of $X$'s effect on $Y$
-		\item $W$ is the quasi-experimental shock to the causal process in our graph
-			\begin{itemize}
-			\item It is not caused by $X$ or $Y$
-			\item It does not cause $Y$ except through $X$
-			\end{itemize}
-	\end{itemize}	
-}
-
-\frame{
-	\frametitle{Formal Definition}
-	An \textbf{instrumental variable} is a variable that satisfies two properties:\\
-	\begin{enumerate}\itemsep0.5em
-		\item Exogeneity\\ % Not testable
-			\begin{itemize}
-				\item $W$ temporally precedes $X$
-				\item $Cov(B, \epsilon) = 0$
-			\end{itemize}
-		\item Relevance\\ % Is testable
-			\begin{itemize}
-				\item $W$ causes $X$
-				\item $Cov(W, X) \neq 0$
-			\end{itemize}
-	\end{enumerate}
-}
-
-
-\frame{
-	\frametitle{How IV Works I}
-	\begin{itemize}\itemsep0.5em
-		\item Start with case where $W$ is 0,1
-		\item To identify the effect $X \rightarrow Y$, all we need is $W$
-		\item We don't need to worry about other omitted variables, but we don't learn anything about the rest of the causal graph
+	\frametitle{{\large Local Average Treatment Effect}}
+	\small
+	\begin{itemize}\itemsep0.2em
+	\item IV estimate \textit{local} to the variation in $X$ that is due to variation $W$ (i.e., the LATE)
+	\item This matters if effects are \textit{heterogeneous}
+	\item LATE is effect for those who \textit{comply} with instrument
+	\item Four subpopulations:
+		\begin{itemize}\footnotesize
+		\item Compliers: $X = 1$ only if $W = 1$
+		\item Always-takers: $X = 1$ regardless of $W$
+		\item Never-takers: $X = 0$ regardless of $W$
+		\item Defiers: $X = 1$ only if $W = 0$
+		\end{itemize}
 	\end{itemize}
 }
-
-\begin{frame}
-\small 
-\begin{center}
-\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
-    \draw[->] (0,0) node[left] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
-    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
-    \draw[->] (Z) -- (Y);
-    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
-    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
-    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
-    \draw[->] (W) -- (Y);
-    \draw[->, dashed] (E) -- (X);
-    
-    \draw[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Treatment} -- (X);
-    \draw[->, very thick, color=red] (X) -- (Y);
-\end{tikzpicture}
-\end{center}
-\end{frame}
 
 \frame{
 	\frametitle{How IV Works II (Wald)}
@@ -754,56 +1078,35 @@ What's this study about? What is their quasi-experimental design?
 }
 
 
-\frame{
-	\frametitle{{\large Local Average Treatment Effect}}
-	\small
-	\begin{itemize}\itemsep0.5em
-	\item IV estimate \textit{local} to the variation in $X$ that is due to variation $W$ (i.e., the LATE)
-	\item This matters if effects are \textit{heterogeneous}
-	\item LATE is effect for those who \textit{comply} with instrument
-	\item Four subpopulations:
-		\begin{itemize}\small
-		\item Compliers: $X = 1$ only if $W = 1$
-		\item Always-takers: $X = 1$ regardless of $W$
-		\item Never-takers: $X = 0$ regardless of $W$
-		\item Defiers: $X = 1$ only if $W = 0$
-		\end{itemize}
-	\end{itemize}
-}
-
 
 \frame{
-	\frametitle{Difference-In-Differences}
-	\small
-	\begin{itemize}\itemsep0.5em
-		\item How do we know change in $Y$ wasn't due to something else?
+	\frametitle{What is ``instrumental''?}
+	\begin{itemize}\itemsep1em
+		\item $W$ must be a crucial cause of $X$'s effect on $Y$
+		\item $W$ is the quasi-experimental shock to the causal process in our graph
 			\begin{itemize}
-				\item How do we know $Y_{0,t}$ is a good stand-in for $Y_{0,t+1}$?
+			\item It is not caused by $X$ or $Y$
+			\item It does not cause $Y$ except through $X$
 			\end{itemize}
-		\item<2-> Use a comparison case (or cases)!
-		\item<3-> Instead of using the pre-post difference in $Y_i$ to estimate the causal effect, use the difference in pre-post differences for two units $i$ and $j$:
-		\begin{align*}
-		(Y_{i,t+1} - Y_{i,t}) - (Y_{j,t+1} - Y_{j,t})
-		\end{align*}
-	\end{itemize}
+	\end{itemize}	
 }
 
 
 
+
+
+\questions
 
 \frame{
 
 \frametitle{Homework!}
 
 \begin{itemize}
-\item Working alone or with a partner, start thinking about a possible experiment
+\item Working alone, with a partner, or in a small group, start thinking about a possible experiment
 \item Start writing a protocol:
 	\begin{enumerate}
 	\item Theory/hypotheses
 	\item Instrumentation
-	\item Sampling
-	\item Implementation
-	\item Analysis
 	\end{enumerate}
 \item Time on Friday to share and get feedback
 \end{itemize}
