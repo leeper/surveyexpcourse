@@ -13,6 +13,7 @@ Misc/
 *.blg
 *.Rhistory
 *.vrb
+*.dvi
 
 # files to ignore #
 Activities/*.*
