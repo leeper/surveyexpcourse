@@ -149,6 +149,7 @@ Though not assigned for the course, the following texts may serve as useful back
  * Blair, G. and Imai, K. 2012. "Statistical Analysis of List Experiments." *Political Analysis* 20: 47-77.
  * Jamieson, J. P. and Harkins, S. G. 2011. "The Intervening Task Method: Implications for Measuring Mediation." *Personality & Social Psychology Bulletin* 37: 652-661.
  * Green, D. P., Ha, S. E., and Bullock, J. G. 2009. "Enough Already about 'Black Box' Experiments: Studying Mediation is More Difficult than Most Scholars Suppose." *The ANNALS of the American Academy of Political and Social Science* 628: 200-208.
+ * Imai, K., Keele, L. Tingley, D., and Yamamoto, T. 2011. "Unpacking the Black Box: Learning about Causal Mechanisms from Experimental and Observational Studies." *American Political Science Review* 105(4): 765-789.
  * Wang, W., Rothschild, D., Goel, S., and Gelman, A. 2015. "Forecasting Elections with Non-representative Polls." *International Journal of Forecasting*: In press.
  * Chandler, J., Paolacci, G., Peer, E., Mueller, P., and Ratliff, K. A. 2015. "Using Nonnaive Participants Can Reduce Effect Sizes." *Psychological Science*: In press.
  * Banducci, S. and Stevens, D. 2015. "Surveys in Context: How Timing in the Electoral Cycle Influences Response Propensity and Satisficing." *Public Opinion Quarterly* 79: 214-243.
