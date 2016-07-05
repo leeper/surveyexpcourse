@@ -74,22 +74,22 @@ KKV's two criteria:
 
 \frame{
 
-\frametitle{{\normalsize Experiments are good at answering ``what if'' questions}}
+\frametitle{{\normalsize What kinds of questions can we answer with (survey) experiments?}}
 
 \normalsize
 
 \begin{itemize}\itemsep0.5em
-\item Forward causal questions
+\item<2-> Forward causal questions
 	\begin{itemize}
 	\item Can X cause Y?
 	\item What effects does X have?
 	\end{itemize}
-\item<2-> Backward causal questions
+\item<3-> Backward causal questions
 	\begin{itemize}
 	\item What causes Y?
 	\item How much of Y is attributable to X?
 	\end{itemize}
-\item<3-> Even though answering ``forward'' causal question, we start with an outcome concept
+\item<4-> Even though answering ``forward'' causal question, we start with an outcome concept
 \end{itemize}
 }
 
@@ -318,6 +318,14 @@ Protocol is the complete planning document for how to design, implement, and ana
 
 }
 
+\questions
+
+
+
+
+\section{Assessing Treatments}
+\frame{\tableofcontents[currentsection]}
+
 
 \frame{
 
@@ -351,12 +359,6 @@ Protocol is the complete planning document for how to design, implement, and ana
 \end{itemize}
 
 }
-
-
-\questions
-
-\section{Assessing Treatments}
-\frame{\tableofcontents[currentsection]}
 
 
 \frame{
@@ -807,7 +809,7 @@ Now think about a \textbf{(black/white)} woman in her early thirties. She is a h
 
 \frametitle{{\normalsize Newer vignette\footnote{Banerjee et al. 2012. ``Are Poor Voters Indifferent to Whether Elected Leaders are Criminal or Corrupt? A Vignette Experiment in Rural India.'' Working paper.}}}
 
-\small
+\footnotesize
 
 Imagine that you were living in a village in another district in Uttar Pradesh and that you were voting for candidates in \textbf{(village/state/national)} election. Here are the two candidates who are running against each other: The first candidate is named \textbf{(caste name)} and is running as the \textbf{(BJP/SP/BSP)} party candidate. \textbf{(Corrupt/criminality allegation)}. His opponent is named \textbf{(caste name)} and is running as the \textbf{(BJP/SP/BSP)} party candidate. \textbf{(Opposite corrupt/criminality allegation)}. From this information, please indicate which candidate you would vote for in the \textbf{(village/state/national)} election. 
 
@@ -894,7 +896,7 @@ With the passage of the Patriot Act in 2001, the FBI can now enter your home, se
 
 \frame{
 
-\frametitle{Aside: Unique features of online studies}
+\frametitle{{\normalsize Aside: Unique features of online studies}}
 
 \begin{itemize}
 \item<2-> Capacity for audio-visual treatments and measurements
@@ -903,7 +905,7 @@ With the passage of the Patriot Act in 2001, the FBI can now enter your home, se
 	\item Implicit outcomes like response times, answer switching, mouse click behavior, browser focus, eye tracking, etc.
 	\end{itemize}
 \item<4-> Complex randomization (Thursday)
-\item<5-> Panel data (Friday)
+\item<5-> Panel data
 \item<5-> Synchronous, multi-person designs
 \end{itemize}
 
@@ -962,18 +964,21 @@ With the passage of the Patriot Act in 2001, the FBI can now enter your home, se
 
 \frametitle{{\normalsize Audio \& Video manipulations}}
 
-\begin{itemize}
-\item Can be problematic for same reasons as long texts
-\item Best practices
-	\begin{itemize}
+\small
+
+\begin{itemize}\itemsep-0.2em
+\item Problematic for same reasons as long texts
+\item<2-> Best practices
+	\begin{itemize}\footnotesize
 	\item Keep it short
 	\item Have the video play automatically
 	\item Disallow survey progression
+	\item Control and validate
 	\end{itemize}
-\item<2->Examples
+\item<3->Examples
 	\begin{itemize}
-	\item Audio: Sound of different voices saying the same sentence
-	\item Video: Advertisments\footnote{Vavreck. 2007 ``The Exaggerated Effects of Advertising on Turnout: The Dangers of Self-Reports.'' \textit{Quarterly Journal of Political Science} 2: 325--343.}
+	\item Television Advertisements\footnote{Vavreck. 2007 ``The Exaggerated Effects of Advertising on Turnout: The Dangers of Self-Reports.'' \textit{Quarterly Journal of Political Science} 2: 325--343.} 
+	\item News Programs\footnote{Mutz. 2007. ``Effects of `In-Your-Face' Television Discourse on Perceptions of a Legitimate Opposition.'' \textit{American Political Science Review} 101(4): 621--635.}
 	\end{itemize}	
 \end{itemize}
 
@@ -1056,11 +1061,11 @@ A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping refor
 
 
 
+\questions
 
 
 
-
-\section{Surveys in Larger Designs}
+\section[Other Designs]{Other Survey Experimental Designs}
 \frame{\tableofcontents[currentsection]}
 
 % quasi-experiments and field experiments
@@ -1073,12 +1078,12 @@ A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping refor
 
 \begin{itemize}\itemsep0.5em
 \item Surveys can be used as a measurement instrument for a field treatment or a manipulation applied in a different survey panel wave
-	\begin{itemize}\footnotesize
+	\begin{enumerate}\footnotesize
 	\item Measure effect duration in two-wave panel
 	\item Solicit pre-treatment outcome measures in a two-wave panel
 	\item Measure effects of field treatment in post-test only design
 	\item Randomly encourage field treatment in pre-test and measure effects in post-test
-	\end{itemize}
+	\end{enumerate}
 \item<2-> Problems? Compliance \& nonresponse
 \end{itemize}
 
@@ -1087,7 +1092,7 @@ A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping refor
 
 \frame{
 
-\frametitle{{\normalsize Effect Duration}}
+\frametitle{{\normalsize I. Effect Duration}}
 
 \begin{itemize}\itemsep0.5em
 \item Use a two- (or more-) wave panel to measure duration of effects
@@ -1106,45 +1111,19 @@ A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping refor
 
 \frame{
 
-\frametitle{{\normalsize Within-Subjects Designs}}
+\frametitle{{\normalsize II. Within-Subjects Designs}}
 
-}
+\small
 
+\begin{itemize}
+\item Estimate treatment effects as a difference-in-differences
+\item Instead of using the post-treatment mean-difference in $Y$ to estimate the causal effect, use the difference in pre-post differences for the two groups:
+	\begin{align*}
+	(\hat{Y}_{0,t+1} - \hat{Y}_{0,t}) - (\hat{Y}_{j,t+1} - \hat{Y}_{j,t})
+	\end{align*}
+\item Advantageous because variance for paired samples decreases as correlation between $t_0$ and $t_1$ observations increases
+\end{itemize}
 
-\frame{
-	\frametitle{Difference-In-Differences}
-	\small
-	\begin{itemize}\itemsep0.5em
-		\item How do we know change in $Y$ wasn't due to something else?
-			\begin{itemize}
-				\item How do we know $Y_{0,t}$ is a good stand-in for $Y_{0,t+1}$?
-			\end{itemize}
-		\item<2-> Use a comparison case (or cases)!
-		\item<3-> Instead of using the pre-post difference in $Y_i$ to estimate the causal effect, use the difference in pre-post differences for two units $i$ and $j$:
-		\begin{align*}
-		(Y_{i,t+1} - Y_{i,t}) - (Y_{j,t+1} - Y_{j,t})
-		\end{align*}
-	\end{itemize}
-}
-
-
-
-\frame{
-
-	\frametitle{{\normalsize Threats to Validity}}
-	
-	\small
-	
-	As soon as treatment is not truly random, we have to worry about threats to validity.\footnote{Shadish, Cook, and Campbell (2002)}
-	
-	\begin{enumerate}
-	\item<2-> History (simultaneous cause)
-	\item<3-> Maturation (time trends)
-	\item<4-> Testing (observation changes respondents)
-	\item<5-> Instrumentation (changing operationalization)
-	\item<6-> Instability (measurement error)
-	\item<7-> Attrition
-	\end{enumerate}
 }
 
 
@@ -1194,12 +1173,32 @@ A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping refor
 }
 
 
+\frame{
+
+	\frametitle{{\normalsize Threats to Validity}}
+	
+	\small
+	
+	As soon as time comes into play, we have to worry about threats to validity.\footnote{Shadish, Cook, and Campbell (2002)}
+	
+	\begin{enumerate}
+	\item<2-> History (simultaneous cause)
+	\item<3-> Maturation (time trends)
+	\item<4-> Testing (observation changes respondents)
+	\item<5-> Instrumentation (changing operationalization)
+	\item<6-> Instability (measurement error)
+	\item<7-> Attrition
+	\end{enumerate}
+}
+
+
+
 
 
 
 \frame{
 
-\frametitle{{\normalsize Randomized Field Treatment}}
+\frametitle{{\normalsize III. Randomized Field Treatment}}
 
 \small
 
@@ -1221,7 +1220,7 @@ A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping refor
 
 \frame{
 
-\frametitle{{\normalsize Treatment Encouragement}}
+\frametitle{{\normalsize IV. Treatment Encouragement}}
 
 \small
 
@@ -1247,11 +1246,10 @@ A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping refor
 
 \frame{
 
-\frametitle{Treatment Noncompliance}
+\frametitle{{\normalsize Treatment Noncompliance}}
 
-\begin{itemize}
-\item More on this Friday
-\item Quick preview today
+\begin{itemize}\itemsep0.5em
+\item Definition:\\{\small ``when subjects who were assigned to receive the treatment go untreated or when subjects assigned to the control group are treated'' \footnote{Gerber \& Green. 2012. \textit{Field Experiments}, p.132.}}
 \item<2-> Several strategies
 	\begin{itemize}
 	\item ``As treated'' analysis
@@ -1262,50 +1260,45 @@ A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping refor
 
 }
 
+\frame{
+\frametitle{{\normalsize Analyzing Noncompliance}}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item If noncompliance only occurs in one group, it is \textit{asymmetric} or \textit{one-sided}
+\item We can ignore non-compliance and analyze the ``intention to treat'' effect, which will underestimate our effects because some people were not treated as assigned: $ITT = \overline{Y}_1 - \overline{Y}_0$
+\item We can use ``instrumental variables'' to estimate the ``local average treatment effect'' (LATE) for those that complied with treatment: $LATE = \frac{ITT}{\% Compliant}$
+\end{itemize}
+}
 
 \frame{
 	\frametitle{{\large Local Average Treatment Effect}}
 	\small
 	\begin{itemize}\itemsep0.2em
-	\item IV estimate \textit{local} to the variation in $X$ that is due to variation $W$ (i.e., the LATE)
+	\item IV estimate is \textit{local} to the variation in $X$ that is due to variation $W$ (i.e., the LATE)
 	\item This matters if effects are \textit{heterogeneous}
 	\item LATE is effect for those who \textit{comply} with instrument
 	\item Four subpopulations:
 		\begin{itemize}\footnotesize
-		\item Compliers: $X = 1$ only if $W = 1$
-		\item Always-takers: $X = 1$ regardless of $W$
-		\item Never-takers: $X = 0$ regardless of $W$
-		\item Defiers: $X = 1$ only if $W = 0$
+		\item Compliers: $X = 1$ only if $D = 1$
+		\item Always-takers: $X = 1$ regardless of $D$
+		\item Never-takers: $X = 0$ regardless of $D$
+		\item Defiers: $X = 1$ only if $D = 0$
 		\end{itemize}
+	\item Exclusion restriction! Monotonicity!
 	\end{itemize}
 }
-
-\frame{
-	\frametitle{How IV Works II (Wald)}
-	\small
-	\begin{itemize}\itemsep0.5em
-		\item Imagine two effects:
-		\begin{align}
-		ITT_y & = E[y_i | w_i = 1] - E[y_i | w_i = 0]\\
-		ITT_x & = E[x_i | w_i = 1] - E[x_i | w_i = 0]
-		\end{align}
-		\item IV estimates the LATE: $\dfrac{ITT_y}{ITT_x}$
-		\item In a regression, this is:\\
-			$E[y_i|w_i] = \beta_0 + \text{LATE} \times E[x_i|w_i]$
-	\end{itemize}
-}
-
-
-
-
 
 \questions
+
+
 
 \frame{
 
 \frametitle{Homework!}
 
-\begin{itemize}
+\begin{itemize}\itemsep0.25em
 \item Working alone, with a partner, or in a small group, start thinking about a possible experiment
 \item Start writing a protocol:
 	\begin{enumerate}

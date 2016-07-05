@@ -47,7 +47,7 @@ The first session will provide an overview of the course, discuss the history of
 
 While the first session demonstrated the advantages of experimentation as a research design, designing experiments can be challenging without a solid grounding in a relevant theoretical literature. This session will discuss common paradigms for survey experimental research and discuss how to design experiments to test social science theories.
 
- - Slides (Coming soon...)
+ - [Slides](Slides/lecture02.pdf)
 
 #### Class Schedule
 
