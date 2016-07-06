@@ -48,15 +48,12 @@ The first session will provide an overview of the course, discuss the history of
 While the first session demonstrated the advantages of experimentation as a research design, designing experiments can be challenging without a solid grounding in a relevant theoretical literature. This session will discuss common paradigms for survey experimental research and discuss how to design experiments to test social science theories.
 
  - [Slides](Slides/lecture02.pdf)
+ - [Description of Experimental Protocol](Activities/protocol.pdf)
 
 #### Class Schedule
 
- - 11:30-11:50 - Translating Theories into Experiments
- - 11:50-13:00 - Paradigms (Question Wording, Vignettes, Sensitive items, etc.)
- - 13:00-13:30 - Quasi-experiments and Field Experiments
-   - Pre-post designs
-   - Unexpected quasi-experiments
-   - Measuring effects of field interventions
+ - 11:30-12:20 - Translating Theories into Experiments
+ - 12:30-13:30 - Paradigms (Question Wording, Vignettes, Sensitive items, etc.)
 
 #### Readings
 
@@ -75,8 +72,8 @@ Experiments are typically performed at one point in time, on a specific sample o
 
  - 11:30-12:00 - External Validity
  - 12:00-12:25 - Sampling, Respondents, and Representativeness
- - 12:35-12:55 - Pretreatment Dynamics
- - 12:55-13:30 - Measuring Behaviors and Behavioral Intentions
+ - 12:35-13:00 - SUTO, Pretreatment, and Behavioral Measures
+ - 13:00-13:30 - Other Survey Experimental Designs
  
 #### Readings
 

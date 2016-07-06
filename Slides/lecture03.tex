@@ -2,27 +2,50 @@
 
 \title{Session III\\External Validity}
 
-% external validity
-% sample-related
-% suto framework
-%  pretreatment: Do unit history or broader context influence our results? We can measure to see if people have been pretreated, but sometimes we can't do that or can't know in advance
-%  behaviors/beavioral intentions
-% Hawthorne effects
-
 \date[]{}
 
 \begin{document}
 
 \frame{\titlepage}
 
+\frame{
+
+\frametitle{Reminder: Friday}
+
+If you're interested in presenting an idea for a survey experiment on Friday, let me know in person or via email.
+
+}
+
+
+\frame{
+
+\frametitle{Review}
+
+What techniques can we use to assess whether a treatment manipulated what we wanted it to and did not manipulate what we didn't want it to?
+
+}
+
+\frame{
+
+\frametitle{Review}
+
+What are some of the available paradigms for implementing a survey experiment?
+
+}
+
+\frame{
+
+\frametitle{Review}
+
+What is an experimental protocol document and why is it useful?
+
+}
+
+
+
 \frame{\tableofcontents}
 
-
-
-
-
-
-\section{External Validity}
+\section[External Validity]{External Validity of a Sample}
 \frame{\tableofcontents[currentsection]}
 
 \frame{
@@ -42,20 +65,22 @@ What makes an experiment (or any research study) generalizable? What does it mea
 
 
 \frame{
-\frametitle{``The Gold Standard''}
+\frametitle{{\normalsize ``The Gold Standard''}}
 
-\begin{quote}\small
-a population-based experiment uses survey sampling methods to produce a collection of experimental subjects that is representative of the target population of interest for a particular theory \dots the population represented by the sample should be representative of the population to which the researcher intends to extend his or her findings. In population-based experiments, experimental subjects are randomly assigned to conditions by the researcher
-\end{quote}
+\small
+\textit{a population-based experiment uses survey sampling methods to produce a collection of experimental subjects that is representative of the target population of interest for a particular theory \dots the population represented by the sample should be representative of the population to which the researcher intends to extend his or her findings. In population-based experiments, experimental subjects are randomly assigned to conditions by the researcher}\\
 
-{\footnotesize p2. from Mutz, Diana. 2011. \textit{Popuation-Based Survey Experiments}. Princeton University Press.\par}
+\vspace{0.5em}
+{\footnotesize p2. from Mutz, Diana. 2011. \textit{Population-Based Survey Experiments}. Princeton University Press.\par}
 
 }
 
 
 \frame{
 	\frametitle{Surveys Start with an Inference Population}
-	\begin{itemize}\itemsep1em
+	
+	\small
+	\begin{itemize}\itemsep0.25em
 		\item We want to speak to a population
 		\item But what population is it?
 			\begin{itemize}
@@ -69,13 +94,10 @@ a population-based experiment uses survey sampling methods to produce a collecti
 
 
 
-
-
-
 \frame{
 	\frametitle{A Hypothetical Census}
 
-	\begin{itemize}\itemsep2em
+	\begin{itemize}\itemsep1em
 		\item Advantages
 			\begin{itemize}
 				\item<2-> Perfectly representative
@@ -91,120 +113,24 @@ a population-based experiment uses survey sampling methods to produce a collecti
 }
 
 
-\frame{\frametitle{So, instead we sample!}}
-
-
-\frame{
-	\frametitle{Sampling Frames}
-	\begin{itemize}\itemsep1em
-		\item Enumeration (listing) of all units eligible for sample selection
-		\item Random sample from that list
-		\item<2-> Building a sampling frame
-			\begin{itemize}
-			\item Combine existing lists
-			\item Canvass/enumerate from scratch
-			\end{itemize}
-		\item<3-> Concern about coverage: Does frame match population?
-	\end{itemize}
-}
-
+\subsection{Design-based}
+\frame{\tableofcontents[currentsection, currentsubsection]}
 
 \frame{
-	\frametitle{Sample Estimates from an SRS}
-	\begin{itemize}\itemsep1em
-		\item Each unit in frame has equal probability of selection
-		\item Sample statistics are unweighted
-		\item Variances are easy to calculate
-		\item Easy to calculate sample size need for a particular variance
-	\end{itemize}
-}
 
-\frame{
-	\frametitle{Sample mean}
-	\begin{equation}
-	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i
-	\end{equation}
-	where $y_i = $ value for a unit, and\\
-	$n = $ sample size
-	
-	\begin{equation}
-	SE_{\bar{y}} = \sqrt{(1-f)\frac{s^2}{n}}
-	\end{equation}
-	where $f = $ proportion of population sampled,\\
-	$s^2 = $ sample element variance, and\\
-	$n = $ sample size
-}
-
-\frame{
-	\frametitle{Estimating sample size}
+\frametitle{{\normalsize Sampling Considerations\dots}}
 
 \small
 
-	If all we cared about was a single proportion:
-
-	\begin{equation}
-		Var(p) = (1-f)\frac{p(1-p)}{n-1}
-	\end{equation}
-	
-	Given a large population:	
-	\begin{equation}
-		Var(p) = \frac{p(1-p)}{n-1}
-	\end{equation}
-	
-	Need to solve the above for $n$.
-	\begin{equation}
-	\only<2->{n = \frac{p(1-p)}{v(p)} = \frac{p(1-p)}{SE^2}}
-	\end{equation}
-}
-
-\frame{
-	\frametitle{Estimating sample size}
-    Determining sample size requires:
-    	\begin{itemize}
-    		\item A possible value of $p$
-    		\item A desired precision (standard error)
-    	\end{itemize}
-	\vspace{1em}
-	If support for each coalition is evenly matched ($p = 0.5$):
-	\begin{equation}
-	n = \frac{0.5(1-0.5)}{SE^2} = \frac{0.25}{SE^2}
-	\end{equation}
-}
-
-\frame{
-	\frametitle{Estimating sample size}
-	What precision (margin of error) do we want?
-	\begin{itemize}
-		\item +/- 2 percentage points: $SE = 0.01$
-			\begin{equation}
-			n = \frac{0.25}{0.01^2} = \frac{0.25}{0.0001} = 2500
-			\end{equation}
-		\item<2-> +/- 5 percentage points: $SE = 0.025$
-			\begin{equation}
-			n = \frac{0.25}{0.000625} = 400
-			\end{equation}
-		\item<3-> +/- 0.5 percentage points: $SE = 0.0025$
-			\begin{equation}
-			n = \frac{0.25}{0.00000625} = 40,000
-			\end{equation}
+\begin{itemize}\itemsep0.25em
+\item Design-based survey samples all work from the premise of each unit having a \textit{known, non-zero} probability of being sampled
+	\begin{itemize}\footnotesize
+	\item SRS is representative per se
+	\item Non-self-weighting samples representative when weighted
 	\end{itemize}
-}
-
-
-
-\frame{
-
-\frametitle{Sampling Considerations\dots}
-
-\begin{itemize}\itemsep1em
-\item<2-> More complex designs possible, all based on each unit having a \textit{known, non-zero} probability of being sampled
-	\begin{itemize}
-	\item Stratified sampling can produce lower variances
-	\end{itemize}
-\item<3-> Random sampling ensures that samples are, \textit{in expectation}, representative of the population \textit{in all respects}
-	\begin{itemize}
+\item<2-> Random sampling ensures that samples are, \textit{in expectation}, representative of the population \textit{in all respects}
+	\begin{itemize}\footnotesize
 	\item Demographics
-	\item Psychological traits
 	\item Covariances
 	\item Potential outcomes
 	\end{itemize}
@@ -214,27 +140,22 @@ a population-based experiment uses survey sampling methods to produce a collecti
 
 \frame{}
 
-\bgroup
-\setbeamercolor{background canvas}{bg=blue!20!white}
-\setbeamertemplate{navigation symbols}{}
 \begin{frame}[plain]{}
 \frametitle{Representativeness}
 
+\vspace{0.25em}
+
 What does it mean for a sample to be representative?
 
-\begin{itemize}
-	\item<2-> Census
-	\item<3-> SRS (or more complex) design
-	\item<4-> Quota sampling (common prior to the 1940s)
-	\item<5-> Demographics match population
-	\item<6-> Others?
+\begin{itemize}\small
+	\item<2-> Census?
+	\item<3-> Probability-based sampling?
+	\item<4-> Quota fulfillment?
+	\item<5-> Others?
 \end{itemize}
 
-\vspace{1em}
-
-\onslide<7->{Which of these matter?}
+\onslide<6->{Which of these matter?}
 \end{frame}
-\egroup
 
 % what kinds of representativeness do we care about?
 
@@ -242,19 +163,18 @@ What does it mean for a sample to be representative?
 
 \frame{
 
-\frametitle{{\large Combining Probability Sampling and\\ Experimental Design}}
+\frametitle{{\large Combining Probability Sampling and Experimental Design}}
 
-\begin{itemize}\itemsep1em
+\small
+
+\begin{itemize}\itemsep0.2em
 \item Sample is representative of population in every respect (in expectation)
 \item Sample Average Treatment Effect (SATE) is the average of the sample's individual-level treatment effects
-	\begin{itemize}
+	\begin{itemize}\footnotesize
 	\item Unbiased estimate of PATE
 	\item Not necessarily any unit's individual treatment effect
 	\item Blocking might reduce variance
-	\end{itemize}
-\item Says nothing about effect heterogeneity
-	\begin{itemize}
-	\item Design is optimized for estimating SATE
+	\item Optimized for estimating SATE
 	\end{itemize}
 \end{itemize}
 }
@@ -274,17 +194,17 @@ Credibility of all of this is based on \textit{design} only
 \frame<1-3>[label=myview]{
 \frametitle{My View}
 
-100\% design-based inference does not exist
+100\% design-based inference does not exist!
 
-\vspace{1em}
+\small
 
-\begin{itemize}\itemsep0.75em
+\begin{itemize}\itemsep0.25em
 \item<2-> All survey designs involve reweighting adjustments
 \item<3-> Representativeness is a more complex issue than demographic comparisons
 \item<4-> Randomization gives us clear causal inference about a \textit{local} effect
 	\begin{itemize}
-	\item I would always sacrifice representativeness for clarity of causal inference
-	\item Focus on figuring out the nature of the \textit{localness}
+	\item Sacrifice representativeness for causal inference
+	\item Try to figure nature of the \textit{localness}
 	\end{itemize}
 \end{itemize}
 }
@@ -293,7 +213,7 @@ Credibility of all of this is based on \textit{design} only
 
 
 \frame{
-\frametitle{My Own Research}
+
 \footnotesize
 \begin{tabular}{ l r r r r r r r} \toprule\toprule
    & {\bf GfK} & {\bf Poll} & {\bf Student} & {\bf Staff}  & {\bf MTurk} & {\bf Ads} & {\bf ANES}\\ \midrule
@@ -310,7 +230,7 @@ Credibility of all of this is based on \textit{design} only
 
 \vspace{1em}
 
-{\footnotesize Mullinix et al. In press. ``The Generalizability of Survey Experiments.'' \textit{Journal of Experimental Political Science}.}
+{\footnotesize Mullinix et al. 2015. ``The Generalizability of Survey Experiments.'' \textit{Journal of Experimental Political Science}.}
 }
 
 \frame{
@@ -329,55 +249,6 @@ Credibility of all of this is based on \textit{design} only
 \againframe<3-4>{myview}
 
 \frame{
-\frametitle{SUTO Framework}
-\begin{itemize}\itemsep1em
-\item Cronbach (1986) talks about generalizability in terms of UTO
-\item Shadish, Cook, and Campbell (2001) speak similarly of:
-	\begin{itemize}
-	\item \textbf{S}ettings
-	\item \textbf{U}nits
-	\item \textbf{T}reatments
-	\item \textbf{O}utcomes
-	\end{itemize}
-\item External validity depends on all of these things
-\end{itemize}
-}
-
-
-\frame{
-\begin{columns}[t]
-\begin{column}{0.5\textwidth}
-	\begin{block}{Population}
-		\begin{itemize}
-		\item Setting
-		\item Units
-		\item Treatments
-		\item Outcomes
-		\end{itemize}
-	\end{block}
-\end{column}
-\begin{column}{0.5\textwidth}
-	\begin{block}{Your Study}
-		\begin{itemize}
-		\item Setting
-		\item Units
-		\item Treatments
-		\item Outcomes
-		\end{itemize}
-	\end{block}
-\end{column}
-\end{columns}
-
-\vspace{1em}
-
-\only<2->{In your study, how do these correspond?\\}
-\only<3->{\hspace{5.7em} how do these differ?\\}
-\only<4->{\hspace{5.7em} do these differences matter?\\}
-
-}
-
-
-\frame{
 \frametitle{Common Differences}
 \begin{itemize}\itemsep1em
 \item Most common thing to focus on is demographic representativeness
@@ -386,73 +257,63 @@ Credibility of all of this is based on \textit{design} only
 	\item \href{http://www.slate.com/articles/health_and_science/science/2013/05/weird_psychology_social_science_researchers_rely_too_much_on_western_college.html}{Western, educated, industrialized, rich, democratic (WEIRD) psychology participants}
 	\end{itemize}
 \item<2-> But do those characteristics actually matter?
-\item<3-> Shadish, Cook, and Campbell tell us to think about:
+\end{itemize}
+}
+
+\frame{
+\frametitle{Common differences}
+
+Shadish, Cook, and Campbell tell us to think about:
 	\begin{itemize}
 	\item Surface similarities
-	\item Ruling out irrelevancies
-	\item Making discriminations
+	\item \textbf<2->{Ruling out irrelevancies}
+	\item \textbf<2->{Making discriminations}
 	\item Interpolation/extrapolation
 	\end{itemize}
-\end{itemize}
 }
 
 
 \frame{
-\frametitle{Focus on effect heterogeneity}
-\begin{itemize}\itemsep1em
+\frametitle{{\normalsize Focus on effect heterogeneity}}
+
+\begin{itemize}
+\item<2-> \textbf{Constant effects}: $TE_i$ and $Y_{i0}$ are same for all observations
+\item<3-> \textbf{Homogeneous effects}: $TE_i$ is same for all observations
+\item<4-> \textbf{Heterogeneous effects}: $TE_i$ is different for all observations
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{{\normalsize Focus on effect heterogeneity}}
+
+\small
+
+\begin{itemize}\itemsep0.5em
 \item Think about and make an evidence-based argument for why you think there are (or are not) heterogeneous effects
 \item<2-> If you think there is heterogeneity, then we probably do not care about the SATE anyway
-	\begin{itemize}
-	\item Focus on CATE instead
-	\item $E[Y_{1i} | X = 1, Z=z] - E[Y_{0i} | X = 0, Z=z]$
-	\end{itemize}
-\item<3-> Two formal analytic strategies
-	\begin{itemize}
-	\item Regression with large number of interactions
-	\item Bayesian Additive Regression Trees
-	\end{itemize}
-\item<4-> But remember: you have to convince reviewers!
+\item<3-> Conditional Average Treatment Effect: $E[Y_{1i} | X = 1, Z=z] - E[Y_{0i} | X = 0, Z=z]$
 \end{itemize}
 }
 
 
 
-\frame{
-\frametitle{BART}
-\begin{itemize}\itemsep1em
-\item Estimate \textit{conditional average treatment effects}
-\item BART is essentially an ensemble machine learning method
-\item Iteratively split a sample into more and more homogeneous groups until some threshold is reached using binary (cutpoint) decisions
-\item Repeat this a bunch of times, aggregating across results
-\end{itemize}
-}
-
-\frame{
-\begin{center}
-\includegraphics[width=\textwidth]{images/greenkern1}
-\end{center}
-{\footnotesize Green and Kern. 2012. ``Modeling Heterogeneous Treatment Effects in Survey Experiments with Bayesian Additive Regression Trees.'' \textit{Public Opinion Quarterly}.\par}
-}
-
-\frame{
-\begin{center}
-\includegraphics[height=.8\textheight]{images/greenkern2}
-\end{center}
-{\footnotesize Green and Kern. 2012. ``Modeling Heterogeneous Treatment Effects in Survey Experiments with Bayesian Additive Regression Trees.'' \textit{Public Opinion Quarterly}.\par}
-}
-
+\subsection{Model-based}
+\frame{\tableofcontents[currentsection, currentsubsection]}
 
 \frame{
 
 \frametitle{Stratification/Blocking}
 
+\small
+
 As soon as we care about heterogeneous effects, it makes sense to stratify and block on factors that might moderate the treatment effect.
 
-\vspace{1em}
+\vspace{0.5em}
 
 \onslide<2->{As soon as we identify all sources of heterogeneity, it doesn't matter what sample we use because effects are \textit{by definition} homogeneous within such strata.}
 
-\vspace{1em}
+\vspace{0.5em}
 
 \onslide<3->{But, we never know when we've reached that point!}
 
@@ -472,16 +333,16 @@ No. Of course not.
 
 % defining your convenience sample
 \frame{
-	\frametitle{Not All Convenience Samples Are Alike}
-	\begin{itemize}\itemsep1em
+	\frametitle{{\normalsize Not All ``Samples'' Are Alike}}
+	
+	\small
+	\begin{itemize}\itemsep0.25em
 		\item<1-> Different types:
 			\begin{itemize}
 				\item<2-> Passive/opt-in/``river sampling''
-				\item<3-> Sample of convenience (not a sample per se)
+				\item<3-> Sample of convenience
 					\begin{itemize}
-					\item Email list
 					\item Snowball sample
-					\item Respondent-driven Sampling
 					\item Students
 					\item Crowdsourcing
 					\end{itemize}
@@ -519,7 +380,9 @@ Ads		& \$636	& 80		& \$7.95\\
 \frame{
 \frametitle{Participant Experience}
 
-\begin{itemize}\itemsep1em
+\small
+
+\begin{itemize}\itemsep0.5em
 \item A lot of growing concern about experience
 \item Larger literature on ``panel conditioning''
 	\begin{itemize}
@@ -535,12 +398,13 @@ Ads		& \$636	& 80		& \$7.95\\
 }
 
 
+\frame{}
 
 % reweighting; pscore methods
 \frame{
 \frametitle{Reweighting}
-\begin{itemize}\itemsep1em
-\item It may be possible to \textit{reweight} convenience sample data to match a population
+\begin{itemize}\itemsep0.5em
+\item If effects are heterogeneous, it may be possible to \textit{reweight} unrepresentative data to match a population
 \item Any method for this is ``model-based'' (rather than ``design-based'')
 \item Not widely used or evaluated (yet)
 \item All techniques build on the idea of stratification
@@ -549,57 +413,53 @@ Ads		& \$636	& 80		& \$7.95\\
 
 
 \frame{
-	\frametitle{Overview of Stratification}
-	\begin{enumerate}\itemsep0.5em
+	\frametitle{Review of Stratification}
+	
+	\small
+	\begin{enumerate}\itemsep0.25em
 		\item Define population
 		\item Construct a sampling frame
 		\item Identify variables we already know about units in the sampling frame
 		\item Stratify sampling frame based on these characteristics
-		\item Collect an SRS (of some size) within each stratum
+		\item Collect an SRS within each stratum
 		\item Aggregate our results
 	\end{enumerate}
-}
-
-\frame{
-	\frametitle{Estimates from a stratified sample}
-	\begin{itemize}\itemsep0.5em
-		\item Within-strata estimates are calculated just like an SRS
-		\item Within-strata variances are calculated just like an SRS
-		\vspace{1em}
-		\item Sample-level estimates are weighted averages of stratum-specific estimates
-		\item Sample-level variances are weighted averages of strataum-specific variances
-	\end{itemize}
 }
 
 
 \frame{
 	\frametitle{Post-Stratification}
-	\begin{itemize}\itemsep1em
+	\begin{itemize}\itemsep0.5em
 		\item Used to correct for nonresponse, coverage errors, and sampling errors
 		\item<2-> Reweight sample data to match population distributions
 			\begin{itemize}
 				\item Divide sample and population into strata
 				\item Weight units in each stratum so that the weighted sample stratum contains the same proportion of units as the population stratum does
 			\end{itemize}
-		\item<3-> There are numerous other related techniques
+		\item<3-> There are numerous related techniques
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{Post-Stratification: Example}
-	\begin{itemize}\itemsep1em
+	\frametitle{{\normalsize Post-Stratification: Example}}
+	
+	\normalsize
+	\begin{itemize}\itemsep0.25em
 		\item Imagine our sample ends up skewed on immigration status and gender relative to the population\\
-		\vspace{1em}
-		\small
-		\begin{tabular}{lrrlr}
-			\hline
-			Group             & Pop. & Sample & Rep.                &              Weight \\ \hline
-			Native-born, Female    &  .45 &     .5 & \onslide<2->{Over}  & \onslide<3->{0.900} \\
-			Native-born, Male      &  .45 &     .4 & \onslide<2->{Under} & \onslide<4->{1.125} \\
-			Immigrant, Female &  .05 &    .07 & \onslide<2->{Over}  & \onslide<4->{0.714} \\
-			Immigrant, Male   &  .05 &    .03 & \onslide<2->{Under} & \onslide<4->{1.667}\\  \hline
-		\end{tabular}
-		\item PS weight is just $w_{ps} = N_l / n_l$
+	\end{itemize}
+	\vspace{0.5em}
+	{\small
+	\begin{tabular}{lrrlr}
+		\hline
+		Group             & Pop. & Sample & Rep.                &              Weight \\ \hline
+		Native-born, Female    &  .45 &     .5 & \onslide<2->{Over}  & \onslide<3->{0.900} \\
+		Native-born, Male      &  .45 &     .4 & \onslide<2->{Under} & \onslide<4->{1.125} \\
+		Immigrant, Female &  .05 &    .07 & \onslide<2->{Over}  & \onslide<4->{0.714} \\
+		Immigrant, Male   &  .05 &    .03 & \onslide<2->{Under} & \onslide<4->{1.667}\\  \hline
+	\end{tabular}
+	}
+	\begin{itemize}
+	\item PS weight is just $w_{ps} = N_l / n_l$
 	\end{itemize}
 }
 
@@ -636,8 +496,6 @@ Ads		& \$636	& 80		& \$7.95\\
 \includegraphics[width=\textwidth]{images/wangetal1}
 \end{center}
 
-\vspace{1em}
-
 {\footnotesize Wang et al. 2015. ``Forecasting elections with non-representative polls.'' \textit{International Journal of Forecasting}.\par}
 
 }
@@ -645,14 +503,16 @@ Ads		& \$636	& 80		& \$7.95\\
 
 
 \frame{
+
+\vspace{-1.5em}
 \begin{center}
 \includegraphics[width=.85\textwidth]{images/mullinix1}
 \end{center}
-\vspace{0.5em}
-{\footnotesize Mullinix et al. In press. ``The Generalizability of Survey Experiments.'' \textit{Journal of Experimental Political Science}.\par}
+{\footnotesize Mullinix et al. 2015. ``The Generalizability of Survey Experiments.'' \textit{Journal of Experimental Political Science}.\par}
 }
 
 \frame{
+\vspace{-1em}
 \begin{center}
 \includegraphics[width=.8\textheight]{images/mullinix2}
 \end{center}
@@ -661,18 +521,18 @@ Ads		& \$636	& 80		& \$7.95\\
 
 
 \frame{
-\frametitle{Propensity Score Approach}
-\begin{enumerate}
-\item Define a target population to which sample inference is intended to generalize
+\frametitle{{\normalsize Propensity Score Approach}}
+
+\small
+
+\begin{enumerate}\itemsep-0.2em
+\item Define a target population 
 \item Estimate a propensity score model
-	\begin{itemize}
+	\begin{itemize}\footnotesize
 	\item Pool experimental samples and target population units
 	\item Predict membership of all target and sample units in the experimental sample
 	\end{itemize}
-\item Using fitted logits, divide the population and sample into strata
-	\begin{itemize}
-	\item Number of strata is commonly 5 (Cochran, 1968)
-	\end{itemize}
+\item Using fitted logits, divide population \& sample into strata
 \item Estimate stratum-specific ATE
 \item Calculate weighted average of stratum-level estimates
 \end{enumerate}
@@ -680,7 +540,7 @@ Ads		& \$636	& 80		& \$7.95\\
 
 
 \frame{
-\frametitle{Propensity Score Approach}
+\frametitle{{\normalsize Propensity Score Approach}}
 
 Target population average treatment effect:
 \begin{equation}
@@ -705,11 +565,11 @@ where $V(v)$ is the variance of the estimated experimental sample effect for str
 \frame{
 \frametitle{Propensity Score Subclassification Estimator}
 \begin{columns}
-\column{\dimexpr\paperwidth-15pt}
+\column{\dimexpr\paperwidth-12pt}
 \scriptsize
 \begin{tabular}{rrrrrrrrr} \toprule
 & \multicolumn{2}{c}{Weights} & \multicolumn{6}{c}{Estimates}\\
-Stratum & Nat'l & Sample & Loan & DREAM (Pro) & DREAM (Con) & Rally (All) \\% & Rally (Distant) & Rally (Local) \\ 
+Stratum & Nat'l & Sample & Loan & DREAM 1 & DREAM 2 & Rally \\% & Rally (Distant) & Rally (Local) \\ 
   \midrule
   1 & 0.20 & 0.83 & 0.94 (0.08) & 0.06 (0.11) & -0.22 (0.12) & 0.74 (0.10) \\% & 0.77 (0.15) & 0.72 (0.15) \\ 
   2 & 0.20 & 0.11 & 0.99 (0.26) & 0.22 (0.37) & -0.28 (0.36) & 0.77 (0.29) \\% & 0.85 (0.39) & 0.70 (0.42) \\ 
@@ -725,9 +585,9 @@ Stratum & Nat'l & Sample & Loan & DREAM (Pro) & DREAM (Con) & Rally (All) \\% & 
 
 
 \frame{
-\textbf{So does reweighting solve everything forever?}
+\frametitle{{\normalsize So does reweighting solve everything forever?}}
 
-\begin{itemize}\itemsep1em
+\begin{itemize}\itemsep0.25em
 \item<2-> Need well-defined target population
 	\begin{itemize}
 	\item and detailed covariate data
@@ -735,41 +595,380 @@ Stratum & Nat'l & Sample & Loan & DREAM (Pro) & DREAM (Con) & Rally (All) \\% & 
 	\end{itemize}
 \item<3-> Purely model-based, so only as good as the model
 	\begin{itemize}
-	\item What unobservables might be hiding bias?
+	\item What unobservables might there be?
 	\item What reweighting might worse bias?
 	\end{itemize}
-\item<4-> Non-coverage is a potentially huge problem
+\item<4-> Non-coverage is a potential problem
 \item<5-> Not well-tested on experimental data
 \end{itemize}
 
 }
 
 
-% eligibility; duplication; recontacts
+
+\questions
+
+\section[SUTO]{Other Notions of External Validity}
+\frame{\tableofcontents[currentsection]}
+
+
 \frame{
-\frametitle{My Advice}
-\begin{itemize}\itemsep1em
-\item Only work with enumerated populations
+\frametitle{SUTO Framework}
+\begin{itemize}\itemsep0.5em
+\item Cronbach (1986) talks about generalizability in terms of UTO
+\item Shadish, Cook, and Campbell (2001) speak similarly of:
 	\begin{itemize}
-	\item Each unit is uniquely identifiable
+	\item \textbf{S}ettings
+	\item \textbf{U}nits
+	\item \textbf{T}reatments
+	\item \textbf{O}utcomes
 	\end{itemize}
-\item<2-> Without this, you risk many things:
-	\begin{itemize}
-	\item Ambiguous eligibility
-	\item Retakes, treatment crossover
-	\item No way to evaluate response rates/bias
-	\end{itemize}
-\item<3-> Know something about your sample
-	\begin{itemize}
-	\item How does it differ from your target of inference?
-	\item What theories or evidence would suggest those differences should matter?
-	\item What can you do to adjust or control for those \textit{consequential} differences?
-	\end{itemize}
+\item External validity depends on all of these
 \end{itemize}
 }
 
 
+\frame{
+\begin{columns}[t]
+\begin{column}{0.5\textwidth}
+	\begin{block}{Population}
+		\begin{itemize}
+		\item Setting
+		\item Units
+		\item Treatments
+		\item Outcomes
+		\end{itemize}
+	\end{block}
+\end{column}
+\begin{column}{0.5\textwidth}
+	\begin{block}{Your Study}
+		\begin{itemize}
+		\item Setting
+		\item Units
+		\item Treatments
+		\item Outcomes
+		\end{itemize}
+	\end{block}
+\end{column}
+\end{columns}
 
+\vspace{0.5em}
+
+\small
+
+\only<2->{In your study, how do these correspond?\\}
+\only<3->{\hspace{5.7em} how do these differ?\\}
+\only<4->{\hspace{5.7em} do these differences matter?\\}
+
+}
+
+
+\frame{
+
+\frametitle{Pretreatment Dynamics}
+
+``If the experiment explores a communication that regularly occurs in `reality,' then reactions in the experiment might be contaminated by those `regular' occurrences prior to the experiment.'' \footnote{p.875 from Druckman \& Leeper. 2012. ``Learning More from Political Communication Experiments: Pretreatment and Its Effects.'' \textit{American Journal of Political Science} 56(4): 875--896.}
+
+}
+
+\frame{
+
+\frametitle{Pretreatment Dynamics}
+
+\small
+\begin{itemize}
+\item Pretreatment is a feature of an experimental setting, treatment, and sample, wherein the effect of the treatment has already occurred\footnote{Or, units having already been treated are otherwise affected differently.}
+\item<2-> Consequences:
+	\begin{itemize}\footnotesize
+	\item Biased effect estimates
+	\end{itemize}
+\item<3-> Mitigation:
+	\begin{itemize}\footnotesize
+	\item Measure pretreatment
+	\item Avoid ``pretreated'' treatments or contexts
+	\item Study units not already treated
+	\item Theorize repeated effects
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Behavioral Outcomes}}
+
+\small
+
+\begin{itemize}
+\item Survey experiments can rarely measure \textit{behavior}, only \textit{attitudes} or \textit{behavioral intentions}
+\item Consequences:
+	\begin{itemize}\footnotesize
+	\item Lack of external validity
+	\item Overestimates (typically) of behavioral intentions or past behavior
+	\end{itemize}
+\item Mitigation:
+	\begin{itemize}\footnotesize
+	\item Acknowledge limitations
+	\item Incentivized surveys or games
+	\item Small behaviors
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\questions
+
+
+\frame{
+
+\frametitle{Small Group Activity!}
+
+In groups of 4--5, consider examples from TESS, Tuesday's lecture, or your own experiences. Discuss:
+\begin{itemize}\small
+\item What was the researcher's question? How did they test it experimentally?
+\item Thinking of SUTO, in what ways is the study externally valid? In what ways is it not externally valid?
+\end{itemize}
+
+Take about 7--8 minutes.
+
+}
+
+
+
+
+\section[Other Designs]{Other Survey Experimental Designs}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+
+\frametitle{{\normalsize Beyond One-shot Designs}}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item Surveys can be used as a measurement instrument for a field treatment or a manipulation applied in a different survey panel wave
+	\begin{enumerate}\footnotesize
+	\item Measure effect duration in two-wave panel
+	\item Solicit pre-treatment outcome measures in a two-wave panel
+	\item Measure effects of field treatment in post-test only design
+	\item Randomly encourage field treatment in pre-test and measure effects in post-test
+	\end{enumerate}
+\item<2-> Problems? Compliance \& nonresponse
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize I. Effect Duration}}
+
+\begin{itemize}\itemsep0.5em
+\item Use a two- (or more-) wave panel to measure duration of effects
+	\begin{itemize}
+	\item T1: Treatment and outcome measurement
+	\item T2+: Outcome measurement
+	\end{itemize}
+\item Two main concerns
+	\begin{itemize}
+	\item Attrition
+	\item Panel conditioning
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{{\normalsize II. Within-Subjects Designs}}
+
+\small
+
+\begin{itemize}
+\item Estimate treatment effects as a difference-in-differences
+\item Instead of using the post-treatment mean-difference in $Y$ to estimate the causal effect, use the difference in pre-post differences for the two groups:
+	\begin{align*}
+	(\hat{Y}_{0,t+1} - \hat{Y}_{0,t}) - (\hat{Y}_{j,t+1} - \hat{Y}_{j,t})
+	\end{align*}
+\item<2-> Advantageous because variance for paired samples decreases as correlation between $t_0$ and $t_1$ observations increases
+\end{itemize}
+
+}
+
+
+\frame{
+	\begin{center}
+	\begin{tikzpicture}[>=latex', scale=0.8]
+        \draw[->] (0,0) node (origin) {}  -- (8,0) node[right] (xaxis) {time};
+        \draw[->] (origin) -- (0,8) node[left] (yaxis) {y};
+        % x ticks
+        \foreach \x in {2,4,6}
+        	\draw (\x,1pt) -- (\x,-3pt) node[anchor=north] {};
+        \draw (2,0) node[below] (before) {$t$};
+        \draw (6,0) node[below] (after) {$t+1$};
+        \draw (4,-0.25) node[below, scale=0.5] (IV) {Intervention};
+        % y ticks
+        \foreach \y in {0,...,7}
+             \draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {$\y$};
+        % intervention
+        \draw (4,0) -- (4,8);
+
+        % line
+        \draw<2-> (6,3.5) node (tr) {};
+        \draw<3-> (6,5) node (ctrl) {};
+        \draw<2-3>[blue] (8,3.5) node (trlab) {Treated};
+        \draw<3-3>[red] (8,5) node (ctrllab) {Control};        
+        \draw<2->[blue, line width=2pt] (2,3) -- (tr);
+        \draw<3->[red, line width=2pt] (2,7) -- (ctrl);
+        
+        % diffs
+        \draw<4-6>[right,decorate,decoration={brace,mirror}] 
+        	(6,3) -- (6,3.5) node[right, pos=0.5] (idiff) {\small $Y_{i,t+1} - Y_{i,t} = +0.5$};
+        \draw<4-6>[right,decorate,decoration={brace}] 
+            (6,7) -- (6,5) node[right, pos=0.5] (jdiff) {\small $Y_{j,t+1} - Y_{j,t} = -2.0$};
+        
+        % trends
+        \draw<5-6>[red,->] (1,7) -- (1,4);
+        \draw<5->[red, dashed] (0,8) -- (8,4);
+        \draw<5->[red, dashed] (0,4) -- (8,0);
+        \draw<6>[right,decorate,decoration={brace}] 
+            (6,3) -- (6,1) node[right, pos=0.5] (idiff2) {\small $2.0$};
+        \draw<7>[right,decorate,decoration={brace}] 
+            (6,3.5) -- (6,1) node[right, pos=0.5] (idiff2) {\small $DID = +2.5$};
+                        
+        
+    \end{tikzpicture}
+    \end{center}
+}
+
+
+\frame{
+
+	\frametitle{{\normalsize Threats to Validity}}
+	
+	\small
+	
+	As soon as time comes into play, we have to worry about threats to validity.\footnote{Shadish, Cook, and Campbell (2002)}
+	
+	\begin{enumerate}
+	\item<2-> History (simultaneous cause)
+	\item<3-> Maturation (time trends)
+	\item<4-> Testing (observation changes respondents)
+	\item<5-> Instrumentation (changing operationalization)
+	\item<6-> Instability (measurement error)
+	\item<7-> Attrition
+	\end{enumerate}
+}
+
+
+
+
+
+
+\frame{
+
+\frametitle{{\normalsize III. Randomized Field Treatment}}
+
+\small
+
+\begin{itemize}\itemsep-0.2em
+\item Examples:
+	\begin{enumerate}
+	\item<2-> Citizens randomly sent a letter by post encouraging them to reduce water usage
+	\item<3-> Different local media markets randomly assigned to receive different advertising
+	\end{enumerate}
+\item<4-> Survey is used to measure outcomes, when treatment assignment is already known
+\item<5-> Issues
+	\begin{itemize}
+	\item<6-> Nonresponse
+	\item<6-> Noncompliance
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{{\normalsize IV. Treatment Encouragement}}
+
+\small
+
+\begin{itemize}\itemsep-0.2em
+\item Design:
+	\begin{itemize}
+	\item T1: Encourage treatment
+	\item T2: Measure effects
+	\end{itemize}
+\item Examples:
+	\begin{enumerate}
+	\item Albertson and Lawrence
+	\end{enumerate}
+\item<2-> Issues
+	\begin{itemize}
+	\item<3-> Nonresponse
+	\item<3-> Noncompliance
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Treatment Noncompliance}}
+
+\begin{itemize}\itemsep0.5em
+\item Definition:\\{\small ``when subjects who were assigned to receive the treatment go untreated or when subjects assigned to the control group are treated'' \footnote{Gerber \& Green. 2012. \textit{Field Experiments}, p.132.}}
+\item<2-> Several strategies
+	\begin{itemize}
+	\item ``As treated'' analysis
+	\item ``Intention to treat'' analysis
+	\item Estimate a LATE
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{{\normalsize Analyzing Noncompliance}}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item If noncompliance only occurs in one group, it is \textit{asymmetric} or \textit{one-sided}
+\item We can ignore non-compliance and analyze the ``intention to treat'' effect, which will underestimate our effects because some people were not treated as assigned: $ITT = \overline{Y}_1 - \overline{Y}_0$
+\item<2-> We can use ``instrumental variables'' to estimate the ``local average treatment effect'' (LATE) for those that complied with treatment: $LATE = \frac{ITT}{\% Compliant}$
+\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Local Average Treatment Effect}}
+	\small
+	\begin{itemize}\itemsep0.2em
+	\item IV estimate is \textit{local} to the variation in $X$ that is due to variation in $D$
+	\item This matters if effects are \textit{heterogeneous}
+	\item LATE is effect for those who \textit{comply}
+	\item Four subpopulations:
+		\begin{itemize}\footnotesize
+		\item Compliers: $X = 1$ only if $D = 1$
+		\item Always-takers: $X = 1$ regardless of $D$
+		\item Never-takers: $X = 0$ regardless of $D$
+		\item Defiers: $X = 1$ only if $D = 0$
+		\end{itemize}
+	\item Exclusion restriction! Monotonicity!
+	\end{itemize}
+}
+
+\questions
+
+\frame{
+
+\frametitle{Homework!}
+
+None! Enjoy your Wednesday!
+
+}
 
 
 \appendix
