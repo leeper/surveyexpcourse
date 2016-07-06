@@ -66,7 +66,7 @@ While the first session demonstrated the advantages of experimentation as a rese
 
 Experiments are typically performed at one point in time, on a specific sample or set of respondents, on a limited range of issues or topic, using a finite set of measurement techniques. Yet researchers' ambitions are often broader, with aims to make claims that extrapolate beyond the particular study's context, sample, and focus. This session will address various forms of external validity, how to maximize generalizability, and the trade-offs involved with such efforts.
 
- - Slides (Coming soon...)
+ - [Slides](Slides/lecture03.pdf)
 
 #### Class Schedule
 
