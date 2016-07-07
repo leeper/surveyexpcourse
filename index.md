@@ -86,7 +86,7 @@ Experiments are typically performed at one point in time, on a specific sample o
 
 While most experiments are designed to focus on a sample average treatment effect, researchers are often interested in and/or faced by causal processes that vary across person, contexts, and other factors. This session will cover various sources of treatment effect heterogeneity.
 
- - Slides (Coming soon...)
+ - [Slides](Slides/lecture04.pdf)
 
 #### Class Schedule
 
