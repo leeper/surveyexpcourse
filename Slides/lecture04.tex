@@ -251,6 +251,11 @@
 
 How should we deal with respondents that appear to not be paying attention, not ``taking'' the treatment, or not responding to outcome measures?
 
+\begin{enumerate}
+\item Keep them
+\item Throw them away
+\end{enumerate}
+
 }
 
 \frame{
@@ -268,26 +273,27 @@ How should we deal with respondents that appear to not be paying attention, not 
 }
 
 
-\frame{
+\frame[label=exclusion]{
 
 \frametitle{{\normalsize When are you excluding participants?}}
 
     \begin{columns}[T]
     \begin{column}[T]{5cm}
         \begin{block}{\rule[-0.6ex]{0pt}{2.5ex}Pre-Treatment}
-            \begin{itemize}\itemsep2em
-                \item<2-> Satisficing behaviors
+            \begin{itemize}\itemsep0.2em
+                \item<2-> \hyperlink{satisficing}{Satisficing behaviors}
                 \item<3-> Inattention
                 \item<4-> Covariate-based selection
+                \item<5-> Pretreated
             \end{itemize}
         \end{block}
     \end{column}
     \begin{column}[T]{5cm}
         \begin{block}{\rule[-0.6ex]{0pt}{2.5ex}Post-Treatment}
-            \begin{itemize}\itemsep2em
-                \item<5-> Speeding on treatment
-                \item<6-> ``Failing'' a manipulation check
-                \item<7-> Drop-off or outcome non-response
+            \begin{itemize}\itemsep0.5em
+                \item<6-> Speeding on treatment
+                \item<7-> ``Failing'' a manipulation check
+                \item<8-> Drop-off
             \end{itemize}
         \end{block}
     \end{column}
@@ -300,138 +306,83 @@ How should we deal with respondents that appear to not be paying attention, not 
 
 \frametitle{Pre-Treatment Exclusion}
 
-% changing definition of sample/population
-
-}
-
-
-
-% attention checks
-\frame{
-\frametitle{Attention Checking}
-
-\large 
-\begin{itemize}\itemsep1em
-\item Online mode invites satisficing
-\item Attention checking can help, but is imperfect
-\end{itemize}
-}
-
-% useful for checking attention
-% may have consequences for representativeness and introduce selection biases
-
-\frame{
-\frametitle{Apparent Satisficing}
 \begin{itemize}\itemsep0.5em
-\item Filter out respondents based on response behavior
-\item Some common measures:
+\item This is totally fine from a causal inference perspective
+\item<2-> Advantages:
 	\begin{itemize}
-	\item ``Straightlining''
-	\item Non-differentiation
-	\item Acquiescence
-	\item Nonresponse
-	\item DK responding
-	\item Speeding
+	\item Focused on engaged respondents
+	\item Likely increase impact of treatment
 	\end{itemize}
-\item Difficult to detect
-\item Difficult to distinguish from ``real'' responses
+\item<3-> Disadvantages:
+	\begin{itemize}
+	\item Changing definition of sample (and thus population)
+	\end{itemize}
 \end{itemize}
-}
 
-\frame{
-\frametitle{Metadata/Paradata}
-\begin{itemize}\itemsep1em
-\item<1-> Timing
-	\begin{itemize}
-	\item Some survey tools will allow you to time page
-	\item Make a prior rules about dropping participants for speeding
-	\end{itemize}
-\item<2-> Mousetracking or eyetracking
-	\begin{itemize}
-	\item Mousetracking is unobtrusive
-	\item Eyetracking requires participants opt-in
-	\end{itemize}
-\item<3-> Record focus/blur browser events
-\end{itemize}
-}
-
-\frame{
-\frametitle{Direct Measures}
-\begin{itemize}\itemsep2em
-\item How closely have you been paying attention to what the questions on this survey actually mean?
-\item<2-> While taking this survey, did you engage in any of the following behaviors? Please check all that apply.
-	\begin{itemize}
-	\item Use your mobile phone
-	\item Browse the internet
-	\item \dots
-	\end{itemize}
-\end{itemize}
 }
 
 
 
+
 \frame{
-\frametitle{Instructional Manipulation Check}
 
-\only<2>{Do you agree or disagree with the decision to send British forces to fight ISIL in Syria? }We would like to know if you are reading the questions on this survey. If you are reading carefully, please ignore this question, do not select any answer below, and click ``next'' to proceed with the survey.\\
+\frametitle{Post-Treatment Exclusion}
 
-\vspace{1em}
+This is much more problematic because it involves controlling for a \textit{post-treatment} variable
+
+}
+
+\frame<1-3>[label=posttreatment]{
+
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw (0,0) node[left, text width=3cm, align=center] (X) {Information};
+    \draw (5,0) node[right, text width=2cm, align=center] (Y) {Opinion};
+    \draw<1-3>[->] (X) -- (Y);
+    \draw[->] (4,-4) node[below, text width=3cm, align=center] (E) {Etc.} -- (Y);
+	\draw<2-> (1,-2) node[text width=3cm, align=center] (M) {Manipulation Check};
+	\draw<2-4>[->,thick,red] (X) -- (M);
+    \draw<2-4>[->,thick,red] (M) -- (Y);
+    \draw<3>[->] (E) -- (M);
+\end{tikzpicture}
+\end{center}
+
+\small 
+\only<2>{Risk that estimate of $\beta_1$ is diminished because effect is being carried through the manipulation check.}
+\only<3>{Introduction of ``collider bias'' wherein values of the manipulation check are affected by other factors.}
+}
+
+
+
+
+
+\frame[label=posttreatment2]{
+
+\frametitle{Post-Treatment Exclusion}
 
 \small
 
-Strongly disagree\\
-Somewhat disagree\\
-Neither agree nor disagree\\
-Somewhat agree\\
-Strongly agree\\
-
-}
-
-
-\frame{
-\frametitle{Attention Checking}
-
-In summary\dots
-
-\begin{itemize}\itemsep1em
-\item Attention checking can be useful
-\item Lots of options
-\item No obvious best metric
-\item Can be analytically consequential
+\begin{itemize}\itemsep0.5em
+\item Any post-treatment exclusion is problematic and should be avoided
+\item<2-> Can estimate a LATE
+	\begin{itemize}\footnotesize
+	\item Interpretation: Effect of manipulation check among those whose value of the check can be changed by the treatment manipulation
+	\end{itemize}
+\item<3-> Non-response or attrition is the same as researcher-imposed exclusion
+	\begin{itemize}\footnotesize
+	\item Not problematic if MCAR
+	\item Nothing really to be done if caused by treatment
+	\end{itemize}
 \end{itemize}
-}
-
-
-
-
-
-
-\frame{
-
-% problems controlling for post-treatment variables
-% graph
 
 }
 
-% slide about non-compliance (not ``taking'' the treatment)
+\againframe<3-4>{posttreatment}
 
-% slide about drop-off, non-response
-
-\frame{
-\frametitle{Substantive Manipulation Check}
-\begin{itemize}\itemsep1em
-\item Discussed this on Tuesday
-\item Risky to remove cases based on this because it is a form of conditioning on post-treatment variables
-\item May be useful to consider either a mediator of effects
-\end{itemize}
-}
+\againframe<2->{posttreatment2}
 
 
-
-
-
-
-\frame{}
+\questions
 
 \section[Moderators]{Moderators and Effect Heterogeneity}
 \frame{\tableofcontents[currentsection]}
@@ -458,7 +409,9 @@ If we think there might be effect heterogeneity, what can we do?
 
 Simply: Manipulating the moderator variable is the best way to estimate a heterogeneous effect!
 
-Why?
+\vspace{1em}
+
+Why is this true?
 
 }
 
@@ -549,7 +502,7 @@ $Y = \beta_0 + \beta_1 X1_{1} + \beta_2 X2_{1} + \beta_3 X1_1 * X2_1 + \epsilon$
 	\item Treatment--control
 	\item Treatment--treatment
 	\end{itemize}
-\item<3-> One solution may be conjoint designs (later)
+\item<3-> One solution may be conjoint designs
 \end{itemize}
 
 }
@@ -585,7 +538,104 @@ Factors & Conditions per factor & Total Conditions & $n$ \\ \midrule
 
 
 
+
+\frame{
+
+\frametitle{Conjoint Designs I}
+
+\small
+
+\begin{itemize}
+\item ``Classic vignettes'' taken to an extreme
+\item Example: Judge whether to admit an immigrant to your country
+\item<2-> Respondents see a series of vignettes that are fully randomized along any number of dimensions
+	\begin{itemize}\footnotesize
+	\item Sex
+	\item Education
+	\item Language proficiency
+	\item etc.
+	\end{itemize}
+\item<3-> Outcome is judgment (binary or rating scale)
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Conjoint Designs II}
+
+Why is this useful?
+
+\begin{itemize}\itemsep0.5em
+	\item Understand complex decision-making
+	\item Within-subjects comparisons
+	\item Heterogeneous effects across versions of treatment
+	\item Pilot testing: Sensitivity of design to specification of \textit{compound} vignette
+\end{itemize}
+
+}
+
+
+\frame{
+\begin{center}
+\includegraphics[height=\textheight]{images/conjoint1}
+\end{center}
+}
+
+\frame{
+\begin{center}
+\includegraphics[width=\textwidth]{images/conjoint2}
+\end{center}
+}
+
+\frame{
+
+\frametitle{Conjoint Designs III}
+
+
+\begin{itemize}\itemsep0.5em
+\item<2-> As long as profiles are randomized, this is just a complex factorial design where we can estimate \textit{marginal effect} of each attribute
+	\begin{itemize}\footnotesize
+	\item Treatment--control SATE, conditional on all other randomized factors
+	\end{itemize}
+\item<3-> Assumptions:
+	\begin{itemize}\footnotesize
+	\item Fully randomized profiles
+	\item No ``carry-over'' effects
+	\item No profile order effects
+	\end{itemize}
+\end{itemize}
+
+}
+
 \questions
+
+
+
+\frame{
+
+\frametitle{Activity!}
+
+\begin{itemize}\itemsep0.5em
+\item Work in groups of 2--3
+\item Consider a research question of interest to you
+	\begin{itemize}\footnotesize
+	\item Opinions on policies
+	\item Product purchasing decisions
+	\item Information selection
+	\item Attitudes toward out-groups
+	\item etc.
+	\end{itemize}
+\item Try to describe a basic conjoint design
+	\begin{itemize}
+	\item What is the outcome?
+	\item What are the factors/features?
+	\end{itemize}
+\end{itemize}
+
+
+}
+
 
 \subsection{Blocking/Block Randomization}
 
@@ -698,13 +748,13 @@ $$SATE_{blocked} = \sum_{1}^{J} \left( \dfrac{n_j}{n} \right)  (\widehat{CATE}_j
 
 \begin{tabular}{rrrrrr}
 Obs. & $X_{1i}$ & $X_{2i}$ & $D_i$ & $Y_i$ & CATE \\ \midrule
-1 & Male & Old & 0 & 5 & \multirow{2}{*}{5} \\
+1 & Male & Old & 0 & 5 & \multirow{2}{*}{\onslide<2->{5}} \\
 2 & Male & Old & 1 & 10 \\  \midrule
-3 & Male & Young & 1 & 4 & \multirow{2}{*}{3} \\
+3 & Male & Young & 1 & 4 & \multirow{2}{*}{\onslide<3->{3}} \\
 4 & Male & Young & 0 & 1 \\ \midrule
-5 & Female & Old & 1 & 6 & \multirow{2}{*}{4} \\
+5 & Female & Old & 1 & 6 & \multirow{2}{*}{\onslide<4->{4}} \\
 6 & Female & Old & 0 & 2 \\ \midrule
-7 & Female & Young & 0 & 6 & \multirow{2}{*}{3} \\
+7 & Female & Young & 0 & 6 & \multirow{2}{*}{\onslide<5->{3}} \\
 8 & Female & Young & 1 & 9 \\ \bottomrule
 \end{tabular}
 \end{center}
@@ -728,14 +778,15 @@ SATE &= \left(\dfrac{2}{8}*5\right) + \left(\dfrac{2}{8}*3\right) + \left(\dfrac
 
 \frametitle{SATE Estimation}
 
+\small
+
 \begin{itemize}
-\item The above calculation is tedious in a large experiment
 \item We can use weighted regression to estimate this in an OLS framework
 \item Weights are the inverse prob. of being treated w/in block
 \begin{itemize}
-\item Pr(Treated) by block: $$p_{ij} = Pr(D_i = 1 | J=j) $$
-\item Weight (Treated) $$ w_{ij} = \dfrac{1}{p_{ij}} $$
-\item Weight (Control) $$ w_{ij} = \dfrac{1}{1-p_{ij}} $$
+\item Pr(Treated) by block: $p_{ij} = Pr(D_i = 1 | J=j) $
+\item Weight (Treated): $ w_{ij} = \dfrac{1}{p_{ij}} $
+\item Weight (Control): $ w_{ij} = \dfrac{1}{1-p_{ij}} $
 \end{itemize}
 \end{itemize}
 
@@ -761,7 +812,24 @@ $$\widehat{SE}_{SATE_{blocked}} = \sqrt{\sum_{1}^{J} \left( \dfrac{n_j}{n} \righ
 }
 
 
+\frame{
 
+\frametitle{Practicalities}
+
+\begin{itemize}\itemsep0.5em
+\item Blocked randomization only works in exactly the same situations where stratified sampling works
+	\begin{itemize}
+	\item Need to observe covariates pre-treatment in order to block on them
+	\item Work best in a panel context
+	\end{itemize}
+\item In a single cross-sectional design that might be challenging
+	\begin{itemize}
+	\item Some software can block ``on the fly''
+	\end{itemize}
+\end{itemize}
+
+
+}
 
 
 
@@ -772,28 +840,138 @@ $$\widehat{SE}_{SATE_{blocked}} = \sqrt{\sum_{1}^{J} \left( \dfrac{n_j}{n} \righ
 \subsection{Post-hoc Approaches}
 
 \frame{
-\frametitle{Three Approaches}
+\frametitle{{\large Three Post-hoc Approaches}}
 
-\begin{itemize}
+\begin{itemize}\itemsep0.5em
 \item Suggestive evidence
 \item Regression using treatment-by-covariate interactions
 \item Automated approaches
+\item<2-> (Replication and meta-analysis)
 \end{itemize}
 
 }
 
 
 
-% quantile-quantile plots and tests of equivalence of variances
+\frame{
+
+\frametitle{Suggestive Evidence}
+
+We can never know $Var(TE_i)$! \onslide<2->{But\dots}
+
+\begin{itemize}\itemsep0.5em
+\item<2-> Quantile-quantile plots
+	\begin{itemize}
+	\item<3-> Compare the distribution of $Y_0$'s to distribution of $Y_1$'s
+	\item<3-> If homogeneity, a vertical shift in $Y_1$'s
+	\item<3-> If heterogeneity, a slope $\neq$ 1
+	\end{itemize}
+\item<2-> Equality of variance tests
+	\begin{itemize}
+	\item<4-> If homogeneity, variance should be equal
+	\item<4-> If heterogeneity, variances should differ
+	\end{itemize}
+\end{itemize}
+
+}
+
+\begin{frame}[fragile]
+
+\frametitle{QQ Plots}
+
+{\scriptsize
+\begin{verbatim}
+# y_0 data
+set.seed(1)
+n <- 200
+y0 <- rnorm(n) + rnorm(n, 0.2)
+
+# y_1 data (homogeneous effects)
+y1a <- y0 + 2 + rnorm(n, 0.2)
+# y_1 data (heterogeneous effects)
+y1b <- y0 + rep(0:1, each = n/2) + rnorm(n, 0.2)
+
+qqplot(y0, y1a, pch=19, xlim=c(-3,5), ylim=c(-3,5), asp=1)
+curve((x), add = TRUE)
+qqplot(y0, y1b, pch=19, xlim=c(-3,5), ylim=c(-3,5), asp=1)
+curve((x), add = TRUE)
+\end{verbatim}
+
+}
+
+\end{frame}
 
 
-\frame{}
+\frame{
+
+\begin{center}
+\only<1>{\includegraphics[height=\textheight]{images/qqplot1}}
+\only<2>{\includegraphics[height=\textheight]{images/qqplot2}}
+\end{center}
+
+}
+
+\begin{frame}[fragile]
+
+\frametitle{Equality of Variance tests}
+
+\footnotesize
+
+\begin{verbatim}
+> var.test(y0, y1a)
+
+        F test to compare two variances
+
+data:  y0 and y1a
+F = 0.60121, num df = 199, denom df = 199, 
+  p-value = 0.0003635
+alternative hypothesis: 
+  true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.4549900 0.7944289
+sample estimates:
+ratio of variances 
+         0.6012131 
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}[fragile]
+
+\frametitle{Equality of Variance tests}
+
+\footnotesize
+
+\begin{verbatim}
+> var.test(y0, y1b)
+
+        F test to compare two variances
+
+data:  y0 and y1b
+F = 0.53483, num df = 199, denom df = 199,
+  p-value = 1.224e-05
+alternative hypothesis:
+  true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.4047531 0.7067133
+sample estimates:
+ratio of variances 
+         0.5348312
+\end{verbatim}
+
+\end{frame}
+
+
+\questions
+
+
+\frame{\frametitle{Regression Estimation}}
 
 \frame{
 
 \frametitle{{\normalsize Aside: Regression Adjustment in Experiments, Generally}}
 
-\begin{itemize}
+\begin{itemize}\itemsep0.5em
 \item Recall the general advice that we do not need covariates in the regression to ``control'' for omitted variables (because there are none)
 \item Including covariates can reduce variance of our SATE by explaining more of the variation in $Y$
 \end{itemize}
@@ -911,10 +1089,12 @@ Imagine two regression models. Which is correct?
 
 \frametitle{Replication!}
 
+\small
+
 \begin{itemize}\itemsep0.5em
 \item If we think effects are homogeneous (across SUTO), then replications in other SUTO conditions should provide us the same SATE (within sampling error)
 \item If we think effects are heterogeneous, then replications should give \textit{systematically} different SATE (or CATE) estimates
-	\begin{itemize}
+	\begin{itemize}\footnotesize
 	\item<2-> Identify those patterns of heterogeneity using meta-analysis
 	\item<3-> Regress effect estimates from multiple studies on SUTO features of each study
 	\end{itemize}
@@ -922,13 +1102,14 @@ Imagine two regression models. Which is correct?
 
 }
 
+\frame{}
 
 
 \frame{
 
 \frametitle{Conclusion}
 
-\begin{itemize}
+\begin{itemize}\itemsep0.5em
 \item Do we want to know SATE, CATE(s), or both?
 \item<2-> Decide in advance
 	\begin{itemize}
@@ -950,14 +1131,81 @@ Imagine two regression models. Which is correct?
 
 
 
-\section{Conjoint Designs}
-\frame{\tableofcontents[currentsection]}
-
-
-
-
-
 \appendix
 \frame{}
+
+\section{Satisficing}
+
+
+\frame[label=satisficing]{
+\frametitle{Apparent Satisficing}
+\begin{itemize}\itemsep0.5em
+\item Some common measures:
+	\begin{itemize}
+	\item ``Straightlining''
+	\item Non-differentiation
+	\item Acquiescence
+	\item Nonresponse
+	\item DK responding
+	\item Speeding
+	\end{itemize}
+\item Difficult to detect and distinguish from ``real'' responses
+\end{itemize}
+}
+
+\frame{
+\frametitle{Metadata/Paradata}
+\begin{itemize}\itemsep1em
+\item<1-> Timing
+	\begin{itemize}
+	\item Some survey tools will allow you to time page
+	\item Make a prior rules about dropping participants for speeding
+	\end{itemize}
+\item<2-> Mousetracking or eyetracking
+	\begin{itemize}
+	\item Mousetracking is unobtrusive
+	\item Eyetracking requires participants opt-in
+	\end{itemize}
+\item<3-> Record focus/blur browser events
+\end{itemize}
+}
+
+\frame{
+\frametitle{Direct Measures}
+\begin{itemize}\itemsep1em
+\item How closely have you been paying attention to what the questions on this survey actually mean?
+\item<2-> While taking this survey, did you engage in any of the following behaviors? Please check all that apply.
+	\begin{itemize}
+	\item Use your mobile phone
+	\item Browse the internet
+	\item \dots
+	\end{itemize}
+\end{itemize}
+}
+
+
+
+\frame{
+\frametitle{{\normalsize Instructional Manipulation Check}}
+
+\small
+
+\only<2>{Do you agree or disagree with the decision to send British forces to fight ISIL in Syria? }We would like to know if you are reading the questions on this survey. If you are reading carefully, please ignore this question, do not select any answer below, and click ``next'' to proceed with the survey.\\
+
+\vspace{0.5em}
+
+\footnotesize
+Strongly disagree\\
+Somewhat disagree\\
+Neither agree nor disagree\\
+Somewhat agree\\
+Strongly agree\\
+
+\vspace{1em}
+\only<2>{\hyperlink{exclusion}{\beamerbutton{Return}}}
+}
+
+
+
 
 \end{document}

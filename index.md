@@ -72,8 +72,7 @@ Experiments are typically performed at one point in time, on a specific sample o
 
  - 11:30-12:00 - External Validity
  - 12:00-12:25 - Sampling, Respondents, and Representativeness
- - 12:35-13:00 - SUTO, Pretreatment, and Behavioral Measures
- - 13:00-13:30 - Other Survey Experimental Designs
+ - 12:35-13:30 - SUTO, Pretreatment, and Behavioral Measures
  
 #### Readings
 
@@ -91,9 +90,9 @@ While most experiments are designed to focus on a sample average treatment effec
 
 #### Class Schedule
 
- - 11:30-12:00 - Attention and Satisficing
- - 12:00-12:25 - Effect Heterogeneity, Moderators, and Blocking
- - 12:35-13:30 - Factorial Designs, Confounding, and Conjoint Designs
+ - 11:30-12:00 - Other Survey Experimental Designs
+ - 12:00-12:25 - Attention and Satisficing
+ - 12:35-13:30 - Effect Heterogeneity, Blocking, Factorial and Conjoint Designs
 
 #### Readings
 
