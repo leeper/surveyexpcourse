@@ -502,7 +502,6 @@ $Y = \beta_0 + \beta_1 X1_{1} + \beta_2 X2_{1} + \beta_3 X1_1 * X2_1 + \epsilon$
 	\item Treatment--control
 	\item Treatment--treatment
 	\end{itemize}
-\item<3-> One solution may be conjoint designs
 \end{itemize}
 
 }
@@ -537,6 +536,7 @@ Factors & Conditions per factor & Total Conditions & $n$ \\ \midrule
 % marginal effects of factors are marginal across the set of levels of the other factors; if those factors aren't complete, then external validity problem
 
 
+\questions
 
 
 \frame{
@@ -547,13 +547,13 @@ Factors & Conditions per factor & Total Conditions & $n$ \\ \midrule
 
 \begin{itemize}
 \item ``Classic vignettes'' taken to an extreme
+	\begin{itemize}
+	\item Address heterogeneity w/r/t SU\textbf{T}O
+	\end{itemize}
 \item Example: Judge whether to admit an immigrant to your country
 \item<2-> Respondents see a series of vignettes that are fully randomized along any number of dimensions
 	\begin{itemize}\footnotesize
-	\item Sex
-	\item Education
-	\item Language proficiency
-	\item etc.
+	\item Sex, Education, Language proficiency, etc.
 	\end{itemize}
 \item<3-> Outcome is judgment (binary or rating scale)
 \end{itemize}
@@ -1008,8 +1008,8 @@ Imagine two regression models. Which is correct?
 \item<2-> SATE: $Y = \beta_0 + \beta_1 X + e$
 \item<3-> CATEs: $$Y = \beta_0 + \beta_1 X + \beta_2 M + \beta_3 X*M + e$$
 	\begin{itemize}
-	\item<4-> Homogeneity: $\beta_1 = \beta_3$
-	\item<4-> Heterogeneity: $\beta_1 \neq \beta_3$
+	\item<4-> Homogeneity: $\beta_3 = 0$
+	\item<4-> Heterogeneity: $\beta_3 \neq 0$
 	\end{itemize}
 
 \end{itemize}
