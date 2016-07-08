@@ -104,22 +104,15 @@ While most experiments are designed to focus on a sample average treatment effec
 
 This session will cover a number of remaining issues, especially related to the implementation of survey experiments.
 
- - Slides (Coming soon...)
+ - [Slides](Slides/lecture05.pdf)
 
 #### Class Schedule
 
- - 11:30-12:00 - "Broken Experiments"
-   - Noncompliance
-   - Recruitment and Attrition
-   - Conditioning
- - 12:00-12:25 - Treatment Self-Selection
- - 12:35-13:00 - Ethics
-   - Deception
-   - Incentives
-   - Recruitment
-   - Randomization
-   - Publication Bias
- - 13:00-13:30 - Student "lightning" presentations
+ - 11:30-11:45 - Review Handling of "Broken Experiments"
+ - 11:45-12:00 - Treatment Self-Selection
+ - 12:00-12:25 - Ethics
+ - 12:35-13:15 - Student "lightning" presentations
+ - 13:15-13:30 - Wrap-up
 
 #### Readings
 
@@ -155,6 +148,7 @@ Though not assigned for the course, the following texts may serve as useful back
  * Hovland, C. I. 1959. "Reconciling Conflicting Results Derived from Experimental and Survey Studies of Attitude Change." *American Psychologist* 14: 8-17.
  * Sterling, T. D., Rosenbaum, W. L., and Weinkam, J. 1995. "Publication Decisions Revisited: The Effect of the Outcome of Statistical Tests on the Decision to Publish and Vice Versa." *The American Statistician* 49: 108-112.
  * Franco, A., Malhotra, N., and Simonovits, G. 2015. "Underreporting in Political Science Survey Experiments: Comparing Questionnaires to Published Results." *Political Analysis* 23: 306-312.
+ * Gelman, A., and Stern, H. 2006. "The Difference Between 'Significant' and 'Not Significant' is Not Itself Statistically Significant." *The American Statistician* 60(4): 328-331.
 
 ---
 

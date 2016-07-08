@@ -1,5 +1,10 @@
 \input{preamble}
 
+\usepackage{ulem} % for strikeout \sout{}
+\usepackage{adjustbox}
+\usetikzlibrary{shapes,arrows,positioning,decorations.pathreplacing}
+
+
 \title{Session V\\Lingering Issues}
 
 \date[]{}
@@ -11,245 +16,118 @@
 \frame{\tableofcontents}
 
 
-\section{``Broken'' Experiments}
+\section[Quiz]{Handling ``Broken'' Experiments}
 \frame{\tableofcontents[currentsection]}
 
-\subsection{Compliance}
-\frame{\tableofcontents[currentsubsection]}
+\frame{
+
+\Large
+
+\begin{center}
+Quiz time!
+\end{center}
+
+}
+
 
 \frame{
 \frametitle{Compliance}
-\begin{itemize}
-\item Compliance is when individuals receive and accept the treatment to which they are assigned:
-	\begin{itemize}
-	\item Receive the wrong treatment (cross-over)
-	\item Fail to receive any treatment 
-	\end{itemize}
-\item This causes problems for our analysis because factors other than randomization explain why individuals receive their treatment
-\end{itemize}
+
+\large
+
+\begin{enumerate}\itemsep0.5em
+\item<1-> What is compliance?
+\item<2-> How can we analyze experimental data when there is noncompliance?
+\end{enumerate}
 }
 
-\begin{frame}
-\small 
-\begin{center}
-\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
-    \draw[->] (0,0) node[left] (X) {Smoking} -- (4,0) node[right] (Y) {Cancer};
-    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
-    \draw[->] (Z) -- (Y);
-    \draw[->] (3.5,2) node[above] (A) {Environment} -- (Y);
-    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
-    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
-    \draw[->] (W) -- (Y);
-    \draw[->, dashed] (E) -- (X);
-    
-    \draw[->, very thick, color=red] (-2.5,1) node[left, color=red] (Tr) {Treatment} -- (X);
-    \draw[->, very thick, color=red] (X) -- (Y);
-    \draw<2->[->, very thick, color=blue] (-3,-0.5) node[left, color=blue] (X2) {$\text{Smoking}_{t-1}$} -- (X);
-    \draw<2->[->, very thick, color=blue] (X2) -- (Tr);
-\end{tikzpicture}
-\end{center}
-\end{frame}
-
-
 \frame{
+\frametitle{Balance testing}
 
-## Noncompliance analysis
+\normalsize
 
-Choices:
-
- 1. Intention to treat analysis
- 
- 2. As-treated analysis
- 
- 3. Exclude noncompliant cases
- 
- 4. Estimate a Local Average Treatment Effect (LATE)
-   - aka Compliance Average Treatment Effect (CATE)
-
-???
-
-Example: one-sided noncompliance in voter mobilization
-
-Phone calls do not reach everyone in the treatment group
-
-**How to prevent attrition?**
-  - Discuss in groups
-  - 1: Pretest for differential attrition rates between groups
-
-**Example: two-sided noncompliance**
-
-Encouragement designs: there is an existing resource that we want to encourage people to use (e.g., going to the library)
-We want to know what effect library use has on childrens' educational outcomes.
-We randomly send letters to some people encouraging them to go to the library
-Not all of them do, so we have noncompliance
-And some of those who do not receive letters go to the library, so we have noncompliance on both sides
+\begin{enumerate}\itemsep0.5em
+\item<1-> What does randomization ensure about the composition of treatment groups?
+\item<2-> What can we do if we find a covariate imbalance between groups?
+\item<3-> How can we avoid this problem entirely?
+\end{enumerate}
 }
 
 
 \frame{
+\frametitle{Nonresponse and Attrition}
 
-\frametitle{Noncompliance}
+\large
 
-\begin{itemize}
-\item Asymmetric (one-sided) noncompliance:
-$ITT = \overline{Y}_1 - \overline{Y}_0$
-$LATE = \frac{ITT}{Pct. Compliant}$
-\item Symmetric (two-sided) noncompliance:
-	\begin{itemize}
-	\item Stronger assumptions are required to analyze it
-	\item \textit{Monotonicity}
-	\item This is a classic design trumps analysis problem
-	\end{itemize}
-\end{itemize}
-
+\begin{enumerate}\itemsep0.5em
+\item<1-> Do we care about outcome nonresponse in experiments?
+\item<2-> How can we analyze experimental data when there is outcome nonresponse or post-treatment attrition?
+\end{enumerate}
 }
 
 
-
-
-
-
-\subsection{Issues in panel designs}
-\frame{\tableofcontents[currentsubsection]}
-
-
 \frame{
-\frametitle{What is a panel?}
+\frametitle{Manipulation checks}
 
-}
+\large
 
-\frame{
-
-\frametitle{Benefits of Panels}
-
-\begin{itemize}\itemsep1em
-
-\item
-
-\end{itemize}
-
-}
-
-% repeated measures of outcomes (effect duration)
-
-% repeated treatments (Druckman and Leeper 2012)
-
-
-
-\frame{
-
-Commercial panels
-
-}
-
-
-% custom panels (from MTurk or elsewhere)
-\frame{
-\frametitle{Custom Panels}
-\begin{itemize}\itemsep1em
-\item Creating your own panel is great
-	\begin{itemize}
-	\item Carefully sample on specific characteristics % stanford model; qualification model; database model
-	\item Organize repeated interviewing or interaction
-	\end{itemize}
-\item Lots of additional issues
-	\begin{itemize}
-	\item Recruitment/Compensation
-	\item Attrition
-	\item Panel Conditioning
-	\end{itemize}
-\item See Callegaro et al. 2014. \textit{Online Panel Research: A Data Quality Perspective}. Wiley.
-\end{itemize}
+\begin{enumerate}\itemsep0.5em
+\item<1-> What is a manipulation check? What can we do with it?
+\item<2-> What do we do if some respondents ``fail'' a manipulation check?
+\end{enumerate}
 }
 
 
 
 \frame{
+\frametitle{Null effects}
 
-\frametitle{Risks I: Recruitment}
+\large
 
-\begin{itemize}\itemsep1em
-
-\item
-
-\end{itemize}
-
+\begin{enumerate}\itemsep0.5em
+\item<1-> What should we do if we find our estimated $\widehat{SATE} = 0$?
+\item<2-> What does it mean for an experiment to be \textit{underpowered}?
+\item<3-> What can we do to reduce the probability of obtaining an (unwanted) ``null effect''?
+\end{enumerate}
 }
 
 
 \frame{
+\frametitle{Effect heterogeneity}
 
-\frametitle{Risks II: Attrition}
+\large
 
-\begin{itemize}\itemsep1em
-
-\item
-
-\end{itemize}
-
+\begin{enumerate}\itemsep0.5em
+\item<1-> What should we do if, post-hoc, we find evidence of effect heterogeneity?
+\item<2-> What can we do pre-implementation to address possible heterogeneity?
+\end{enumerate}
 }
-
-% attrition
-\frame{
-\frametitle{Attrition}
-\begin{itemize}\itemsep1em
-\item We care about two issues:
-	\begin{itemize}
-	\item Who leaves a study early
-	\item When they leave a study
-	\end{itemize}
-\item<2-> We care about representativeness (not just demographically)
-\item<3-> Analyze when participants leave study to identify difficult, confusing, or problematic study elements
-	\begin{itemize}
-	\item Ideally, do pilot tests
-	\end{itemize}
-\end{itemize}
-
-}
-
-\frame{
-
-Considerations:
-
- - Symmetric, possibly random, attrition
- 
- - One-sided or systematic attrition
- 
- - Pre-treatment/post-treatment
- 
- - Pre-measurement/post-measurement
-
-
-Statistically, as soon as one unit leaves study, it is no longer an experiment! Yet, we cannot force units to stay in an experiment.
-
-When do we exclude cases? When do we impute missing data?
-
-What can we do practically to prevent or respond to attrition?
- 
- - Adaptive design: anticipate spending more resources on those likely to attrit
- - Pretesting: try to assess who is likely to attrit in a pilot study so you can identify where to expend resources
-
- - Treatment attrition versus measurement attrition
-  - Measurement attrition is a missing data problem
-  - Treatment attrition means we don't even know if the unit would have taken their assigned treatment
-}
-
-
-
-
 
 
 \frame{
+\frametitle{Representativeness}
 
-\frametitle{Risks III: Panel Conditioning}
+\large
 
-\begin{itemize}\itemsep1em
-
-\item
-
-\end{itemize}
-
+\begin{enumerate}\itemsep0.5em
+\item<1-> Under what conditions is a design-based, probability sample necessary for experimental inference?
+\item<2-> What kind of causal inferences can we draw from an experiment on a descriptively unrepresentative sample?
+\end{enumerate}
 }
+
+\frame{
+\frametitle{Peer Review}
+
+\large
+
+\begin{enumerate}\itemsep0.5em
+\item<1-> What should we do if a peer reviewer asks us to ``control'' for covariates in the analysis?
+\item<2-> What should we do if a peer reviewer asks us to include or exclude particular respondents from the analysis?
+\end{enumerate}
+}
+
+
+\questions
 
 
 \section{Treatment Self-Selection}
@@ -257,10 +135,10 @@ What can we do practically to prevent or respond to attrition?
 
 \frame{
 
-Bennett and Iyengar\footnote{Bennett, W. Lance, and Shanto Iyengar. 2008. ``A new era of minimal effects? The changing foundations of political communication.'' \textit{Journal of Communication} 58(4): 707--31.}:
+Bennett and Iyengar:\footnote{p.724 from Bennett \& Iyengar. 2008. ``A new era of minimal effects? The changing foundations of political communication.'' \textit{Journal of Communication} 58(4): 707--31.}
 
 \begin{quote}\small
-manipulational control actually weakens the ability to generalize to the real world where exposure to politics is typically voluntary. Accordingly, it is important that experimental researchers use designs that combine manipulation with self-selection of exposure. (724)
+manipulational control actually weakens the ability to generalize to the real world where exposure to \sout{politics} \underline{stimuli} is typically voluntary. Accordingly, it is important that experimental researchers use designs that combine manipulation with self-selection of exposure.
 \end{quote}
 
 }
@@ -268,21 +146,181 @@ manipulational control actually weakens the ability to generalize to the real wo
 
 \frame{
 
-Hovland\footnote{Hovland, Carl I. 1959. ``Reconciling conflicting results derived from experimental and survey studies of attitude change.'' \textit{American Psychologist} 14(1): 8--17.}:
+Hovland: \footnote{p.16 from Hovland. 1959. ``Reconciling conflicting results derived from experimental and survey studies of attitude change.'' \textit{American Psychologist} 14(1): 8--17.}
 
 \begin{quote}\small
-It should be possible to assess what demographic and personality factors predispose one to expose oneself to particular communications and then to utilize experimental and control groups having these characteristics. Under some circumstances the evaluation could be made on only those who select themselves, with both experimental and control groups coming from the self-selected audience. (16)
+It should be possible to assess what demographic and personality factors predispose one to expose oneself to particular \sout{communications} \underline{stimuli} and then to utilize experimental and control groups having these characteristics. Under some circumstances the evaluation could be made on only those who select themselves, with both experimental and control groups coming from the self-selected audience.
 \end{quote}
-
 
 }
 
 
+\frame{
+
+\frametitle{{\large Treatment Preferences I}}
+
+\begin{itemize}\itemsep0.5em
+\item Experiments are about inferring effect of $X$ on $Y$
+\item Respondents may have preferences over whether they are treated or untreated\footnote{Rucker. 1989. ``A Two-Stage Trial Design for Testing Treatment, Self-Selection, and Treatment Preference Effects.'' \textit{Statistics in Medicine} 8: 477--485.}
+\item Origins of this discussion are in the medical literature\footnote{Swift \& Callahan. 2009. ``The Impact of Client Treatment Preferences on Outcome: A Meta-Analysis.'' \textit{Journal of Clinical Psychology} 65(4): 368--381.}
+\item Closely related to the notion of placebo effects
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{{\large Treatment Preferences I}}
+
+\begin{itemize}\itemsep1em
+\item Treatment preferences may be an important factor in:
+	\begin{itemize}
+	\item Compliance
+	\item Effect heterogeneity
+	\end{itemize}
+\item<2-> Depending on your treatments, you may want to measure preferences
+	\begin{enumerate}
+	\item<3-> Stated preference measures
+	\item<4-> Designs that reveal preferences
+	\end{enumerate}
+\end{itemize}
+
+}
 
 
-% ETHICS
+\frame{
+
+\begin{adjustbox}{max totalsize={1.1\textwidth}{1.2\textheight},center}
+\tikzstyle{block} = [draw, text width=7.5em, text centered]
+\tikzstyle{line} = [draw, >=latex']
+\begin{tikzpicture}[scale=0.4, font=\sffamily\small, node distance=1cm]
+    \node[block] (X) {Background\\Questionnaire};
+    \node[block, above right=1.5 and 1 of X] (High) {High\\Importance};
+        \node[block, above right=0.25 and 1 of High] (HiChoice) {Choice};
+            \node[block, above right=0 and 0.5 of HiChoice] (HiChoicePro) {Chose Pro (204)};
+            \node[block, below right=0 and 0.5 of HiChoice] (HiChoiceCon) {Chose Con (67)};
+            \path [line] (HiChoice.east) -- (HiChoicePro.west);
+            \path [line] (HiChoice.east) -- (HiChoiceCon.west);
+        
+        \node[block, below right=0.25 and 1 of High] (HiCaptive) {Captive};
+            \node[block, above right=0 and 0.5 of HiCaptive] (HiCaptivePro) {Pro (66)};
+            \node[block, below right=0 and 0.5 of HiCaptive] (HiCaptiveCon) {Con (68)};
+            \path [line] (HiCaptive.east) -- (HiCaptivePro.west);
+            \path [line] (HiCaptive.east) -- (HiCaptiveCon.west);
+
+        \path [line] (High.east) -- (HiChoice.west);
+        \path [line] (High.east) -- (HiCaptive.west);
+    
+    %\node[block, right=9.25 of X, color=gray] (Control) {Control (66)};
+    
+    \node[block, below right=1.5 and 1 of X] (Low) {Low\\Importance};
+        \node[block, above right=0.25 and 1 of Low] (LoChoice) {Choice};
+            \node[block, above right=0 and 0.5 of LoChoice] (LoChoicePro) {Chose Pro (173)};
+            \node[block, below right=0 and 0.5 of LoChoice] (LoChoiceCon) {Chose Con (101)};
+            \path [line] (LoChoice.east) -- (LoChoicePro.west);
+            \path [line] (LoChoice.east) -- (LoChoiceCon.west);
+        
+        \node[block, below right=0.25 and 1 of Low] (LoCaptive) {Captive};
+            \node[block, above right=0 and 0.5 of LoCaptive] (LoCaptivePro) {Pro (67)};
+            \node[block, below right=0 and 0.5 of LoCaptive] (LoCaptiveCon) {Con (67)};
+            \path [line] (LoCaptive.east) -- (LoCaptivePro.west);
+            \path [line] (LoCaptive.east) -- (LoCaptiveCon.west);
+
+        \path [line] (Low.east) -- (LoChoice.west);
+        \path [line] (Low.east) -- (LoCaptive.west);
+    
+    
+    \path [line] (X.east) -- (High.west);
+    \path [line] (X.east) -- (Low.west);
+    %\path [line, color=gray] (X.east) -- (Control.west);
+    
+	\node[below right=0 and .2 of HiChoicePro] (HiYChoice) {$\bar{Y}_{Choice}$};
+	\draw [decorate, decoration={brace,amplitude=7pt}]
+		(HiChoicePro.north east) -- (HiChoiceCon.south east);
+	\node[right=.2 of HiCaptivePro] (HiYPro) {$\bar{Y}_{Pro}$};
+	\draw [decorate, decoration={brace,amplitude=5pt}]
+		(HiCaptivePro.north east) -- (HiCaptivePro.south east);
+	\node[right=.2 of HiCaptiveCon] (HiYCon) {$\bar{Y}_{Con}$};
+	\draw [decorate, decoration={brace,amplitude=5pt}]
+		(HiCaptiveCon.north east) -- (HiCaptiveCon.south east);
+	
+	\node[below right=0 and .2 of LoChoicePro] (HiYChoice) {$\bar{Y}_{Choice}$};
+	\draw [decorate, decoration={brace,amplitude=7pt}]
+		(LoChoicePro.north east) -- (LoChoiceCon.south east);
+	\node[right=.2 of LoCaptivePro] (LoYPro) {$\bar{Y}_{Pro}$};
+	\draw [decorate, decoration={brace,amplitude=5pt}]
+		(LoCaptivePro.north east) -- (LoCaptivePro.south east);
+    \node[right=.2 of LoCaptiveCon] (LoYCon) {$\bar{Y}_{Con}$};
+	\draw [decorate, decoration={brace,amplitude=5pt}]
+		(LoCaptiveCon.north east) -- (LoCaptiveCon.south east);
+    
+\end{tikzpicture}
+\end{adjustbox}
+
+\vspace{2em}
+
+{\tiny Leeper. 2016. ``How Does Treatment Self-Selection Affect Inferences About Political Communication?'' Available at \url{http://thomasleeper.com/research.html}\par}
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Analyzing 3-Group Preference Trials\footnote{GK2011 Package for R. \url{https://cran.r-project.org/package=GK2011}}}}
+
+\begin{enumerate}\itemsep0.5em
+\item SATE: $\bar{Y}_{T} - \bar{Y}_{C}$
+\item CATE (Prefer T): $\dfrac{\bar{Y}_{Choice} - \bar{Y}_{C}}{\hat{\alpha}}$
+\item CATE (Prefer C): $\dfrac{\bar{Y}_{T} - \bar{Y}_{Choice}}{1-\hat{\alpha}}$
+\end{enumerate}
+
+\vspace{1em}
+
+Note: $\alpha = Pr(T | Choice)$
+}
+
+
+
+\questions
+
 \section{Research Ethics}
 \frame{\tableofcontents[currentsection]}
+
+\frame{
+\frametitle{History: Key Moments}
+
+\small
+
+\begin{enumerate}
+\item Tuskegee (1932-1972) and Guatemala (1946-1948) Studies
+\item Nuremberg Code (1947)
+\item Helsinki Declaration (1964)
+\item U.S. 45 CFR 46 (1974) and ``Common Rule'' (1991)
+\item The Belmont Report (1979)
+\item EU Data Protection Directive (1995; 2012)
+	\begin{itemize}
+	\item UK Data Protection Act (1998)
+	\end{itemize}
+\end{enumerate}
+}
+
+
+\frame{
+	\frametitle{Helsinki Declaration}
+	
+	\small
+	\begin{itemize}
+	\item Adopted by the World Medical Association in 1964\footnote{\url{http://www.bmj.com/content/2/5402/177}}
+	\item Narrowly focused on medical research
+	\item Expanded the Nuremberg Code
+		\begin{itemize}
+		\item Relaxed consent requirements
+		\item Risks should not exceed benefits
+		\item Institutionalization of ethics oversight
+		\end{itemize}
+	\item<2-> Do these rules apply to non-medical research?
+	\end{itemize}
+
+}
 
 \frame{
 	\frametitle{The Belmont Report}
@@ -306,16 +344,55 @@ It should be possible to assess what demographic and personality factors predisp
 
 }
 
+\frame{
+\frametitle{Benefits and Harm}
+	\begin{itemize}\itemsep1em
+	\item What is a ``benefit''?
+	\item What is a ``harm''?
+	\item How do we balance the two?
+	\end{itemize}
+}
+
 
 \frame{
-	\frametitle{Informed Consent}
+
+\frametitle{Ethical Considerations}
+
+\begin{itemize}
+\item Most ethical issues are not unique to \textit{experimental} social science
+\item Some especially important issues:
+	\begin{enumerate}
+	\item Randomization
+	\item Informed consent
+	\item Privacy
+	\item Deception
+	\item Publication bias
+	\end{enumerate}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{I. Randomization}
+
+\begin{itemize}
+\item Is it ethical to randomize?
+\end{itemize}
+
+}
+
+
+
+\frame{
+	\frametitle{II. Informed Consent}
 	\begin{itemize}
 	\item Persons must consent to being a research subject
 	\item<2-> What this means in practice is complicated
 		\begin{itemize}
-		\item What is research?
 		\item What is consent?
 		\item What is ``informed'' consent?
+		\item What exactly do they have to consent to?
 		\end{itemize}
 	\item<3-> Cross-national variations
 		\begin{itemize}
@@ -326,22 +403,11 @@ It should be possible to assess what demographic and personality factors predisp
 
 }
 
-\frame{
-\frametitle{Benefits and Harm}
-	\begin{itemize}\itemsep2em
-	\item What is a ``benefit''?
-	\item What is a ``harm''?
-	\item How do we balance the two?
-	\end{itemize}
-}
-
 
 \frame{
-	\frametitle{Privacy}
-	\begin{itemize}
-	\item EU Data Protection Directive (1995) and UK Data Protection Act (1998)
-	\item Deals with ``personal data''
-	\item Data can be processed when:
+	\frametitle{III. Privacy}
+	\begin{itemize}\itemsep0.5em
+	\item Under EU Data Protection Directive (1995), data can be processed when:
 		\begin{itemize}
 		\item Consent is given
 		\item Data are used for a ``legitimate'' purpose
@@ -349,7 +415,55 @@ It should be possible to assess what demographic and personality factors predisp
 		\end{itemize}
 	\item Data cannot leave the EU except under conditions
 	\end{itemize}
+
 }
+
+\frame{
+	\frametitle{III. Privacy}
+	\begin{itemize}\itemsep1em
+	\item Experimental might be additionally sensitive
+	\item<2-> Answers reflect ``manipulated'' attitudes, behaviors, perceptions, etc. that respondents may not have given in another setting
+	\end{itemize}
+
+}
+
+
+
+\frame{
+
+\frametitle{IV. Deception}
+
+\begin{itemize}
+\item Major distinction between psychology tradition and economics tradition\footnote{Dickson, E. 2011. ``Economics versus Psychology Experiments.'' \textit{Cambridge Handbook of Experimental Political Science}.}
+	\begin{itemize}
+	\item Purpose of the study
+	\item Purpose of specific items or tasks
+	\item Order or length of questionnaire
+	\end{itemize}
+\item<2-> Psychologists focus on \textit{debriefing}
+\item<3-> Within economics, norms about \textit{acts of omission} versus \textit{acts of commission}
+	\begin{itemize}
+	\item<4-> Omission: In a multi-round trust game, an additional round is added
+	\item<5-> Commission: Telling respondents it is a dictator game, but it is actually a trust game
+	\end{itemize}
+\end{itemize}
+
+
+}
+
+
+\frame{
+
+\frametitle{V. Publication Bias}
+
+\begin{itemize}\itemsep0.5em
+\item Publication bias not typically discussed as an ethical question
+\item<2-> If studies are meant to policy or practical implications, then we care about PATE or a set of CATEs, including whether their effects are positive, negative, or zero.
+\item<3-> Publication bias (toward ``significant'' results) invites wasting resources on treatments that actually don't work
+\end{itemize}
+
+}
+
 
 
 \frame{
@@ -358,18 +472,51 @@ It should be possible to assess what demographic and personality factors predisp
 	\item<2-> Funding
 	\item<3-> Independence and Politicization
 	\item<4-> Vulnerable populations (e.g. children, sick)
-	\item<5-> Cross-national research
-	\item<6-> Participant-observation disclosures
+	\item<5-> Incentives
+	\item<6-> Cross-national research
 	\item<7-> End uses/users of research
-	\item<8-> Others?
+	\item<8-> Others\dots
 	\end{enumerate}
 }
 
+\questions
 
 \section{Short Presentations}
 \frame{\tableofcontents[currentsection]}
 
+\frame{
 
+\Large
+
+\begin{center}
+Presentations!
+\end{center}
+
+}
+
+
+\frame{}
+
+
+\section{Conclusion}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+
+\frametitle{Learning Outcomes}
+
+\small
+
+By the end of the week, you should be able to\dots
+
+\begin{enumerate}
+\item<2-> Explain how to analyze experiments quantitatively.
+\item<3-> Explain how to design experiments that speak to relevant research questions and theories.
+\item<4-> Evaluate the uses and limitations of several common survey experimental paradigms.
+\item<5-> Identify practical issues that arise in the implementation of experiments and evaluate how to anticipate and respond to them.
+\end{enumerate}
+
+}
 
 
 \frame{
@@ -381,7 +528,8 @@ It should be possible to assess what demographic and personality factors predisp
 	\end{itemize}
 }
 
+
 \appendix
-\frame{}
+
 
 \end{document}
