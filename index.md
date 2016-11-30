@@ -67,7 +67,7 @@ While the first session demonstrated the advantages of experimentation as a rese
 
 ### Session 3: External Validity (July 7, 9:00-11:00)
 
-Experiments are typically performed at one point in time, on a specific sample or set of respondents, on a limited range of issues or topic, using a finite set of measurement techniques. Yet researchers' ambitions are often broader, with aims to make claims that extrapolate beyond the particular study's context, sample, and focus. This session will address various forms of external validity, how to maximize generalizability, and the trade-offs involved with such efforts.
+Experiments are typically performed at one point in time, on a specific sample or set of respondents, on a limited range of issues or topic, using a finite set of measurement techniques. Yet researchers' ambitions are often broader, with aims to make claims that extrapolate beyond the particular study's context, sample, and focus. This session will address various forms of external validity, how to maximize generalizability, and the trade-offs involved with such efforts. 
 
  - [Slides](Slides/lecture03.pdf)
 
@@ -88,15 +88,15 @@ Experiments are typically performed at one point in time, on a specific sample o
 
 ### Session 4: Sources of Heterogeneity (July 7, 11:00-13:00)
 
-While most experiments are designed to focus on a sample average treatment effect, researchers are often interested in and/or faced by causal processes that vary across person, contexts, and other factors. This session will cover various sources of treatment effect heterogeneity.
+This session will cover a number of remaining issues, especially related to the practical implementation of survey experiments.
 
  - [Slides](Slides/lecture04.pdf)
  - [Slides](Slides/lecture05.pdf)
 
 #### Class Schedule
 
- - 11:00-12:00 - Lingering Issues (Attention, Satisficing, Self-Selection, Ethics)
- - 12:00-12:25 - Effect Heterogeneity due to Treatments and Outcomes
+ - 11:00-11:30 - Effect Heterogeneity due to Treatments and Outcomes
+ - 11:30-12:00 - Lingering Issues (Attention, Satisficing, Self-Selection, Ethics)
  - 12:00-12:45 - Handling of "Broken Experiments"
  - 12:45-13:00 - Summary and Conclusion
 
