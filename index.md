@@ -3,9 +3,9 @@ layout: default
 title: Home
 ---
 
-# "Survey Experiments in Practice" Short Course #
+# "Survey Experiments in Practice" Short Course
 
-This page holds materials for a short course called "Survey Experiments in Practice" to be taught at the [Barcelona Summer School in Survey Methodology](http://www.upf.edu/survey/Summer/) at Universitat Pompeu Fabra in Barcelona. The short course involves five 2-hour sessions, tentatively scheduled to run from 11:30-13:30 each morning July 4-8, 2016. Slides, readings, and materials for each session of the course will be available here shortly.
+This page holds materials for a short course called "Survey Experiments in Practice" to be taught at the [Barcelona Summer School in Survey Methodology](http://www.upf.edu/survey/Summer/) at Universitat Pompeu Fabra in Barcelona. The short course involves two 4-hour sessions, scheduled to run from 9:00-13:00 each morning July 6-7, 2017. Slides, readings, and materials for each session of the course are available here.
 
 ## Overview
 
@@ -21,7 +21,8 @@ Students interested in discussing their own research are welcome to make appoint
 
 An outline of the course is given below. All of the readings [are available here](https://drive.google.com/open?id=0Bwxjj0JIn0KoYkNIUXhtWFp5OTg).
 
-### Session 1: Survey Experiments in Context (July 4, 11:30-13:30)
+
+### Session 1: Survey Experiments in Context (July 6, 9:00-11:00)
 
 The first session will provide an overview of the course, discuss the history of survey experiments and experiments in general, and provide a conceptual and notational framework for design, analyzing, and discussing experiments.
 
@@ -33,9 +34,9 @@ The first session will provide an overview of the course, discuss the history of
 
 #### Class Schedule
 
- - 11:30-12:00 - Introductions and Course Overview
- - 12:00-12:25 - History of the Survey Experiment (and Experiments, generally)
- - 12:30-13:30 - Potential Outcomes Framework of Causality
+ - 9:00-9:30 - Introductions and Course Overview
+ - 9:30-10:00 - History of the Survey Experiment (and Experiments, generally)
+ - 10:00-10:50 - Potential Outcomes Framework of Causality
 
 #### Readings
 
@@ -43,7 +44,8 @@ The first session will provide an overview of the course, discuss the history of
  - Kuklinski, J. H. and Hurley, N. L. 1994. "On Hearing and Interpreting Political Messages: A Cautionary Tale of Citizen Cue-Taking" *The Journal of Politics* 56: 729-751.
  - Holland, P. W. 1986. "Statistics and Causal Inference." *Journal of the American Statistical Association* 81: 945-960.
 
-### Session 2: Examples and Paradigms (July 5, 11:30-13:30)
+
+### Session 2: Examples and Paradigms (July 6, 11:00-13:00)
 
 While the first session demonstrated the advantages of experimentation as a research design, designing experiments can be challenging without a solid grounding in a relevant theoretical literature. This session will discuss common paradigms for survey experimental research and discuss how to design experiments to test social science theories.
 
@@ -52,8 +54,8 @@ While the first session demonstrated the advantages of experimentation as a rese
 
 #### Class Schedule
 
- - 11:30-12:20 - Translating Theories into Experiments
- - 12:30-13:30 - Paradigms (Question Wording, Vignettes, Sensitive items, etc.)
+ - 11:05-11:30 - Translating Theories into Experiments
+ - 11:30-13:00 - Paradigms (Question Wording, Vignettes, Sensitive items, etc.)
 
 #### Readings
 
@@ -62,7 +64,8 @@ While the first session demonstrated the advantages of experimentation as a rese
  - Glynn, A. N. 2013. "What Can We Learn with Statistical Truth Serum?: Design and Analysis of the List Experiment." *Public Opinion Quarterly* 77: 159-172.
  - Albertson, B. L. and Lawrence, A. 2009. "After the Credits Roll: The Long-Term Effects of Educational Television on Public Knowledge and Attitudes." *American Politics Research* 37: 275-300.
 
-### Session 3: External Validity (July 6, 11:30-13:30)
+
+### Session 3: External Validity (July 7, 9:00-11:00)
 
 Experiments are typically performed at one point in time, on a specific sample or set of respondents, on a limited range of issues or topic, using a finite set of measurement techniques. Yet researchers' ambitions are often broader, with aims to make claims that extrapolate beyond the particular study's context, sample, and focus. This session will address various forms of external validity, how to maximize generalizability, and the trade-offs involved with such efforts.
 
@@ -70,55 +73,42 @@ Experiments are typically performed at one point in time, on a specific sample o
 
 #### Class Schedule
 
- - 11:30-12:00 - External Validity
- - 12:00-12:25 - Sampling, Respondents, and Representativeness
- - 12:35-13:30 - SUTO, Pretreatment, and Behavioral Measures
+ - 9:00-9:30 - External Validity
+ - 9:30-10:00 - Model-based and Design-based Representativeness
+ - 10:00-11:50 - SUTO; Effect Heterogeneity due to Settings and Respondents
  
 #### Readings
 
  - Gaines, B. J., Kuklinski, J. H., and Quirk, P. J. 2007. "The Logic of the Survey Experiment Reexamined." *Political Analysis* 15: 1-20.
  - Druckman, J. N. and Leeper, T. J. 2012. "Learning More from Political Communication Experiments: Pretreatment and Its Effects." *American Journal of Political Science* 56: 875-896.
- - Bolsen, T. 2013. "A Light Bulb Goes On: Norms, Rhetoric, and Actions for the Public Good." *Political Behavior* 35: 1-20.
  - Mullinix, K. J., Leeper, T. J., Druckman, J. N., and Freese, J. 2015. "The Generalizability of Survey Experiments." *Journal of Experimental Political Science*: In press.
+ - Green, D. P. and Kern, H. L. 2012. "Modeling Heterogeneous Treatment Effects in Survey Experiments with Bayesian Additive Regression Trees." *Public Opinion Quarterly* 76: 491-511.
+ - Warren, J. R. and Halpern-Manners, A. 2012. "Panel Conditioning in Longitudinal Social Science Surveys." *Sociological Research & Methods* 41: 491-534.
 
 
-### Session 4: Sources of Heterogeneity (July 7, 11:30-13:30)
+### Session 4: Sources of Heterogeneity (July 7, 11:00-13:00)
 
 While most experiments are designed to focus on a sample average treatment effect, researchers are often interested in and/or faced by causal processes that vary across person, contexts, and other factors. This session will cover various sources of treatment effect heterogeneity.
 
  - [Slides](Slides/lecture04.pdf)
-
-#### Class Schedule
-
- - 11:30-12:00 - Other Survey Experimental Designs
- - 12:00-12:25 - Attention and Satisficing
- - 12:35-13:30 - Effect Heterogeneity, Blocking, Factorial and Conjoint Designs
-
-#### Readings
-
- - Clifford, S. and Jerit, J. 2015. "Do Attempts to Improve Respondent Attention Increase Social Desirability Bias?" *Public Opinion Quarterly* 79: 790-802.
- - Green, D. P. and Kern, H. L. 2012. "Modeling Heterogeneous Treatment Effects in Survey Experiments with Bayesian Additive Regression Trees." *Public Opinion Quarterly* 76: 491-511.
- - Hainmueller, J., Hangartner, D., and Yamamoto, T. 2015. "Validating Vignette and Conjoint Survey Experiments Against Real-World Behavior." *Proceedings of the National Academy of Sciences*: In press.
-
-### Session 5: Lingering Issues (July 8, 11:30-13:30)
-
-This session will cover a number of remaining issues, especially related to the implementation of survey experiments.
-
  - [Slides](Slides/lecture05.pdf)
 
 #### Class Schedule
 
- - 11:30-11:45 - Review Handling of "Broken Experiments"
- - 11:45-12:00 - Treatment Self-Selection
- - 12:00-12:25 - Ethics
- - 12:35-13:15 - Student "lightning" presentations
- - 13:15-13:30 - Wrap-up
+ - 11:00-12:00 - Lingering Issues (Attention, Satisficing, Self-Selection, Ethics)
+ - 12:00-12:25 - Effect Heterogeneity due to Treatments and Outcomes
+ - 12:00-12:45 - Handling of "Broken Experiments"
+ - 12:45-13:00 - Summary and Conclusion
 
 #### Readings
 
- - Warren, J. R. and Halpern-Manners, A. 2012. "Panel Conditioning in Longitudinal Social Science Surveys." *Sociological Research & Methods* 41: 491-534.
+ - Clifford, S. and Jerit, J. 2015. "Do Attempts to Improve Respondent Attention Increase Social Desirability Bias?" *Public Opinion Quarterly* 79: 790-802.
+ - Bolsen, T. 2013. "A Light Bulb Goes On: Norms, Rhetoric, and Actions for the Public Good." *Political Behavior* 35: 1-20.
+ - Hainmueller, J., Hangartner, D., and Yamamoto, T. 2015. "Validating Vignette and Conjoint Survey Experiments Against Real-World Behavior." *Proceedings of the National Academy of Sciences*: In press.
  - Leeper, T. J. ["The Role of Media Choice and Media Effects in Political Knowledge Gaps."](https://dl.dropboxusercontent.com/u/414906/KnowledgeGaps.pdf) Working paper, London School of Economics and Political Science.
  - Hertwig, R. and Ortmann, A. 2008. "Deception in Experiments: Revisiting the Arguments in Its Defense." *Ethics & Behavior* 18: 59-92.
+
+
 
 ---
 
@@ -133,7 +123,7 @@ Though not assigned for the course, the following texts may serve as useful back
  * Schuman, H. and Presser, S. 1981. *Questions and Answers in Attitude Surveys: Experiments on Question Form, Wording, and Context*. SAGE Publications.
  * Groves, R. M., Fowler, F. J., Couper, M. P., Lepkowski, J. M., Singer, E., and Tourangeau, R. 2009. *Survey Methodology*. Wiley-Interscience.
  
-### Methodology
+### Survey, Experimental, and Survey-Experimental Methodology
 
  * Blair, G. and Imai, K. 2012. "Statistical Analysis of List Experiments." *Political Analysis* 20: 47-77.
  * Jamieson, J. P. and Harkins, S. G. 2011. "The Intervening Task Method: Implications for Measuring Mediation." *Personality & Social Psychology Bulletin* 37: 652-661.
