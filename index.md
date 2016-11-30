@@ -59,7 +59,6 @@ While the first session demonstrated the advantages of experimentation as a rese
 
 #### Readings
 
- - Tversky, A. and Kahneman, D. 1981. "The Framing of Decisions and the Psychology of Choice." *Science* 211: 453-458.
  - Schuldt, J. P., Konrath, S. H., and Schwarz, N. 2011. "'Global Warming' or 'Climate Change'?: Whether the Planet is Warming Depends on Question Wording." *Public Opinion Quarterly* 75: 115-124.
  - Glynn, A. N. 2013. "What Can We Learn with Statistical Truth Serum?: Design and Analysis of the List Experiment." *Public Opinion Quarterly* 77: 159-172.
  - Albertson, B. L. and Lawrence, A. 2009. "After the Credits Roll: The Long-Term Effects of Educational Television on Public Knowledge and Attitudes." *American Politics Research* 37: 275-300.
@@ -86,7 +85,7 @@ Experiments are typically performed at one point in time, on a specific sample o
  - Warren, J. R. and Halpern-Manners, A. 2012. "Panel Conditioning in Longitudinal Social Science Surveys." *Sociological Research & Methods* 41: 491-534.
 
 
-### Session 4: Sources of Heterogeneity (July 7, 11:00-13:00)
+### Session 4: Practical Issues in Survey Experimental Research (July 7, 11:00-13:00)
 
 This session will cover a number of remaining issues, especially related to the practical implementation of survey experiments.
 
