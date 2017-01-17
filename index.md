@@ -5,7 +5,7 @@ title: Home
 
 # "Survey Experiments in Practice" Short Course
 
-This page holds materials for a short course called "Survey Experiments in Practice" to be taught at the [Barcelona Summer School in Survey Methodology](http://www.upf.edu/survey/Summer/) at Universitat Pompeu Fabra in Barcelona. The short course involves two 4-hour sessions, scheduled to run from 9:00-13:00 each morning July 6-7, 2017. Slides, readings, and materials for each session of the course are available here.
+This page holds materials for a short course called "Survey Experiments in Practice", which I teach from time to time in various places. Feel free to contact me if you would like me to put on workshop about survey experiments. I'm willing to travel!
 
 ## Overview
 
@@ -13,9 +13,40 @@ Survey experiments have emerged as one of the most powerful methodological tools
 
 This course will use published examples of experimental research to demonstrate a variety of ways to leverage survey experiments for testing social science theories. The course will teach participants how to use different survey experimental designs and how to address challenges related to sampling, survey mode, ethics, effect heterogeneity, and more. Students leave the course with a thorough understanding of how survey experiments can provide useful causal inferences, knowledge of how to design and analyze simple and complex experiments, and the ability to evaluate experimental research and apply these methods in their own research.
 
-Students interested in discussing their own research are welcome to make appointments to meet with the instructor outside of class time.
+---
+
+## Upcoming Courses
+
+This course was first taught at the RECSM (Universitat Pompeu Fabra) Barcelona Summer School in Survey Methodology. Materials for the 2017 version of that course are below.
+
+I also teach on this topic in shorter modules. Upcoming versions of the course are:
+
+
+### EUI
+
+A one-day workshop at the Europen University Institute (Florence, Italy; 18 January 2017).
+
+ - [Slides](Slides/EUI2017.pdf)
+ - [R Code for Activites](Activities/EUI2017.R)
+
+This version of the workshop includes activities using R.
+
+### NTNU
+
+A two-day workshop at NTNU, Norwegian University of Science and Technology (Trondheim, Norway; 30-31 January 2017).
+
+ - [Slides - Day 1](Slides/NTNU2017-1.pdf)
+ - [Slides - Day 2](Slides/NTNU2017-2.pdf)
+
+This version of the workshop includes activities using Stata.
+
 
 ---
+
+# UPF-RECSM Seminar
+
+The next full iteration of this course will be taught at the [Barcelona Summer School in Survey Methodology](http://www.upf.edu/survey/Summer/) at Universitat Pompeu Fabra in Barcelona. The short course involves two 4-hour sessions, scheduled to run from 9:00-13:00 each morning July 6-7, 2017. Slides, readings, and materials for each session of the course are available here.
+
 
 ## Syllabus and Schedule
 
