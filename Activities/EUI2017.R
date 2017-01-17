@@ -1,5 +1,10 @@
 # R code for EUI Workshop on Survey Experiments
 
+#------------------------------#
+## Setup                      ##
+#------------------------------#
+
+
 # Example datasets from TESS
 # http://www.tessexperiments.org/data/holbrook120.html
 utils::download.file("http://www.tessexperiments.org/data/zip/holbrook120.zip", "holbrook120.zip", mode = "wb")
@@ -22,11 +27,18 @@ library("mcode")   # convenience functions for working with data recoding
 library("margins") # marginal effects
 
 
-# opening activity
+#------------------------------#
+## Opening Activity           ##
+#------------------------------#
+
 dat <- rio::import("https://docs.google.com/spreadsheets/d/1SKWljS1EeNkAV5V0NZUwrKOu3LQFILVMB37xfTxyrPM/edit#gid=778386445")
 t.test(Guess ~ Group, data = dat)
 summary(lm(Guess ~ Group, data = dat))
 
+
+#------------------------------#
+## Variance and Power         ##
+#------------------------------#
 
 # variance estimation
 se_mean <- function(x, sd = 3) {
@@ -58,7 +70,6 @@ sd(replicate(5000, mean(rnorm(500)) - mean(rnorm(500)) ))
 sd(replicate(5000, mean(rnorm(1000)) ))
 
 
-
 # power
 ## large effect
 power.t.test(, delta = 1, sd = 1, sig.level = 0.05, power = 0.8, type = "two.sample", alternative = "two.sided")
@@ -69,7 +80,6 @@ lapply(seq(0.1, 1, by = 0.1), function(eff) {
 })
 
 ## subgroup effect sizes -> need to estimate size of subgroup or use unequal selection probabilities
-
 
 # Calculation of Cohen's d standardized mean-difference
 cohensd <- function(x, y) {
@@ -87,6 +97,33 @@ cohensd <- function(x, y) {
     # return
     return(unname(dif/sigma))
 }
+
+
+
+#------------------------------#
+## Randomization Distribution ##
+#------------------------------#
+
+# theoretical randomizations
+onedraw <- function() {
+  r <- replicate(nrow(dat), sample(1:2,1))
+  dat[cbind(1:nrow(dat),r)] <- NA
+  return(mean(dat[dat[["Group"]] == "Group 2","Guess"], na.rm=TRUE) -
+         mean(dat[dat[["Group"]] == "Group 1","Guess"], na.rm=TRUE) )
+}
+
+# simulate 2000 experiments from these data
+x1 <- replicate(5000, onedraw())
+hist(x1, col=rgb(1,0,0,.5), border = "white", main = "Randomization Distribution", xlab = "Possible Treatment Effect")
+abline(v = 0, lwd = 1, lty = 2, col = "black")
+abline(v = unname(diff(tapply(dat[["Guess"]], dat[["Group"]], mean, na.rm = TRUE))), lwd=3, col='red') # true effect
+
+
+
+#------------------------------#
+## Example 1: Schuldt         ##
+## (Question wording)         ##
+#------------------------------#
 
 
 schuldt <- rio::import("Schuldt301.zip", which = "TESS2_117_Schuldt_Client.sav")
@@ -172,41 +209,12 @@ cplot(mhetero, x = "PPEDUC", dx = "gw", what = "effect")
 # also possible using "bartMachine", but super clunky at the moment
 
 
-# list experiment
-holbrook <- rio::import("Holbrook120.zip", which = "TESS1_Client.sav")
-names(holbrook)
-dim(holbrook)
-
-## main experiment (not list experiment)
-holbrook[["tr"]] <- ifelse(!is.na(holbrook[["TESSQ1"]]), 1, ifelse(!is.na(holbrook[["TESSQ2"]]), 0, NA_real_))
-holbrook[["voted"]] <- mergeNA(holbrook[["TESSQ1"]], holbrook[["TESSQ2"]])
-holbrook[["voted"]] <- ifelse(holbrook[["voted"]] == 1, 1, ifelse(holbrook[["voted"]] == 2, 0, NA_real_))
-
-t.test(voted ~ tr, data = holbrook)
-t.test(voted ~ tr, data = holbrook, var.equal = TRUE)
-summary(lm(voted ~ tr, data = holbrook))
-
-## list experiment (treatment effect is estimate of behaviour)
-holbrook[["trlist"]] <- ifelse(!is.na(holbrook[["TESSQ3"]]), 0, ifelse(!is.na(holbrook[["TESSQ4"]]), 1, NA_real_))
-holbrook[["listcount"]] <- mergeNA(holbrook[["TESSQ3"]], holbrook[["TESSQ4"]])
-
-aggregate(listcount ~ trlist, data = holbrook, FUN = mean, na.rm = TRUE)
 
 
-t.test(listcount ~ trlist, data = holbrook)
-t.test(listcount ~ trlist, data = holbrook, var.equal = TRUE)
-summary(lm(listcount ~ trlist, data = holbrook))
-aggregate(voted ~ tr, data = holbrook, FUN = mean, na.rm = TRUE)
-
-
-summary(ictreg(listcount ~ trlist, data = holbrook, treat = "trlist", method = "lm"))
-
-
-
-
-
-
-##
+#------------------------------#
+## Example 2: Newman          ##
+## (Activity)                 ##
+#------------------------------#
 
 
 newman <- rio::import("NewmanJohnston508.zip", which = "TESS3_171_Johnston_Client.sav")
@@ -255,4 +263,42 @@ newman[["tr_all"]] <- interaction(newman[["tr"]], newman[["cues"]], newman[["arg
 summary(lm(outcome ~ tr_all, data = newman))
 
 cplot(m_factorial, x = "args", dx = "tr", data = newman[!is.na(newman$args), ], what = "effect")
+
+
+#------------------------------#
+## Example 3: Holbrook        ##
+## (Question wording; List)   ##
+#------------------------------#
+
+
+# list experiment
+holbrook <- rio::import("Holbrook120.zip", which = "TESS1_Client.sav")
+names(holbrook)
+dim(holbrook)
+
+## main experiment (not list experiment)
+holbrook[["tr"]] <- ifelse(!is.na(holbrook[["TESSQ1"]]), 1, ifelse(!is.na(holbrook[["TESSQ2"]]), 0, NA_real_))
+holbrook[["voted"]] <- mergeNA(holbrook[["TESSQ1"]], holbrook[["TESSQ2"]])
+holbrook[["voted"]] <- ifelse(holbrook[["voted"]] == 1, 1, ifelse(holbrook[["voted"]] == 2, 0, NA_real_))
+
+t.test(voted ~ tr, data = holbrook)
+t.test(voted ~ tr, data = holbrook, var.equal = TRUE)
+summary(lm(voted ~ tr, data = holbrook))
+
+## list experiment (treatment effect is estimate of behaviour)
+holbrook[["trlist"]] <- ifelse(!is.na(holbrook[["TESSQ3"]]), 0, ifelse(!is.na(holbrook[["TESSQ4"]]), 1, NA_real_))
+holbrook[["listcount"]] <- mergeNA(holbrook[["TESSQ3"]], holbrook[["TESSQ4"]])
+
+aggregate(listcount ~ trlist, data = holbrook, FUN = mean, na.rm = TRUE)
+
+
+t.test(listcount ~ trlist, data = holbrook)
+t.test(listcount ~ trlist, data = holbrook, var.equal = TRUE)
+summary(lm(listcount ~ trlist, data = holbrook))
+aggregate(voted ~ tr, data = holbrook, FUN = mean, na.rm = TRUE)
+
+
+summary(ictreg(listcount ~ trlist, data = holbrook, treat = "trlist", method = "lm"))
+
+
 
