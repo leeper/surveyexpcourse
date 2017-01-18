@@ -28,6 +28,9 @@ A one-day workshop at the Europen University Institute (Florence, Italy; 18 Janu
 
  - [Slides](Slides/EUI2017.pdf)
  - [R Code for Activites](Activities/EUI2017.R)
+ - Papers
+   - [Holbrook and Krosnick](Activities/Holbrook, Krosnick (POQ, 2010).pdf)
+   - [Schuldt et al.](Activities/Schuldt, Konrath, Schwarz (POQ, 2011).pdf)
 
 This version of the workshop includes activities using R.
 

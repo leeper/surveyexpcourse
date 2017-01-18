@@ -23,7 +23,7 @@
 \setbeamertemplate{frametitle}{\vspace{.5em}\bfseries\insertframetitle}
 \newcommand{\heading}[1]{\noindent \textbf{#1}\\ \vspace{1em}}
 \newcommand{\questions}{\frame{\vspace{4em}\centering{\Large Questions?}}}
-\newcommand{\Ractivity}{\frame{\vspace{4em}\centering{\Large Let's work in R!}}}
+\newcommand{\Ractivity}[1]{\frame{\vspace{4em}\centering{\Large Let's work in R!\\ \vspace{1em} {(#1)}}}}
 
 
 \usepackage{bbding,color,multirow,times,ccaption,tabularx,graphicx,verbatim,booktabs}
@@ -62,9 +62,6 @@
 \begin{document}
 
 \frame{\titlepage}
-
-
-\frame{\tableofcontents}
 
 
 \frame{
@@ -118,10 +115,7 @@
 
 }
 
-
-
-\section{Introduction}
-\frame{\tableofcontents[currentsection]}
+\frame{\tableofcontents[subsubsectionstyle=hide]}
 
 \frame{
 \frametitle{Who am I?}
@@ -216,7 +210,7 @@ By the end of the day, you should be able to\dots
 
 
 \section[History/Logic]{History and Logic of Experiments}
-\frame{\tableofcontents[currentsection]}
+\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
 
 \frame{
 
@@ -274,6 +268,29 @@ Oxford English Dictionary defines ``experiment'' as:
 
 }
 
+
+
+\frame{
+\frametitle{{\large \textit{Survey}-experiments, specifically}}
+
+\small
+
+\begin{itemize}
+\item<2-> A survey experiment is just an experiment that occurs in a survey context
+	\begin{itemize}
+	\item As opposed to in the field or in a laboratory
+	\end{itemize}
+\item<3-> Properties:
+	\begin{itemize}
+	\item Sample is representative of population in every respect (in expectation)
+	\item Sample Average Treatment Effect (SATE) is the average of the sample's individual-level treatment effects
+	\item SATE is unbiased estimate of PATE
+	\end{itemize}
+\item<4-> Sometimes a distinction is made between survey and online experiments
+\end{itemize}
+}
+
+
 \frame{
 
 \frametitle{TESS}
@@ -315,7 +332,7 @@ Protocol is the complete planning document for how to design, implement, and ana
 
 \frame{
 
-\frametitle{Why bother?}
+\frametitle{Why bother writing a protocol?}
 
 \begin{itemize}\itemsep0.5em
 \item<2-> Be clear to yourself what you're trying to do before you do it
@@ -659,7 +676,7 @@ Concisely, we typically discuss two potential outcomes:
 
 }
 
-\frame{
+\frame[label=tidy]{
 
 \frametitle{Computation of Effects II}
 
@@ -683,17 +700,37 @@ An experimental data structure looks like:
 
 }
 
+\frame{
+
+\frametitle{Computation of Effects II}
+
+Sometimes it looks like this instead, which is bad:
+
+\small
+
+\begin{center}
+\begin{tabular}{cccc}
+\texttt{unit} & \texttt{treatment} & \texttt{outcome0}  & \texttt{outcome1} \\ \hline 
+1 & 0 & 13 & NA \\
+2 & 0 & 6 & NA \\
+3 & 0 & 4 & NA \\
+4 & 0 & 5 & NA \\
+5 & 1 & NA & 3 \\
+6 & 1 & NA & 1 \\
+7 & 1 & NA & 10 \\
+8 & 1 & NA & 9 \\ \hline
+\end{tabular}
+\end{center}
+
+}
+
+\againframe{tidy}
+
+
 
 \begin{frame}[fragile]
 
 \frametitle{Computation of Effects III}
-
-Stata:\small
-\begin{verbatim}
-ttest outcome, by(treatment)
-reg outcome i.treatment
-\end{verbatim}
-
 
 R:\small
 \begin{verbatim}
@@ -701,12 +738,22 @@ t.test(outcome ~ treatment, data = data)
 lm(outcome ~ factor(treatment), data = data)
 \end{verbatim}
 
+Stata:\small
+\begin{verbatim}
+ttest outcome, by(treatment)
+reg outcome i.treatment
+\end{verbatim}
+
 \end{frame}
 
 
 \questions
 
-\Ractivity
+\Ractivity{Basic analysis}
+
+
+
+
 
 
 \frame{
@@ -766,7 +813,7 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{n_0} + \frac{\widehat{Var
 
 \frametitle{Statistical Power}
 
-\begin{itemize}
+\begin{itemize}\itemsep0.5em
 \item Power analysis to determine sample size
 \item Type I and Type II Errors
 	\begin{itemize}
@@ -833,6 +880,9 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 
 }
 
+\Ractivity{Power Analysis}
+
+
 \frame{
 \frametitle{Intuition about Power}
 
@@ -843,202 +893,13 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 }
 
 
-\Ractivity
-
-
-
-\frame{
-
-\frametitle{Complex Designs}
-
-\small
-
-\begin{itemize}
-\item An experiment can have any number of conditions
-	\begin{itemize}\footnotesize
-	\item Up to the limits of sample size
-	\item More than 8--10 conditions is typically unwieldy
-	\end{itemize}
-\item Typically analyze complex designs using ANOVA or regression, but we are still ultimately interested in pairwise comparisons to estimates SATEs
-	\begin{itemize}\footnotesize
-	\item Treatment--treatment, or treatment-control
-	\item Without control group, we don't know which treatment(s) affected the outcome
-	\end{itemize}
-\end{itemize}
-
-}
-
-
-\begin{frame}
-\begin{center}
-\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
-    \draw (0,0) node[left, text width=3cm, align=center] (X) {Policy\\Beneficiaries};
-    \draw[->] (X) -- (3,0) node[right, text width=2cm, align=center] (Y) {Policy\\Opinion};
-    \draw[->] (-3,3) node[above] (Z) {Ideology} -- (X);
-    \draw[->] (Z) -- (Y);
-    \draw[->] (2,-3) node[below, text width=3cm, align=center] (E) {Etc.} -- (Y);
-    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Identity Salience} -- (Y);
-    \draw[->] (W) -- (X);
-    \draw<2->[->,thick,red] (-5,1) node[above] (T1) {Treatment 1} -- (X);
-    \draw<2->[->,thick,red] (-5,-2) node[above] (T1) {Treatment 2} -- (W);
-\end{tikzpicture}
-\end{center}
-\end{frame}
-
-
-
-\frame{
-	\frametitle{{\normalsize Ex. Question-as-treatment\footnote{Transue. 2007. ``Identity Salience, Identity Acceptance, and Racial Policy Attitudes: {American} National Identity as a Uniting Force.'' \textit{American Journal of Political Science} 51(1): 78--91.}}}
-	
-
-\begin{itemize}
-\item \only<1,3>{How close do you feel to your ethnic or racial group?}\only<2,4>{How close do you feel to other Americans?}
-\item \only<1-2>{Some people have said that taxes need to be raised to take care of pressing national needs. How willing would you be to have your taxes raised to improve education in public schools?}\only<3-4>{Some people have said that taxes need to be raised to take care of pressing national needs. How willing would you be to have your taxes raised to improve educational opportunities for minorities?}
-\end{itemize}
-	
-}
-
-
-\frame{
-
-\frametitle{2x2 Factorial Design}
-
-\only<1>{
-\begin{center}
-\begin{tabular}{lr}
-Condition &  \\ \midrule
-Educ. for Minorities & $Y_1$ \\
-Schools & $Y_0$ \\ \bottomrule
-\end{tabular}
-\end{center}
-}
-
-\only<2>{
-\begin{center}
-\begin{tabular}{lrr}
-Condition & Americans & Own Race \\ \midrule
-Educ. for Minorities & $Y_{1,0}$ & $Y_{1,1}$ \\
-Schools & $Y_{0,0}$ & $Y_{0,1}$ \\ \bottomrule
-\end{tabular}
-\end{center}
-}
-
-}
-
-
-\frame{
-
-\frametitle{Two ways to estimate this}
-
-Dummy variable regression:
-
-$Y = \beta_0 + \beta_1 X_{0,1} + \beta_2 X_{1,0} + \beta_3 X_{1,1} + \epsilon$
-
-\vspace{1em}
-
-Interaction effect:
-
-$Y = \beta_0 + \beta_1 X1_{1} + \beta_2 X2_{1} + \beta_3 X1_1 * X2_1 + \epsilon$
-
-}
-
-
-\frame<1>[label=factorialconsiderations]{
-
-\frametitle{Considerations}
-
-\begin{itemize}\itemsep0.5em
-\item Need to have hypotheses about heterogeneity a priori
-\item Factorial designs can quickly become unwieldy and expensive
-\item<2-> Need to consider what CATEs are of theoretical interest
-	\begin{itemize}
-	\item Treatment--control
-	\item Treatment--treatment
-	\end{itemize}
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{Probably obvious, but\dots}
-
-\footnotesize
-
-\begin{center}
-\begin{tabular}{cccc}
-Factors & Conditions per factor & Total Conditions & $n$ \\ \midrule
-1 & 2 & 2 & 400 \\ 
-1 & 3 & 3 & 600 \\
-1 & 4 & 4 & 800 \\
-2 & 2 & 4 & 800 \\
-2 & 3 & 6 & 1200 \\
-2 & 4 & 8 & 1600 \\
-3 & 3 & 9 & 1800 \\
-3 & 4 & 12 & 2400 \\
-4 & 4 & 16 & 3200 \\ \bottomrule
-\end{tabular}
-\end{center}
-
-{\footnotesize Assumes power to detect a relatively small effect, but no consideration of multiple comparisons.}
-
-}
-
-\againframe{factorialconsiderations}
-
-% marginal effects of factors are marginal across the set of levels of the other factors; if those factors aren't complete, then external validity problem
-
-
-\questions
-
-
-
-\frame{}
-
-
-\frame{
-\frametitle{{\large \textit{Survey}-experiments, specifically}}
-
-\small
-
-\begin{itemize}
-\item<2-> A survey experiment is just an experiment that occurs in a survey context
-	\begin{itemize}
-	\item As opposed to in the field or in a laboratory
-	\end{itemize}
-\item<3-> Sometimes a distinction is made between survey and online experiments
-\end{itemize}
-}
-
-
-\frame{
-
-\frametitle{{\large Combining Survey Design and\\ Experimental Design}}
-
-\small
-
-\begin{itemize}\itemsep0.25em
-\item Sample is representative of population in every respect (in expectation)
-\item Sample Average Treatment Effect (SATE) is the average of the sample's individual-level treatment effects
-	\begin{itemize}
-	\item Unbiased estimate of PATE
-	\end{itemize}
-\item<2-> Says nothing about effect heterogeneity
-	\begin{itemize}
-	\item Design is optimized for estimating SATE
-	\end{itemize}
-\end{itemize}
-}
-
-
-\questions
 
 
 \frame{}
 
 
 \section[Theory]{From Theory to Design}
-\frame{\tableofcontents[currentsection]}
+\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
 % deriving hypotheses from theory and manipulations from hypotheses
 
 
@@ -1065,6 +926,7 @@ Factors & Conditions per factor & Total Conditions & $n$ \\ \midrule
 
 
 
+\section[Principles]{Operationalization Principles}
 
 \frame{
 
@@ -1222,9 +1084,7 @@ These days, Democrats and Republicans differ from one another considerably. The 
 \questions
 
 
-\Ractivity
-
-
+\frame{}
 
 
 
@@ -1267,7 +1127,7 @@ These days, Democrats and Republicans differ from one another considerably. The 
 \begin{quote}\large
 The best criterion for evaluating the quality of an experiment is whether it manipulated the intended independent variable and controlled everything else by design.
 \end{quote}
-\onslide<2->{\small\hspace{5em} --Thomas J. Leeper (5 July 2016)}
+\onslide<2->{\small\hspace{5em} --Thomas J. Leeper (18 January 2017)}
 
 }
 
@@ -1419,12 +1279,9 @@ The best criterion for evaluating the quality of an experiment is whether it man
 
 
 
-\Ractivity
 
-
-
-\section[Examples]{Common Paradigms and Examples}
-\frame{\tableofcontents[currentsection]}
+\subsection[Examples]{Common Paradigms and Examples}
+\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
 
 
 \frame{
@@ -1432,7 +1289,7 @@ The best criterion for evaluating the quality of an experiment is whether it man
 \frametitle{Question Wording Designs}
 
 \begin{itemize}
-\item Kahneman and Tversky is a ``question wording'' experiment
+\item Kahneman and Tversky used a lot of ``question wording'' experiments
 \item Hypothesized difference in outcomes according to the decision being faced
 	\begin{itemize}
 	\item Risky or not risky
@@ -1444,23 +1301,6 @@ The best criterion for evaluating the quality of an experiment is whether it man
 
 }
 
-\frame{
-
-\frametitle{Activity!}
-
-\begin{itemize}
-\item With a partner, identify each of the protocol elements of the experiment described by Kahneman and Tversky
-\begin{enumerate}
-\item Theory/hypotheses
-\item Instrumentation
-\item Sampling
-\item Implementation
-\item Analysis
-\end{enumerate}
-\item Report back in about 4 minutes
-\end{itemize}
-
-}
 
 
 
@@ -1807,7 +1647,7 @@ With the passage of the Patriot Act in 2001, the FBI can now enter your home, se
 	\begin{itemize}
 	\item Implicit outcomes like response times, answer switching, mouse click behavior, browser focus, eye tracking, etc.
 	\end{itemize}
-\item<4-> Complex randomization (Thursday)
+\item<4-> Complex randomization
 \item<5-> Panel data
 \item<5-> Synchronous, multi-person designs
 \end{itemize}
@@ -1965,13 +1805,13 @@ A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping refor
 \questions
 
 
-\Ractivity
+\Ractivity{Analysis of Example Experiments}
 
 
 
 
 \section[SUTO]{Sources of Heterogeneity}
-\frame{\tableofcontents[currentsection]}
+\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
 
 
 \frame{
@@ -2058,7 +1898,24 @@ A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping refor
 
 
 \subsection[S]{Settings}
-\frame{\tableofcontents[currentsubsection]}
+
+\frame{
+
+\frametitle{Settings}
+
+\begin{itemize}\itemsep1em
+\item We should expect heterogeneity related to settings!
+\item How do we use/explore this?
+	\begin{itemize}
+	\item<2-> Comparative research designs where experiments provide measures for each case
+	\item<3-> Over-time replications of the same design
+	\item<4-> Replication of a design across contexts with unknown sources of variability?
+	\end{itemize}
+\item<5-> Can we control for context?
+\end{itemize}
+
+}
+
 
 \frame{
 
@@ -2091,12 +1948,23 @@ A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping refor
 }
 
 
+\questions
+
+
+
+
+
 
 \subsection[U]{Unit}
-\frame{\tableofcontents[currentsubsection]}
 
 
 \frame{
+
+\frametitle{Units}
+
+Most commonly studied source of heterogeneity is covariate-related (i.e., characteristics of units).\\
+
+\vspace{1em}
 
 If we think there might be covariate-related effect heterogeneity, what can we do?
 
@@ -2487,7 +2355,7 @@ Imagine two regression models. Which is correct?
 }
 
 
-\Ractivity
+\Ractivity{Covariate-related effect heterogeneity}
 
 
 \frame{
@@ -2556,8 +2424,6 @@ Imagine two regression models. Which is correct?
 
 
 
-
-
 \subsubsection{Manipulate the Moderator}
 
 
@@ -2572,9 +2438,170 @@ Why is this true?
 }
 
 
+\frame{
+
+\frametitle{Complex Designs}
+
+\small
+
+\begin{itemize}
+\item An experiment can have any number of conditions
+	\begin{itemize}\footnotesize
+	\item Up to the limits of sample size
+	\item More than 8--10 conditions is typically unwieldy
+	\end{itemize}
+\item Typically analyze complex designs using ANOVA or regression, but we are still ultimately interested in pairwise comparisons to estimates SATEs
+	\begin{itemize}\footnotesize
+	\item Treatment--treatment, or treatment-control
+	\item Without control group, we don't know which treatment(s) affected the outcome
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\begin{frame}
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw (0,0) node[left, text width=3cm, align=center] (X) {Policy\\Beneficiaries};
+    \draw[->] (X) -- (3,0) node[right, text width=2cm, align=center] (Y) {Policy\\Opinion};
+    \draw[->] (-3,3) node[above] (Z) {Ideology} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (2,-3) node[below, text width=3cm, align=center] (E) {Etc.} -- (Y);
+    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Identity Salience} -- (Y);
+    \draw[->] (W) -- (X);
+    \draw<2->[->,thick,red] (-5,1) node[above] (T1) {Treatment 1} -- (X);
+    \draw<2->[->,thick,red] (-5,-2) node[above] (T1) {Treatment 2} -- (W);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+
+\frame{
+	\frametitle{{\normalsize Ex. Question-as-treatment\footnote{Transue. 2007. ``Identity Salience, Identity Acceptance, and Racial Policy Attitudes: {American} National Identity as a Uniting Force.'' \textit{American Journal of Political Science} 51(1): 78--91.}}}
+	
+
+\begin{itemize}
+\item \only<1,3>{How close do you feel to your ethnic or racial group?}\only<2,4>{How close do you feel to other Americans?}
+\item \only<1-2>{Some people have said that taxes need to be raised to take care of pressing national needs. How willing would you be to have your taxes raised to improve education in public schools?}\only<3-4>{Some people have said that taxes need to be raised to take care of pressing national needs. How willing would you be to have your taxes raised to improve educational opportunities for minorities?}
+\end{itemize}
+	
+}
+
+
+\frame{
+
+\frametitle{2x2 Factorial Design}
+
+\only<1>{
+\begin{center}
+\begin{tabular}{lr}
+Condition &  \\ \midrule
+Educ. for Minorities & $Y_1$ \\
+Schools & $Y_0$ \\ \bottomrule
+\end{tabular}
+\end{center}
+}
+
+\only<2>{
+\begin{center}
+\begin{tabular}{lrr}
+Condition & Americans & Own Race \\ \midrule
+Educ. for Minorities & $Y_{1,0}$ & $Y_{1,1}$ \\
+Schools & $Y_{0,0}$ & $Y_{0,1}$ \\ \bottomrule
+\end{tabular}
+\end{center}
+}
+
+}
+
+
+\frame{
+
+\frametitle{Two ways to estimate this}
+
+Dummy variable regression:
+
+$Y = \beta_0 + \beta_1 X_{0,1} + \beta_2 X_{1,0} + \beta_3 X_{1,1} + \epsilon$
+
+\vspace{1em}
+
+Interaction effect:
+
+$Y = \beta_0 + \beta_1 X1_{1} + \beta_2 X2_{1} + \beta_3 X1_1 * X2_1 + \epsilon$
+
+}
+
+
+\frame<1>[label=factorialconsiderations]{
+
+\frametitle{Considerations}
+
+\begin{itemize}\itemsep0.5em
+\item Need to have hypotheses about heterogeneity a priori
+\item Factorial designs can quickly become unwieldy and expensive
+\item<2-> Need to consider what CATEs are of theoretical interest
+	\begin{itemize}
+	\item Treatment--control
+	\item Treatment--treatment
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Probably obvious, but\dots}
+
+\footnotesize
+
+\begin{center}
+\begin{tabular}{cccc}
+Factors & Conditions per factor & Total Conditions & $n$ \\ \midrule
+1 & 2 & 2 & 400 \\ 
+1 & 3 & 3 & 600 \\
+1 & 4 & 4 & 800 \\
+2 & 2 & 4 & 800 \\
+2 & 3 & 6 & 1200 \\
+2 & 4 & 8 & 1600 \\
+3 & 3 & 9 & 1800 \\
+3 & 4 & 12 & 2400 \\
+4 & 4 & 16 & 3200 \\ \bottomrule
+\end{tabular}
+\end{center}
+
+{\footnotesize Assumes power to detect a relatively small effect, but no consideration of multiple comparisons.}
+
+}
+
+\againframe{factorialconsiderations}
+
+% marginal effects of factors are marginal across the set of levels of the other factors; if those factors aren't complete, then external validity problem
+
+
+\questions
+
 
 
 \subsubsection{Attention and Satisficing}
+
+
+\frame{
+
+One final issue with unit-related sources of heterogeneity is how we handle or analyze survey-experimental data where we think participants misbehaved.
+
+\vspace{1em}
+
+\only<2->{This falls into a couple of broad categories:
+
+\begin{itemize}
+\item Noncompliance
+\item Inattention
+\item Survey Satisficing
+\end{itemize}
+}
+}
 
 \frame{
 
@@ -2718,7 +2745,24 @@ This is much more problematic because it involves controlling for a \textit{post
 
 
 \subsection[T]{Treatments}
-\frame{\tableofcontents[currentsubsection]}
+
+\frame{
+
+\frametitle{Treatments}
+
+\begin{itemize}\itemsep1em
+\item We should expect this! Why?
+\item<2-> What can we do?
+	\begin{itemize}
+	\item Pilot testing
+	\item Replication
+	\item More complex design
+	\item Conjoint experiments
+	\end{itemize}
+\end{itemize}
+
+}
+
 
 
 \frame{
@@ -2791,49 +2835,296 @@ Why is this useful?
 }
 
 
+\frame{}
 
+\frame{
 
-% Talk about replication and using different paradigms
+\frametitle{Replication}
 
-
-
+\begin{itemize}\itemsep1em
+\item Conjoints solve one problem: they identify the relative size of sources of heterogeneity within a given treatment
+\item<2-> But how should we consider experiments testing the same theory using different treatments?
+	\begin{itemize}
+	\item ``Triangulation''
+	\item Consistent directionality
+	\item Consistent (standardized) effect sizes
+	\end{itemize}
+\item<3-> Big conclusion: replication is important and there's not enough of it.
+\end{itemize}
+}
 
 \questions
 
 
-
-
-
-
-
-
 \subsection[O]{Outcomes}
-\frame{\tableofcontents[currentsubsection]}
-
 
 \frame{
 
-\frametitle{{\normalsize Behavioral Outcomes}}
+\frame{Outcomes}
 
-\small
-
-\begin{itemize}
-\item Survey experiments can rarely measure \textit{behavior}, only \textit{attitudes} or \textit{behavioral intentions}
-\item Consequences:
-	\begin{itemize}\footnotesize
-	\item Lack of external validity
-	\item Overestimates (typically) of behavioral intentions or past behavior
+\begin{itemize}\itemsep1em
+\item This is expected!
+	\begin{itemize}
+	\item E.g., non-equivalent outcomes
 	\end{itemize}
-\item Mitigation:
-	\begin{itemize}\footnotesize
-	\item Acknowledge limitations
-	\item Incentivized surveys or games
-	\item Small behaviors
+\item Reasonable to explore multiple outcomes
+	\begin{itemize}
+	\item Multiple comparisons
+	\item Power considerations
+	\item Construct validity
 	\end{itemize}
+\item<2-> What outcomes you measure depend on your theory
+\item<3-> Lots of potential for behavioral measures!
 \end{itemize}
 
 }
 
+
+\frame{
+\frametitle{Behavioural measures}
+Some behaviours that can be directly measured through survey questionnaires.
+
+\vspace{1em}
+
+\only<2->{Three broad categories:}
+\begin{enumerate}
+\item<3-> Behavioural measures that provide survey paradata % (response latency, reading times, answer switching, nonresponse)
+\item<4-> Behavioural measures that operationalize attitudes % IAT
+\item<5-> Behavioural measures that operationalize behaviours % (e.g., political participation; purchasing)
+\end{enumerate}
+}
+
+
+\frame{
+\frametitle{Behavioural Measures for Paradata}
+
+Why?
+	\begin{itemize}
+	\item Respondents use of the survey tells us something meaningful about their behaviour
+	\end{itemize}
+\only<2->{What?
+	\begin{itemize}
+	\item<3-> Nonresponse
+	\item<4-> Response latencies
+	\item<5-> Reading times
+	\item<6-> Answer switching
+	\item<7-> Eye tracking
+	\item<8-> Mouse tracking
+	\item<9-> Smartphone metadata
+	\end{itemize}
+}
+}
+
+
+\frame{
+\frametitle{Behavioural Measures for Attitudes}
+
+Why?
+	\begin{itemize}
+	\item Attitudinal self-reports might be ``cheap talk''
+	\end{itemize}
+
+\vspace{1em}
+\only<2->{What?
+	\begin{itemize}
+	\item<3-> Implicit Association Test
+	\item<4-> Incentivized Survey questions
+	\end{itemize}
+}
+}
+
+
+
+\frame{
+
+\frametitle{Behavioural Measures for Behaviour}
+
+Why?
+	\begin{itemize}
+	\item We want to observe or affect behaviour (e.g., in an experiment)
+	\end{itemize}
+	
+\vspace{1em}
+\only<2->{What? 
+	\begin{itemize}
+	\item Directly measure or initiate a direct measure of a behaviour
+	\item May be measured by something that occurs within the confines of the survey or something outside of the survey
+	\end{itemize}
+}
+}
+
+
+\frame<1-2>[label=infochoice]{
+
+\frametitle{Example 1:\\Active Information Choice}
+
+\begin{itemize}\itemsep0.5em
+\item<2-> ``Followed link'' identification\footnote{Guess, AM. 2015. ``Measure for Measure.'' \textit{Political Analysis} 23: 59--75. \href{http://doi.org/10.1093/pan/mpu010}{doi:10.1093/pan/mpu010} }
+
+\item<3-> Information boards\footnote{Leeper, TJ. 2014. ``The Informational Basis for Mass Polarization.'' \textit{Public Opinion Quarterly} 78(1): 27--46. \href{http://doi.org/10.1093/poq/nft045}{doi:10.1093/poq/nft045}}
+
+\item<4-> Video choice\footnote{Arceneaux, K \& Johnson, M. 2012. \textit{Changing Minds or Changign Channels}. Chicago: The University of Chicago Press.}
+
+\item<5-> Dynamic Process Tracing Environment \footnote{\url{https://dpte.polisci.uiowa.edu/dpte/}}
+\end{itemize}
+
+}
+
+\frame{\includegraphics[width=\textwidth]{images/linksguess.png}}
+
+\againframe<2-3>{infochoice}
+
+\frame{\includegraphics[width=\textwidth]{images/leeper.png}}
+
+\againframe<3-5>{infochoice}
+
+\frame{\includegraphics[width=\textwidth]{images/dpte1.png}}
+\frame{\includegraphics[width=\textwidth]{images/dpte2.png}}
+\frame{\includegraphics[width=\textwidth]{images/dpte3.png}}
+
+
+
+\frame{
+
+\frametitle{Example 2:\\Sign-up/Enrolment}
+
+An extension of information choice behaviour would be explicit engagement in other kinds of (small) behaviours, such as:
+
+\begin{itemize}\itemsep0.5em
+\item Entering an email address to receive information or join a mailing list \footnote{Leeper, TJ. 2017. ``How Does Treatment Self-Selection Affect Inferences About Political Communication?'' \textit{Journal of Experimental Political Science}: In press.} \footnote{Bolsen, Druckman, \& Cook. 2014. ``Communication and Collective Actions.'' \textit{Journal of Experimental Political Science} 1(1): 24--38. \href{http://doi.org/10.1017/xps.2014.2}{doi:10.1017/xps.2014.2}}
+
+\item Signing up for an appointment or further interaction
+\end{itemize}
+
+}
+
+
+\frame<1>[label=incentivised]{
+\frametitle{Example 3:\\Incentivised Survey Questions}
+
+Definitions:
+
+\begin{itemize}\itemsep0.5em
+\item A survey question is just a self-report
+\item An \textit{incentivized} survey question attached financial gains or losses to the answer options
+\end{itemize}
+
+\vspace{1em}
+\only<2->{
+Paradigm could be applied to any measure of behavioural intentions to avoid cheap talk.
+}
+
+}
+
+\frame{
+
+\includegraphics[width=\textwidth]{images/eckelgrossman.png}
+
+\vspace{2em}
+{\tiny Eckel \& Grossman. 2008 ``Forecasting risk attitudes.'' \textit{Journal of Economic Behavior \& Organization} 68(1): 1--17. \href{http://doi.org/10.1016/j.jebo.2008.04.006}{doi:10.1016/j.jebo.2008.04.006}\par }
+}
+
+\againframe<1->{incentivised}
+
+
+\frame[label=purchasing]{
+\frametitle{Example 4:\\Purchasing Decisions}
+
+Common ways to study purchasing behaviour include:
+
+\begin{itemize}
+\item<2-> Direct attitudinal questions
+\item<3-> Retrospective and prospective self-reports
+\item<4-> Conjoint experiments
+\end{itemize}
+
+\only<5->{Another way is embedding a purchase in a survey.\footnote{Bolsen, T. 2011. ``A Lightbulb Goes On.'' \textit{Political Behavior} 35(1): 1--20.  \href{http://doi.org/10.1007/s11109-011-9186-5}{10.1007/s11109-011-9186-5}
+}}
+
+}
+
+\frame{
+
+\begin{center}
+\includegraphics[width=.45\textwidth]{images/lightbulb1.png}
+\includegraphics[width=.38\textwidth]{images/lightbulb2.png}
+\end{center}
+
+\vspace{1em}
+
+{\tiny 
+Source: Wikimedia Commons (\href{https://commons.wikimedia.org/wiki/File:06_Spiral_CFL_Bulb_2010-03-08_(white_back).jpg}{Sun Ladder}, \href{https://commons.wikimedia.org/wiki/File:Gluehlampe_01_KMJ.jpg}{KMJ}) \par }
+
+}
+
+
+\frame{
+
+\frametitle{Example 5:\\Donations}
+
+\begin{itemize}\itemsep1em
+\item Miller and Krosnick\footnote{Miller, Krosnick, \& Lowe. N.d. ``The Impact of Policy Change Threat on Financial Contributions to Interest Groups.'' Working paper.} asked for charitable donations via cheque directly as part of a paper-and-pencil survey
+
+\item<2-> Klar and Piston\footnote{Klar \& Piston. 2015. ``The influence of competing organisational appeals on individual donations.'' \textit{Journal of Public Policy} 35(2): 171--91. \href{http://doi.org/10.1017/S0143814X15000203}{doi:10.1017/S0143814X15000203}} offered respondents a survey incentive up-front for participation and then later offered them a chance to donate (a portion of payment) to a charity
+\end{itemize}
+
+}
+
+
+
+
+\frame{
+
+\frametitle{Example 6:\\Web Tracking Data}
+
+\begin{enumerate}\itemsep1em
+\item Active installation of a tracking app, such as YouGov Pulse\footnote{\url{https://yougov.co.uk/find-solutions/profiles/pulse/}} \footnote{Guess, AM. N.d. ``Media Choice and Moderation.'' Working paper, \url{https://dl.dropboxusercontent.com/u/663930/GuessJMP.pdf}.}
+
+\item Post-hoc collection of web history files using something like Web Historian \footnote{\url{http://www.webhistorian.org/}}
+\end{enumerate}
+}
+
+
+
+\frame<1-2>[label=other]{
+\frametitle{Other Possibilities}
+
+\begin{itemize}\itemsep1em
+\item<2-> Coordination tasks
+	\begin{itemize}
+	\item Synchronous group tasks\footnote{Mao, Mason, Suri, Watts. 2016. ``An Experimental Study of Team Size and Performance on a Complex Task.'' \textit{PLoS ONE} 11(4): e0153048. \href{http://doi.org/10.1371/journal.pone.0153048}{doi:10.1371/journal.pone.0153048}} 
+	\item Game play
+	\item Simulations
+	\end{itemize}
+\item<3-> Offering incentives to perform future behaviour (tracked elsewhere)
+\item<4-> OAuth/API integrations w/ other platforms
+	\begin{itemize}
+	\item Merging website usage data w/ survey data
+	\item Treating website sign-up or usage as behavioural outcomes
+	\item Linking with smartphone metadata
+	\end{itemize}
+\end{itemize}
+}
+
+\frame{\includegraphics[width=\textwidth]{images/mao.png}}
+
+
+\againframe<2->{other}
+
+
+\frame{}
+
+\frame{
+
+\frametitle{Activity!}
+
+\large 
+
+\begin{center}
+With a partner, brainstorm how one or more these behavioural measures might be applied to a survey data collection relevant to your own work or your organisation.
+\end{center}
+
+}
 
 
 \frame{}
@@ -2869,7 +3160,7 @@ Why is this useful?
 	\item Include in protocol
 	\item Design study to estimate CATE(s)
 	\end{itemize}
-\item<3-> Estimation of CATEs
+\item<3-> Estimation of unit-related CATEs
 	\begin{itemize}
 	\item Block randomization
 	\item Post-hoc procedures
@@ -2883,17 +3174,16 @@ Why is this useful?
 
 
 \section[More Designs]{Beyond One-Shot Designs}
-\frame{\tableofcontents[currentsubsection]}
+\frame{\tableofcontents[currentsubsection,subsubsectionstyle=hide]}
 
 \frame{
 
 \frametitle{{\normalsize Beyond One-shot Designs}}
 
-\small
 
 \begin{itemize}\itemsep0.5em
 \item Surveys can be used as a measurement instrument for a field treatment or a manipulation applied in a different survey panel wave
-	\begin{enumerate}\footnotesize
+	\begin{enumerate}
 	\item Measure effect duration in two-wave panel
 	\item Solicit pre-treatment outcome measures in a two-wave panel
 	\item Measure effects of field treatment in post-test only design
@@ -3046,7 +3336,7 @@ Why is this useful?
 	\end{itemize}
 \item Examples:
 	\begin{enumerate}
-	\item Albertson and Lawrence
+	\item Albertson and Lawrence\footnote{Albertson \& Lawrence. 2009. ``After the Credits Roll.'' \textit{American Politics Research} 37(2): 275--300. \href{http://doi.org/10.1177/1532673X08328600}{10.1177/1532673X08328600}.}
 	\end{enumerate}
 \item<2-> Issues
 	\begin{itemize}
@@ -3111,9 +3401,7 @@ Why is this useful?
 
 
 
-
-\section*[Quiz]{Handling ``Broken'' Experiments}
-\frame{\tableofcontents[currentsection]}
+\frame{}
 
 \frame{
 
@@ -3230,7 +3518,7 @@ Quiz time!
 
 
 \section{Presentations/Conclusion}
-\frame{\tableofcontents[currentsection]}
+\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
 
 \frame{
 
