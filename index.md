@@ -39,8 +39,8 @@ This version of the workshop includes activities using R.
 
 A two-day workshop at NTNU, Norwegian University of Science and Technology (Trondheim, Norway; 30-31 January 2017).
 
- - [Slides - Day 1](Slides/NTNU2017-1.pdf)
- - [Slides - Day 2](Slides/NTNU2017-2.pdf)
+ - Slides - Day 1 [ ](Slides/NTNU2017-1.pdf)
+ - Slides - Day 2 [ ](Slides/NTNU2017-2.pdf)
 
 This version of the workshop includes activities using Stata.
 
