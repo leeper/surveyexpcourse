@@ -21,9 +21,10 @@ library("ghit")    # installing github packages
 library("rio")     # data loading
 library("ggplot2") # plotting
 library("list")    # alternative list experiment estimators
-#ghit::install_github("leeper/mcode")
+ghit::install_github("leeper/mcode")
 library("mcode")   # convenience functions for working with data recoding
-#ghit::install_github("leeper/margins", build_vignettes = FALSE)
+ghit::install_github("leeper/prediction", build_vignettes = FALSE)
+ghit::install_github("leeper/margins", build_vignettes = FALSE)
 library("margins") # marginal effects
 
 
@@ -241,6 +242,7 @@ newman[["args"]] <- factor(ifelse(newman[["XTESS171"]] %in% c(2,5,9,12), 0,
 outcome <- newman[, paste0("Q6", LETTERS[1:6])]
 outcome[] <- lapply(outcome, function(x) ifelse(is.nan(x), NA_real_, x))
 newman[["outcome"]] <- mergeNA(outcome[, 1:6])
+newman[["outcome"]] <- ifelse(newman[["outcome"]] == -1, NA_real_, newman[["outcome"]])
 rm(outcome)
 
 # manipulation check for small subset of respondents
