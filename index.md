@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+description: "Survey experiments have emerged as one of the most powerful methodological tools in the social sciences. This course will use published examples of experimental research to demonstrate a variety of ways to leverage survey experiments for testing social science theories."
 ---
 
 # "Survey Experiments in Practice" Short Course
