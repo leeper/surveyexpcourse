@@ -6,25 +6,24 @@ description: "Survey experiments have emerged as one of the most powerful method
 
 # "Survey Experiments in Practice" Short Course
 
-This page holds materials for a short course called "Survey Experiments in Practice", which I teach from time to time in various places. Feel free to contact me if you would like me to put on workshop about survey experiments. I'm willing to travel!
+This page holds materials for a short course called "Survey Experiments in Practice", which I teach from time to time in various places. This course was first taught at the RECSM (Universitat Pompeu Fabra) Barcelona Summer School in Survey Methodology. Materials for the 2017 version of that course are below. 
 
-## Overview
+### Overview
 
 Survey experiments have emerged as one of the most powerful methodological tools in the social sciences. By combining experimental design that provides clear causal inference with the flexibility of the survey context as a site for behavioral research, survey experiments can be used in almost any field to study almost any question. Conducting survey experiments can appear fairly simple but doing them well is hard. 
 
 This course will use published examples of experimental research to demonstrate a variety of ways to leverage survey experiments for testing social science theories. The course will teach participants how to use different survey experimental designs and how to address challenges related to sampling, survey mode, ethics, effect heterogeneity, and more. Students leave the course with a thorough understanding of how survey experiments can provide useful causal inferences, knowledge of how to design and analyze simple and complex experiments, and the ability to evaluate experimental research and apply these methods in their own research.
 
+### Host a workshop/course/seminar!
+
+Feel free to contact me if you would like me to put on workshop about survey experiments. I'm willing to travel and can teach this material in workshops varying from 1-2 hours to several days!
+
+
 ---
 
-## Upcoming Courses
+## NTNU
 
-This course was first taught at the RECSM (Universitat Pompeu Fabra) Barcelona Summer School in Survey Methodology. Materials for the 2017 version of that course are below.
-
-I also teach on this topic in shorter modules. Upcoming versions of the course are:
-
-### NTNU
-
-A two-day workshop at NTNU, Norwegian University of Science and Technology (Trondheim, Norway; 30-31 January 2017). The schedule for the course is as follows:
+The next iteration of this will be a two-day workshop at NTNU, Norwegian University of Science and Technology (Trondheim, Norway; 30-31 January 2017). The schedule for the course is as follows:
 
 ### Monday 30 January - *Morning*
 
@@ -50,34 +49,28 @@ A two-day workshop at NTNU, Norwegian University of Science and Technology (Tron
  - Conclusion
 
  - Slides
-   - Day 1 [ ](Slides/NTNU2017-1.pdf)
-   - Day 2 [ ](Slides/NTNU2017-2.pdf)
+   - Day 1 [ ](slides/NTNU2017-1.pdf)
+   - Day 2 [ ](slides/NTNU2017-2.pdf)
 
  - Activities
-   - Opening Activity: [Data](Activities/activity01.tsv), [Stata (.do)](Activities/activity01.do), [R (.R)](Activiites/activity01.R)
-   - Power calculatiosn: [Stata (.do)](Activities/power.do), [R (.R)](Activities/power.R)
+   - Opening Activity: [Data](activities/activity01.tsv), [Stata (.do)](activities/activity01.do), [R (.R)](activities/activity01.R)
+   - Power calculatiosn: [Stata (.do)](activities/power.do), [R (.R)](activities/power.R)
  
  
  - Example 1: Holbrook and Krosnick
-   - [Paper](Activities/Holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
-   - [TESS Record](http://www.tessexperiments.org/data/holbrook120.html)
-   - [Questionnaire](Activities/Holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
-   - Data: [SPSS (.sav)](Activities/Holbrook/data.sav), [Stata (.dta)](Activities/Holbrook/data.dta)
-   - Code: [Stata](Activities/Holbrook/holbrook.R), [R](Activities/Holbrook/holbrook.R)
+   - [Paper](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf), [TESS Record](http://www.tessexperiments.org/data/holbrook120.html), [Questionnaire](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
+   - Data: [SPSS (.sav)](activities/holbrook/data.sav), [Stata (.dta)](activities/holbrook/data.dta)
+   - Code: [Stata](activities/holbrook/holbrook.R), [R](activities/holbrook/holbrook.R)
  
  - Example 2: Schuldt et al.
-   - [Paper](Activities/Schuldt/Schuldt, Konrath, Schwarz (POQ, 2011).pdf)
-   - [TESS Record](http://www.tessexperiments.org/data/schuldt301.html)
-   - [Questionnaire](Activities/Schuldt/Questionnaire.doc)
-   - Data: [SPSS (.sav)](Activities/Schuldt/data.sav), [Stata (.dta)](Activities/Schuldt/data.dta)
-   - Code: [Stata](Activities/Schdult/schuldt.do), [R](Activities/Schdult/schuldt.R)
+   - [Paper](activities/schuldt/Schuldt, Konrath, Schwarz (POQ, 2011).pdf), [TESS Record](http://www.tessexperiments.org/data/schuldt301.html), [Questionnaire](activities/schuldt/Questionnaire.doc)
+   - Data: [SPSS (.sav)](activities/schuldt/data.sav), [Stata (.dta)](activities/schuldt/data.dta)
+   - Code: [Stata](activities/schuldt/schuldt.do), [R](activities/schuldt/schuldt.R)
  
  - Example 3: Johnston, Newman, and Velez
-   - Unpublished
-   - [TESS Record](http://www.tessexperiments.org/data/newman508.html)
-   - [Questionnaire](Activities/Johnston/questionnaire.doc)
-   - Data: [SPSS (.sav)](Activities/Johnston/data.sav), [Stata (.dta)](Activities/Johnston/data.dta)
-   - Code: [Stata](Activities/Johnston/johnston.do), [R Code](Activities/Johnston/johnston.R)
+   - (Unpublished), [TESS Record](http://www.tessexperiments.org/data/newman508.html), [Questionnaire](activities/johnston/questionnaire.doc)
+   - Data: [SPSS (.sav)](activities/johnston/data.sav), [Stata (.dta)](activities/johnston/data.dta)
+   - Code: [Stata](activities/johnston/johnston.do), [R Code](activities/johnston/johnston.R)
  
 Note: This version of the workshop includes activities using Stata, but R examples are also provided.
 
@@ -88,11 +81,11 @@ Note: This version of the workshop includes activities using Stata, but R exampl
 
 A one-day workshop at the Europen University Institute (Florence, Italy; 18 January 2017).
 
- - [Slides](Slides/EUI2017.pdf)
- - [R Code for Activites](Activities/EUI2017.R)
+ - [Slides](slides/EUI2017.pdf)
+ - [R Code for Activites](activities/EUI2017.R)
  - Papers
-   - [Holbrook and Krosnick](Activities/Holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
-   - [Schuldt et al.](Activities/Schuldt/Schuldt, Konrath, Schwarz (POQ, 2011).pdf)
+   - [Holbrook and Krosnick](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
+   - [Schuldt et al.](activities/schuldt/Schuldt, Konrath, Schwarz (POQ, 2011).pdf)
 
 This version of the workshop includes activities using R.
 
@@ -113,11 +106,11 @@ An outline of the course is given below. All of the readings [are available here
 
 The first session will provide an overview of the course, discuss the history of survey experiments and experiments in general, and provide a conceptual and notational framework for design, analyzing, and discussing experiments.
 
- - [Slides](Slides/lecture01.pdf)
+ - [Slides](slides/lecture01.pdf)
  - Materials from Anchoring Experiment Activity
-   - [Data](Activities/activity01.tsv) (tab-separated values)
-   - [R script](Activities/activity01.R)
-   - [Stata .do file](Activities/activity01.do)
+   - [Data](activities/activity01.tsv) (tab-separated values)
+   - [R script](activities/activity01.R)
+   - [Stata .do file](activities/activity01.do)
 
 #### Class Schedule
 
@@ -136,8 +129,8 @@ The first session will provide an overview of the course, discuss the history of
 
 While the first session demonstrated the advantages of experimentation as a research design, designing experiments can be challenging without a solid grounding in a relevant theoretical literature. This session will discuss common paradigms for survey experimental research and discuss how to design experiments to test social science theories.
 
- - [Slides](Slides/lecture02.pdf)
- - [Description of Experimental Protocol](Activities/protocol.pdf)
+ - [Slides](slides/lecture02.pdf)
+ - [Description of Experimental Protocol](activities/protocol.pdf)
 
 #### Class Schedule
 
@@ -155,7 +148,7 @@ While the first session demonstrated the advantages of experimentation as a rese
 
 Experiments are typically performed at one point in time, on a specific sample or set of respondents, on a limited range of issues or topic, using a finite set of measurement techniques. Yet researchers' ambitions are often broader, with aims to make claims that extrapolate beyond the particular study's context, sample, and focus. This session will address various forms of external validity, how to maximize generalizability, and the trade-offs involved with such efforts. 
 
- - [Slides](Slides/lecture03.pdf)
+ - [Slides](slides/lecture03.pdf)
 
 #### Class Schedule
 
@@ -176,8 +169,8 @@ Experiments are typically performed at one point in time, on a specific sample o
 
 This session will cover a number of remaining issues, especially related to the practical implementation of survey experiments.
 
- - [Slides](Slides/lecture04.pdf)
- - [Slides](Slides/lecture05.pdf)
+ - [Slides](slides/lecture04.pdf)
+ - [Slides](slides/lecture05.pdf)
 
 #### Class Schedule
 
