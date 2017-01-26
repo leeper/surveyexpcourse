@@ -48,6 +48,8 @@ The next iteration of this will be a two-day workshop at NTNU, Norwegian Univers
  - Workshop and discussion of participants' designs and experiments
  - Conclusion
 
+Materials for participants:
+ 
  - Slides
    - Day 1 [ ](slides/NTNU2017-1.pdf)
    - Day 2 [ ](slides/NTNU2017-2.pdf)

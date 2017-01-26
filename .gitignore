@@ -1,5 +1,5 @@
 # subdirectories to ignore #
-Misc/
+misc/
 
 # filetypes to ignore #
 *.aux
@@ -16,7 +16,4 @@ Misc/
 *.dvi
 
 # files to ignore #
-Activities/*.*
-!Activities/*.tex
-!Activities/*.pdf
 Overview.docx
