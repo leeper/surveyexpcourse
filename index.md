@@ -54,10 +54,12 @@ Materials for participants:
    - Day 1 [ ](slides/NTNU2017-1.pdf)
    - Day 2 [ ](slides/NTNU2017-2.pdf)
 
- - Activities
+ - Activities and other materials
    - Opening Activity: [Data](activities/activity01.tsv), [Stata (.do)](activities/activity01.do), [R (.R)](activities/activity01.R)
-   - Power calculatiosn: [Stata (.do)](activities/power.do), [R (.R)](activities/power.R)
- 
+   - Power calculations: [Stata (.do)](activities/power.do), [R (.R)](activities/power.R)
+   - [Leeper, TJ. 2011. "The Oft-Neglected Role of Protocol in the Design and Reporting of Experiments"](activities/protocol.pdf)
+   - [An example protocol document](activities/protocol_example.pdf)
+      
  
  - Example 1: Holbrook and Krosnick
    - [Paper](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf), [TESS Record](http://www.tessexperiments.org/data/holbrook120.html), [Questionnaire](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf)

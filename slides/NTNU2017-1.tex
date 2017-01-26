@@ -1,14 +1,1847 @@
-\input{preamble}
+\documentclass[14pt]{beamer}
+%\documentclass[handout]{beamer} %Makes Handouts
+\usetheme{Singapore} %Gray with fade at top
+\useoutertheme[subsection=false]{miniframes} %Supppress subsection in header
+\useinnertheme{rectangles} %Itemize/Enumerate boxes
+\usecolortheme{seagull} %Color theme
+\usecolortheme{rose} %Inner color theme
+
+\definecolor{light-gray}{gray}{0.75}
+\definecolor{dark-gray}{gray}{0.55}
+\setbeamercolor{item}{fg=light-gray}
+\setbeamercolor{enumerate item}{fg=dark-gray}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{mini frames}{}
+%\setbeamercovered{dynamics}
+\setbeamerfont*{title}{size=\Large,series=\bfseries}
+\setbeamerfont{footnote}{size=\tiny}
+
+%\setbeameroption{notes on second screen} %Dual-Screen Notes
+%\setbeameroption{show only notes} %Notes Output
+
+\setbeamertemplate{frametitle}{\vspace{.5em}\bfseries\insertframetitle}
+\newcommand{\heading}[1]{\noindent \textbf{#1}\\ \vspace{1em}}
+\newcommand{\questions}{\frame{\vspace{4em}\centering{\Large Questions?}}}
+\newcommand{\StataActivity}[1]{\frame{\vspace{4em}\centering{\Large Let's work in Stata!\\ \vspace{1em} {(#1)}}}}
+
+
+\usepackage{bbding,color,multirow,times,ccaption,tabularx,graphicx,verbatim,booktabs}
+\usepackage{colortbl} %Table overlays
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{alltt}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,decorations.pathreplacing,calc}
+
+
+\author[]{Thomas J. Leeper}
+\institute{
+  Government Department\\London School of Economics and Political Science
+}
+
 
 \title{Session I\\Survey Experiments in Context}
 
-\date[]{}
+% ### Monday 30 January - *Morning*
+% 
+%  - Introduction to surveys, experiments, and the survey-experiment nexus
+%  - History of survey experimentation
+%  - Scientific and statistical logic of survey experiments
+% 
+% ### Monday 30 January - *Afternoon*
+% 
+%  - Translating theories into experimental designs
+%  - Common survey experimental paradigms
+%  - Discussion of applied examples
+
+\date[]{18 January 2017}
 
 \begin{document}
 
 \frame{\titlepage}
 
-\frame{\tableofcontents}
+
+\frame{
+
+\frametitle{Activity!}
+
+\only<2-4,6>{
+\begin{enumerate}
+\item<2-4,6> Ask you to guess a number
+\item<3-4,6> Number off 1 and 2 across the room
+\item<4,6> Group 2, close your eyes
+\item<6> Group 1, close your eyes
+\end{enumerate}
+}
+
+\Large
+\only<5>{\textit{Group 1}\\ Think about whether the population of Chicago is more or less than 500,000 people. What do you think the population of Chicago is?}
+\only<7>{\textit{Group 2}\\ Think about whether the population of Chicago is more or less than 10,000,000 people. What do you think the population of Chicago is?}
+
+}
+\frame{}
+
+\frame{
+
+\frametitle{Enter your data}
+
+\begin{itemize}\itemsep1em
+\item Go here: \url{http://bit.ly/297vEdd}
+\item Enter your guess and your group number
+\end{itemize}
+
+%http://goo.gl/forms/xDW4FLm9pau0O8zz2
+
+}
+
+
+\frame{
+
+\frametitle{Results}
+
+\begin{itemize}\itemsep1em
+\item True population: 2.79 million
+\item<2-> What did you guess? \href{https://docs.google.com/spreadsheets/d/1SKWljS1EeNkAV5V0NZUwrKOu3LQFILVMB37xfTxyrPM/edit?usp=sharing}{(See Responses)}
+\item<3-> What's going on here?
+	\begin{itemize}
+	\item An experiment!
+	\item Demonstrates ``anchoring'' heuristic
+	\end{itemize}
+\item<4-> Experiments are easy to analyze, but only if designed and implemented well
+\end{itemize}
+
+}
+
+\frame{\tableofcontents[subsubsectionstyle=hide]}
+
+\frame{
+\frametitle{Who am I?}
+
+\small
+
+\begin{itemize}\itemsep0.25em
+
+\item Thomas Leeper
+
+\item Assistant Professor in Political Behaviour at London School of Economics
+
+\begin{itemize}
+\item 2013--15: Aarhus University (Denmark)
+\item 2008--12: PhD from Northwestern University (Chicago, USA)
+\item Birth--2008: Minnesota, USA
+\end{itemize}
+
+\item Interested in public opinion and political psychology
+
+\item Email: \href{mailto:t.leeper@lse.ac.uk}{t.leeper@lse.ac.uk}
+
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Who are you?}
+
+\begin{itemize}\itemsep1em
+
+\item Where are you from?
+
+\item Have you designed a survey and/or experiment before?
+
+\item What do you hope to learn from the course?
+
+\end{itemize}
+
+}
+
+
+
+\frame{
+
+\frametitle{Quick Survey}
+
+\begin{enumerate}\itemsep0.5em
+\item<2-> How many of you have worked with survey data before?
+\item<3-> Of those, how many of you have \textit{performed} a survey before?
+\item<4-> How many of you have worked with experimental data before?
+\item<5-> Of those, how many of you have \textit{performed} an experiment before?
+\end{enumerate}
+
+}
+
+
+\frame{
+
+\frametitle{Course Materials}
+
+\begin{center}
+All material for the course is available at:\\
+
+\vspace{1em}
+
+\url{http://www.thomasleeper.com/surveyexpcourse/}
+\end{center}
+
+}
+
+\frame{
+
+\frametitle{Learning Outcomes}
+
+\small
+
+By the end of the day, you should be able to\dots
+
+\begin{enumerate}
+\item<2-> Explain how to analyze experiments quantitatively.
+\item<3-> Explain how to design experiments that speak to relevant research questions and theories.
+\item<4-> Evaluate the uses and limitations of several common survey experimental paradigms.
+\item<5-> Identify practical issues that arise in the implementation of experiments and evaluate how to anticipate and respond to them.
+\end{enumerate}
+
+}
+
+
+
+
+\section[History/Logic]{History and Logic of Experiments}
+\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
+
+\frame{
+
+\frametitle{Experiments: Definition}
+
+Oxford English Dictionary defines ``experiment'' as:
+
+\begin{enumerate}
+\item A scientific procedure undertaken to make a discovery, test a hypothesis, or demonstrate a known fact
+\item A course of action tentatively adopted without being sure of the outcome
+\end{enumerate}
+}
+
+\frame{
+
+\frametitle{Experiments: History}
+
+\begin{itemize}\itemsep0.75em
+\item ``Experiments'' have a very long history
+
+\item Major advances in design and analysis of experiments based on agricultural and later biostatistical research in the 19th century (Fisher, Neyman, Pearson, etc.)
+
+\item First randomized, controlled trial (RCT) by Peirce and Jastrow in 1884
+
+	\begin{itemize}
+	\item<2-> First experiment by Gosnell (1924)
+	\item<2-> Gerber and Green (2000) first major \textit{field} experiment
+	\end{itemize}
+
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Survey-Experiments}
+
+\small
+
+\begin{itemize}
+\item Rise of surveys in the behavioral revolution
+	\begin{itemize}
+	\item Experimentation rare because of paper mode
+	\item Limited use of ``split ballots''
+	\end{itemize}
+\item<2-> 1983: Merrill Shanks and the Berkeley Survey Research Center develop \textbf{CATI}
+\item<3-> Mid-1980s: Paul Sniderman \& Tom Piazza performed the first survey experiment\only<3->{\footnote{Sniderman, Paul M., and Thomas Piazza. 1993. \textit{The Scar of Race}. Cambridge, MA: Harvard University Press.}}
+	\begin{itemize}\footnotesize
+	\item Then: the ``first multi-investigator''
+	\item Later: Skip Lupia and Diana Mutz created TESS
+	\end{itemize}
+
+\end{itemize}
+
+}
+
+
+
+\frame{
+\frametitle{{\large \textit{Survey}-experiments, specifically}}
+
+\small
+
+\begin{itemize}
+\item<2-> A survey experiment is just an experiment that occurs in a survey context
+	\begin{itemize}
+	\item As opposed to in the field or in a laboratory
+	\end{itemize}
+\item<3-> Properties:
+	\begin{itemize}
+	\item Sample is representative of population in every respect (in expectation)
+	\item Sample Average Treatment Effect (SATE) is the average of the sample's individual-level treatment effects
+	\item SATE is unbiased estimate of PATE
+	\end{itemize}
+\item<4-> Sometimes a distinction is made between survey and online experiments
+\end{itemize}
+}
+
+
+\frame{
+
+\frametitle{TESS}
+
+\small
+
+\begin{itemize}
+\item Time-Sharing Experiments for the Social Sciences
+\item Multi-disciplinary initiative that provides infrastructure for survey experiments on nationally representative samples of the United States population
+\item Funded by the U.S. National Science Foundation
+\item Anyone anywhere in the world can apply\footnote{See also: \href{https://www.lissdata.nl/lissdata/}{LISS}, \href{http://www.uib.no/en/citizen}{Bergen's Citizen Panel}, \href{http://lore.gu.se/surveys/citizen}{Gothenburg's Citizen Panel}}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize TESS has ``Open Protocols''}}
+
+Protocol is the complete planning document for how to design, implement, and analyze an experiment.\footnote{Thomas J. Leeper. 2011. ``The Use of Protocol in the Design and Reporting of Experiments.'' \textit{The Experimental Political Scientist}.}
+
+\small
+
+\begin{enumerate}\itemsep-0.2em
+\item Theory/hypotheses
+\item Instrumentation
+	\begin{itemize}
+	\item Manipulation(s)
+	\item Outcome(s)
+	\item Covariate(s)
+	\item Manipulation check(s)
+	\end{itemize}
+\item Sampling
+\item Implementation
+\item Analysis
+\end{enumerate}
+}
+
+\frame{
+
+\frametitle{Why bother writing a protocol?}
+
+\begin{itemize}\itemsep0.5em
+\item<2-> Be clear to yourself what you're trying to do before you do it
+\item<3-> Assess the literature for best practices
+\item<4-> Highlight areas in need of pilot testing
+\item<5-> Economize questionnaire development
+\item<6-> Study preregistration
+\end{itemize}
+
+}
+
+\questions
+
+
+
+
+
+\frame{
+	\includegraphics[width=\textwidth]{images/correlation.png}
+}
+
+
+\frame{
+
+\frametitle{Addressing Confounding}
+
+In observational research\dots
+
+\begin{enumerate}\itemsep0.5em
+\item<2-> Correlate a ``putative'' cause ($X$) and an outcome ($Y$)
+\item<3-> Identify all possible confounds (\textbf{Z})
+\item<4-> ``Condition'' on all confounds
+	\begin{itemize}
+	\item Calculate correlation between $X$ and $Y$ at each combination of levels of \textbf{Z}
+	\end{itemize}
+\item<5-> Basically: $Y = \beta_0 + \beta_1 X + \beta Z + \epsilon $
+\end{enumerate}
+
+}
+
+
+\begin{frame}
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw (0,0) node[left] (X) {\textcolor<2->{red}{Smoking}};
+    \draw[->] (X) -- (5,0) node[right] (Y) {Cancer};
+    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
+    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
+    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
+    \draw[->] (W) -- (Y);
+    \draw<2->[->, dashed, very thick] (E) -- (X);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+
+
+\frame{
+
+\frametitle{Experiments are different}
+
+\begin{enumerate}\itemsep0.75em
+\item<2-> Draw causal inferences through \textit{design} not \textit{analysis}
+\item<3-> Randomization breaks selection bias
+\item<4-> We don't need to ``control'' for anything
+\item<5-> We see ``causal effects'' in the comparison of experimental groups
+\end{enumerate}
+
+}
+
+
+% Mill's method of difference
+\frame{
+\frametitle{{\normalsize Mill's Method of Difference}}
+
+\small
+
+If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, \textbf<2->{have every circumstance save one in common}, that one occurring only in the former; \textbf<2->{the circumstance in which alone the two instances differ, is the} effect, or \textbf<2->{cause}, or an necessary part of the cause, \textbf<2->{of the phenomenon}.
+}
+
+
+
+\frame{
+
+\frametitle{Definitions}
+
+\only<2>{\textbf{Unit}: A physical object at a particular point in time}
+
+\only<3>{\textbf{Treatment}: An intervention, whose effect(s) we wish to assess relative to some other (non-)intervention}
+
+\only<4>{
+\textbf{Potential outcomes}: The outcome for each unit that we would observe if that unit received each treatment
+\begin{itemize}
+\item Multiple potential outcomes for each unit, but we only observe one of them
+\end{itemize}
+}
+
+\only<5>{\textbf{Causal effect}: The comparisons between the unit-level potential outcomes under each intervention}
+
+}
+
+
+
+
+% Individual-level effects versus ATEs
+
+
+\frame{
+	\frametitle{The Experimental Ideal}
+	\small
+	A randomized experiment, or randomized control trial is:
+ 		\begin{quote}\small
+ 			The observation of units after, and possibly before, a randomly assigned intervention in a controlled setting, which tests one or more precise causal expectations
+ 		\end{quote}
+ 	This is Holland's ``statistical solution'' to the fundamental problem of causal inference
+}
+
+\frame{
+\frametitle{The Experimental Ideal}
+\begin{itemize}\itemsep0.5em
+\item It solves both the temporal ordering and confounding problems of observational causal inference
+	\begin{itemize}
+   		\item Treatment ($X$) is applied by the researcher before outcome ($Y$)
+   		\item Randomization means there are no confounding ($Z$) variables
+	\end{itemize}
+\item<2-> Thus experiments are a ``gold standard'' of causal inference
+\item<3-> Basically: $Y = \beta_0 + \beta_1 X + \epsilon $
+\end{itemize}
+}
+
+
+\frame{
+
+\frametitle{Neyman-Rubin Potential Outcomes Framework}
+
+If we are interested in some outcome $Y$, then for every unit $i$, there are numerous ``potential outcomes'' $Y*$ only one of which is visible in a given reality. Comparisons of (partially unobservable) potential outcomes indicate causality.
+
+}
+
+\frame{
+
+\frametitle{Neyman-Rubin Potential Outcomes Framework}
+
+Concisely, we typically discuss two potential outcomes:
+
+\begin{itemize}\small
+\item $Y_{0i}$, the \textit{potential} outcome \textit{realized} if $X_i = 0$ (b/c $D_i = 0$, assigned to control)
+\item $Y_{1i}$, the \textit{potential} outcome \textit{realized} if $X_i = 1$ (b/c $D_i = 1$, assigned to treatment)
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Historical Aside}
+
+\small
+
+\begin{itemize}
+\item The history of the potential outcomes framework is contested
+\item Most people attribute it to Donald Rubin
+\item Paul Holland was the first to link to the philosophical discussions of causality
+\item Donald Rubin attributes this to Jerzy Neyman (1923)
+\item James Heckman denies all of this and attributes it Andrew Roy (1951)
+\end{itemize}
+}
+
+
+
+
+
+
+
+% design-based experimental inference
+\frame{
+	\frametitle{Experimental Inference I}
+	\small
+	\begin{itemize}\itemsep0.5em
+    	\item<1-> Each unit has multiple \textit{potential} outcomes, but we only observe one of them, randomly
+    	\item<2-> In this sense, we are sampling potential outcomes from each unit's population of potential outcomes
+		\only<2->{
+			\begin{center}
+			\begin{tabular}{ccccc}
+			unit & low & high & \onslide<3->{control} & \onslide<4->{etc.} \\ \midrule
+			1 & ? & ? & \onslide<3->{?} & \onslide<4->{\dots} \\
+			2 & ? & ? & \onslide<3->{?} & \onslide<4->{\dots} \\
+			3 & ? & ? & \onslide<3->{?} & \onslide<4->{\dots} \\
+			4 & ? & ? & \onslide<3->{?} & \onslide<4->{\dots} \\ \bottomrule
+			\end{tabular}
+			\end{center}
+		}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Experimental Inference II}
+	\small
+	\begin{itemize}\itemsep0.5em
+    	\item<1-> We cannot see individual-level causal effects
+    	\item<2-> We can see \textit{average causal effects}
+    		\begin{itemize}
+        		\item<2-> Ex.: Average difference in cancer between those who do and do not smoke
+    		\end{itemize}
+    	\item<3-> We want to know: $TE_i = Y_{1i} - Y_{0i}$
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Experimental Inference III}
+	\small
+	\begin{itemize}\itemsep0.5em
+		\item<1-> We want to know: $TE_i = Y_{1i} - Y_{0i}$ for every $i$ in the population
+		\item<2-> We can average: $E[TE_i] = E[Y_{1i} - Y_{0i}] = E[Y_{1i}] - E[Y_{0i}]$
+		\item<3-> But we still only see one potential outcome for each unit:\\ \vspace{1em}
+    		$ATE_{naive} = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0]$
+    	\item<4-> Is this what we want to know?
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Experimental Inference IV}
+	\small
+	\begin{itemize}\itemsep0.5em
+	\item What we want and what we have:
+		\begin{align}
+		ATE & = E[Y_{1i}] - E[Y_{0i}] \\[1em]
+		ATE_{naive} & = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0]
+		\end{align}		
+	\item<2-> Are the following statements true?\\
+  		\begin{itemize}\itemsep0.5em
+      		\item<2-> $E[Y_{1i}] = E[Y_{1i} | X = 1]$
+      		\item<2-> $E[Y_{0i}] = E[Y_{0i} | X = 0]$
+  		\end{itemize}
+  	\item<3-> Not in general!
+  	\end{itemize}
+}
+
+\frame{
+	\frametitle{Experimental Inference V}
+	\small
+	\begin{itemize}\itemsep0.5em
+    	\item Only true when both of the following hold:
+    	\begin{align}
+    	E[Y_{1i}] = E[Y_{1i} | X = 1] = E[Y_{1i} | X = 0]\\
+    	E[Y_{0i}] = E[Y_{0i} | X = 1] = E[Y_{0i} | X = 0]
+    	\end{align}
+    	\item In that case, potential outcomes are \textit{independent} of treatment assignment
+		\item If true (e.g., due to randomization of $X$), then:
+    	\begin{align*}
+    	ATE_{naive} & = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0] \tag{5}\\
+    	& = E[Y_{1i}] - E[Y_{0i}]\\
+    	& = ATE
+    	\end{align*}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Experimental Inference VI}
+	
+	
+	\normalsize
+	\begin{itemize}\itemsep0.5em
+    	\item This holds in experiments because of a \textit{physical process of randomization}\footnote{Random means ``known probability of treatment'' not ``haphazard''.}
+   		\item<2-> Units differ only in side of coin that was up
+	   		\begin{itemize}\footnotesize
+	   		\item $X_i = 1$ only because $D_i = 1$
+	   		\end{itemize}
+	   	\item<3-> Implications:
+		   	\begin{itemize}
+		   	\item Covariate balance
+		   	\item Potential outcomes balanced and independent of treatment assignment
+		   	\item No confounding (selection bias)
+		   	\end{itemize}
+	\end{itemize}
+}
+
+
+
+
+\begin{frame}
+\small 
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw[->] (0,0) node[left] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
+    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
+    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
+    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
+    \draw[->] (W) -- (Y);
+    \draw[->, dashed] (E) -- (X);
+    
+    \draw<2->[->, very thick, color=red] (-2.5,1) node[left, color=red, text width=2cm, align=center] (Tr) {Random\\Assignment} -- (X);
+    \draw<2->[->, very thick, color=red] (X) -- (Y);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+
+\questions
+
+
+
+\frame{
+\frametitle{Experimental Analysis I}
+\small
+\begin{itemize}
+\item The statistic of interest in an experiment is the \textit{sample average treatment effect} (SATE)
+\item If our sample is \textit{representative}, then this provides an estimate of the population average treatment (PATE)
+\item This boils down to being a mean-difference between two groups:
+	\begin{equation}
+	SATE = \frac{1}{n_1}\sum Y_{1i} - \frac{1}{n_0}\sum Y_{0i}
+	\end{equation}
+\end{itemize}
+}
+
+
+
+\frame{
+
+\frametitle{Computation of Effects I}
+
+\begin{itemize}\itemsep0.5em
+\item In practice we often estimate SATE using t-tests, ANOVA, or OLS regression
+\item These are all basically equivalent
+\item<2-> Reasons to choose one procedure over another:
+	\begin{itemize}
+	\item<2-> Disciplinary norms
+	\item<3-> Ease of interpretation
+	\item<4-> Flexibility for >2 treatment conditions
+	\end{itemize}
+\end{itemize}
+
+
+
+}
+
+\frame[label=tidy]{
+
+\frametitle{Computation of Effects II}
+
+An experimental data structure looks like:
+
+\small
+
+\begin{center}
+\begin{tabular}{ccc}
+\texttt{unit} & \texttt{treatment} & \texttt{outcome} \\ \hline 
+1 & 0 & 13 \\
+2 & 0 & 6 \\
+3 & 0 & 4 \\
+4 & 0 & 5 \\
+5 & 1 & 3 \\
+6 & 1 & 1 \\
+7 & 1 & 10 \\
+8 & 1 & 9 \\ \hline
+\end{tabular}
+\end{center}
+
+}
+
+\frame{
+
+\frametitle{Computation of Effects II}
+
+Sometimes it looks like this instead, which is bad:
+
+\small
+
+\begin{center}
+\begin{tabular}{cccc}
+\texttt{unit} & \texttt{treatment} & \texttt{outcome0}  & \texttt{outcome1} \\ \hline 
+1 & 0 & 13 & NA \\
+2 & 0 & 6 & NA \\
+3 & 0 & 4 & NA \\
+4 & 0 & 5 & NA \\
+5 & 1 & NA & 3 \\
+6 & 1 & NA & 1 \\
+7 & 1 & NA & 10 \\
+8 & 1 & NA & 9 \\ \hline
+\end{tabular}
+\end{center}
+
+}
+
+\againframe{tidy}
+
+
+
+\begin{frame}[fragile]
+
+\frametitle{Computation of Effects III}
+
+Stata:\small
+\begin{verbatim}
+ttest outcome, by(treatment)
+reg outcome i.treatment
+\end{verbatim}
+
+R:\small
+\begin{verbatim}
+t.test(outcome ~ treatment, data = data)
+lm(outcome ~ factor(treatment), data = data)
+\end{verbatim}
+
+\end{frame}
+
+
+\questions
+
+\StataActivity{Basic analysis}
+
+
+
+
+
+
+\frame{
+\frametitle{Experimental Analysis II}
+	\small
+\begin{itemize}\itemsep0.5em
+\item We don't just care about the size of the SATE. We also want to know whether it is significantly different from zero (i.e., different from no effect/difference)
+\item To know that, we need to estimate the \textit{variance} of the SATE
+\item The variance is influenced by:
+	\begin{itemize}
+	\item Total sample size
+	\item Variance of the outcome, $Y$
+	\item Relative size of each treatment group
+	\end{itemize}
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Experimental Analysis III}
+	\small
+\begin{itemize}\itemsep0.5em
+\item Formula for the variance of the SATE is:\\
+$\widehat{Var}(SATE) = \dfrac{\widehat{Var}(Y_0)}{n_0} + \dfrac{\widehat{Var}(Y_1)}{n_1}$
+
+	\begin{itemize}
+	\item $\widehat{Var}(Y_0)$ is control group variance
+	\item $\widehat{Var}(Y_1)$ is treatment group variance
+	\end{itemize}
+
+\item We often express this as the \textit{standard error} of the estimate:\\
+$\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{n_0} + \frac{\widehat{Var}(Y_1)}{n_1}}$
+\end{itemize}
+}
+
+
+\frame{
+
+\frametitle{Intuition about Variance}
+
+\begin{itemize}\itemsep0.5em
+\item Bigger sample $\rightarrow$ smaller SEs
+\item Smaller variance $\rightarrow$ smaller SEs
+\item Efficient use of sample size:
+	\begin{itemize}
+	\item When treatment group variances equal, equal sample sizes are most efficient
+	\item When variances differ, sample units are better allocated to the group with higher variance in \emph{Y}
+	\end{itemize}
+\end{itemize}
+
+
+}
+
+
+
+\frame{
+
+\frametitle{Statistical Power}
+
+\begin{itemize}\itemsep0.5em
+\item Power analysis to determine sample size
+\item Type I and Type II Errors
+	\begin{itemize}
+	\item True positive rate is power
+	\item False negative rate is the significance threshold ($\alpha$)
+	\end{itemize}
+\end{itemize}
+
+\begin{tabular}{lrr}
+\toprule
+& $H_0$ True & $H_0$ False \\ \midrule
+Reject $H_0$ & Type 1 Error & \textbf{True positive} \\
+Accept $H_0$ & False negative & Type II error \\ \bottomrule
+\end{tabular}
+
+}
+
+
+\frame{
+
+\frametitle{Doing a Power Analysis}
+
+\begin{itemize}
+\item $\mu$, Treatment group mean outcomes
+\item $N$, Sample size
+\item $\sigma$, Outcome variance
+\item $\alpha$ Statistical significance threshold
+\item $\phi$, a sampling distribution
+\end{itemize}
+
+$Power = \phi\left( \frac{|\mu_1 - \mu_0|\sqrt{N}}{2\sigma} - \phi^{-1}\left( 1 - \frac{\alpha}{2} \right) \right)$
+
+}
+
+
+
+\frame{
+\frametitle{Intuition about Power}
+
+Minimum detectable effect is the smallest effect we could detect given sample size, ``true'' effect size, variance of outcome, power, and $\alpha$.\\
+
+\vspace{0.5em}
+
+In essence: some non-zero effect sizes are not detectable by a study of a given sample size.\footnote{Gelman, A. and Weakliem, D. 2009. ``Of Beauty, Sex and Power.'' \textit{American Scientist} 97(4): 310--16}
+
+}
+
+
+\frame{
+
+\frametitle{Intuition about Power}
+
+\begin{itemize}\itemsep0.5em
+\item It can help to think in terms of ``standardized effect sizes''
+\item Cohen's $d$:\\ $d = \frac{\bar{x}_1 - \bar{x}_0}{s}$, where
+$s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
+\item Intuition: How large is the effect in standard deviations of the outcome?
+	\begin{itemize}
+	\item Know if effects are large or small
+	\item Compare effects across studies
+	\end{itemize}
+\item Small: 0.2; Medium: 0.5; Large: 0.8
+\end{itemize}
+
+}
+
+\StataActivity{Power Analysis}
+
+
+\frame{
+\frametitle{Intuition about Power}
+
+\begin{center}
+\includegraphics[height=0.8\textheight, trim = 0in 0in 0in 0.5in , clip]{images/power}
+\end{center}
+
+}
+
+
+
+
+\frame{}
+
+
+\section[Theory]{From Theory to Design}
+\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
+% deriving hypotheses from theory and manipulations from hypotheses
+
+
+\frame{
+
+\frametitle{{\normalsize What kinds of questions can we answer with (survey) experiments?}}
+
+\normalsize
+
+\begin{itemize}\itemsep0.5em
+\item<2-> Forward causal questions
+	\begin{itemize}
+	\item Can X cause Y?
+	\item What effects does X have?
+	\end{itemize}
+\item<3-> Backward causal questions
+	\begin{itemize}
+	\item What causes Y?
+	\item How much of Y is attributable to X?
+	\end{itemize}
+\item<4-> Even though answering ``forward'' causal question, we start with an outcome concept
+\end{itemize}
+}
+
+
+
+\section[Principles]{Operationalization Principles}
+
+\frame{
+
+\frametitle{Hypothesis Testing}
+
+\begin{itemize}\itemsep0.5em
+\item From theory, we derive testable hypotheses
+\begin{itemize}
+\item Hypotheses are expectations about differences in outcomes across levels of a putatively causal variable
+\item Hypothesis must be testable by an SATE
+\end{itemize}
+\item Manipulations are developed to create variation in that causal variable
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Example: News Framing}}
+
+\small
+
+\begin{itemize}
+\item Theory: Presentation of news affects opinion
+\item Hypotheses:
+	\begin{itemize}\footnotesize
+	\item News emphasizing free speech increases support for a hate group rally
+	\item News emphasizing public safety decreases support for a hate group rally
+	\end{itemize}
+\item Manipulation:
+	\begin{itemize}\footnotesize
+	\item Control group: no information
+	\item Free speech group: article emphasizing rights
+	\item Public safety group: article emphasizing safety
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+
+
+\frame{
+
+\frametitle{{\normalsize Example: Partisan Identity}}
+
+\small
+
+\begin{itemize}
+\item Theory: Strength of partisan identity affects tendency to accept party position
+\item Hypotheses:
+	\begin{itemize}\small
+	\item Strong partisans are more likely to accept their party's position on an issue
+	\end{itemize}
+\item Manipulation:
+	\begin{itemize}\small
+	\item Control group: no manipulation
+	\item ``Univalent'' condition
+	\item ``Ambivalent'' condition
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame[label=ambivalentpartisan]{
+
+\frametitle{\textbf{\only<1>{Univalent}\only<2>{Ambivalent}}}
+
+These days, Democrats and Republicans differ from one another considerably. The two groups seem to be growing further and further apart, not only in terms of their opinions but also their lifestyles. Earlier in the survey, you said you tend to identify as a \textit{Democrat/ Republican}. Please take a few minutes to think about what you like about \textit{Democrats/ Republicans} compared to the \textit{Republicans/ Democrats}. Think of 2 to 3 things you especially like best about \textbf{\only<1>{your party}\only<2>{the other party}}. Then think of 2 to 3 things you especially dislike about \textbf{\only<2>{your party}\only<1>{the other party}}. Now please write those thoughts in the space below.
+
+}
+
+
+
+\frame{
+
+\frametitle{Treatments Test Hypotheses!}
+
+\begin{itemize}\itemsep0.5em
+\item<2-> Derive experimental design from hypotheses
+\item<3-> Experimental ``factors'' are expressions of hypotheses as randomized groups
+\item<4-> What intervention each group receives depends on hypotheses
+	\begin{itemize}
+	\item presence/absence
+	\item levels/doses
+	\item qualitative variations
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Ex.: Presence/Absence}}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item Theory: Negative campaigning reduces support for the party described negatively.
+\item Hypothesis: Exposure to a negative advertisement criticizing a party reduces support for that party.
+\item Manipulation:
+	\begin{itemize}\small 
+	\item Control group receives no advertisement. 
+	\item Treatment group watches a video containing a negative ad describing a party.
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Ex.: Levels/doses}}
+
+\small
+
+\begin{itemize}\itemsep-0.2em
+\item Theory: Negative campaigning reduces support for the party described negatively.
+\item Hypothesis: Exposure to higher levels of negative advertising criticizing a party reduces support for that party.
+\item Manipulation:
+	\begin{itemize}\footnotesize
+	\item Control group receives no advertisement. 
+	\item Treatment group 1 watches a video containing 1 negative ad describing a party.
+	\item Treatment group 2 watches a video containing 2 negative ads describing a party.
+	\item Treatment group 3 watches a video containing 3 negative ads describing a party.
+	\item etc.
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Ex.: Qualitative variation}}
+
+\small
+
+\begin{itemize}
+\item Theory: Negative campaigning reduces support for the party described negatively.
+\item Hypothesis: Exposure to a negative advertisement criticizing a party reduces support for that party, while a positive advertisement has no effect.
+\item Manipulation:
+	\begin{itemize}\footnotesize
+	\item Control group receives no advertisement. 
+	\item Negative treatment group watches a video containing a negative ad describing a party.
+	\item Positive treatment group watches a video containing a positive ad describing a party.
+	\end{itemize}
+\end{itemize}
+
+}
+
+\questions
+
+
+\frame{}
+
+
+
+\frame{
+
+\frametitle{Activity!}
+
+\begin{itemize}\itemsep0.5em
+\item How do we know if an experiment is any good?
+\item Talk with a partner for about 3 minutes
+\item Try to develop some criteria that allow you to evaluate ``what makes for a good experiment?'' 
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Some possible criteria}
+
+\small
+
+\begin{itemize}\itemsep-0.2em
+\item Significant results
+\item Face validity
+\item Coherent for respondents
+\item Non-obvious to respondents
+\item Simple
+\item Indirect/unobtrusive
+\item Validated by prior work
+\item Innovative/creative
+\item \dots
+\end{itemize}
+
+}
+
+
+\frame{
+
+\begin{quote}\large
+The best criterion for evaluating the quality of an experiment is whether it manipulated the intended independent variable and controlled everything else by design.
+\end{quote}
+\onslide<2->{\small\hspace{5em} --Thomas J. Leeper (18 January 2017)}
+
+}
+
+\frame{
+
+\frametitle{How do we know we manipulated what we think we manipulated?}
+
+\small
+
+\begin{itemize}
+\item<2-> Outcomes are affected consistent with theory
+\item<3-> Before the study using \textit{pilot testing} (or \emph{pretesting})
+\item<4-> During the study, using \emph{manipulation checks}
+\item<5-> During the study, using \emph{placebos}
+\item<6-> During the study, using \textit{non-equivalent outcomes}
+\end{itemize}
+}
+
+\frame{
+
+\frametitle{I. Outcomes Affected}
+
+\begin{itemize}\itemsep0.5em
+\item Follows a circular logic!
+\item Doesn't tell us anything if we hypothesize null effects
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{II. Pilot Testing}
+
+\small
+
+\begin{itemize}\itemsep0.2em
+\item Goal: establish construct validity of manipulation
+\item Assess whether a set of possible manipulations affect a measure of the \textit{independent} variable
+\item<2-> Example:
+	\begin{itemize}
+	\item Goal: Manipulate the ``strength'' of an argument
+	\item Write several arguments
+	\item Ask pilot test respondents to report how strong each one was
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{III. Manipulation Checks}
+
+\small
+
+\begin{itemize}\itemsep0.2em
+\item Manipulation checks are items added post-treatment, post-outcome that assess whether the \textit{independent} variable was affected by treatment
+\item We typically talk about manipulations as directly setting the value of $X$, but in practice we are typically manipulating something \textit{that we think} strongly modifies $X$
+\item<2-> Example: information manipulations aim to modify knowledge or beliefs, but are necessarily imperfect at doing so
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{\normalsize Manipulation check example\footnote{Leeper \& Slothuus. n.d. ``Can Citizens Be Framed?'' Available from: \url{http://thomasleeper.com/research.html}.}}
+
+\begin{enumerate}
+\item Treatment 1: Supply Information
+\item Manipulation check 1: measure beliefs
+\item Treatment 2: Prime a set of considerations
+\item Outcome: Measure opinion
+\item Manipulation check 2: measure dimension salience
+\end{enumerate}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Some Best Practices}}
+
+
+\begin{itemize}\itemsep0.5em
+\item<2-> Manipulation checks should be innocuous
+	\begin{itemize}
+	\item Shouldn't modify independent variable
+	\item Shouldn't modify outcome variable
+	\end{itemize}
+\item<3-> Generally, measure post-outcome
+\item<4-> Measure both what you wanted to manipulate \textit{and} what you didn't want to manipulate
+	\begin{itemize}
+	\item Most treatments are \textit{compound}!
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{IV. Placebos}
+
+\begin{itemize}\itemsep0.5em
+\item Include an experimental condition that \textit{does not} manipulate the variable of interest (but might affect the outcome)
+\item<2-> Example:
+	\begin{itemize}
+	\item Study whether risk-related arguments about climate change increase support for a climate change policy
+	\item Placebo condition: control article with risk-related arguments about non-environmental issue (e.g., terrorism)
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{V. Non-equivalent outcomes}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item Measures an outcome that \textit{should not} be affected by independent variable
+\item<2-> Example:
+	\begin{itemize}
+	\item Assess effect of some treatment on attitudes toward group A
+	\item Focal outcome: attitudes toward group A
+	\item Non-equivalent outcome: attitudes toward group B
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Aside: Demand Characteristics}}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item ``Demand characteristics'' are features of experiments that (unintentionally) imply the purpose of the study and thereby change respondents' behavior (to be consistent with theory)
+\item<2-> Implications:
+	\begin{itemize}\footnotesize
+	\item Design experimental treatments that are non-obvious
+	\item Do not disclose the purpose of the study up front\footnote{But, consider the ethics of not doing so (more Friday)}
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+
+
+\subsection[Examples]{Common Paradigms and Examples}
+\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
+
+
+\frame{
+
+\frametitle{Question Wording Designs}
+
+\begin{itemize}
+\item Kahneman and Tversky used a lot of ``question wording'' experiments
+\item Hypothesized difference in outcomes according to the decision being faced
+	\begin{itemize}
+	\item Risky or not risky
+	\item Gains or losses
+	\end{itemize}
+\item Manipulation operationalizes this by asking two different questions
+\item Outcome is the answer to the question
+\end{itemize}
+
+}
+
+
+
+
+\frame{
+
+\frametitle{``Framing'' or ``Priming'' Experiments}
+
+Example: Schuldt et al. ```Global Warming' or `Climate Change'? Whether the Planet is Warming Depends on Question Wording.''
+
+\vspace{1em}
+
+What's this study about?
+}
+
+
+\frame{
+
+\small
+
+You may have heard about the idea that the world's temperature may have been \textbf{\only<1>{going up}\only<2>{changing}} over the past 100 years, a phenomenon sometimes called \textbf{\only<1>{global warming}\only<2>{climate change}}. What is your personal opinion regarding whether or not this has been happening?
+	\begin{itemize}\itemsep-0.25em\footnotesize
+	\item Definitely has not been happening
+	\item Probably has not been happening
+	\item Unsure, but leaning toward it has not been happening
+	\item Not sure either way
+	\item Unsure, but leaning toward it has been happening
+	\item Probably has been happening
+	\item Definitely has been happening
+	\end{itemize}
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Another framing example\footnote{Singer \& Couper. 2014. ``The Effect of Question Wording on Attitudes toward Prenatal Testing and Abortion.'' \textit{Public Opinion Quarterly} 78(3): 751--760.}}}
+
+\footnotesize
+
+Today, tests are being developed that make it possible to detect serious genetic defects \textbf{\only<1>{before a baby is born}\only<2>{in the fetus during pregnancy}}. But so far, it is impossible either to treat or to correct most of them. If (you/your partner) were pregnant, would you want (her) to have a test to find out if the \textbf{\only<1>{baby}\only<2>{fetus}} has any serious genetic defects? (Yes/No)\\
+
+\vspace{0.5em}
+
+Suppose a test shows the \textbf{\only<1>{baby}\only<2>{fetus}} has a serious genetic defect. Would you, yourself, want (your partner) to have an abortion if a test shows the \textbf{\only<1>{baby}\only<2>{fetus}} has a serious genetic defect? (Yes/No)
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Another framing example\footnote{Bobo \& Johnson. 2004. ``A Taste for Punishment: Black and White Americans' Views on the Death Penalty and the War on Drugs.'' Du Bois Review 1(1): 151--180.}}}
+
+\only<2>{Blacks are about 12\% of the U.S. population, but they were half of the homicide offenders last year. }Do you favor or oppose the death penalty for persons convicted of murder?
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Another framing example\footnote{Haider-Markel \& Joslyn. 2001. ``Gun Policy, Opinion, Tragedy, and Blame Attribution: The Conditional Influence of Issue Frames.'' \textit{Journal of Politics} 63(2): 520--543.}}}
+
+\only<1>{Concealed handgun laws have recently received national attention. Some people have argued that law-abiding citizens have the right to protect themselves.}\only<2>{Concealed handgun laws have recently received national attention. Some people have argued that laws allowing citizens to carry concealed handguns threaten public safety because they would allow almost anyone to carry a gun almost anywhere, even onto school grounds.} What do you think about concealed handgun laws?
+
+}
+
+
+\frame{
+
+\frametitle{Question testing}
+
+Use question wording designs to select which survey measures we want to use
+
+\begin{itemize}
+\item Select possible question wordings
+\item Select some criterion(-ia) for assessing which is better
+\item Pilot test and then use the item that performs better
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Aside: Experimentation vs. Other Pretesting Methods}}
+
+\small
+
+\begin{itemize}\itemsep0.25em
+\item<2-> Experiments are complementary to other pretesting methods
+\item<3-> Specific value added of an experiment: optimize questions or other survey features against a specific criterion, e.g.:
+	\begin{itemize}\footnotesize
+	\item (Non-)Response or drop-off rates
+	\item ``Don't know'' rates
+	\item Item characteristics
+	\item Reading times or response latencies
+	\end{itemize}
+\item<4-> But! Power considerations\dots
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Classic question testing experiment\footnote{Bishop, G.F., Tuchfarber, A. \& Oldendick, R.W. 1986. ``Opinions on Fictitious Issues: The Pressure to Answer Survey Questions.'' \textit{Public Opinion Quarterly} 50(2): 240--250.}}}
+
+Some people feel that The 1975 Public Affairs Act should be repealed-do you agree or disagree with this idea\only<1>{?}\only<2>{, or haven't you thought much about this issue?}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize An example\footnote{Holbrook \& Krosnick. 2013. ``A New Question Sequence to Measure Voter Turnout in Telephone Surveys: Results of an Experiment in the 2006 {ANES} Pilot Study.'' \textit{Public Opinion Quarterly} 77: 106--123.}}}
+
+\small
+
+In talking to people about elections, we often find that a lot of people were not able to vote because they weren't registered, they were sick, or they just didn't have time. \only<1>{How about you--did you vote in the elections this November?}\only<2>{Which of the following statements best describes you?
+    \begin{itemize}\footnotesize
+    \item One, I did not vote in the November 3 election
+    \item two, I thought about voting this time but didn't
+    \item three, I usually vote but didn't this time
+    \item four, I am sure I voted
+    \end{itemize}}
+
+}
+
+\frame{
+
+\frametitle{{\normalsize An Instructional Manipulation\footnote{Sturgis, Allum \& Smith. 2008. ``An Experiment on the Measurement of Political Knowledge in Surveys.'' \textit{Public Opinion Quarterly} 72(1): 90--102.}}}
+
+\small
+
+For the next few questions, I am going to read out some statements, and for each one, please tell me if it is true or false. If you don't know, \only<1>{just say so and we will skip to the next one}\only<2>{please just give me your best guess}.
+
+\begin{enumerate}\footnotesize
+\item Britain's electoral system is based on proportional representation.
+\item MPs from different parties are on parliamentary committees.
+\item The Conservatives are opposed to the ratification of a constitution for the European Union.
+\end{enumerate}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize An Instructional Manipulation + \footnote{Prior \& Lupia. 2008. ``Money, Time, and Political Knowledge: Distinguishing Quick Recall and Political Learning Skills.'' \textit{American journal of Political Science} 52(1): 169--183.}}}
+
+\small
+
+\only<1>{In the next part of this study, you will be asked 14 questions about politics, public policy, and economics. Many people don't know the answers to these questions, but it is helpful for us if you answer, even if you're not sure what the correct answer is. We encourage you to take a guess on every question. At the end of this study, you will see a summary of how many questions you answered correctly.}\only<2>{We will pay you for answering questions correctly.
+You will earn \$1 for every correct answer you give. So, if you answer 3 of the 14 questions correctly, you will earn \$3. If you answer 7 of the 14 questions correctly, you will earn \$7. The more questions you answer correctly, the more you will earn.}
+
+}
+
+
+
+\frame{
+
+\frametitle{{\normalsize Question Order Designs}}
+
+\small
+
+\begin{itemize}
+\item Manipulation of pre-outcome questionnaire
+\item<2-> Example:
+	\begin{itemize}
+	\item Goal: assess influence of value salience on support for a policy
+	\item Manipulate by asking different questions:
+		\begin{itemize}
+		\item Battery of 5 ``rights'' questions, or
+		\item Battery of 5 ``life'' questions
+		\end{itemize}
+	\item Measure support for legalized abortion
+	\end{itemize}
+\item<3-> If answers to manipulated questions matter, can measure rest post-outcome
+\end{itemize}
+
+}
+
+\frame{
+	\frametitle{{\normalsize Ex. Question-as-treatment\footnote{Transue. 2007. ``Identity Salience, Identity Acceptance, and Racial Policy Attitudes: {American} National Identity as a Uniting Force.'' \textit{American Journal of Political Science} 51(1): 78--91.}}}
+	
+
+\begin{itemize}
+\item \only<1,3>{How close do you feel to your ethnic or racial group?}\only<2,4>{How close do you feel to other Americans?}
+\item \only<1-2>{Some people have said that taxes need to be raised to take care of pressing national needs. How willing would you be to have your taxes raised to improve education in public schools?}\only<3-4>{Some people have said that taxes need to be raised to take care of pressing national needs. How willing would you be to have your taxes raised to improve educational opportunities for minorities?}
+\end{itemize}
+	
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Ex.: Knowledge and Political Interest}}
+
+\footnotesize
+
+\begin{enumerate}
+\item Do you happen to remember anything special that your U.S. Representative has done for your district or for the people in your district while he has been in Congress?
+\item Is there any legislative bill that has come up in the House of Representatives, on which you remember how your congressman has voted in the last couple of years?
+\item Now, some people seem to follow what's going on in government and public affairs most of the time, whether there's an election going on or not. Others aren't that interested. Would you say that you follow what's going on in government and public affairs most of the time, some of the time, only now and then, or hardly at all?
+\end{enumerate}
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Ex.: Knowledge and Political Interest}}
+
+\footnotesize
+
+\begin{enumerate}
+\item Now, some people seem to follow what's going on in government and public affairs most of the time, whether there's an election going on or not. Others aren't that interested. Would you say that you follow what's going on in government and public affairs most of the time, some of the time, only now and then, or hardly at all?
+\item Do you happen to remember anything special that your U.S. Representative has done for your district or for the people in your district while he has been in Congress?
+\item Is there any legislative bill that has come up in the House of Representatives, on which you remember how your congressman has voted in the last couple of years?
+\end{enumerate}
+
+}
+
+
+
+\frame{
+
+\frametitle{Vignettes}
+
+\begin{itemize}
+\item A ``vignette'' is a short paragraph of text describing a situation
+\item Vignettes are probably the most common survey experimental paradigm, after question wording designs
+\item Take many forms and increasingly encompass non-textual stimuli
+\item Basically limited to web-based mode
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{A classic vignette\footnote{Gilens, M. 1996. ```Race coding' and white opposition to welfare. \textit{American Political Science Review} 90(3): 593--604.}}
+
+\small
+
+Now think about a \textbf{(black/white)} woman in her early thirties. She is a high school \textbf{(graduate/drop out)} with a ten-year-old child, and she has been on welfare for the past year.
+
+\begin{itemize}\footnotesize
+\item How likely is it that she will have more children in order to get a bigger welfare check? (1 = Very likely, \dots, 7 = Not at all likely)
+\item How likely do you think it is that she will really try hard to find a job in the next year? (1 = Very likely, \dots, 7 = Not at all likely)
+\end{itemize}
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Newer vignette\footnote{Banerjee et al. 2012. ``Are Poor Voters Indifferent to Whether Elected Leaders are Criminal or Corrupt? A Vignette Experiment in Rural India.'' Working paper.}}}
+
+\footnotesize
+
+Imagine that you were living in a village in another district in Uttar Pradesh and that you were voting for candidates in \textbf{(village/state/national)} election. Here are the two candidates who are running against each other: The first candidate is named \textbf{(caste name)} and is running as the \textbf{(BJP/SP/BSP)} party candidate. \textbf{(Corrupt/criminality allegation)}. His opponent is named \textbf{(caste name)} and is running as the \textbf{(BJP/SP/BSP)} party candidate. \textbf{(Opposite corrupt/criminality allegation)}. From this information, please indicate which candidate you would vote for in the \textbf{(village/state/national)} election. 
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Longer texts\footnote{Druckman \& Leeper. 2012. ``Learning More from Political Communication Experiments: Pretreatment and Its Effects.'' \textit{American Journal of Political Science} 56(4): 875--896.}}}
+
+\small
+
+We are testing materials for use in a study \textbf{\only<1>{of the structure of sentences people use when writing news editorials}\only<2>{that is related to the kinds of opinions people form about public policies}}. Along these lines, we would like you to read a series of paragraphs, taken from recent major newspaper editorials.
+
+}
+
+\frame{
+
+\small
+
+Please read the following paragraphs and, for each, rate \textbf{\only<1>{how \textit{dynamic} you think it is. A paragraph is more ``dynamic'' when it uses more vivid action words. For example, a statement like, ``He sped up and raced through the light before crashing into the swerving truck,'' seems more dynamic than, ``He went faster to get through the light before having an accident.'' The action words in the first sentence (which we have highlighted in bold) seem more dynamic or vivid than those contained in the second sentence.}\only<2>{the extent to which it decreases or increases your support for the Patriot Act. In subsequent surveys we will ask you for your overall opinion about the state-run casino (i.e., the extent to which you oppose or support the state-run casino).}} There are no right or wrong opinions and your responses to all questions are completely confidential.
+
+}
+
+\frame{
+
+\small
+
+Please read the paragraphs carefully and, after each one, rate \textbf{\only<1>{the extent to which you think it is \textit{dynamic}}\only<2>{the extent to which it decreases or increases your support for the Patriot Act}}.\\
+
+\vspace{1em}
+
+\footnotesize
+
+With the passage of the Patriot Act in 2001, the FBI can now enter your home, search around, and doesn't ever have to tell you it was there. You could be perfectly innocent, yet federal agents can go through your most personal effects. When considering new laws, a test of the impact on liberty should be required. On that test, the Patriot Act fails. At a massive 342 pages, it potentially violates at least six of the ten original amendments known as the Bill of Rights --- the First, Fourth, Fifth, Sixth, Seventh and Eighth Amendments --- and possibly the Thirteenth and Fourteenth as well.
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Example\footnote{Merolla \& Zechmeister. 2013. ``Evaluating Political Leaders in Times of Terror and Economic Threat: The Conditioning Influence of Politician Partisanship.'' \textit{Journal of Politics} 75(3): 599--712.}}}
+
+\begin{center}
+\includegraphics<1>[width=.85\textwidth]{images/merollazechmeister1}
+\includegraphics<2>[width=.85\textwidth]{images/merollazechmeister2}
+\end{center}
+
+}
+
+
+\frame{
+
+\frametitle{{\large Some vignette considerations}}
+
+\begin{itemize}\small
+\item<2-> Comparability across conditions
+	\begin{itemize}
+	\item Length
+	\item Readability
+	\end{itemize}
+\item<3-> Language proficiency
+\item<4-> Length
+	\begin{itemize}\small
+	\item Timers
+	\item Forced exposure
+	\item Mouse trackers
+	\end{itemize}
+\item<5-> Devices
+	\begin{itemize}\small
+	\item Browser-specificity
+	\item Device sizes (e.g., mobile)
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\begin{center}
+\includegraphics[height=\textheight]{images/devicesizes.png}
+\end{center}
+}
+
+\frame{
+
+\frametitle{{\normalsize Aside: Unique features of online studies}}
+
+\begin{itemize}
+\item<2-> Capacity for audio-visual treatments and measurements
+\item<3-> Paradata collection
+	\begin{itemize}
+	\item Implicit outcomes like response times, answer switching, mouse click behavior, browser focus, eye tracking, etc.
+	\end{itemize}
+\item<4-> Complex randomization
+\item<5-> Panel data
+\item<5-> Synchronous, multi-person designs
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Non-textual Manipulations}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item Images can work well
+\item Standalone or embedded in a text or question
+\item<2-> Examples
+	\begin{itemize}\footnotesize
+	\item<2-> Kalmoe \& Gross\footnote{``Cueing Patriotism, Prejudice, and Partisanship in the Age of Obama: Experimental Tests of U.S. Flag Imagery Effects in Presidential Elections.'' \textit{Political Psychology}: in press.} measure impact of patriotic cues on candidate support by showing images of candidates with and without flags
+	\item<3-> Subliminal primes possible, depending on software
+	\item<4-> Lots of recent examples of facial manipulation
+	\end{itemize}
+
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Example\footnote{Iyengar et al. 2010. ``Do Explicit Racial Cues Influence Candidate Preference? The Case of Skin Complexion in the 2008 Campaign.'' Working paper.}}
+
+\includegraphics[width=\textwidth]{images/IyengarMessingBailenson}
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Example\footnote{Laustsen \& Petersen. 2016. ``Winning Faces vary by Ideology.'' \textit{Political Communication} 33(2): 188--211.}}}
+
+\begin{center}
+\includegraphics[width=\textwidth, trim={0cm 0cm 0cm 9cm}, clip]{images/laustsen}
+\end{center}
+}
+
+\frame{
+\frametitle{{\normalsize Example\footnote{Bailenson et al. 2006. ``Transformed Facial Similarity as a Political Cue: A Preliminary Investigation.'' \textit{Political Psychology} 27(3): 373--385.}}}
+
+\begin{center}
+\includegraphics[width=\textwidth, trim={0cm 7.7cm 0cm 0cm}, clip]{images/BailensonGarlandIyengar}
+\end{center}
+}
+
+
+
+
+\frame{
+
+\frametitle{{\normalsize Audio \& Video manipulations}}
+
+\small
+
+\begin{itemize}\itemsep-0.2em
+\item Problematic for same reasons as long texts
+\item<2-> Best practices
+	\begin{itemize}\footnotesize
+	\item Keep it short
+	\item Have the video play automatically
+	\item Disallow survey progression
+	\item Control and validate
+	\end{itemize}
+\item<3->Examples
+	\begin{itemize}
+	\item Television Advertisements\footnote{Vavreck. 2007 ``The Exaggerated Effects of Advertising on Turnout: The Dangers of Self-Reports.'' \textit{Quarterly Journal of Political Science} 2: 325--343.} 
+	\item News Programs\footnote{Mutz. 2007. ``Effects of `In-Your-Face' Television Discourse on Perceptions of a Legitimate Opposition.'' \textit{American Political Science Review} 101(4): 621--635.}
+	\end{itemize}	
+\end{itemize}
+
+}
+
+
+
+
+\frame{
+\frametitle{``Task'' Designs}
+
+\begin{itemize}\itemsep0.5em
+\item Task designs ask respondents to perform a task
+\item Often developed for laboratory settings
+\item<2-> Most common example: writing something
+\item<3-> Can be problematic:
+	\begin{itemize}
+	\item Time-intensive
+	\item Invites drop-off
+	\item Compliance problems
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\againframe{ambivalentpartisan}
+
+
+
+\questions
+
+
+\frame{
+
+\frametitle{Sensitive Item Designs}
+
+\begin{itemize}
+\item Experiments can also be used to measure something
+\item Goal here is not necessarily causal inference, though the causal insight of the experiment provides \textit{descriptively} useful information
+\item Paradigms
+	\begin{itemize}
+	\item List experiments
+	\item Endorsement experiments
+	\end{itemize}
+\end{itemize}
+}
+
+\frame{
+
+\frametitle{{\normalsize List Experiments \footnote{Kuklinski et al. 1997. ``Racial Prejudice and Attitudes Toward Affirmative Action.'' \textit{American Journal of Political Science} 41(2): 402--419.}}}
+
+\small
+
+Now I'm going to read you three things that sometimes make people angry or upset. After I read all three, just tell me \textit{how many} of them upset you. I don't want to know which ones. just \textit{how many}.
+
+\footnotesize
+
+\begin{enumerate}
+\item the federal government increasing the tax on gasoline
+\item professional athletes getting million-dollar salaries
+\item large corporations polluting the environment
+\item<2-> \textbf{a black family moving in next door}
+\end{enumerate}
+
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Endorsement experiments\footnote{Lyall, Blair, \& Imai. 2013. ``Explaining Support for Combatants during Wartime: A Survey Experiment in Afghanistan.'' \textit{American Political Science Review} 107(4): 679--705.}}}
+
+\small
+
+A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping reform of the Afghan prison system, including the construction of new prisons in every district to help alleviate overcrowding in existing facilities. Though expensive, new programs for inmates would also be offered, and new judges and prosecutors would be trained. How do you feel about this proposal?
+}
+
+
+
+
+\questions
+
+
+\StataActivity{Analysis of Example Experiments}
+
+
+
+
+
+
+
+
+
+
+
+\frame{
+
+\frametitle{Look for TESS Examples}
+
+In groups of 2--3, look through some TESS examples
+\begin{itemize}
+\item What was the researcher's question?
+\item How did they test it experimentally?
+\item What was interesting or surprising about the designs?
+\end{itemize}
+
+Take about 15 minutes.
+
+}
+
+
+\frame{}
+
+
+
+
+\appendix
+
+
 
 
 \end{document}
