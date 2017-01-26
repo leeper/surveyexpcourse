@@ -26,21 +26,25 @@ I also teach on this topic in shorter modules. Upcoming versions of the course a
 
 A two-day workshop at NTNU, Norwegian University of Science and Technology (Trondheim, Norway; 30-31 January 2017). The schedule for the course is as follows:
 
-Monday 30 January - Morning
+### Monday 30 January - *Morning*
+
  - Introduction to surveys, experiments, and the survey-experiment nexus
  - History of survey experimentation
  - Scientific and statistical logic of survey experiments
 
-Monday 30 January - Afternoon
+### Monday 30 January - *Afternoon*
+
  - Translating theories into experimental designs
  - Common survey experimental paradigms
  - Discussion of applied examples
 
-Tuesday 31 January - Morning
+### Tuesday 31 January - *Morning*
+
  - Generalizability and external validity
  - Advanced statistical considerations (mediation, effect heterogeneity, etc.)
 
-Tuesday 31 January - Afternoon
+### Tuesday 31 January - *Afternoon*
+
  - Practical considerations and handling "broken" experiments
  - Workshop and discussion of participants' designs and experiments
  - Conclusion
