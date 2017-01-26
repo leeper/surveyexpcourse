@@ -22,32 +22,80 @@ This course was first taught at the RECSM (Universitat Pompeu Fabra) Barcelona S
 
 I also teach on this topic in shorter modules. Upcoming versions of the course are:
 
+### NTNU
 
-### EUI
+A two-day workshop at NTNU, Norwegian University of Science and Technology (Trondheim, Norway; 30-31 January 2017). The schedule for the course is as follows:
+
+Monday 30 January - Morning
+ - Introduction to surveys, experiments, and the survey-experiment nexus
+ - History of survey experimentation
+ - Scientific and statistical logic of survey experiments
+
+Monday 30 January - Afternoon
+ - Translating theories into experimental designs
+ - Common survey experimental paradigms
+ - Discussion of applied examples
+
+Tuesday 31 January - Morning
+ - Generalizability and external validity
+ - Advanced statistical considerations (mediation, effect heterogeneity, etc.)
+
+Tuesday 31 January - Afternoon
+ - Practical considerations and handling "broken" experiments
+ - Workshop and discussion of participants' designs and experiments
+ - Conclusion
+
+ - Slides
+   - Day 1 [ ](Slides/NTNU2017-1.pdf)
+   - Day 2 [ ](Slides/NTNU2017-2.pdf)
+
+ - Activities
+   - Opening Activity: [Data](Activities/activity01.tsv), [Stata (.do)](Activities/activity01.do), [R (.R)](Activiites/activity01.R)
+   - Power calculatiosn: [Stata (.do)](Activities/power.do), [R (.R)](Activities/power.R)
+ 
+ 
+ - Example 1: Holbrook and Krosnick
+   - [Paper](Activities/Holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
+   - [TESS Record](http://www.tessexperiments.org/data/holbrook120.html)
+   - [Questionnaire](Activities/Holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
+   - Data: [SPSS (.sav)](Activities/Holbrook/data.sav), [Stata (.dta)](Activities/Holbrook/data.dta)
+   - Code: [Stata](Activities/Holbrook/holbrook.R), [R](Activities/Holbrook/holbrook.R)
+ 
+ - Example 2: Schuldt et al.
+   - [Paper](Activities/Schuldt/Schuldt, Konrath, Schwarz (POQ, 2011).pdf)
+   - [TESS Record](http://www.tessexperiments.org/data/schuldt301.html)
+   - [Questionnaire](Activities/Schuldt/Questionnaire.doc)
+   - Data: [SPSS (.sav)](Activities/Schuldt/data.sav), [Stata (.dta)](Activities/Schuldt/data.dta)
+   - Code: [Stata](Activities/Schdult/schuldt.do), [R](Activities/Schdult/schuldt.R)
+ 
+ - Example 3: Johnston, Newman, and Velez
+   - Unpublished
+   - [TESS Record](http://www.tessexperiments.org/data/newman508.html)
+   - [Questionnaire](Activities/Johnston/questionnaire.doc)
+   - Data: [SPSS (.sav)](Activities/Johnston/data.sav), [Stata (.dta)](Activities/Johnston/data.dta)
+   - Code: [Stata](Activities/Johnston/johnston.do), [R Code](Activities/Johnston/johnston.R)
+ 
+Note: This version of the workshop includes activities using Stata, but R examples are also provided.
+
+
+---
+
+# EUI, 2017
 
 A one-day workshop at the Europen University Institute (Florence, Italy; 18 January 2017).
 
  - [Slides](Slides/EUI2017.pdf)
  - [R Code for Activites](Activities/EUI2017.R)
  - Papers
-   - [Holbrook and Krosnick](Activities/Holbrook, Krosnick (POQ, 2010).pdf)
-   - [Schuldt et al.](Activities/Schuldt, Konrath, Schwarz (POQ, 2011).pdf)
+   - [Holbrook and Krosnick](Activities/Holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
+   - [Schuldt et al.](Activities/Schuldt/Schuldt, Konrath, Schwarz (POQ, 2011).pdf)
 
 This version of the workshop includes activities using R.
-
-### NTNU
-
-A two-day workshop at NTNU, Norwegian University of Science and Technology (Trondheim, Norway; 30-31 January 2017).
-
- - Slides - Day 1 [ ](Slides/NTNU2017-1.pdf)
- - Slides - Day 2 [ ](Slides/NTNU2017-2.pdf)
-
-This version of the workshop includes activities using Stata.
 
 
 ---
 
-# UPF-RECSM Seminar
+# UPF-RECSM Seminar, 2017
 
 The next full iteration of this course will be taught at the [Barcelona Summer School in Survey Methodology](http://www.upf.edu/survey/Summer/) at Universitat Pompeu Fabra in Barcelona. The short course involves two 4-hour sessions, scheduled to run from 9:00-13:00 each morning July 6-7, 2017. Slides, readings, and materials for each session of the course are available here.
 
