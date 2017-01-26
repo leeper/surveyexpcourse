@@ -1,0 +1,947 @@
+\input{preamble}
+
+\title{Session I\\Survey Experiments in Context}
+
+\date[]{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+\frame{\tableofcontents}
+
+
+\frame{
+
+\frametitle{Activity!}
+
+\only<2-4,6>{
+\begin{enumerate}
+\item<2-4,6> Ask you to guess a number
+\item<3-4,6> Number off 1 and 2 across the room
+\item<4,6> Group 2, close your eyes
+\item<6> Group 1, close your eyes
+\end{enumerate}
+}
+
+\Large
+\only<5>{\textit{Group 1}\\ Think about whether the population of Chicago is more or less than 500,000 people. What do you think the population of Chicago is?}
+\only<7>{\textit{Group 2}\\ Think about whether the population of Chicago is more or less than 10,000,000 people. What do you think the population of Chicago is?}
+
+}
+\frame{}
+
+\frame{
+
+\frametitle{Enter your data}
+
+\begin{itemize}\itemsep1em
+\item Go here: \url{http://bit.ly/297vEdd}
+\item Enter your guess and your group number
+\end{itemize}
+
+
+%\url{http://goo.gl/forms/xDW4FLm9pau0O8zz2}
+
+}
+
+
+\frame{
+
+\frametitle{Results}
+
+\begin{itemize}\itemsep1em
+\item True population: 2.79 million
+\item<2-> What did you guess? \href{https://docs.google.com/spreadsheets/d/1SKWljS1EeNkAV5V0NZUwrKOu3LQFILVMB37xfTxyrPM/edit?usp=sharing}{(See Responses)}
+\item<3-> What's going on here?
+	\begin{itemize}
+	\item An experiment!
+	\item Demonstrates ``anchoring'' heuristic
+	\end{itemize}
+\item<4-> Experiments are easy to analyze, but only if designed and implemented well
+\end{itemize}
+
+}
+
+
+
+\section{Introductions}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+\frametitle{Who am I?}
+
+\small
+
+\begin{itemize}\itemsep0.25em
+
+\item Thomas Leeper
+
+\item Assistant Professor in Political Behaviour at London School of Economics
+
+\begin{itemize}
+\item 2013--15: Aarhus University (Denmark)
+\item 2008--12: PhD from Northwestern University (Chicago, USA)
+\item Birth--2008: Minnesota, USA
+\end{itemize}
+
+\item Interested in public opinion and political psychology
+
+\item Email: \href{mailto:t.leeper@lse.ac.uk}{t.leeper@lse.ac.uk}
+
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Who are you?}
+
+\begin{itemize}\itemsep1em
+
+\item Introduce yourself to a neighbour
+
+\item Where are you from?
+
+\item What do you hope to learn from the course?
+
+\end{itemize}
+
+}
+
+
+
+\frame{
+
+\frametitle{Quick Survey}
+
+\begin{enumerate}\itemsep0.5em
+\item<2-> How many of you have worked with survey data before?
+\item<3-> Of those, how many of you have \textit{performed} a survey before?
+\item<4-> How many of you have worked with experimental data before?
+\item<5-> Of those, how many of you have \textit{performed} an experiment before?
+\end{enumerate}
+
+}
+
+
+
+\section{Course Outline}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+
+\frametitle{Course Materials}
+
+\begin{center}
+All material for the course is available at:\\
+
+\vspace{1em}
+
+\url{http://www.thomasleeper.com/surveyexpcourse/}
+\end{center}
+
+}
+
+\frame{
+
+\frametitle{Learning Outcomes}
+
+\small
+
+By the end of the week, you should be able to\dots
+
+\begin{enumerate}
+\item<2-> Explain how to analyze experiments quantitatively.
+\item<3-> Explain how to design experiments that speak to relevant research questions and theories.
+\item<4-> Evaluate the uses and limitations of several common survey experimental paradigms.
+\item<5-> Identify practical issues that arise in the implementation of experiments and evaluate how to anticipate and respond to them.
+\end{enumerate}
+
+}
+
+
+\frame{
+
+\frametitle{Schedule of Five Sessions}
+
+\begin{enumerate}\itemsep0.5em
+\item Survey Experiments in Context
+\item Examples and Paradigms
+\item External Validity
+\item Sources of Heterogeneity
+\item Lingering Issues
+\end{enumerate}
+
+}
+
+
+\questions
+
+
+
+\section[History]{History of Experiments}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+
+\frametitle{Experiments}
+
+Oxford English Dictionary defines ``experiment'' as:
+
+\begin{enumerate}
+\item A scientific procedure undertaken to make a discovery, test a hypothesis, or demonstrate a known fact
+\item A course of action tentatively adopted without being sure of the outcome
+\end{enumerate}
+}
+
+\frame{
+
+\frametitle{Experiments}
+
+\begin{itemize}\itemsep0.75em
+\item ``Experiments'' have a very long history
+
+\item Major advances in design and analysis of experiments based on agricultural and later biostatistical research in the 19th century
+	\begin{itemize}
+	\item R.A. Fisher
+	\item Jerzy Neyman
+	\item Karl Pearson
+	\item Oscar Kempthorne
+	\end{itemize}
+
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{In Social Sciences}
+
+\small
+
+\begin{itemize}
+\item ``Experiments'' emerged in psychology 19th century
+	\begin{itemize}\footnotesize
+	\item Not randomized -- more like ``What if?'' studies
+	\item Heavily laboratory-based or clinical
+	\end{itemize}
+\item<2-> First randomized, controlled trial (RCT) by Peirce and Jastrow in 1884
+\item<3-> RCTs came later to medicine (circa 1950)
+\item<4-> And have been a major part of the ``credibility revolution'' in economics
+	\begin{itemize}
+	\item See, especially, LaLonde (1986)
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{In Political Science I}
+
+\begin{itemize}\itemsep0.5em
+\item APSA Pres. A. Lawrence Lowell (1922):\\
+{\small
+\textit{``We are limited by the impossibility of experiment. Politics is an observational, not an experimental science\dots''}
+}
+\item<2-> First experiment by Gosnell (1924)
+\item<3-> Gerber and Green (2000) first major \textit{field} experiment
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{{\large In Political Science II}}
+
+\small
+
+\begin{itemize}
+\item Rise of surveys in the behavioral revolution
+\item Survey research was not experimental because interviewing was still mostly paper-based
+\item<2-> 1983: Merrill Shanks and the Berkeley Survey Research Center develop CATI
+\item<3-> Mid-1980s: Paul Sniderman \& Tom Piazza performed the first survey experiment\only<3->{\footnote{Sniderman, Paul M., and Thomas Piazza. 1993. \textit{The Scar of Race}. Cambridge, MA: Harvard University Press.}}
+	\begin{itemize}\footnotesize
+	\item Then: the ``first multi-investigator''
+	\item Later: Skip Lupia and Diana Mutz created TESS
+	\end{itemize}
+
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{TESS}
+
+\small
+
+\begin{itemize}
+\item Time-Sharing Experiments for the Social Sciences
+\item Multi-disciplinary initiative that provides infrastructure for survey experiments on nationally representative samples of the United States population
+\item Funded by the U.S. National Science Foundation
+\item Anyone anywhere in the world can apply
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{TESS-like Projects}
+
+There are some TESS-like initiatives outside the United States:
+
+\begin{itemize}\itemsep1em
+\item Netherlands: \href{https://www.lissdata.nl/lissdata/}{LISS}
+\item Norway: \href{http://www.uib.no/en/citizen}{Bergen's Citizen Panel}
+\item Sweden: \href{http://lore.gu.se/surveys/citizen}{Gothenburg's Citizen Panel}
+\end{itemize}
+
+}
+
+
+\questions
+
+
+
+\section[Logic]{Logic of Experiments}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+\includegraphics[width=\textwidth]{images/correlation.png}
+}
+
+
+\frame{
+
+\frametitle{Addressing Confounding}
+
+In observational research\dots
+
+\begin{enumerate}\itemsep0.5em
+\item<2-> Correlate a ``putative'' cause ($X$) and an outcome ($Y$)
+\item<3-> Identify all possible confounds (\textbf{Z})
+\item<4-> ``Condition'' on all confounds
+	\begin{itemize}
+	\item Calculate correlation between $X$ and $Y$ at each combination of levels of \textbf{Z}
+	\end{itemize}
+\item<5-> Basically: $Y = \beta_0 + \beta_1 X + \beta Z + \epsilon $
+\end{enumerate}
+
+}
+
+
+\begin{frame}
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw (0,0) node[left] (X) {\textcolor<2->{red}{Smoking}};
+    \draw[->] (X) -- (5,0) node[right] (Y) {Cancer};
+    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
+    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
+    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
+    \draw[->] (W) -- (Y);
+    \draw<2->[->, dashed, very thick] (E) -- (X);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+
+
+\frame{
+
+\frametitle{Experiments are different}
+
+\begin{enumerate}\itemsep0.75em
+\item<2-> Draw causal inferences through \textit{design} not \textit{analysis}
+\item<3-> Randomization breaks selection bias
+\item<4-> We don't need to ``control'' for anything
+\item<5-> We see ``causal effects'' in the comparison of experimental groups
+\end{enumerate}
+
+}
+
+
+% Mill's method of difference
+\frame{
+\frametitle{{\normalsize Mill's Method of Difference}}
+
+\small
+
+If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, \textbf<2->{have every circumstance save one in common}, that one occurring only in the former; \textbf<2->{the circumstance in which alone the two instances differ, is the} effect, or \textbf<2->{cause}, or an necessary part of the cause, \textbf<2->{of the phenomenon}.
+}
+
+
+
+\frame{
+
+\frametitle{Definitions}
+
+\only<2>{\textbf{Unit}: A physical object at a particular point in time}
+
+\only<3>{\textbf{Treatment}: An intervention, whose effect(s) we wish to assess relative to some other (non-)intervention}
+
+\only<4>{
+\textbf{Potential outcomes}: The outcome for each unit that we would observe if that unit received each treatment
+\begin{itemize}
+\item Multiple potential outcomes for each unit, but we only observe one of them
+\end{itemize}
+}
+
+\only<5>{\textbf{Causal effect}: The comparisons between the unit-level potential outcomes under each intervention}
+
+}
+
+
+
+
+
+
+
+
+% Individual-level effects versus ATEs
+
+
+\frame{
+	\frametitle{The Experimental Ideal}
+	\small
+	A randomized experiment, or randomized control trial is:
+ 		\begin{quote}\small
+ 			The observation of units after, and possibly before, a randomly assigned intervention in a controlled setting, which tests one or more precise causal expectations
+ 		\end{quote}
+ 	This is Holland's ``statistical solution'' to the fundamental problem of causal inference
+}
+
+\frame{
+\frametitle{The Experimental Ideal}
+\begin{itemize}\itemsep0.5em
+\item It solves both the temporal ordering and confounding problems of observational causal inference
+	\begin{itemize}
+   		\item Treatment ($X$) is applied by the researcher before outcome ($Y$)
+   		\item Randomization means there are no confounding ($Z$) variables
+	\end{itemize}
+\item<2-> Thus experiments are a ``gold standard'' of causal inference
+\item<3-> Basically: $Y = \beta_0 + \beta_1 X + \epsilon $
+\end{itemize}
+}
+
+
+\frame{
+
+\frametitle{Neyman-Rubin Potential Outcomes Framework}
+
+If we are interested in some outcome $Y$, then for every unit $i$, there are numerous ``potential outcomes'' $Y*$ only one of which is visible in a given reality. Comparisons of (partially unobservable) potential outcomes indicate causality.
+
+}
+
+\frame{
+
+\frametitle{Neyman-Rubin Potential Outcomes Framework}
+
+Concisely, we typically discuss two potential outcomes:
+
+\begin{itemize}\small
+\item $Y_{0i}$, the \textit{potential} outcome \textit{realized} if $X_i = 0$ (b/c $D_i = 0$, assigned to control)
+\item $Y_{1i}$, the \textit{potential} outcome \textit{realized} if $X_i = 1$ (b/c $D_i = 1$, assigned to treatment)
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Historical Aside}
+
+\small
+
+\begin{itemize}
+\item The history of the potential outcomes framework is contested
+\item Most people attribute it to Donald Rubin
+\item Paul Holland was the first to link to the philosophical discussions of causality
+\item Donald Rubin attributes this to Jerzy Neyman (1923)
+\item James Heckman denies all of this and attributes it Andrew Roy (1951)
+\end{itemize}
+}
+
+
+
+
+
+
+
+% design-based experimental inference
+\frame{
+	\frametitle{Experimental Inference I}
+	\small
+	\begin{itemize}\itemsep0.5em
+    	\item<1-> Each unit has multiple \textit{potential} outcomes, but we only observe one of them, randomly
+    	\item<2-> In this sense, we are sampling potential outcomes from each unit's population of potential outcomes
+		\only<2->{
+			\begin{center}
+			\begin{tabular}{ccccc}
+			unit & low & high & \onslide<3->{control} & \onslide<4->{etc.} \\ \midrule
+			1 & ? & ? & \onslide<3->{?} & \onslide<4->{\dots} \\
+			2 & ? & ? & \onslide<3->{?} & \onslide<4->{\dots} \\
+			3 & ? & ? & \onslide<3->{?} & \onslide<4->{\dots} \\
+			4 & ? & ? & \onslide<3->{?} & \onslide<4->{\dots} \\ \bottomrule
+			\end{tabular}
+			\end{center}
+		}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Experimental Inference II}
+	\small
+	\begin{itemize}\itemsep0.5em
+    	\item<1-> We cannot see individual-level causal effects
+    	\item<2-> We can see \textit{average causal effects}
+    		\begin{itemize}
+        		\item<2-> Ex.: Average difference in cancer between those who do and do not smoke
+    		\end{itemize}
+    	\item<3-> We want to know: $TE_i = Y_{1i} - Y_{0i}$
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Experimental Inference III}
+	\small
+	\begin{itemize}\itemsep0.5em
+		\item<1-> We want to know: $TE_i = Y_{1i} - Y_{0i}$ for every $i$ in the population
+		\item<2-> We can average: $E[TE_i] = E[Y_{1i} - Y_{0i}] = E[Y_{1i}] - E[Y_{0i}]$
+		\item<3-> But we still only see one potential outcome for each unit:\\ \vspace{1em}
+    		$ATE_{naive} = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0]$
+    	\item<4-> Is this what we want to know?
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Experimental Inference IV}
+	\small
+	\begin{itemize}\itemsep0.5em
+	\item What we want and what we have:
+		\begin{align}
+		ATE & = E[Y_{1i}] - E[Y_{0i}] \\[1em]
+		ATE_{naive} & = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0]
+		\end{align}		
+	\item<2-> Are the following statements true?\\
+  		\begin{itemize}\itemsep0.5em
+      		\item<2-> $E[Y_{1i}] = E[Y_{1i} | X = 1]$
+      		\item<2-> $E[Y_{0i}] = E[Y_{0i} | X = 0]$
+  		\end{itemize}
+  	\item<3-> Not in general!
+  	\end{itemize}
+}
+
+\frame{
+	\frametitle{Experimental Inference V}
+	\small
+	\begin{itemize}\itemsep0.5em
+    	\item Only true when both of the following hold:
+    	\begin{align}
+    	E[Y_{1i}] = E[Y_{1i} | X = 1] = E[Y_{1i} | X = 0]\\
+    	E[Y_{0i}] = E[Y_{0i} | X = 1] = E[Y_{0i} | X = 0]
+    	\end{align}
+    	\item In that case, potential outcomes are \textit{independent} of treatment assignment
+		\item If true (e.g., due to randomization of $X$), then:
+    	\begin{align*}
+    	ATE_{naive} & = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0] \tag{5}\\
+    	& = E[Y_{1i}] - E[Y_{0i}]\\
+    	& = ATE
+    	\end{align*}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Experimental Inference VI}
+	
+	
+	\normalsize
+	\begin{itemize}\itemsep0.5em
+    	\item This holds in experiments because of a \textit{physical process of randomization}\footnote{Random means ``known probability of treatment'' not ``haphazard''.}
+   		\item<2-> Units differ only in side of coin that was up
+	   		\begin{itemize}\footnotesize
+	   		\item $X_i = 1$ only because $D_i = 1$
+	   		\end{itemize}
+	   	\item<3-> Implications:
+		   	\begin{itemize}
+		   	\item Covariate balance
+		   	\item Potential outcomes balanced and independent of treatment assignment
+		   	\item No confounding (selection bias)
+		   	\end{itemize}
+	\end{itemize}
+}
+
+
+
+
+\begin{frame}
+\small 
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw[->] (0,0) node[left] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
+    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
+    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
+    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
+    \draw[->] (W) -- (Y);
+    \draw[->, dashed] (E) -- (X);
+    
+    \draw<2->[->, very thick, color=red] (-2.5,1) node[left, color=red, text width=2cm, align=center] (Tr) {Random\\Assignment} -- (X);
+    \draw<2->[->, very thick, color=red] (X) -- (Y);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+
+\questions
+
+
+
+\frame{
+\frametitle{Experimental Analysis I}
+\small
+\begin{itemize}
+\item The statistic of interest in an experiment is the \textit{sample average treatment effect} (SATE)
+\item If our sample is \textit{representative}, then this provides an estimate of the population average treatment (PATE)
+\item This boils down to being a mean-difference between two groups:
+	\begin{equation}
+	SATE = \frac{1}{n_1}\sum Y_{1i} - \frac{1}{n_0}\sum Y_{0i}
+	\end{equation}
+\end{itemize}
+}
+
+
+
+\frame{
+
+\frametitle{Computation of Effects I}
+
+\begin{itemize}\itemsep0.5em
+\item In practice we often estimate SATE using t-tests, ANOVA, or OLS regression
+\item These are all basically equivalent
+\item<2-> Reasons to choose one procedure over another:
+	\begin{itemize}
+	\item<2-> Disciplinary norms
+	\item<3-> Ease of interpretation
+	\item<4-> Flexibility for >2 treatment conditions
+	\end{itemize}
+\end{itemize}
+
+
+
+}
+
+\frame{
+
+\frametitle{Computation of Effects II}
+
+An experimental data structure looks like:
+
+\small
+
+\begin{center}
+\begin{tabular}{ccc}
+\texttt{unit} & \texttt{treatment} & \texttt{outcome} \\ \hline 
+1 & 0 & 13 \\
+2 & 0 & 6 \\
+3 & 0 & 4 \\
+4 & 0 & 5 \\
+5 & 1 & 3 \\
+6 & 1 & 1 \\
+7 & 1 & 10 \\
+8 & 1 & 9 \\ \hline
+\end{tabular}
+\end{center}
+
+}
+
+
+\begin{frame}[fragile]
+
+\frametitle{Computation of Effects III}
+
+Stata:\small
+\begin{verbatim}
+ttest outcome, by(treatment)
+reg outcome i.treatment
+\end{verbatim}
+
+
+R:\small
+\begin{verbatim}
+t.test(outcome ~ treatment, data = data)
+lm(outcome ~ factor(treatment), data = data)
+\end{verbatim}
+
+\end{frame}
+
+
+\questions
+
+
+\frame{
+\frametitle{Experimental Analysis II}
+	\small
+\begin{itemize}\itemsep0.5em
+\item We don't just care about the size of the SATE. We also want to know whether it is significantly different from zero (i.e., different from no effect/difference)
+\item To know that, we need to estimate the \textit{variance} of the SATE
+\item The variance is influenced by:
+	\begin{itemize}
+	\item Total sample size
+	\item Variance of the outcome, $Y$
+	\item Relative size of each treatment group
+	\end{itemize}
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Experimental Analysis III}
+	\small
+\begin{itemize}\itemsep0.5em
+\item Formula for the variance of the SATE is:\\
+$\widehat{Var}(SATE) = \dfrac{\widehat{Var}(Y_0)}{n_0} + \dfrac{\widehat{Var}(Y_1)}{n_1}$
+
+	\begin{itemize}
+	\item $\widehat{Var}(Y_0)$ is control group variance
+	\item $\widehat{Var}(Y_1)$ is treatment group variance
+	\end{itemize}
+
+\item We often express this as the \textit{standard error} of the estimate:\\
+$\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{n_0} + \frac{\widehat{Var}(Y_1)}{n_1}}$
+\end{itemize}
+}
+
+
+\frame{
+
+\frametitle{Intuition about Variance}
+
+\begin{itemize}\itemsep0.5em
+\item Bigger sample $\rightarrow$ smaller SEs
+\item Smaller variance $\rightarrow$ smaller SEs
+\item Efficient use of sample size:
+	\begin{itemize}
+	\item When treatment group variances equal, equal sample sizes are most efficient
+	\item When variances differ, sample units are better allocated to the group with higher variance in \emph{Y}
+	\end{itemize}
+\end{itemize}
+
+
+}
+
+
+
+\frame{
+
+\frametitle{Statistical Power}
+
+\begin{itemize}
+\item Power analysis to determine sample size
+\item Type I and Type II Errors
+	\begin{itemize}
+	\item True positive rate is power
+	\item False negative rate is the significance threshold ($\alpha$)
+	\end{itemize}
+\end{itemize}
+
+\begin{tabular}{lrr}
+\toprule
+& $H_0$ True & $H_0$ False \\ \midrule
+Reject $H_0$ & Type 1 Error & \textbf{True positive} \\
+Accept $H_0$ & False negative & Type II error \\ \bottomrule
+\end{tabular}
+
+}
+
+
+\frame{
+
+\frametitle{Doing a Power Analysis}
+
+\begin{itemize}
+\item $\mu$, Treatment group mean outcomes
+\item $N$, Sample size
+\item $\sigma$, Outcome variance
+\item $\alpha$ Statistical significance threshold
+\item $\phi$, a sampling distribution
+\end{itemize}
+
+$Power = \phi\left( \frac{|\mu_1 - \mu_0|\sqrt{N}}{2\sigma} - \phi^{-1}\left( 1 - \frac{\alpha}{2} \right) \right)$
+
+}
+
+
+
+\frame{
+\frametitle{Intuition about Power}
+
+Minimum detectable effect is the smallest effect we could detect given sample size, ``true'' effect size, variance of outcome, power, and $\alpha$.\\
+
+\vspace{0.5em}
+
+In essence: some non-zero effect sizes are not detectable by a study of a given sample size.\footnote{Gelman, A. and Weakliem, D. 2009. ``Of Beauty, Sex and Power.'' \textit{American Scientist} 97(4): 310--16}
+
+}
+
+
+\frame{
+
+\frametitle{Intuition about Power}
+
+\begin{itemize}\itemsep0.5em
+\item It can help to think in terms of ``standardized effect sizes''
+\item Cohen's $d$:\\ $d = \frac{\bar{x}_1 - \bar{x}_0}{s}$, where
+$s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
+\item Intuition: How large is the effect in standard deviations of the outcome?
+	\begin{itemize}
+	\item Know if effects are large or small
+	\item Compare effects across studies
+	\end{itemize}
+\item Small: 0.2; Medium: 0.5; Large: 0.8
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Intuition about Power}
+
+\begin{center}
+\includegraphics[height=0.8\textheight, trim = 0in 0in 0in 0.5in , clip]{images/power}
+\end{center}
+
+}
+
+
+
+\frame{
+
+\frametitle{Aside: Complex Designs}
+
+\small
+
+\begin{itemize}
+\item An experiment can have any number of conditions
+	\begin{itemize}\footnotesize
+	\item Up to the limits of sample size
+	\item More than 8--10 conditions is typically unwieldy
+	\end{itemize}
+\item Typically analyze complex designs using ANOVA or regression, but we are still ultimately interested in pairwise comparisons to estimates SATEs
+	\begin{itemize}\footnotesize
+	\item Treatment--treatment, or treatment-control
+	\item Without control group, we don't know which treatment(s) affected the outcome
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{}
+
+
+\frame{
+\frametitle{{\large \textit{Survey}-experiments, specifically}}
+
+\small
+
+\begin{itemize}
+\item Everything so far applies to any kind of experiment
+\item<2-> A survey experiment is just an experiment that occurs in a survey context
+	\begin{itemize}
+	\item As opposed to in the field or in a laboratory
+	\end{itemize}
+\item<3-> Sometimes a distinction is made between survey and online experiments
+\item<4-> Lots of common paradigms for survey experiments (tomorrow)
+\end{itemize}
+}
+
+
+\frame{
+
+\frametitle{{\large Combining Survey Design and\\ Experimental Design}}
+
+\small
+
+\begin{itemize}\itemsep0.25em
+\item Sample is representative of population in every respect (in expectation)
+\item Sample Average Treatment Effect (SATE) is the average of the sample's individual-level treatment effects
+	\begin{itemize}
+	\item Unbiased estimate of PATE
+	\end{itemize}
+\item<2-> Says nothing about effect heterogeneity
+	\begin{itemize}
+	\item Design is optimized for estimating SATE
+	\item Discuss this on Wednesday
+	\end{itemize}
+\end{itemize}
+}
+
+
+\questions
+
+
+\frame{
+
+\frametitle{Homework!}
+
+\begin{itemize}
+\item Get a sense of what can be studied experimentally
+\item Visit Time-Sharing Experiments for the Social Sciences
+	\begin{itemize}
+	\item \url{http://tessexperiments.org}
+	\end{itemize}
+\item Pick two studies from TESS
+\item We will share them in class tomorrow
+\end{itemize}
+
+}
+
+
+
+\appendix
+\frame{}
+
+\begin{frame}[fragile]
+
+\frametitle{{\large Randomization Distribution}}
+
+\tiny
+
+\begin{verbatim}
+# theoretical randomizations
+onedraw <- function(eff=FALSE, dat = d) {
+  r <- replicate(nrow(dat), sample(1:2,1))
+  dat[cbind(1:nrow(dat),r)] <- NA
+  if (eff) {
+    return(mean(dat[,'y1'], na.rm=TRUE) -
+           mean(dat[,'y0'], na.rm=TRUE) )
+  } else {
+    return(dat)
+  }
+}
+
+onedraw() # one randomization
+onedraw(TRUE) # one effect estimate
+
+# simulate 2000 experiments from these data
+x1 <- replicate(2000, onedraw(TRUE))
+hist(x1, col=rgb(1,0,0,.5), border='white')
+abline(v=-2, lwd=3, col='red') # true effect
+\end{verbatim}
+
+\end{frame}
+
+
+\end{document}
