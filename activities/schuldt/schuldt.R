@@ -1,7 +1,5 @@
 # http://www.tessexperiments.org/data/schuldt301.html
 utils::download.file("http://www.tessexperiments.org/data/zip/Schuldt301.zip", "Schuldt301.zip", mode = "wb")
-# http://www.tessexperiments.org/data/newman508.html
-utils::download.file("http://www.tessexperiments.org/data/zip/NewmanJohnston508.zip", "NewmanJohnston508.zip", mode = "wb")
 
 install.packages(c("ghit", "rio", "ggplot2"))
 
@@ -11,8 +9,7 @@ library("rio")     # data loading
 library("ggplot2") # plotting
 ghit::install_github("leeper/mcode")
 library("mcode")   # convenience functions for working with data recoding
-ghit::install_github("leeper/prediction", build_vignettes = FALSE)
-ghit::install_github("leeper/margins", build_vignettes = FALSE)
+ghit::install_github(c("leeper/prediction", "leeper/margins"), build_vignettes = FALSE)
 library("margins") # marginal effects
 
 

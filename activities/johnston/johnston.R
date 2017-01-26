@@ -9,8 +9,7 @@ library("rio")     # data loading
 library("ggplot2") # plotting
 ghit::install_github("leeper/mcode")
 library("mcode")   # convenience functions for working with data recoding
-ghit::install_github("leeper/prediction", build_vignettes = FALSE)
-ghit::install_github("leeper/margins", build_vignettes = FALSE)
+ghit::install_github(c("leeper/prediction", "leeper/margins"), build_vignettes = FALSE)
 library("margins") # marginal effects
 
 

@@ -26,3 +26,6 @@ s
 
 ## ANOVA
 summary(aov(Guess ~ Group, data = dat))
+
+### F-test equivalent to t-test when only two conditions
+### F = t^2

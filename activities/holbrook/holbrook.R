@@ -6,12 +6,10 @@ install.packages(c("ghit", "rio", "ggplot2", "list"))
 library("stats")
 library("ghit")    # installing github packages
 library("rio")     # data loading
-library("ggplot2") # plotting
 library("list")    # alternative list experiment estimators
 ghit::install_github("leeper/mcode")
 library("mcode")   # convenience functions for working with data recoding
-ghit::install_github("leeper/prediction", build_vignettes = FALSE)
-ghit::install_github("leeper/margins", build_vignettes = FALSE)
+ghit::install_github(c("leeper/prediction", "leeper/margins"), build_vignettes = FALSE)
 library("margins") # marginal effects
 
 
