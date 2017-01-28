@@ -51,8 +51,8 @@ The next iteration of this will be a two-day workshop at NTNU, Norwegian Univers
 Materials for participants:
  
  - Slides
-   - Day 1 [ ](slides/NTNU2017-1.pdf)
-   - Day 2 [ ](slides/NTNU2017-2.pdf)
+   - [Day 1](slides/NTNU2017-1.pdf)
+   - [Day 2](slides/NTNU2017-2.pdf)
 
  - Activities and other materials
    - Opening Activity: [Data](activities/activity01.tsv), [Stata (.do)](activities/activity01.do), [R (.R)](activities/activity01.R)

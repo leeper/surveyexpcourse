@@ -46,7 +46,7 @@
 }
 
 
-\title{Session I\\Survey Experiments in Context}
+\title{Session II\\Survey Experiments in Context}
 
 % ### Tuesday 31 January - *Morning*
 % 
@@ -65,7 +65,7 @@
 
 \frame{\titlepage}
 
-\frame{\tableofcontents}
+\frame{\tableofcontents[subsubsectionstyle=hide]}
 
 \section[More Designs]{Beyond One-Shot Designs}
 \frame{\tableofcontents[currentsubsection,subsubsectionstyle=hide]}
@@ -1181,76 +1181,10 @@ It should be possible to assess what demographic and personality factors predisp
 
 \frame{
 
-\begin{adjustbox}{max totalsize={1.1\textwidth}{1.2\textheight},center}
-\tikzstyle{block} = [draw, text width=7.5em, text centered]
-\tikzstyle{line} = [draw, >=latex']
-\begin{tikzpicture}[scale=0.4, font=\sffamily\small, node distance=1cm]
-    \node[block] (X) {Background\\Questionnaire};
-    \node[block, above right=1.5 and 1 of X] (High) {High\\Importance};
-        \node[block, above right=0.25 and 1 of High] (HiChoice) {Choice};
-            \node[block, above right=0 and 0.5 of HiChoice] (HiChoicePro) {Chose Pro (204)};
-            \node[block, below right=0 and 0.5 of HiChoice] (HiChoiceCon) {Chose Con (67)};
-            \path [line] (HiChoice.east) -- (HiChoicePro.west);
-            \path [line] (HiChoice.east) -- (HiChoiceCon.west);
-        
-        \node[block, below right=0.25 and 1 of High] (HiCaptive) {Captive};
-            \node[block, above right=0 and 0.5 of HiCaptive] (HiCaptivePro) {Pro (66)};
-            \node[block, below right=0 and 0.5 of HiCaptive] (HiCaptiveCon) {Con (68)};
-            \path [line] (HiCaptive.east) -- (HiCaptivePro.west);
-            \path [line] (HiCaptive.east) -- (HiCaptiveCon.west);
-
-        \path [line] (High.east) -- (HiChoice.west);
-        \path [line] (High.east) -- (HiCaptive.west);
-    
-    %\node[block, right=9.25 of X, color=gray] (Control) {Control (66)};
-    
-    \node[block, below right=1.5 and 1 of X] (Low) {Low\\Importance};
-        \node[block, above right=0.25 and 1 of Low] (LoChoice) {Choice};
-            \node[block, above right=0 and 0.5 of LoChoice] (LoChoicePro) {Chose Pro (173)};
-            \node[block, below right=0 and 0.5 of LoChoice] (LoChoiceCon) {Chose Con (101)};
-            \path [line] (LoChoice.east) -- (LoChoicePro.west);
-            \path [line] (LoChoice.east) -- (LoChoiceCon.west);
-        
-        \node[block, below right=0.25 and 1 of Low] (LoCaptive) {Captive};
-            \node[block, above right=0 and 0.5 of LoCaptive] (LoCaptivePro) {Pro (67)};
-            \node[block, below right=0 and 0.5 of LoCaptive] (LoCaptiveCon) {Con (67)};
-            \path [line] (LoCaptive.east) -- (LoCaptivePro.west);
-            \path [line] (LoCaptive.east) -- (LoCaptiveCon.west);
-
-        \path [line] (Low.east) -- (LoChoice.west);
-        \path [line] (Low.east) -- (LoCaptive.west);
-    
-    
-    \path [line] (X.east) -- (High.west);
-    \path [line] (X.east) -- (Low.west);
-    %\path [line, color=gray] (X.east) -- (Control.west);
-    
-	\node[below right=0 and .2 of HiChoicePro] (HiYChoice) {$\bar{Y}_{Choice}$};
-	\draw [decorate, decoration={brace,amplitude=7pt}]
-		(HiChoicePro.north east) -- (HiChoiceCon.south east);
-	\node[right=.2 of HiCaptivePro] (HiYPro) {$\bar{Y}_{Pro}$};
-	\draw [decorate, decoration={brace,amplitude=5pt}]
-		(HiCaptivePro.north east) -- (HiCaptivePro.south east);
-	\node[right=.2 of HiCaptiveCon] (HiYCon) {$\bar{Y}_{Con}$};
-	\draw [decorate, decoration={brace,amplitude=5pt}]
-		(HiCaptiveCon.north east) -- (HiCaptiveCon.south east);
-	
-	\node[below right=0 and .2 of LoChoicePro] (HiYChoice) {$\bar{Y}_{Choice}$};
-	\draw [decorate, decoration={brace,amplitude=7pt}]
-		(LoChoicePro.north east) -- (LoChoiceCon.south east);
-	\node[right=.2 of LoCaptivePro] (LoYPro) {$\bar{Y}_{Pro}$};
-	\draw [decorate, decoration={brace,amplitude=5pt}]
-		(LoCaptivePro.north east) -- (LoCaptivePro.south east);
-    \node[right=.2 of LoCaptiveCon] (LoYCon) {$\bar{Y}_{Con}$};
-	\draw [decorate, decoration={brace,amplitude=5pt}]
-		(LoCaptiveCon.north east) -- (LoCaptiveCon.south east);
-    
-\end{tikzpicture}
-\end{adjustbox}
-
+\includegraphics[height=\textheight]{images/leeper2017}
 \vspace{2em}
 
-{\tiny Leeper. 2016. ``How Does Treatment Self-Selection Affect Inferences About Political Communication?'' Available at \url{http://thomasleeper.com/research.html}\par}
+{\tiny Leeper. 2017. ``How Does Treatment Self-Selection Affect Inferences About Political Communication?'' Available at \url{http://thomasleeper.com/research.html}\par}
 
 }
 
@@ -2443,8 +2377,6 @@ Strongly agree\\
 \vspace{1em}
 \only<2>{\hyperlink{exclusion}{\beamerbutton{Return}}}
 }
-
-
 
 
 \end{document}
