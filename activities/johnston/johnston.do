@@ -63,5 +63,5 @@ reg outcome i.args
 * full design using factorial parameterization
 reg outcome i.tr##i.cues##i.args
 margins, dydx(*)
-marginsplot
+// marginsplot
 

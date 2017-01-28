@@ -1,5 +1,4 @@
 # http://www.tessexperiments.org/data/holbrook120.html
-utils::download.file("http://www.tessexperiments.org/data/zip/holbrook120.zip", "holbrook120.zip", mode = "wb")
 
 install.packages(c("ghit", "rio", "ggplot2", "list"))
 
@@ -13,8 +12,13 @@ ghit::install_github(c("leeper/prediction", "leeper/margins"), build_vignettes =
 library("margins") # marginal effects
 
 
-# list experiment
-holbrook <- rio::import("Holbrook120.zip", which = "TESS1_Client.sav")
+# load data
+if ("data.dta" %in% dir()) {
+    holbrook <- rio::import("data.dta")
+} else {
+    utils::download.file("http://www.tessexperiments.org/data/zip/holbrook120.zip", "holbrook120.zip", mode = "wb")
+    holbrook <- rio::import("Holbrook120.zip", which = "TESS1_Client.sav")
+}
 names(holbrook)
 dim(holbrook)
 

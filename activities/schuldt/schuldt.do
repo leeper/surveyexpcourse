@@ -1,4 +1,4 @@
-use schuldt.dta
+use data.dta
 
 table XTESS117
 * 1,3,5,7 = "Global Warming"

@@ -1,5 +1,4 @@
 # http://www.tessexperiments.org/data/newman508.html
-utils::download.file("http://www.tessexperiments.org/data/zip/NewmanJohnston508.zip", "NewmanJohnston508.zip", mode = "wb")
 
 install.packages(c("ghit", "rio", "ggplot2"))
 
@@ -12,8 +11,13 @@ library("mcode")   # convenience functions for working with data recoding
 ghit::install_github(c("leeper/prediction", "leeper/margins"), build_vignettes = FALSE)
 library("margins") # marginal effects
 
-
-johnston <- rio::import("NewmanJohnston508.zip", which = "TESS3_171_Johnston_Client.sav")
+# load data
+if ("data.dta" %in% dir()) {
+    johnston <- rio::import("data.dta")
+} else {
+    utils::download.file("http://www.tessexperiments.org/data/zip/NewmanJohnston508.zip", "NewmanJohnston508.zip", mode = "wb")
+    johnston <- rio::import("NewmanJohnston508.zip", which = "TESS3_171_Johnston_Client.sav")
+}
 names(johnston)
 dim(johnston)
 

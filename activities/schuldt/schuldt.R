@@ -1,5 +1,4 @@
 # http://www.tessexperiments.org/data/schuldt301.html
-utils::download.file("http://www.tessexperiments.org/data/zip/Schuldt301.zip", "Schuldt301.zip", mode = "wb")
 
 install.packages(c("ghit", "rio", "ggplot2"))
 
@@ -13,7 +12,13 @@ ghit::install_github(c("leeper/prediction", "leeper/margins"), build_vignettes =
 library("margins") # marginal effects
 
 
-schuldt <- rio::import("Schuldt301.zip", which = "TESS2_117_Schuldt_Client.sav")
+# load data
+if ("data.dta" %in% dir()) {
+    schuldt <- rio::import("data.dta")
+} else {
+    utils::download.file("http://www.tessexperiments.org/data/zip/Schuldt301.zip", "Schuldt301.zip", mode = "wb")
+    schuldt <- rio::import("Schuldt301.zip", which = "TESS2_117_Schuldt_Client.sav")
+}
 names(schuldt)
 dim(schuldt)
 

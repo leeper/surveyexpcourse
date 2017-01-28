@@ -54,27 +54,33 @@ Materials for participants:
    - [Day 1](slides/NTNU2017-1.pdf)
    - [Day 2](slides/NTNU2017-2.pdf)
 
- - Activities and other materials
-   - Opening Activity: [Data](activities/activity01.tsv), [Stata (.do)](activities/activity01.do), [R (.R)](activities/activity01.R)
-   - Power calculations: [Stata (.do)](activities/power.do), [R (.R)](activities/power.R)
+ - Readings
+   - [Holland, PW. 1986. "Statistics and Causal Inference." *Journal of the American Statistical Association* 81(396): 945-960.](activities/Holland1986.pdf)
    - [Leeper, TJ. 2011. "The Oft-Neglected Role of Protocol in the Design and Reporting of Experiments"](activities/protocol.pdf)
    - [An example protocol document](activities/protocol_example.pdf)
-      
  
- - Example 1: Holbrook and Krosnick
+ - Empirical Example 1: Holbrook and Krosnick
    - [Paper](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf), [TESS Record](http://www.tessexperiments.org/data/holbrook120.html), [Questionnaire](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
    - Data: [SPSS (.sav)](activities/holbrook/data.sav), [Stata (.dta)](activities/holbrook/data.dta)
    - Code: [Stata](activities/holbrook/holbrook.R), [R](activities/holbrook/holbrook.R)
  
- - Example 2: Schuldt et al.
+ - Empirical Example 2: Schuldt et al.
    - [Paper](activities/schuldt/Schuldt, Konrath, Schwarz (POQ, 2011).pdf), [TESS Record](http://www.tessexperiments.org/data/schuldt301.html), [Questionnaire](activities/schuldt/Questionnaire.doc)
    - Data: [SPSS (.sav)](activities/schuldt/data.sav), [Stata (.dta)](activities/schuldt/data.dta)
    - Code: [Stata](activities/schuldt/schuldt.do), [R](activities/schuldt/schuldt.R)
  
- - Example 3: Johnston, Newman, and Velez
+ - Empirical Example 3: Johnston, Newman, and Velez
    - (Unpublished), [TESS Record](http://www.tessexperiments.org/data/newman508.html), [Questionnaire](activities/johnston/questionnaire.doc)
    - Data: [SPSS (.sav)](activities/johnston/data.sav), [Stata (.dta)](activities/johnston/data.dta)
    - Code: [Stata](activities/johnston/johnston.do), [R Code](activities/johnston/johnston.R)
+ 
+ - Other Activities
+   - Opening Activity: [Data](activities/activity01.tsv), [Stata (.do)](activities/activity01.do), [R (.R)](activities/activity01.R)
+   - Power calculations: [Stata (.do)](activities/power.do), [R (.R)](activities/power.R)
+   - Effect heterogeneity: [Stata (.do)](activities/heterogeneity.do), [R (.R)](activities/heterogeneity.R)
+   - Mediation and Manipulation Checks: [Stata (.do)](activities/ivreg.do), [R (.R)](activities/ivreg.R)
+   - Balance testing: [Stata (.do)](activities/balance.do), [R (.R)](activities/balance.R)
+   - Survey Weighting: [Stata (.do)](activities/weighting.do), [R (.R)](activities/weighting.R)
  
 Note: This version of the workshop includes activities using Stata, but R examples are also provided.
 
