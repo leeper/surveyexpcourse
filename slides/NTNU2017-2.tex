@@ -33,6 +33,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{alltt}
+\usepackage{ulem} % for strikeout \sout{}
+\usepackage{adjustbox}
 
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,decorations.pathreplacing,calc}
@@ -57,7 +59,7 @@
 %  - Workshop and discussion of participants' designs and experiments
 %  - Conclusion
 
-\date[]{18 January 2017}
+\date[]{31 January 2017}
 
 \begin{document}
 
@@ -215,6 +217,44 @@
 }
 
 \frame{
+\frametitle{Noncompliance}
+\begin{itemize}
+\item Compliance is when individuals receive and accept the treatment to which they are assigned
+\item Non-compliance is when participants receive the wrong treatment (cross-over) or simply fail to receive the treatment to which they are assigned
+\item This causes problems for our analysis because factors other than randomization explain why individuals receive their treatment
+\item Lots of methods for dealing with this, but the consequence is generally reduced power
+\end{itemize}
+}
+
+\frame{
+\frametitle{Asymmetric Noncompliance}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item If noncompliance only occurs in one group, it is \textit{asymmetric}
+\item We can ignore non-compliance and analyze the ``intention to treat'' effect, which will underestimate our effects because some people were not treated as assigned\\
+	$ITT = \overline{Y}_1 - \overline{Y}_0$
+\item We can use ``instrumental variables'' to estimate the ``local average treatment effect'' (LATE) for those that complied with treatment:\\
+	$LATE = \frac{ITT}{Percent Compliant}$
+\item We can ignore randomization and analyze data ``as-treated'', but this makes our study no longer an experiment
+\end{itemize}
+}
+
+\frame{
+\frametitle{Two-Sided Noncompliance}
+\begin{itemize}\itemsep1em
+\item Two-sided noncompliance is more complex analytically
+\item Stronger assumptions are required to analyze it and we won't discus them here
+\item Best to try to develop a better design to avoid this rather than try to deal with the complexities of analyzing a broken design
+\end{itemize}
+}
+
+
+
+
+
+\frame{
 
 \frametitle{{\normalsize IV. Treatment Encouragement}}
 
@@ -287,6 +327,192 @@
 }
 
 \questions
+
+
+
+\section{More Statistical Issues}
+\frame{\tableofcontents[currentsubsection,subsubsectionstyle=hide]}
+
+\subsection{Representativeness}
+
+\frame{
+\frametitle{Unrepresentative Samples}
+\begin{itemize}\itemsep1em
+\item Most common thing to focus on is demographic representativeness
+	\begin{itemize}
+	\item Sears (1986): ``students aren't real people''
+	\item \href{http://www.slate.com/articles/health_and_science/science/2013/05/weird_psychology_social_science_researchers_rely_too_much_on_western_college.html}{Western, educated, industrialized, rich, democratic (WEIRD) psychology participants}
+	\end{itemize}
+\item<2-> But do those characteristics actually matter?
+\item<3-> Shadish, Cook, and Campbell tell us to think about:
+	\begin{itemize}
+	\item Surface similarities
+	\item Ruling out irrelevancies
+	\item Making discriminations
+	\item Interpolation/extrapolation
+	\end{itemize}
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Reweighting}
+\begin{itemize}\itemsep1em
+\item It may be possible to \textit{reweight} convenience sample data to match a population
+\item Any method for this is ``model-based'' (rather than ``design-based'')
+\item Not widely used or evaluated (yet)
+\item All techniques build on the idea of stratification
+\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Overview of Stratification}
+	\begin{enumerate}\itemsep0.5em
+		\item Define population
+		\item Construct a sampling frame
+		\item Identify variables we already know about units in the sampling frame
+		\item Stratify sampling frame based on these characteristics
+		\item Collect an SRS (of some size) within each stratum
+		\item Aggregate our results
+	\end{enumerate}
+}
+
+\frame{
+	\frametitle{Estimates from a stratified sample}
+	\begin{itemize}\itemsep0.5em
+		\item Within-strata estimates are calculated just like an SRS
+		\item Within-strata variances are calculated just like an SRS
+		\vspace{1em}
+		\item Sample-level estimates are weighted averages of stratum-specific estimates
+		\item Sample-level variances are weighted averages of strataum-specific variances
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Post-Stratification}
+	\begin{itemize}\itemsep1em
+		\item Used to correct for nonresponse, coverage errors, and sampling errors
+		\item<2-> Reweight sample data to match population distributions
+			\begin{itemize}
+				\item Divide sample and population into strata
+				\item Weight units in each stratum so that the weighted sample stratum contains the same proportion of units as the population stratum does
+			\end{itemize}
+		\item<3-> There are numerous other related techniques
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Post-Stratification: Example}
+	\begin{itemize}\itemsep1em
+		\item Imagine our sample ends up skewed on immigration status and gender relative to the population\\
+		\vspace{1em}
+		\small
+		\begin{tabular}{lrrlr}
+			\hline
+			Group             & Pop. & Sample & Rep.                &              Weight \\ \hline
+			Native-born, Female    &  .45 &     .5 & \onslide<2->{Over}  & \onslide<3->{0.900} \\
+			Native-born, Male      &  .45 &     .4 & \onslide<2->{Under} & \onslide<4->{1.125} \\
+			Immigrant, Female &  .05 &    .07 & \onslide<2->{Over}  & \onslide<4->{0.714} \\
+			Immigrant, Male   &  .05 &    .03 & \onslide<2->{Under} & \onslide<4->{1.667}\\  \hline
+		\end{tabular}
+		\item PS weight is just $w_{ps} = N_l / n_l$
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Post-Stratification}
+	\begin{itemize}\itemsep1em
+		\item This is the basis for inference in non-probability samples
+		\begin{itemize}
+			\item \textit{Demographic} representativeness
+		\end{itemize}
+		\item Online panels will reweight sample based on age, sex, education, etc.
+		\item Purely design-based surveys are increasingly rare
+	\end{itemize}
+}
+
+
+\frame{
+\frametitle{The Xbox Study}
+
+\begin{center}
+\includegraphics[width=\textwidth]{images/wangetal2}
+\end{center}
+
+{\footnotesize Wang et al. 2015. ``Forecasting elections with non-representative polls.'' \textit{International Journal of Forecasting}.\par}
+
+}
+
+
+\frame{
+\frametitle{The Xbox Study}
+
+\begin{center}
+\includegraphics[width=\textwidth]{images/wangetal1}
+\end{center}
+
+\vspace{1em}
+
+{\footnotesize Wang et al. 2015. ``Forecasting elections with non-representative polls.'' \textit{International Journal of Forecasting}.\par}
+
+}
+
+
+
+\frame{
+\begin{center}
+\includegraphics[width=.85\textwidth]{images/mullinix1}
+\end{center}
+\vspace{0.5em}
+{\footnotesize Mullinix et al. In press. ``The Generalizability of Survey Experiments.'' \textit{Journal of Experimental Political Science}.\par}
+}
+
+\frame{
+\begin{center}
+\includegraphics[width=.8\textheight]{images/mullinix2}
+\end{center}
+}
+
+
+\frame{
+\textbf{So does reweighting solve everything forever?}
+
+\begin{itemize}\itemsep1em
+\item<2-> Need well-defined target population
+	\begin{itemize}
+	\item and detailed covariate data
+	\item and large stratum sizes
+	\end{itemize}
+\item<3-> Purely model-based, so only as good as the model
+	\begin{itemize}
+	\item What unobservables might be hiding bias?
+	\item What reweighting might worse bias?
+	\end{itemize}
+\item<4-> Non-coverage is a potentially huge problem
+\item<5-> Not well-tested on experimental data
+\end{itemize}
+
+}
+
+
+
+
+
+
+\subsection{Mediation}
+
+\frame{
+\frametitle{Effect Mediation}
+\begin{itemize}\itemsep0.5em
+\item Sometimes we care about \textit{why} an effect comes about (i.e., what is the mechanism?)
+\item This is called \textit{mediation}
+\item If we suspect this happens and we care about the mediation process, we should try to manipulate the treatment and the suspected mediator
+\item If we cannot manipulate the mediator, there is basically no credible way of estimating the ``mediation effect'' of the treatment group a given mediator
+\end{itemize}
+}
 
 
 
@@ -428,6 +654,13 @@
 
 }
 
+\frame{}
+
+
+
+
+
+
 
 \questions
 
@@ -458,199 +691,24 @@ If we think there might be covariate-related effect heterogeneity, what can we d
 
 \subsubsection{Blocking/Block Randomization}
 
-
 \frame{
 
-\frametitle{Block Randomization I}
-
-{\small \textbf{Stratification:Sampling::Blocking:Experiments}}
+\frametitle{Block Randomization}
 
 \small
 
 \begin{itemize}\itemsep0.5em
 \item<2-> Basic idea: randomization occurs within strata defined before treatment assignment
 \item<3-> CATE is estimate for each stratum; aggregated to SATE
-\item<4-> Why?
+\item<4-> But\dots
 	\begin{itemize}
-	\item Eliminate chance imbalances
-	\item Optimized for estimating CATEs
+	\item Blocked randomization only works in exactly the same situations where stratified sampling works
+	\item Need to observe covariates pre-treatment in order to block on them, so works in panels but not cross-sectional designs
 	\item More precise SATE estimate
 	\end{itemize}
 \end{itemize}
 
 }
-
-\begin{frame}[fragile]
-
-\begin{center}
-\begin{tabular}{lcccccccc}
-Exp. & \multicolumn{4}{c}{Control} & \multicolumn{4}{c}{Treatment} \\ \midrule
-1 & M & M & M & M & F & F & F & F \\
-2 & M & M & M & F & M & F & F & F \\
-3 & M & M & F & F & M & M & F & F \\
-4 & M & F & F & F & M & M & M & F \\
-5 & F & F & F & F & M & M & M & M \\ \bottomrule
-\end{tabular}
-\end{center}
-
-
-{\scriptsize
-\begin{verbatim}
-# population of men and women
-pop <- rep(c("Male", "Female"), each = 4)
-
-# randomly assign into treatment and control
-split(sample(pop, 8, FALSE), c(rep(0,4), rep(1,4)))
-\end{verbatim}
-}
-
-\end{frame}
-
-\frame{
-
-\begin{center}
-
-\begin{tabular}{rrrr}
-Obs. & $X_{1i}$ & $X_{2i}$ & $D_i$ \\ \midrule
-1 & Male & Old & 0 \\
-2 & Male & Old & 1 \\  \midrule
-3 & Male & Young & 1 \\
-4 & Male & Young & 0 \\ \midrule
-5 & Female & Old & 1 \\
-6 & Female & Old & 0 \\ \midrule
-7 & Female & Young & 0 \\
-8 & Female & Young & 1 \\ \bottomrule
-\end{tabular}
-\end{center}
-
-}
-
-\frame[label=blocking2]{
-
-\frametitle{Block Randomization II}
-
-\begin{itemize}
-\item Blocking ensures ignorability of all covariates used to construct the blocks
-\item Incorporates covariates explicitly into the \textit{design}
-\item<2-> When is blocking \textit{statistically} useful?
-	\begin{itemize}
-	\item<3-> If those covariates affect values of potential outcomes, blocking reduces the variance of the SATE
-	\item<4-> Most valuable in small samples
-	\item<5-> Not valuable if all blocks have similar potential outcomes
-	\end{itemize}
-\end{itemize}
-
-}
-
-
-
-\frame{
-
-\frametitle{Statistical Properties I}
-
-\small
-
-Complete randomization:\\
-$$SATE = \frac{1}{n_1}\sum Y_{1i} - \frac{1}{n_0}\sum Y_{0i}$$
-
-\vspace{2em}
-
-Block randomization:\\
-$$SATE_{blocked} = \sum_{1}^{J} \left( \dfrac{n_j}{n} \right)  (\widehat{CATE}_j)$$
-
-}
-
-
-\frame{
-
-\begin{center}
-
-\begin{tabular}{rrrrrr}
-Obs. & $X_{1i}$ & $X_{2i}$ & $D_i$ & $Y_i$ & CATE \\ \midrule
-1 & Male & Old & 0 & 5 & \multirow{2}{*}{\onslide<2->{5}} \\
-2 & Male & Old & 1 & 10 \\  \midrule
-3 & Male & Young & 1 & 4 & \multirow{2}{*}{\onslide<3->{3}} \\
-4 & Male & Young & 0 & 1 \\ \midrule
-5 & Female & Old & 1 & 6 & \multirow{2}{*}{\onslide<4->{4}} \\
-6 & Female & Old & 0 & 2 \\ \midrule
-7 & Female & Young & 0 & 6 & \multirow{2}{*}{\onslide<5->{3}} \\
-8 & Female & Young & 1 & 9 \\ \bottomrule
-\end{tabular}
-\end{center}
-
-}
-
-\frame{
-
-\frametitle{SATE Estimation}
-
-\begin{align*}
-SATE &= \left(\dfrac{2}{8}*5\right) + \left(\dfrac{2}{8}*3\right) + \left(\dfrac{2}{8}*4\right) + \left(\dfrac{2}{8}*3\right) \\ \vspace{1em}
-&= 3.75
-\end{align*}
-
-\onslide<2->{The blocked and unblocked estimates are the same here because $Pr(Treatment)$ is constant across blocks and blocks are all the same size.}
-
-}
-
-\frame{
-
-\frametitle{SATE Estimation}
-
-\small
-
-\begin{itemize}
-\item We can use weighted regression to estimate this in an OLS framework
-\item Weights are the inverse prob. of being treated w/in block
-\begin{itemize}
-\item Pr(Treated) by block: $p_{ij} = Pr(D_i = 1 | J=j) $
-\item Weight (Treated): $ w_{ij} = \dfrac{1}{p_{ij}} $
-\item Weight (Control): $ w_{ij} = \dfrac{1}{1-p_{ij}} $
-\end{itemize}
-\end{itemize}
-
-}
-
-
-\frame{
-
-\frametitle{Statistical Properties II}
-
-\small
-
-Complete randomization:\\
-$$\widehat{SE}_{SATE} = \sqrt{\dfrac{\widehat{Var}(Y_0)}{n_0} + \dfrac{\widehat{Var}(Y_1)}{n_1}}$$
-
-\vspace{1em}
-
-Block randomization:\\
-$$\widehat{SE}_{SATE_{blocked}} = \sqrt{\sum_{1}^{J} \left( \dfrac{n_j}{n} \right)^2  \widehat{Var}{(SATE_j)}}$$
-
-\only<2->{When is the blocked design more efficient?}
-
-}
-
-
-\frame{
-
-\frametitle{Practicalities}
-
-\begin{itemize}\itemsep0.5em
-\item Blocked randomization only works in exactly the same situations where stratified sampling works
-	\begin{itemize}
-	\item Need to observe covariates pre-treatment in order to block on them
-	\item Work best in a panel context
-	\end{itemize}
-\item In a single cross-sectional design that might be challenging
-	\begin{itemize}
-	\item Some software can block ``on the fly''
-	\end{itemize}
-\end{itemize}
-
-
-}
-
-
 
 
 
@@ -1064,6 +1122,157 @@ Factors & Conditions per factor & Total Conditions & $n$ \\ \midrule
 \questions
 
 
+\subsubsection{Treatment Self-Selection}
+
+\frame{
+
+Bennett and Iyengar:\footnote{p.724 from Bennett \& Iyengar. 2008. ``A new era of minimal effects? The changing foundations of political communication.'' \textit{Journal of Communication} 58(4): 707--31.}
+
+\begin{quote}\small
+manipulational control actually weakens the ability to generalize to the real world where exposure to stimuli is typically voluntary. Accordingly, it is important that experimental researchers use designs that combine manipulation with self-selection of exposure.
+\end{quote}
+
+}
+
+
+\frame{
+
+Hovland: \footnote{p.16 from Hovland. 1959. ``Reconciling conflicting results derived from experimental and survey studies of attitude change.'' \textit{American Psychologist} 14(1): 8--17.}
+
+\begin{quote}\small
+It should be possible to assess what demographic and personality factors predispose one to expose oneself to particular communications and then to utilize experimental and control groups having these characteristics. Under some circumstances the evaluation could be made on only those who select themselves, with both experimental and control groups coming from the self-selected audience.
+\end{quote}
+
+}
+
+
+\frame{
+
+\frametitle{{\large Treatment Preferences I}}
+
+\begin{itemize}\itemsep0.5em
+\item Experiments are about inferring effect of $X$ on $Y$
+\item Respondents may have preferences over whether they are treated or untreated\footnote{Rucker. 1989. ``A Two-Stage Trial Design for Testing Treatment, Self-Selection, and Treatment Preference Effects.'' \textit{Statistics in Medicine} 8: 477--485.}
+\item Origins of this discussion are in the medical literature\footnote{Swift \& Callahan. 2009. ``The Impact of Client Treatment Preferences on Outcome: A Meta-Analysis.'' \textit{Journal of Clinical Psychology} 65(4): 368--381.}
+\item Closely related to the notion of placebo effects
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{{\large Treatment Preferences I}}
+
+\begin{itemize}\itemsep1em
+\item Treatment preferences may be an important factor in:
+	\begin{itemize}
+	\item Compliance
+	\item Effect heterogeneity
+	\end{itemize}
+\item<2-> Depending on your treatments, you may want to measure preferences
+	\begin{enumerate}
+	\item<3-> Stated preference measures
+	\item<4-> Designs that reveal preferences
+	\end{enumerate}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\begin{adjustbox}{max totalsize={1.1\textwidth}{1.2\textheight},center}
+\tikzstyle{block} = [draw, text width=7.5em, text centered]
+\tikzstyle{line} = [draw, >=latex']
+\begin{tikzpicture}[scale=0.4, font=\sffamily\small, node distance=1cm]
+    \node[block] (X) {Background\\Questionnaire};
+    \node[block, above right=1.5 and 1 of X] (High) {High\\Importance};
+        \node[block, above right=0.25 and 1 of High] (HiChoice) {Choice};
+            \node[block, above right=0 and 0.5 of HiChoice] (HiChoicePro) {Chose Pro (204)};
+            \node[block, below right=0 and 0.5 of HiChoice] (HiChoiceCon) {Chose Con (67)};
+            \path [line] (HiChoice.east) -- (HiChoicePro.west);
+            \path [line] (HiChoice.east) -- (HiChoiceCon.west);
+        
+        \node[block, below right=0.25 and 1 of High] (HiCaptive) {Captive};
+            \node[block, above right=0 and 0.5 of HiCaptive] (HiCaptivePro) {Pro (66)};
+            \node[block, below right=0 and 0.5 of HiCaptive] (HiCaptiveCon) {Con (68)};
+            \path [line] (HiCaptive.east) -- (HiCaptivePro.west);
+            \path [line] (HiCaptive.east) -- (HiCaptiveCon.west);
+
+        \path [line] (High.east) -- (HiChoice.west);
+        \path [line] (High.east) -- (HiCaptive.west);
+    
+    %\node[block, right=9.25 of X, color=gray] (Control) {Control (66)};
+    
+    \node[block, below right=1.5 and 1 of X] (Low) {Low\\Importance};
+        \node[block, above right=0.25 and 1 of Low] (LoChoice) {Choice};
+            \node[block, above right=0 and 0.5 of LoChoice] (LoChoicePro) {Chose Pro (173)};
+            \node[block, below right=0 and 0.5 of LoChoice] (LoChoiceCon) {Chose Con (101)};
+            \path [line] (LoChoice.east) -- (LoChoicePro.west);
+            \path [line] (LoChoice.east) -- (LoChoiceCon.west);
+        
+        \node[block, below right=0.25 and 1 of Low] (LoCaptive) {Captive};
+            \node[block, above right=0 and 0.5 of LoCaptive] (LoCaptivePro) {Pro (67)};
+            \node[block, below right=0 and 0.5 of LoCaptive] (LoCaptiveCon) {Con (67)};
+            \path [line] (LoCaptive.east) -- (LoCaptivePro.west);
+            \path [line] (LoCaptive.east) -- (LoCaptiveCon.west);
+
+        \path [line] (Low.east) -- (LoChoice.west);
+        \path [line] (Low.east) -- (LoCaptive.west);
+    
+    
+    \path [line] (X.east) -- (High.west);
+    \path [line] (X.east) -- (Low.west);
+    %\path [line, color=gray] (X.east) -- (Control.west);
+    
+	\node[below right=0 and .2 of HiChoicePro] (HiYChoice) {$\bar{Y}_{Choice}$};
+	\draw [decorate, decoration={brace,amplitude=7pt}]
+		(HiChoicePro.north east) -- (HiChoiceCon.south east);
+	\node[right=.2 of HiCaptivePro] (HiYPro) {$\bar{Y}_{Pro}$};
+	\draw [decorate, decoration={brace,amplitude=5pt}]
+		(HiCaptivePro.north east) -- (HiCaptivePro.south east);
+	\node[right=.2 of HiCaptiveCon] (HiYCon) {$\bar{Y}_{Con}$};
+	\draw [decorate, decoration={brace,amplitude=5pt}]
+		(HiCaptiveCon.north east) -- (HiCaptiveCon.south east);
+	
+	\node[below right=0 and .2 of LoChoicePro] (HiYChoice) {$\bar{Y}_{Choice}$};
+	\draw [decorate, decoration={brace,amplitude=7pt}]
+		(LoChoicePro.north east) -- (LoChoiceCon.south east);
+	\node[right=.2 of LoCaptivePro] (LoYPro) {$\bar{Y}_{Pro}$};
+	\draw [decorate, decoration={brace,amplitude=5pt}]
+		(LoCaptivePro.north east) -- (LoCaptivePro.south east);
+    \node[right=.2 of LoCaptiveCon] (LoYCon) {$\bar{Y}_{Con}$};
+	\draw [decorate, decoration={brace,amplitude=5pt}]
+		(LoCaptiveCon.north east) -- (LoCaptiveCon.south east);
+    
+\end{tikzpicture}
+\end{adjustbox}
+
+\vspace{2em}
+
+{\tiny Leeper. 2016. ``How Does Treatment Self-Selection Affect Inferences About Political Communication?'' Available at \url{http://thomasleeper.com/research.html}\par}
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Analyzing 3-Group Preference Trials\footnote{GK2011 Package for R. \url{https://cran.r-project.org/package=GK2011}}}}
+
+\begin{enumerate}\itemsep0.5em
+\item SATE: $\bar{Y}_{T} - \bar{Y}_{C}$
+\item CATE (Prefer T): $\dfrac{\bar{Y}_{Choice} - \bar{Y}_{C}}{\hat{\alpha}}$
+\item CATE (Prefer C): $\dfrac{\bar{Y}_{T} - \bar{Y}_{Choice}}{1-\hat{\alpha}}$
+\end{enumerate}
+
+\vspace{1em}
+
+Note: $\alpha = Pr(T | Choice)$
+}
+
+
+
+\questions
+
 
 \subsubsection{Attention and Satisficing}
 
@@ -1083,6 +1292,120 @@ One final issue with unit-related sources of heterogeneity is how we handle or a
 \end{itemize}
 }
 }
+
+
+% attention checks
+\frame{
+\frametitle{Attention Checking}
+
+\large 
+\begin{itemize}\itemsep1em
+\item Online mode invites satisficing
+\item Attention checking can help, but is imperfect
+\end{itemize}
+}
+
+% useful for checking attention
+% may have consequences for representativeness and introduce selection biases
+
+\frame{
+\frametitle{Apparent Satisficing}
+\begin{itemize}\itemsep0.5em
+\item Filter out respondents based on response behavior
+\item Some common measures:
+	\begin{itemize}
+	\item ``Straightlining''
+	\item Non-differentiation
+	\item Acquiescence
+	\item Nonresponse
+	\item DK responding
+	\item Speeding
+	\end{itemize}
+\item Difficult to detect
+\item Difficult to distinguish from ``real'' responses
+\end{itemize}
+}
+
+\frame{
+\frametitle{Metadata/Paradata}
+\begin{itemize}\itemsep1em
+\item<1-> Timing
+	\begin{itemize}
+	\item Some survey tools will allow you to time page
+	\item Make a prior rules about dropping participants for speeding
+	\end{itemize}
+\item<2-> Mousetracking or eyetracking
+	\begin{itemize}
+	\item Mousetracking is unobtrusive
+	\item Eyetracking requires participants opt-in
+	\end{itemize}
+\item<3-> Record focus/blur browser events
+\end{itemize}
+}
+
+\frame{
+\frametitle{Direct Measures}
+\begin{itemize}\itemsep2em
+\item How closely have you been paying attention to what the questions on this survey actually mean?
+\item<2-> While taking this survey, did you engage in any of the following behaviors? Please check all that apply.
+	\begin{itemize}
+	\item Use your mobile phone
+	\item Browse the internet
+	\item \dots
+	\end{itemize}
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Substantive Manipulation Check}
+\begin{itemize}\itemsep1em
+\item Two common approaches:
+	\begin{itemize}
+	\item Information recall or understanding
+	\item Measure level of manipulated treatment variable
+	\end{itemize}
+\item Risky to remove cases based on this because it is a form of conditioning on post-treatment variables
+\item May be useful to consider either a mediator of effects
+\end{itemize}
+}
+
+\frame{
+\frametitle{Instructional Manipulation Check}
+
+\only<2>{Do you agree or disagree with the decision to send British forces to fight ISIL in Syria? }We would like to know if you are reading the questions on this survey. If you are reading carefully, please ignore this question, do not select any answer below, and click ``next'' to proceed with the survey.\\
+
+\vspace{1em}
+
+\small
+
+Strongly disagree\\
+Somewhat disagree\\
+Neither agree nor disagree\\
+Somewhat agree\\
+Strongly agree\\
+
+}
+
+
+\frame{
+\frametitle{Attention Checking}
+
+In summary\dots
+
+\begin{itemize}\itemsep1em
+\item Attention checking can be useful
+\item Lots of options
+\item No obvious best metric
+\item Can be analytically consequential
+\end{itemize}
+}
+
+
+
+
+
+
 
 \frame{
 
@@ -1335,6 +1658,7 @@ Why is this useful?
 }
 
 \questions
+
 
 
 \subsection[O]{Outcomes}
@@ -1647,7 +1971,7 @@ With a partner, brainstorm how one or more these behavioural measures might be a
 
 \frame{
 
-\frametitle{Conclusion}
+\frametitle{Heterogeneity Take-aways}
 
 \begin{itemize}\itemsep0.5em
 \item Do we want to know SATE, CATE(s), or both?
@@ -1670,12 +1994,189 @@ With a partner, brainstorm how one or more these behavioural measures might be a
 
 
 
+\section[Recruitment]{Participant Recruitment}
+\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
+
+
+\frame{
+\frametitle{Recruitment Considerations}
+\begin{itemize}\itemsep0.75em
+\item Recruitment
+	\begin{itemize}
+	\item Sampling
+	\item Opt-in
+	\item A mix of each
+	\end{itemize}
+\item Incentives
+\item Frequency of participation
+	\begin{itemize}
+	\item MTurk panelists do 100+ studies per month
+	\item YouGov panelists do nearly as many
+	\end{itemize}
+\item ``Profile'' variables
+\item Quotas, post-stratification, weighting
+\item Respondent ``quality''
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Professional Panels}
+\begin{itemize}\itemsep1em
+\item Big players: SSI, YouGov, GfK, TNS/Gallup
+\item Online panels of respondents
+\item Respondents participate for incentives
+\item Study costs are negotiated
+	\begin{itemize}
+	\item Sample size
+	\item Study length (number of survey items)
+	\item Targeting
+	\item Timing
+	\end{itemize}
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{{\large KnowledgeNetworks versus YouGov}}
+\begin{itemize}\itemsep1em
+\item Big debate in early 2000s about online panels
+	\begin{itemize}
+	\item KN used ABS to build a representative panel
+	\item YouGov created an opt-in panel; used ``sample matching''
+	\end{itemize}
+\item<2-> YouGov's process:
+	\begin{itemize}
+	\item Randomly sample from a list
+	\item Match each sampled individual to someone in their opt-in panel
+	\item Survey the matched individuals
+	\end{itemize}
+\item<3-> Evidence inconclusive but many think KN approach is better
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Opt-in (Crowdsourcing) Sites}
+\begin{itemize}\itemsep1em
+\item Not exactly a panel (fully opt-in)
+\item Incentivized participation
+\item<2-> Prominent examples
+	\begin{itemize}
+	\item MTurk
+	\item Crowdflower
+	\item Microworkers
+	\item Prolific Academic
+	\item Google Surveys
+	\end{itemize}
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{``River Sampling''}
+\begin{itemize}\itemsep1em
+\item Not using an existing subject pool
+	\begin{itemize}
+	\item Link sharing or posting on websites
+	\item Using email list
+	\item Online advertising (Google, Facebook)
+	\end{itemize}
+\item<2-> My advice: don't do this unless you have no other choice!
+\end{itemize}
+}
+
+\frame{
+\frametitle{Custom Panels}
+\begin{itemize}\itemsep1em
+\item Creating your own panel is great
+	\begin{itemize}
+	\item Carefully sample on specific characteristics % stanford model; qualification model; database model
+	\item Organize repeated interviewing or interaction
+	\end{itemize}
+\item Lots of additional issues
+	\begin{itemize}
+	\item Attrition
+	\item Compensation
+	\item Panel Conditioning
+	\end{itemize}
+\item See Callegaro et al. 2014. \textit{Online Panel Research: A Data Quality Perspective}. Wiley.
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{My Advice, Elaborated}
+\begin{itemize}\itemsep1em
+\item Only work with populations where each unit is uniquely identifiable
+\item<2-> Without this, you risk many things:
+	\begin{itemize}
+	\item Ambiguous eligibility
+	\item Retakes, treatment crossover
+	\item No way to evaluate response rates/bias
+	\end{itemize}
+\item<3-> Know something about your sample
+	\begin{itemize}
+	\item How does it differ from your target of inference?
+	\item What theories or evidence would suggest those differences should matter?
+	\item What can you do to adjust or control for those \textit{consequential} differences?
+	\end{itemize}
+\end{itemize}
+}
+
+
+
+\frame{
+\frametitle{Measure, Measure, Measure}
+
+\vspace{1em}
+
+The only way to evaluate a sample is to know something about it.
+
+\vspace{1em}
+
+The best way to convince reviewers is to rule out irrelevancies.
+}
+
+
+\frame{
+\frametitle{Don't forget statistical power\dots}
+\begin{center}
+\includegraphics[height=0.85\textheight, trim = 0in 0in 0in 0.5in , clip]{images/power}
+\end{center}
+}
+
+\frame{
+\frametitle{And don't forget costs, either!}
+
+From one of my studies:\\
+
+\vspace{1em}
+
+\centering
+\begin{tabular}{l r r r}
+Sample	& Cost	& n	& Cost/participant\\ \midrule
+National	& \$13200	& 593	& \$22.26\\
+Exit Poll	& \$3000	& 741	& \$4.05\\
+Students	& \$0	& 299	& \$0\\
+Staff		& \$1280	& 128	& \$10.00\\
+MTurk	& \$550	& 1024	& \$0.54\\
+Ads		& \$636	& 80		& \$7.95\\
+\bottomrule
+\end{tabular}
+}
 
 
 
 
 
 \frame{}
+
+
+\section*{Quiz}
+\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
+
+
 
 \frame{
 
@@ -1833,6 +2334,41 @@ By the end of the day, you should be able to\dots
 	\item Good luck with your research!
 	\end{itemize}
 }
+
+
+\frame{}
+
+\section{References}
+
+\frame{
+\frametitle{Experimental Methods}
+\begin{itemize}\itemsep1em
+\item Druckman et al. 2011. \textit{Cambridge Handbook of Experimental Political Science}. Cambridge.
+\item Gerber and Green. 2011. \textit{Field Experiments}. W.W. Norton.
+\item Mutz. 2011. \textit{Population-Based Survey Experiments}. Princeton.
+\item Shadish et al. 2001. \textit{Experimental and Quasi-Experimental Designs for Generalized Causal Inference}. Houghton Mifflin.
+\end{itemize}
+}
+
+\frame{
+\frametitle{Survey Methods}
+\begin{itemize}\itemsep1em
+\item Groves et al. 2008. \textit{Survey Methodology}. 2nd Edition. Wiley.
+\item Lohr. 2010. \textit{Sampling: Design and Analysis}. 2nd Edition. Cengage.
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Online Surveys}
+\begin{itemize}\itemsep1em
+\item Callegaro et al. 2015. \textit{Web Survey Methodology}. Sage.
+\item Callegaro et al. 2015. \textit{Online Panel Research: A Data Quality Perspective}. Wiley.
+\end{itemize}
+}
+
+
+\frame{}
 
 
 \appendix

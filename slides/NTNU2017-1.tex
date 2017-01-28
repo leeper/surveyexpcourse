@@ -58,7 +58,7 @@
 %  - Common survey experimental paradigms
 %  - Discussion of applied examples
 
-\date[]{18 January 2017}
+\date[]{30 January 2017}
 
 \begin{document}
 
@@ -210,7 +210,7 @@ By the end of the day, you should be able to\dots
 
 
 
-\section[History/Logic]{History and Logic of Experiments}
+\section[History]{History of Experimentation}
 \frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
 
 \frame{
@@ -247,6 +247,31 @@ Oxford English Dictionary defines ``experiment'' as:
 
 
 \frame{
+\centering
+What distinguishes a \textit{survey} experiment from any other experiment?
+}
+
+
+\frame{
+
+\begin{enumerate}\itemsep1em
+\item Field Experiments
+\item Laboratory Experiments
+\item Survey Experiments
+\end{enumerate}
+
+Difference is only about \textit{setting} and \textit{mode}.\\
+
+\only<2->{Logic and methods of analysis are the same!}
+
+}
+
+
+
+
+
+
+\frame{
 
 \frametitle{Survey-Experiments}
 
@@ -255,7 +280,7 @@ Oxford English Dictionary defines ``experiment'' as:
 \begin{itemize}
 \item Rise of surveys in the behavioral revolution
 	\begin{itemize}
-	\item Experimentation rare because of paper mode
+	\item Paper-and-pencil mode limited experimentation
 	\item Limited use of ``split ballots''
 	\end{itemize}
 \item<2-> 1983: Merrill Shanks and the Berkeley Survey Research Center develop \textbf{CATI}
@@ -264,7 +289,6 @@ Oxford English Dictionary defines ``experiment'' as:
 	\item Then: the ``first multi-investigator''
 	\item Later: Skip Lupia and Diana Mutz created TESS
 	\end{itemize}
-
 \end{itemize}
 
 }
@@ -306,6 +330,22 @@ Oxford English Dictionary defines ``experiment'' as:
 \end{itemize}
 
 }
+
+\frame{
+
+\frametitle{TESS-like Projects}
+
+There are some TESS-like initiatives outside the United States:
+
+\begin{itemize}\itemsep1em
+\item Netherlands: \href{https://www.lissdata.nl/lissdata/}{LISS}
+\item Norway: \href{http://www.uib.no/en/citizen}{Bergen's Citizen Panel}
+\item Sweden: \href{http://lore.gu.se/surveys/citizen}{Gothenburg's Citizen Panel}
+\end{itemize}
+
+}
+
+
 
 
 \frame{
@@ -349,10 +389,12 @@ Protocol is the complete planning document for how to design, implement, and ana
 
 
 
+\section[Logic]{Logic and Analysis}
+\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
 
 
 \frame{
-	\includegraphics[width=\textwidth]{images/correlation.png}
+	\includegraphics[width=\textwidth]{images/xkcdcorrelation.png}
 }
 
 
@@ -365,7 +407,7 @@ In observational research\dots
 \begin{enumerate}\itemsep0.5em
 \item<2-> Correlate a ``putative'' cause ($X$) and an outcome ($Y$)
 \item<3-> Identify all possible confounds (\textbf{Z})
-\item<4-> ``Condition'' on all confounds
+\item<4-> ``Condition'' on all possibl econfounds
 	\begin{itemize}
 	\item Calculate correlation between $X$ and $Y$ at each combination of levels of \textbf{Z}
 	\end{itemize}
@@ -454,6 +496,30 @@ If an instance in which the phenomenon under investigation occurs, and an instan
  	This is Holland's ``statistical solution'' to the fundamental problem of causal inference
 }
 
+
+\frame{
+\frametitle{Two solutions!\footnote{From Holland}}
+
+\begin{enumerate}\itemsep1em
+\item Scientific Solution
+	\begin{itemize}
+	\item All units are identical
+	\item Each can provide a perfect counterfactual
+	\item Common in, e.g., agriculture, biology
+	\end{itemize}
+\item<2-> Statistical Solution
+	\begin{itemize}
+	\item Units are not identical
+	\item Random exposure to a potential cause
+	\item Effects measured on average across units
+	\item Known as the ``Experimental ideal''
+	\end{itemize}
+\end{enumerate}
+
+}
+
+
+
 \frame{
 \frametitle{The Experimental Ideal}
 \begin{itemize}\itemsep0.5em
@@ -470,7 +536,7 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 
 \frame{
 
-\frametitle{Neyman-Rubin Potential Outcomes Framework}
+\frametitle{Neyman--Rubin Potential Outcomes Framework}
 
 If we are interested in some outcome $Y$, then for every unit $i$, there are numerous ``potential outcomes'' $Y*$ only one of which is visible in a given reality. Comparisons of (partially unobservable) potential outcomes indicate causality.
 
@@ -478,7 +544,7 @@ If we are interested in some outcome $Y$, then for every unit $i$, there are num
 
 \frame{
 
-\frametitle{Neyman-Rubin Potential Outcomes Framework}
+\frametitle{Neyman--Rubin Potential Outcomes Framework}
 
 Concisely, we typically discuss two potential outcomes:
 
@@ -597,8 +663,7 @@ Concisely, we typically discuss two potential outcomes:
 
 \frame{
 	\frametitle{Experimental Inference VI}
-	
-	
+
 	\normalsize
 	\begin{itemize}\itemsep0.5em
     	\item This holds in experiments because of a \textit{physical process of randomization}\footnote{Random means ``known probability of treatment'' not ``haphazard''.}
@@ -637,14 +702,252 @@ Concisely, we typically discuss two potential outcomes:
 \end{center}
 \end{frame}
 
-
-
 \questions
 
 
 
 \frame{
-\frametitle{Experimental Analysis I}
+
+\large
+\centering
+Does randomization \textit{guarantee balance}? Does it work every time?
+
+\only<2->{What happens if there is imbalance? How would we know?}
+}
+
+
+\frame{
+
+\frametitle{Balance Testing I}
+
+\begin{itemize}\itemsep0.5em
+\item Analysis of experiments assumes that randomization produces covariate balance
+\item<2-> But this is only true \textit{in expectation}
+\item<3-> If we find covariate imbalance, we can:
+	\begin{itemize}
+	\item Ignore it
+	\item Condition on imbalanced covariates
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Balance Testing II}
+
+There are three basic ways to detect covariate imbalance:
+
+\begin{enumerate}\itemsep1em
+\item Regressing treatment assignment on covariates
+\item Conducting t-tests for each covariate across experimental groups
+\item Examining covariate means visually
+\end{enumerate}
+
+}
+
+\StataActivity{Balance testing!}
+
+
+
+\frame{}
+
+\frame{
+
+\large\centering
+The other solution --- if possible --- is to \textit{block randomize}.
+
+}
+
+
+\frame{
+
+\frametitle{Block Randomization I}
+
+{\small \textbf{Stratification:Sampling::Blocking:Experiments}}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item<2-> Basic idea: randomization occurs within strata defined before treatment assignment
+\item<3-> CATE is estimate for each stratum; aggregated to SATE
+\item<4-> Why?
+	\begin{itemize}
+	\item Eliminate chance imbalances
+	\item Optimized for estimating CATEs
+	\item More precise SATE estimate
+	\end{itemize}
+\end{itemize}
+
+}
+
+\begin{frame}[fragile]
+
+\begin{center}
+\begin{tabular}{lcccccccc}
+Exp. & \multicolumn{4}{c}{Control} & \multicolumn{4}{c}{Treatment} \\ \midrule
+1 & M & M & M & M & F & F & F & F \\
+2 & M & M & M & F & M & F & F & F \\
+3 & M & M & F & F & M & M & F & F \\
+4 & M & F & F & F & M & M & M & F \\
+5 & F & F & F & F & M & M & M & M \\ \bottomrule
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+\frame{
+
+\begin{center}
+
+\begin{tabular}{rrrr}
+Obs. & $X_{1i}$ & $X_{2i}$ & $D_i$ \\ \midrule
+1 & Male & Old & 0 \\
+2 & Male & Old & 1 \\  \midrule
+3 & Male & Young & 1 \\
+4 & Male & Young & 0 \\ \midrule
+5 & Female & Old & 1 \\
+6 & Female & Old & 0 \\ \midrule
+7 & Female & Young & 0 \\
+8 & Female & Young & 1 \\ \bottomrule
+\end{tabular}
+\end{center}
+
+}
+
+\frame[label=blocking2]{
+
+\frametitle{Block Randomization II}
+
+\begin{itemize}
+\item Blocking ensures ignorability of all covariates used to construct the blocks
+\item Incorporates covariates explicitly into the \textit{design}
+\item<2-> When is blocking \textit{statistically} useful?
+	\begin{itemize}
+	\item<3-> If those covariates affect values of potential outcomes, blocking reduces the variance of the SATE
+	\item<4-> Most valuable in small samples
+	\item<5-> Not valuable if all blocks have similar potential outcomes
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+
+\frame{
+
+\frametitle{Statistical Properties I}
+
+\small
+
+Complete randomization:\\
+$$SATE = \frac{1}{n_1}\sum Y_{1i} - \frac{1}{n_0}\sum Y_{0i}$$
+
+\vspace{2em}
+
+Block randomization:\\
+$$SATE_{blocked} = \sum_{1}^{J} \left( \dfrac{n_j}{n} \right)  (\widehat{CATE}_j)$$
+
+}
+
+
+\frame{
+
+\begin{center}
+
+\begin{tabular}{rrrrrr}
+Obs. & $X_{1i}$ & $X_{2i}$ & $D_i$ & $Y_i$ & CATE \\ \midrule
+1 & Male & Old & 0 & 5 & \multirow{2}{*}{\onslide<2->{5}} \\
+2 & Male & Old & 1 & 10 \\  \midrule
+3 & Male & Young & 1 & 4 & \multirow{2}{*}{\onslide<3->{3}} \\
+4 & Male & Young & 0 & 1 \\ \midrule
+5 & Female & Old & 1 & 6 & \multirow{2}{*}{\onslide<4->{4}} \\
+6 & Female & Old & 0 & 2 \\ \midrule
+7 & Female & Young & 0 & 6 & \multirow{2}{*}{\onslide<5->{3}} \\
+8 & Female & Young & 1 & 9 \\ \bottomrule
+\end{tabular}
+\end{center}
+
+}
+
+\frame{
+
+\frametitle{SATE Estimation}
+
+\begin{align*}
+SATE &= \left(\dfrac{2}{8}*5\right) + \left(\dfrac{2}{8}*3\right) + \left(\dfrac{2}{8}*4\right) + \left(\dfrac{2}{8}*3\right) \\ \vspace{1em}
+&= 3.75
+\end{align*}
+
+\onslide<2->{The blocked and unblocked estimates are the same here because $Pr(Treatment)$ is constant across blocks and blocks are all the same size.}
+
+}
+
+\frame{
+
+\frametitle{SATE Estimation}
+
+\small
+
+\begin{itemize}
+\item We can use weighted regression to estimate this in an OLS framework
+\item Weights are the inverse prob. of being treated w/in block
+\begin{itemize}
+\item Pr(Treated) by block: $p_{ij} = Pr(D_i = 1 | J=j) $
+\item Weight (Treated): $ w_{ij} = \dfrac{1}{p_{ij}} $
+\item Weight (Control): $ w_{ij} = \dfrac{1}{1-p_{ij}} $
+\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Statistical Properties II}
+
+\small
+
+Complete randomization:\\
+$$\widehat{SE}_{SATE} = \sqrt{\dfrac{\widehat{Var}(Y_0)}{n_0} + \dfrac{\widehat{Var}(Y_1)}{n_1}}$$
+
+\vspace{1em}
+
+Block randomization:\\
+$$\widehat{SE}_{SATE_{blocked}} = \sqrt{\sum_{1}^{J} \left( \dfrac{n_j}{n} \right)^2  \widehat{Var}{(SATE_j)}}$$
+
+\only<2->{When is the blocked design more efficient?}
+
+}
+
+
+\frame{
+
+\frametitle{Practicalities}
+
+\begin{itemize}\itemsep0.5em
+\item Blocked randomization only works in exactly the same situations where stratified sampling works
+	\begin{itemize}
+	\item Need to observe covariates pre-treatment in order to block on them
+	\item Work best in a panel context
+	\end{itemize}
+\item In a single cross-sectional design that might be challenging
+	\begin{itemize}
+	\item Some software can block ``on the fly''
+	\end{itemize}
+\end{itemize}
+
+
+}
+
+\questions
+
+\frame{}
+
+
+
+\frame{
+\frametitle{Experimental Analysis}
 \small
 \begin{itemize}
 \item The statistic of interest in an experiment is the \textit{sample average treatment effect} (SATE)
@@ -653,6 +956,7 @@ Concisely, we typically discuss two potential outcomes:
 	\begin{equation}
 	SATE = \frac{1}{n_1}\sum Y_{1i} - \frac{1}{n_0}\sum Y_{0i}
 	\end{equation}
+\item<2->The Neyman--Rubin logic only works for \textit{means}\footnote{But not medians, etc.}
 \end{itemize}
 }
 
@@ -660,7 +964,7 @@ Concisely, we typically discuss two potential outcomes:
 
 \frame{
 
-\frametitle{Computation of Effects I}
+\frametitle{Computation of Effects}
 
 \begin{itemize}\itemsep0.5em
 \item In practice we often estimate SATE using t-tests, ANOVA, or OLS regression
@@ -679,7 +983,7 @@ Concisely, we typically discuss two potential outcomes:
 
 \frame[label=tidy]{
 
-\frametitle{Computation of Effects II}
+\frametitle{Experimental Data Tidying}
 
 An experimental data structure looks like:
 
@@ -703,7 +1007,7 @@ An experimental data structure looks like:
 
 \frame{
 
-\frametitle{Computation of Effects II}
+\frametitle{Experimental Data Tidying}
 
 Sometimes it looks like this instead, which is bad:
 
@@ -712,14 +1016,41 @@ Sometimes it looks like this instead, which is bad:
 \begin{center}
 \begin{tabular}{cccc}
 \texttt{unit} & \texttt{treatment} & \texttt{outcome0}  & \texttt{outcome1} \\ \hline 
-1 & 0 & 13 & NA \\
-2 & 0 & 6 & NA \\
-3 & 0 & 4 & NA \\
-4 & 0 & 5 & NA \\
-5 & 1 & NA & 3 \\
-6 & 1 & NA & 1 \\
-7 & 1 & NA & 10 \\
-8 & 1 & NA & 9 \\ \hline
+1 & 0 & 13 & . \\
+2 & 0 & 6 & . \\
+3 & 0 & 4 & . \\
+4 & 0 & 5 & . \\
+5 & 1 & . & 3 \\
+6 & 1 & . & 1 \\
+7 & 1 & . & 10 \\
+8 & 1 & . & 9 \\ \hline
+\end{tabular}
+\end{center}
+
+}
+
+\againframe{tidy}
+
+
+\frame{
+
+\frametitle{Experimental Data Tidying}
+
+Sometimes it looks like this instead, which is even worse:
+
+\small
+
+\begin{center}
+\begin{tabular}{cccc}
+\texttt{unit} & \texttt{treatment} & \texttt{outcome0}  & \texttt{outcome1} \\ \hline 
+1 & . & 13 & . \\
+2 & . & 6 & . \\
+3 & . & 4 & . \\
+4 & . & 5 & . \\
+5 & . & . & 3 \\
+6 & . & . & 1 \\
+7 & . & . & 10 \\
+8 & . & . & 9 \\ \hline
 \end{tabular}
 \end{center}
 
@@ -729,9 +1060,13 @@ Sometimes it looks like this instead, which is bad:
 
 
 
+
+
+
+
 \begin{frame}[fragile]
 
-\frametitle{Computation of Effects III}
+\frametitle{Computation of Effects in Stata}
 
 Stata:\small
 \begin{verbatim}
@@ -757,8 +1092,13 @@ lm(outcome ~ factor(treatment), data = data)
 
 
 
+
+
+
+
+
 \frame{
-\frametitle{Experimental Analysis II}
+\frametitle{SATE Variance Estimation}
 	\small
 \begin{itemize}\itemsep0.5em
 \item We don't just care about the size of the SATE. We also want to know whether it is significantly different from zero (i.e., different from no effect/difference)
@@ -774,7 +1114,7 @@ lm(outcome ~ factor(treatment), data = data)
 
 
 \frame{
-\frametitle{Experimental Analysis III}
+\frametitle{SATE Variance Estimation}
 	\small
 \begin{itemize}\itemsep0.5em
 \item Formula for the variance of the SATE is:\\
@@ -805,9 +1145,39 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{n_0} + \frac{\widehat{Var
 	\end{itemize}
 \end{itemize}
 
-
 }
 
+
+\frame{
+	\frametitle{Important considerations}
+	\begin{itemize}\itemsep0.5em
+		\item Required sample size depends on $SATE$ and $Var(Y)$
+		\item<2-> In large populations, population size is irrelevant
+		\item<3-> In small populations, precision is influenced by the proportion of population sampled
+		\item<4-> In anything other than an SRS, sample size calculation is more difficult
+		\item<5-> Most research assumes SRS even though a more complex design is actually used
+		\item<6-> Sample size needed to obtain a precise estimate of SATE is always going to be twice as large as needed to obtain an precise estimate of $\bar{Y}$
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Estimating sample size}
+	What precision (margin of error) do we want?
+	\begin{itemize}
+		\item $p$ +/- 5 percentage points: $SE = 0.025$
+			\begin{equation}
+			n = \frac{0.25}{0.000625} = 400
+			\end{equation}
+		\item<2-> $p$ +/- 2 percentage points: $SE = 0.01$
+			\begin{equation}
+			n = \frac{0.25}{0.01^2} = \frac{0.25}{0.0001} = 2500
+			\end{equation}
+		\item<3-> $p$ +/- 0.5 percentage points: $SE = 0.0025$
+			\begin{equation}
+			n = \frac{0.25}{0.00000625} = 40,000
+			\end{equation}
+	\end{itemize}
+}
 
 
 \frame{
@@ -896,10 +1266,14 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 
 
 
+
+
+
+
 \frame{}
 
 
-\section[Theory]{From Theory to Design}
+\section[Theory$\rightarrow$Design]{From Theory to Design}
 \frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
 % deriving hypotheses from theory and manipulations from hypotheses
 
@@ -1820,16 +2194,17 @@ A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping refor
 
 \frame{
 
-\frametitle{Look for TESS Examples}
+\frametitle{Homework!}
 
-In groups of 2--3, look through some TESS examples
 \begin{itemize}
-\item What was the researcher's question?
-\item How did they test it experimentally?
-\item What was interesting or surprising about the designs?
+\item Get a sense of what can be studied survey-experimentally
+\item Visit Time-Sharing Experiments for the Social Sciences
+	\begin{itemize}
+	\item \url{http://tessexperiments.org}
+	\end{itemize}
+\item Pick two studies from TESS
+\item We will share them in tomorrow
 \end{itemize}
-
-Take about 15 minutes.
 
 }
 
@@ -1841,6 +2216,1056 @@ Take about 15 minutes.
 
 \appendix
 
+
+\section{Representativeness}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+	\frametitle{Case selection}
+	
+	Our ambitions about what kind of inferences we want to derive from our descriptions influence how we select cases.
+	
+	
+	\begin{itemize}\itemsep1em
+	\item<2-> Purposive
+	\item<3-> Comparative
+	\item<4-> Representative
+		\begin{itemize}
+		\item<5-> Unrepresentative
+		\end{itemize}
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Discuss in Pairs!}
+	
+	\Large
+	\begin{center}
+	What does it mean for a ``sample'' (set of cases) to be representative of a population?
+	\end{center}
+}
+
+\frame{
+	\frametitle{{\large Different conceptualizations}}
+	
+	\small
+	
+	\begin{itemize}\itemsep0.5em
+		\item \textbf{Design-based}: A sample is representative because of how it was drawn (e.g., randomly)
+		\item \textbf{Model-based}: A sample is representative because it resembles in the population with respect to certain variables (e.g., same proportion of women in sample and population, etc.)
+		\item \textbf{Expert judgement}: A sample is representative as judged by an expert who deems it ``fit for purpose''
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Obtaining Representativeness}
+	\begin{itemize}\itemsep0.5em
+		\item<2-> Census
+		\item<3-> Convenience/Purposive samples
+		\item<4-> Quota sampling (common before 1940s)
+		\item<5-> \textbf<7>{Simple random sampling}
+		\item<6-> Complex survey designs
+	\end{itemize}
+}
+
+
+\section{Design-based (Statistical) Sampling}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+	\frametitle{{\normalsize Inference from Sample to Population}}
+	\begin{itemize}\itemsep0.5em
+	\item We want to know pop. parameter $\theta$
+	\item We only observe sample estimate $\hat{\theta}$
+	\item We have a guess but are also uncertain
+	\vspace{1em}
+	\item<2-> What range of values for $\theta$ does our $\hat{\theta}$ imply?
+	\end{itemize}
+}
+
+\frame[label=srs]{
+	\frametitle{Simple Random Sampling}
+	\begin{enumerate}\itemsep0.5em
+		\item Define target population
+		\item Create ``sampling frame''
+		\item Each unit in frame has equal probability of selection
+		\item Collect data on each unit
+		\item Calculate sample \textit{statistic}
+		\item Draw an inference to the population
+	\end{enumerate}
+}
+
+
+\begin{frame}[fragile]
+\begin{center}
+\begin{tikzpicture}
+    \fill<1->[red!60,opacity=0.75] (0,0) circle (4cm) 
+        node[text=white, align=center, text width=3cm] {};
+    \node<1-> (pop) at (-3,2) {\textbf{Population}};
+    \fill<2->[blue!80,opacity=0.5] (2,0) circle (3.8cm) 
+        node[text=white, align=center, text width=3cm] {};
+    \node<2->[align=center, text width=3cm] (pop) at (3,2) {\textbf{Sampling\\ Frame}};
+    \fill<3->[blue,opacity=0.75] (1.5,-1.5) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (3,1) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (2,-1) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (0,1.25) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (.25,.5) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (0,-2) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (2,2.25) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (1,.75) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+    \fill<4->[blue,opacity=0.75] (2.5,-2) circle (1cm) 
+        node[text=white, align=center, text width=3cm] {Sample};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+\againframe{srs}
+
+\frame{
+	\frametitle{Statistical Inference I}
+
+	To calculate a sample mean (or proportion):
+
+	\begin{equation}
+	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i
+	\end{equation}
+	{\small
+	where $y_i = $ value for a unit, and\\
+	$n = $ sample size
+	}
+	\vspace{0.5em}
+	
+	%This is a \textit{statistic} (the sample mean) that \textit{estimates} the population \textit{parameter} (the population mean)
+	
+}
+
+
+\frame{
+	\frametitle{Statistical Inference II}
+	\begin{itemize}\itemsep1em
+	\item If we calculate $\bar{y}$ in our \textit{sample}, what does this tell us about the $\bar{Y}$ in the \textit{population}?
+	\item<2-> The sample \textit{estimate} is our guess at the value of the population \textit{parameter} within some degree of uncertainty
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Law of Large Numbers}
+	\begin{itemize}
+	\item Definition: The \textit{mean} of the $\hat{\theta}$ from each of a number of samples will converge on the population $\theta$, as the number of samples increases
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Sampling Variance}
+	\begin{itemize}\itemsep1em
+	\item The $\hat{\theta}$ in any particular sample can differ from the population value $\theta$
+	\item This variation is calling ``sampling variance'' or ``sampling error''
+	\item The standard error describes the average amount of variation of the $\hat{\theta}$'s around $\theta$
+\end{itemize}
+}
+
+
+\frame{
+	\frametitle{How Uncertain Are We?}
+	\begin{itemize}\itemsep1em
+	\item Our uncertainty depends on sampling procedures
+	\item Most importantly, \textit{sample size}
+		\begin{itemize}
+		\item As $n \rightarrow \infty$, uncertainty $\rightarrow 0$
+		\end{itemize}
+	\item We typically summarize our uncertainty as the \textit{standard error}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Standard Errors (SEs)}
+	\begin{itemize}\itemsep1em
+	\item Definition: ``The standard error of a sample estimate is the average distance that a sample estimate ($\hat{\theta}$) would be from the population parameter ($\theta$) if we drew many separate random samples and applied our estimator to each.''
+	\item<2-> Square root of the sampling variance
+\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Sample mean}
+	
+	\small
+	
+	\begin{equation}
+	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_i
+	\end{equation}
+	where $y_i = $ value for a unit, and\\
+	$n = $ sample size
+	
+	\begin{equation}
+	SE_{\bar{y}} = \sqrt{(1-f)\frac{s^2}{n}}
+	\end{equation}
+	where $f = $ proportion of population sampled,\\
+	$s^2 = $ sample (element) variance, and\\
+	$n = $ sample size
+}
+
+\frame{
+	\frametitle{SATE}
+	
+	\small
+	
+	\begin{equation}
+	\hat{SATE} = \frac{1}{n_1}\sum_{i=1}^{n_1}y_{i,1} - \frac{1}{n_0}\sum_{i=1}^{n_1}y_{i,0}
+	\end{equation}
+	where $y_{i,1} = $ value for a treatment group unit, and\\
+	$y_{i,0} = $ value for a control group unit, and\\
+	$n_1, n_0 = $ group sample sizes
+	
+	
+	\begin{equation}
+	\widehat{Var}(SATE) = \dfrac{\widehat{Var}(y_1)}{n_1} + \dfrac{\widehat{Var}(y_0)}{n_0}
+	\end{equation}
+	where $Var(y_0) = \sum_{i=1}^{n_0}(y_{i,0} - \bar{y}_0)^2$,\\
+	$Var(y_1) = \sum_{i=1}^{n_1}(y_{i,1} - \bar{y}_1)^2$, and\\
+	$n_1, n_0 = $ group sample sizes
+}
+
+\questions
+
+
+\frame{}
+
+
+\section{Response Rates}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+    \frametitle{Response Rates}
+    \begin{itemize}\itemsep1em
+        \item Why do we care?
+        \item<2-> Survey Error
+            \begin{itemize}
+                \item<2-> Variance
+                \item<2-> Bias
+            \end{itemize}
+        \item<3-> Sample size calculations (and design effects) are based on completed interviews
+        \item<4-> Cost, time, and effort
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Response Rates}
+    \begin{itemize}
+        \item Imagine we need $n=1000$
+        \item How many attempts to obtain that sample:\\
+        \vspace{1em}
+        \begin{tabular}{l r}\toprule
+        Response Rate & Needed Attempts\\ \midrule
+        1.00 & 1000 \\
+        0.75 & 1333 \\
+        0.50 & 2000 \\
+        0.25 & 4000 \\
+        0.10 & 10,000 \\ \bottomrule
+        \end{tabular}
+    \end{itemize}
+}
+
+
+\frame{
+	\frametitle{Response Rate}
+	\begin{itemize}\itemsep1em
+		\item Interviews divided by eligibles
+		\item $RR = \frac{I}{E}$
+		\item Challenges
+    		\begin{itemize}
+        		\item Unknown eligibility
+        		\item Partial interviews
+        		\item Non-probability samples
+        		\item Complex survey designs
+    		\end{itemize}
+        \item Cooperation Rate (I's divided by contacts)
+	\end{itemize}
+}
+
+\frame<1>[label=codes]{
+	\frametitle{Disposition Codes}
+	\begin{itemize}\itemsep1em
+		\item Complete Interview (I)
+		\item Partial Interview (P)
+		\item Non-interviews
+    		\begin{itemize}
+        		\item Refusal (R)
+        		\item Non-contact (NC)
+        		\item Other (O)
+    		\end{itemize}
+		\item<2> Unknowns (U)
+		\item<2> Ineligibles
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{What is a refusal?}
+	\begin{itemize}\itemsep2em
+		\item<1-> How do categorize a respondent as a refusal?
+		\item<2-> When can we try to convert an apparent refusal?
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{What is a refusal?}
+	\begin{itemize}\itemsep1em
+		\item<1-> ``I don't want to participate.''
+		\item<2-> ``I'm too busy to do this right now.''
+		\item<3-> ``What do I get for my time?''
+		\item<4-> (Hang-up phone without saying anything.)
+		\item<5-> ``Okay, but I only have 5 minutes.''
+		\item<6-> ``My husband can do it if you call back.''
+		\item<7-> ``How did you get my number?''
+		\item<8-> ``Go f' yourself.''
+	\end{itemize}
+}
+
+
+\againframe{codes}
+
+\frame{
+	\frametitle{Eligibility}
+	\begin{itemize}\itemsep2em
+		\item<1-> Why would an ineligible unit be in our sample?
+		\item<2-> How do we determine ineligibility?
+		\item<3-> What do we do with ``unknowns''?
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Response Rate 1\footnote{Note: Simplified slightly}}
+	\Large
+	\begin{itemize}\itemsep2em
+		\item $RR1 = \frac{I}{(I + P) + (R + NC) + U}$
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Response Rate 2\footnote{Note: Simplified slightly}}
+    \Large
+	\begin{itemize}\itemsep2em
+		\item $RR2 = \frac{I + P}{(I + P) + (R + NC) + U}$
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Response Rates 3 and 4\footnote{Note: Simplified slightly}}
+	\Large
+    \begin{itemize}\itemsep2em
+		\item $RR3 = \frac{I}{(I + P) + (R + NC) + (e*U)}$
+		\item $RR4 = \frac{I + P}{(I + P) + (R + NC) + (e*U)}$
+		\vspace{1em}
+		\item $e$ is estimated proportion eligible among unknowns
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Refusal Rates}
+	\begin{itemize}\itemsep2em
+		\item Related to response rate
+		\item Numerator is refusals
+		\item E.g., {\Large $REF1 = \frac{R}{(I + P) + (R + NC) + U}$}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Complex Survey Designs}
+	\begin{itemize}\itemsep2em
+		\item Stratified Sampling (unequal allocation)
+    		\begin{itemize}
+        		\item Sums of codes weighted by $\frac{1}{p}$
+        		\item $p$ is probability of selection
+        		\item May want to report stratum-specific rates
+    		\end{itemize}
+    	\item Multi-stage sampling (e.g., cluster sampling)
+        	\begin{itemize}
+            	\item RR is product of cluster cooperation and within-cluster response rate
+        	\end{itemize}
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Internet Surveys}
+	\begin{itemize}\itemsep2em
+		\item For \textit{probability-based samples}, RR is a product of:
+    		\begin{itemize}
+        		\item Recruitment Rate (RR for panel enrollment)
+        		\item Completion Rate (RR for specific survey)
+        		\item Profile Rate (in some cases)
+        		\item E.g., if Recruitment Rate is 30\% and Completion Rate is 80\%, $RR = 0.3 * 0.8 =$ 24\%
+    		\end{itemize}
+    	\item For \textit{non-probability samples}, RR is undefined
+        	\begin{itemize}
+            	\item No sampling involved (so no denominator)
+            	\item If from panel, report Completion Rate
+            	\item If fully opt-in, there's nothing you can do
+        	\end{itemize}
+	\end{itemize}
+}
+
+
+\frame{
+\frametitle{Differential Response Rates}
+\begin{itemize}\itemsep2em
+\item Experimental inference breaks if treatment causes breakoff or item nonresponse
+\item If known in advance, you should:
+	\begin{itemize}
+		\item Change the experiment
+		\item Differential incentives
+		\item Mode differences
+	\end{itemize}
+\item If discovered in field, you can:
+	\begin{itemize}
+		\item Add/modify incentives
+		\item Refusal conversion
+	\end{itemize}
+\end{itemize}
+}
+
+
+
+\section{Regression Analysis}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+	\frametitle{Uses of Regression}
+	\begin{enumerate}\itemsep2em
+	\item Description
+	\item Prediction
+	\item Causal Inference
+	\end{enumerate}
+}
+
+\frame{
+	\frametitle{Descriptive Inference}
+	\begin{enumerate}\itemsep1em
+	\item We want to understand a \textit{population} of cases
+	\item We cannot observe them all, so:
+		\begin{enumerate}
+    		\item Draw a \textit{representative} sample
+    		\item Perform mathematical procedures on sample data
+    		\item Use assumptions to make inferences about population
+    		\item Express uncertainty about those inferences based on assumptions
+		\end{enumerate}
+	\end{enumerate}
+}
+
+\frame{
+	\frametitle{Parameter Estimation}
+	\begin{itemize}\itemsep1em
+    	\item We want to observe population \textit{parameter} $\theta$
+    	\item If we obtain a representative sample of population units:\\
+    		\begin{itemize}\itemsep1em
+        		\item Our sample statistic $\hat{\theta}$ is an unbiased estimate of $\theta$
+        		\item Our sampling procedure dictates how uncertain we are about the value of $\theta$
+    		\end{itemize}
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Causal Inference}
+	\begin{enumerate}\itemsep1em
+	\item<2-> Everything that goes into descriptive inference
+	\item<3-> Plus, philosophical assumptions
+	\item<4-> Plus, randomization \textit{or} perfectly specified model
+	\end{enumerate}
+}
+
+
+
+\subsection{OLS}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+\frametitle{Relationship}
+
+\begin{itemize}\itemsep1em
+\item<1-> Covariance:\\
+	$Cov(X,Y) = \sum_{i=1}^{n} \dfrac{(X_i - \bar{X})(Y_i - \bar{Y})}{n-1}$
+\item<2-> Pearson's Correlation:\\
+	{\small $Corr(X,Y) = r_{x,y} = \sum_{i=1}^{n} \dfrac{(X_i - \bar{X})(Y_i - \bar{Y})}{(n-1)s_x s_y}$}
+\end{itemize}
+}
+
+
+\frame{
+
+\frametitle{Correlation is linear!}
+
+\includegraphics[width=\textwidth]{images/correlation}
+
+\vspace{1em}
+{\footnotesize Source: \href{https://commons.wikimedia.org/wiki/File:Correlation_examples2.svg}{Wikimedia}}
+}
+
+
+\frame{
+
+	\frametitle{Analyzing Complex Surveys}
+	
+	\small
+	
+	\begin{itemize}\itemsep1em
+	\item There's a saying: ``Every simple random survey is simple in the same way, but every complex survey is complex in its own way.''
+	\item<2-> Statistics courses will almost always assume simple random sampling
+	\item<3-> Any sample that is not self-weighting requires more complicated \textit{estimators} that account for varying weights
+	\item<4-> Don't try to do this by hand
+		\begin{itemize}
+ 		\item \href{http://www.stata.com/manuals13/svy.pdf}{Stata \texttt{svy} module}
+ 		\item \href{https://cran.r-project.org/web/packages/survey/index.html}{R \texttt{survey} package}
+		\end{itemize}
+	\end{itemize}
+
+}
+
+
+\frame<1-5,2>[label=ways]{
+	\frametitle{Ways of Thinking About OLS}
+	\begin{enumerate}\itemsep1em
+    	\item<2-> Estimating Unit-level Causal Effect
+    	\item<3-> Ratio of $Cov(X,Y)$ and $Var(X)$
+    	\item<4-> Minimizing residual sum of squares (SSR)
+    	\item<5-> Line (or surface) of best fit
+	\end{enumerate}
+}
+
+
+\frame{
+	\frametitle{Bivariate Regression I}
+	\begin{itemize}\itemsep1em
+	\item $Y$ is continuous
+	\item $X$ is a randomized treatment indicator/dummy $(0,1)$
+	\item How do we know if the treatment $X$ had an effect on $Y$?
+	\item<2-> Look at mean-difference: $E[Y_i|X_i=1] - E[Y_i|X_i=0]$
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Three Equations}
+	\begin{enumerate}\itemsep2em
+	\item Population: $Y = \beta_0 + \beta_1 X \hspace{0.5em} (+ \epsilon)$
+	\item Sample estimate: $\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x$
+	\item Unit:
+		\begin{align*}
+		y_i & = \hat{\beta}_0 + \hat{\beta}_1 x_i + e_i\\
+		    & = \bar{y}_{0i} + (y_{1i} - y_{0i}) x_i + (y_{0i} - \bar{y}_{0i})
+		\end{align*}
+	\end{enumerate}
+}
+
+
+\frame<1-2>[label=dummy]{
+	\frametitle{Bivariate Regression I}
+	\begin{itemize}\itemsep1em
+    	\item Mean difference ($E[Y_i|X_i=1] - E[Y_i|X_i=0]$) is the regression line slope
+    	\item Slope ($\beta$) defined as $\frac{\Delta Y}{\Delta X}$
+    		\vspace{1em}
+    		\begin{itemize}\itemsep1em
+        		\item<2-> $\Delta Y = E[Y_i|X=1] - E[Y_i|X=0]$
+        		\item<2-> $\Delta X = 1 - 0 = 1$
+    		\end{itemize}
+    	\item<3-> How do we know if this is a \textit{significant} difference?
+    		\begin{itemize}
+        		\item We'll come back to that
+    		\end{itemize}
+	\end{itemize}
+
+}
+
+% graphs of mean-difference
+% http://thomasleeper.com/regcourse/Slides-2014/Session02_01.html#20
+
+
+\frame[label=bivariate1]{
+	\begin{center}
+	\begin{tikzpicture}[>=latex', scale=0.8]
+        \draw[->] (0,0) node[below] (origin) {}  -- (8,0) node[right] (xaxis) {x};
+        \draw[->] (origin) -- (0,8) node[left] (yaxis) {y};
+        % x ticks
+        \draw (2,1pt) -- (2,-3pt) node[anchor=north] {0};
+        \draw (6,1pt) -- (6,-3pt) node[anchor=north] {1};
+        % y ticks
+        \foreach \y in {1,...,7}
+             \draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {$\y$};
+        
+        % points
+        \foreach \y in {0.5,1.0,...,3.5} {
+        	\draw[gray,fill] (2,\y) circle [radius=1pt];
+        	\draw[gray,fill] (6,3+\y) circle [radius=1pt];
+        }
+        % y_0-bar
+        \draw<2-4>[dashed] (0,2) -- (8,2) node[right] {$\bar{y_0}$};
+        % y_1-bar
+        \draw<2-4>[dashed] (0,5) -- (8,5) node[right] {$\bar{y_1}$};
+        % mean points
+        \draw<2->[red,fill] (2,2) circle [radius=3pt];
+        \draw<2->[red,fill] (6,5) circle [radius=3pt];
+        
+        % slope
+        \draw<3-4>[solid, line width=2pt] (2,2) -- (6,2);
+        \draw<3-5>[solid, line width=2pt] (6,2) -- (6,5);
+        \node<3-4>(deltax) at (4,1) {$\Delta_x$};
+        \node<3>[right](deltay) at (7,3.5) {$\Delta_y$};
+        \node<4>[right](deltay) at (7,3.5) {$\Delta_y = \beta_1$};
+        \node<5>[right](deltay) at (7,3.5) {$\hat{\beta}_1$};
+        
+        \draw<4->[blue, solid, line width=2pt] (2,2) -- (6,5);
+        \node<4-5>[below left](b0) at (2,2) {$\hat{\beta}_0$};
+        
+        \node<5>[right](eq) at (0.5,7) {\small $\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x$};
+        \node<6->[right](eq) at (0.5,7) {\small $\hat{y} = 2 + 3 x$};
+        \node<7->[right](eq) at (0.5,6) {\small $y_i = 2 + 3 x_i + e_i$};
+        \draw<7->[right,decorate,decoration={brace,mirror,amplitude=7.5pt}] (6,5)  -- (6,6.5)
+        	node [right, pos=0.5, xshift=7] {\small $e_i$};
+    \end{tikzpicture}
+    \end{center}
+}
+
+% OLS only makes sense in a linear world
+
+\frame{
+	\frametitle{Systematic versus unsystematic component of the data}
+	\begin{itemize}\itemsep1em
+    	\item Systematic: Regression line (slope)
+    		\begin{itemize}
+    		\item Linear regression estimates the conditional means of the population data (i.e., $E[Y|X]$)
+    		\end{itemize}
+    	\item Unsystematic: Error term is the deviation of observations from the line
+    		\begin{itemize}
+        		\item The difference between each value $y_i$ and $\hat{y}_i$ is the \textit{residual}: $e_i$
+        		\item OLS produces an estimate of the relationship between X and Y that minimizes the \textit{residual sum of squares}
+    		\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Why are there residuals?}
+	\begin{itemize}\itemsep1em
+		\item<2-> Omitted variables
+		\item<2-> Measurement error
+		\item<2-> Fundamental randomness
+	\end{itemize}
+}
+
+
+\frame{}
+
+
+\section{Opinion Questions}
+\frame{\tableofcontents[currentsection]}
+
+
+\frame{
+	\frametitle{Evaluative questions}
+	\begin{itemize}\itemsep1em
+		\item Name an object of evaluation
+		\item Possibly describe that object
+		\item Ask for a transformation of the evaluation onto a set of responses
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Question templates}
+
+	\small
+	
+	\begin{itemize}
+		\item Ratings
+			\begin{itemize}
+				\item Several varieties of rating scales
+			\end{itemize}
+		\item Scales/Thermometers
+		\item Agree-disagree
+		\item Forced choices
+		\item Open-ended
+		\item Rankings (note: need alternatives to rank against)
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Extended Example}
+	\begin{itemize}\itemsep1em
+		\item Public opinion survey in Great Britain
+		\item Construct: Opinion toward UK involvement in air strikes on Islamic State militants in Iraq and Syria
+		\item Think about strengths and weaknesses of each question
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Example: Rating (bipolar)}}
+	Do you support or oppose Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria?
+	\begin{itemize}
+		\item Strongly support
+		\item Somewhat support
+		\item Neither support nor oppose
+		\item Somewhat oppose
+		\item Strongly oppose
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Example: Rating (branching)}}
+	
+	\footnotesize
+	
+	Do you support or oppose Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria?
+	\begin{itemize}
+		\item Support
+		\item Neither support nor oppose
+		\item Oppose
+	\end{itemize}
+	\vspace{1em}
+	Would you say that you strongly [support|oppose] or somewhat [support|oppose] Great Britain's participation?
+	\begin{itemize}
+		\item Strongly
+		\item Somewhat
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Example: Rating (bipolar)}}
+	Are you favourable or unfavourable toward Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria?
+	\begin{itemize}
+		\item Very favourable
+		\item Somewhat favourable
+		\item Neither favourable nor unfavourable
+		\item Somewhat unfavourable
+		\item Strongly unfavourable
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Example: Rating (unipolar)}}
+	To what extent do you support Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria?
+	\begin{itemize}
+		\item Strongly
+		\item Moderately
+		\item Somewhat
+		\item Not at all
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Example: Rating (unipolar)}}
+	How favourable are you toward Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria?
+	\begin{itemize}
+		\item Extremely favourable
+		\item Very favourable
+		\item Moderately favourable
+		\item Somewhat favourable
+		\item Not at all favourable
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Example: Numbered Scale}}
+	
+	\small
+	
+	On a scale from 1 to 5, with 1 being ``strongly oppose'' and 5 being ``strongly support,'' to what extent do you support Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria?
+	\begin{enumerate}
+		\item Strongly oppose
+		\item 
+		\item 
+		\item 
+		\item Strongly support
+	\end{enumerate}
+}
+
+\frame{
+	\frametitle{{\large Example: Thermometer}}
+	
+	\footnotesize
+	
+	We would like to get your feelings toward some of political policies. Please rate your support for the policy using something we call the feeling thermometer. Ratings between 50 degrees and 100 degrees mean that you feel favourable and warm toward the policy. Ratings between 0 degrees and 50 degrees mean that you don't feel favourable toward the policy. You would rate the policy at the 50 degree mark if you don't feel particularly favourable or unfavourable toward.
+	
+	\vspace{1em}
+	Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria.
+	\begin{itemize}
+		\item 0--100 slider
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{{\normalsize Example: Agree/Disagree (bipolar)}}
+	To what extent do you agree with the following statement: I support Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria.
+	\begin{itemize}
+		\item Strongly agree
+		\item Somewhat agree
+		\item Neither agree nor disagree
+		\item Somewhat disagree
+		\item Strongly disagree
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\normalsize Example: Agree/Disagree (unipolar)}}
+	To what extent do you agree with the following statement: I support Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria.
+	\begin{itemize}
+		\item Agree completely
+		\item Agree to a large extent
+		\item Agree to a moderate extent
+		\item Agree a little bit
+		\item Agree not at all
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Example: Forced choice}}
+	When thinking about Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria, which of the following comes closer to your opinion:
+	\begin{itemize}
+		\item Great Britain should participate in air strikes
+		\item Great Britain should not participate in air strikes
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Example: Open-ended}}
+	In your own words, how would you describe your opinion on Great Britain's participation in U.S.-led air strikes on Islamic State (IS) in Iraq and Syria?
+}
+
+
+\frame{
+	\frametitle{Additional Considerations}
+	\begin{itemize}\itemsep0.5em
+		\item How many response categories?
+		\item Middle category (presence and label)
+		\item ``no opinion'' and/or ``don't know'' options
+		\item Probe if ``no opinion'' or ``don't know''?
+		    \begin{itemize}
+                \item Encourage guessing?
+    		    \item Clarify/describe object of evaluation?
+		    \end{itemize}
+		\item Branching format?
+		\item Order of response categories
+		\item Changes based on survey mode
+	\end{itemize}
+}
+
+
+
+
+
+\section{Research Ethics}
+\frame{\tableofcontents[currentsection]}
+
+\frame{
+\frametitle{History: Key Moments}
+
+\small
+
+\begin{enumerate}
+\item Tuskegee (1932-1972) and Guatemala (1946-1948) Studies
+\item Nuremberg Code (1947)
+\item Helsinki Declaration (1964)
+\item U.S. 45 CFR 46 (1974) and ``Common Rule'' (1991)
+\item The Belmont Report (1979)
+\item EU Data Protection Directive (1995; 2012)
+	\begin{itemize}
+	\item UK Data Protection Act (1998)
+	\end{itemize}
+\end{enumerate}
+}
+
+
+\frame{
+	\frametitle{Helsinki Declaration}
+	
+	\small
+	\begin{itemize}
+	\item Adopted by the World Medical Association in 1964\footnote{\url{http://www.bmj.com/content/2/5402/177}}
+	\item Narrowly focused on medical research
+	\item Expanded the Nuremberg Code
+		\begin{itemize}
+		\item Relaxed consent requirements
+		\item Risks should not exceed benefits
+		\item Institutionalization of ethics oversight
+		\end{itemize}
+	\item<2-> Do these rules apply to non-medical research?
+	\end{itemize}
+
+}
+
+\frame{
+	\frametitle{The Belmont Report}
+	
+	\small
+	\begin{itemize}
+	\item Commissioned by the U.S. Government in 1979\footnote{\url{http://www.hhs.gov/ohrp/humansubjects/guidance/belmont.html}}
+	\item Three overarching principles:
+		\begin{enumerate}
+		\item Respect for persons
+		\item Beneficence
+		\item Justice
+		\end{enumerate}
+	\item Three policy implications:
+		\begin{itemize}
+		\item Informed consent
+		\item Assessment of risks/benefits
+		\item Care for vulnerable populations
+		\end{itemize}
+	\end{itemize}
+
+}
+
+\frame{
+\frametitle{Benefits and Harm}
+	\begin{itemize}\itemsep1em
+	\item What is a ``benefit''?
+	\item What is a ``harm''?
+	\item How do we balance the two?
+	\end{itemize}
+}
+
+
+\frame{
+
+\frametitle{Ethical Considerations}
+
+\begin{itemize}
+\item Most ethical issues are not unique to \textit{experimental} social science
+\item Some especially important issues:
+	\begin{enumerate}
+	\item Randomization
+	\item Informed consent
+	\item Privacy
+	\item Deception
+	\item Publication bias
+	\end{enumerate}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{I. Randomization}
+
+\begin{itemize}
+\item Is it ethical to randomize?
+\end{itemize}
+
+}
+
+
+
+\frame{
+	\frametitle{II. Informed Consent}
+	\begin{itemize}
+	\item Persons must consent to being a research subject
+	\item<2-> What this means in practice is complicated
+		\begin{itemize}
+		\item What is consent?
+		\item What is ``informed'' consent?
+		\item What exactly do they have to consent to?
+		\end{itemize}
+	\item<3-> Cross-national variations
+		\begin{itemize}
+		\item Consent forms required in U.S.
+		\item Not required in UK
+		\end{itemize}
+	\end{itemize}
+
+}
+
+
+\frame{
+	\frametitle{III. Privacy}
+	\begin{itemize}\itemsep0.5em
+	\item Under EU Data Protection Directive (1995), data can be processed when:
+		\begin{itemize}
+		\item Consent is given
+		\item Data are used for a ``legitimate'' purpose
+		\item Anonymous or confidential
+		\end{itemize}
+	\item Data cannot leave the EU except under conditions
+	\end{itemize}
+
+}
+
+\frame{
+	\frametitle{III. Privacy}
+	\begin{itemize}\itemsep1em
+	\item Experimental might be additionally sensitive
+	\item<2-> Answers reflect ``manipulated'' attitudes, behaviors, perceptions, etc. that respondents may not have given in another setting
+	\end{itemize}
+
+}
+
+
+
+\frame{
+
+\frametitle{IV. Deception}
+
+\begin{itemize}
+\item Major distinction between psychology tradition and economics tradition\footnote{Dickson, E. 2011. ``Economics versus Psychology Experiments.'' \textit{Cambridge Handbook of Experimental Political Science}.}
+	\begin{itemize}
+	\item Purpose of the study
+	\item Purpose of specific items or tasks
+	\item Order or length of questionnaire
+	\end{itemize}
+\item<2-> Psychologists focus on \textit{debriefing}
+\item<3-> Within economics, norms about \textit{acts of omission} versus \textit{acts of commission}
+	\begin{itemize}
+	\item<4-> Omission: In a multi-round trust game, an additional round is added
+	\item<5-> Commission: Telling respondents it is a dictator game, but it is actually a trust game
+	\end{itemize}
+\end{itemize}
+
+
+}
+
+
+\frame{
+
+\frametitle{V. Publication Bias}
+
+\begin{itemize}\itemsep0.5em
+\item Publication bias not typically discussed as an ethical question
+\item<2-> If studies are meant to policy or practical implications, then we care about PATE or a set of CATEs, including whether their effects are positive, negative, or zero.
+\item<3-> Publication bias (toward ``significant'' results) invites wasting resources on treatments that actually don't work
+\end{itemize}
+
+}
+
+
+
+\frame{
+	\frametitle{{\normalsize Lots of Other Ethical Questions}}
+	\begin{enumerate}
+	\item<2-> Funding
+	\item<3-> Independence and Politicization
+	\item<4-> Vulnerable populations (e.g. children, sick)
+	\item<5-> Incentives
+	\item<6-> Cross-national research
+	\item<7-> End uses/users of research
+	\item<8-> Others\dots
+	\end{enumerate}
+}
+
+\questions
 
 
 
