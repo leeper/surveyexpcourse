@@ -185,7 +185,11 @@ All material for the course is available at:\\
 
 \vspace{1em}
 
-\url{http://www.thomasleeper.com/surveyexpcourse/}
+\url{http://www.thomasleeper.com/surveyexpcourse/}\\
+
+\vspace{1em}
+
+\url{https://github.com/leeper/surveyexpcourse}
 \end{center}
 
 }
@@ -712,6 +716,8 @@ Concisely, we typically discuss two potential outcomes:
 \centering
 Does randomization \textit{guarantee balance}? Does it work every time?
 
+\vspace{1em}
+
 \only<2->{What happens if there is imbalance? How would we know?}
 }
 
@@ -748,201 +754,6 @@ There are three basic ways to detect covariate imbalance:
 
 \StataActivity{Balance testing!}
 
-
-
-\frame{}
-
-\frame{
-
-\large\centering
-The other solution --- if possible --- is to \textit{block randomize}.
-
-}
-
-
-\frame{
-
-\frametitle{Block Randomization I}
-
-{\small \textbf{Stratification:Sampling::Blocking:Experiments}}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-\item<2-> Basic idea: randomization occurs within strata defined before treatment assignment
-\item<3-> CATE is estimate for each stratum; aggregated to SATE
-\item<4-> Why?
-	\begin{itemize}
-	\item Eliminate chance imbalances
-	\item Optimized for estimating CATEs
-	\item More precise SATE estimate
-	\end{itemize}
-\end{itemize}
-
-}
-
-\begin{frame}[fragile]
-
-\begin{center}
-\begin{tabular}{lcccccccc}
-Exp. & \multicolumn{4}{c}{Control} & \multicolumn{4}{c}{Treatment} \\ \midrule
-1 & M & M & M & M & F & F & F & F \\
-2 & M & M & M & F & M & F & F & F \\
-3 & M & M & F & F & M & M & F & F \\
-4 & M & F & F & F & M & M & M & F \\
-5 & F & F & F & F & M & M & M & M \\ \bottomrule
-\end{tabular}
-\end{center}
-
-\end{frame}
-
-\frame{
-
-\begin{center}
-
-\begin{tabular}{rrrr}
-Obs. & $X_{1i}$ & $X_{2i}$ & $D_i$ \\ \midrule
-1 & Male & Old & 0 \\
-2 & Male & Old & 1 \\  \midrule
-3 & Male & Young & 1 \\
-4 & Male & Young & 0 \\ \midrule
-5 & Female & Old & 1 \\
-6 & Female & Old & 0 \\ \midrule
-7 & Female & Young & 0 \\
-8 & Female & Young & 1 \\ \bottomrule
-\end{tabular}
-\end{center}
-
-}
-
-\frame[label=blocking2]{
-
-\frametitle{Block Randomization II}
-
-\begin{itemize}
-\item Blocking ensures ignorability of all covariates used to construct the blocks
-\item Incorporates covariates explicitly into the \textit{design}
-\item<2-> When is blocking \textit{statistically} useful?
-	\begin{itemize}
-	\item<3-> If those covariates affect values of potential outcomes, blocking reduces the variance of the SATE
-	\item<4-> Most valuable in small samples
-	\item<5-> Not valuable if all blocks have similar potential outcomes
-	\end{itemize}
-\end{itemize}
-
-}
-
-
-
-\frame{
-
-\frametitle{Statistical Properties I}
-
-\small
-
-Complete randomization:\\
-$$SATE = \frac{1}{n_1}\sum Y_{1i} - \frac{1}{n_0}\sum Y_{0i}$$
-
-\vspace{2em}
-
-Block randomization:\\
-$$SATE_{blocked} = \sum_{1}^{J} \left( \dfrac{n_j}{n} \right)  (\widehat{CATE}_j)$$
-
-}
-
-
-\frame{
-
-\begin{center}
-
-\begin{tabular}{rrrrrr}
-Obs. & $X_{1i}$ & $X_{2i}$ & $D_i$ & $Y_i$ & CATE \\ \midrule
-1 & Male & Old & 0 & 5 & \multirow{2}{*}{\onslide<2->{5}} \\
-2 & Male & Old & 1 & 10 \\  \midrule
-3 & Male & Young & 1 & 4 & \multirow{2}{*}{\onslide<3->{3}} \\
-4 & Male & Young & 0 & 1 \\ \midrule
-5 & Female & Old & 1 & 6 & \multirow{2}{*}{\onslide<4->{4}} \\
-6 & Female & Old & 0 & 2 \\ \midrule
-7 & Female & Young & 0 & 6 & \multirow{2}{*}{\onslide<5->{3}} \\
-8 & Female & Young & 1 & 9 \\ \bottomrule
-\end{tabular}
-\end{center}
-
-}
-
-\frame{
-
-\frametitle{SATE Estimation}
-
-\begin{align*}
-SATE &= \left(\dfrac{2}{8}*5\right) + \left(\dfrac{2}{8}*3\right) + \left(\dfrac{2}{8}*4\right) + \left(\dfrac{2}{8}*3\right) \\ \vspace{1em}
-&= 3.75
-\end{align*}
-
-\onslide<2->{The blocked and unblocked estimates are the same here because $Pr(Treatment)$ is constant across blocks and blocks are all the same size.}
-
-}
-
-\frame{
-
-\frametitle{SATE Estimation}
-
-\small
-
-\begin{itemize}
-\item We can use weighted regression to estimate this in an OLS framework
-\item Weights are the inverse prob. of being treated w/in block
-\begin{itemize}
-\item Pr(Treated) by block: $p_{ij} = Pr(D_i = 1 | J=j) $
-\item Weight (Treated): $ w_{ij} = \dfrac{1}{p_{ij}} $
-\item Weight (Control): $ w_{ij} = \dfrac{1}{1-p_{ij}} $
-\end{itemize}
-\end{itemize}
-
-}
-
-
-\frame{
-
-\frametitle{Statistical Properties II}
-
-\small
-
-Complete randomization:\\
-$$\widehat{SE}_{SATE} = \sqrt{\dfrac{\widehat{Var}(Y_0)}{n_0} + \dfrac{\widehat{Var}(Y_1)}{n_1}}$$
-
-\vspace{1em}
-
-Block randomization:\\
-$$\widehat{SE}_{SATE_{blocked}} = \sqrt{\sum_{1}^{J} \left( \dfrac{n_j}{n} \right)^2  \widehat{Var}{(SATE_j)}}$$
-
-\only<2->{When is the blocked design more efficient?}
-
-}
-
-
-\frame{
-
-\frametitle{Practicalities}
-
-\begin{itemize}\itemsep0.5em
-\item Blocked randomization only works in exactly the same situations where stratified sampling works
-	\begin{itemize}
-	\item Need to observe covariates pre-treatment in order to block on them
-	\item Work best in a panel context
-	\end{itemize}
-\item In a single cross-sectional design that might be challenging
-	\begin{itemize}
-	\item Some software can block ``on the fly''
-	\end{itemize}
-\end{itemize}
-
-
-}
-
-\questions
-
-\frame{}
 
 
 
@@ -1218,6 +1029,7 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{n_0} + \frac{\widehat{Var
 	\end{itemize}
 \end{itemize}
 
+\centering
 \begin{tabular}{lrr}
 \toprule
 & $H_0$ True & $H_0$ False \\ \midrule
@@ -1289,13 +1101,203 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 }
 
 
+\frame{}
+
+
+\frame{
+
+\large\centering
+One way to avoid covariate imbalance and improve statistical power is \textbf{block randomization}.
+
+}
+
+\frame{
+
+\frametitle{Block Randomization I}
+
+{\small \textbf{Stratification:Sampling::Blocking:Experiments}}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item<2-> Basic idea: randomization occurs within strata defined before treatment assignment
+\item<3-> CATE is estimate for each stratum; aggregated to SATE
+\item<4-> Why?
+	\begin{itemize}
+	\item Eliminate chance imbalances
+	\item Optimized for estimating CATEs
+	\item More precise SATE estimate
+	\end{itemize}
+\end{itemize}
+
+}
+
+\begin{frame}[fragile]
+
+\begin{center}
+\begin{tabular}{lcccccccc}
+Exp. & \multicolumn{4}{c}{Control} & \multicolumn{4}{c}{Treatment} \\ \midrule
+1 & M & M & M & M & F & F & F & F \\
+2 & M & M & M & F & M & F & F & F \\
+3 & M & M & F & F & M & M & F & F \\
+4 & M & F & F & F & M & M & M & F \\
+5 & F & F & F & F & M & M & M & M \\ \bottomrule
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+\frame{
+
+\begin{center}
+
+\begin{tabular}{rrrr}
+Obs. & $X_{1i}$ & $X_{2i}$ & $D_i$ \\ \midrule
+1 & Male & Old & 0 \\
+2 & Male & Old & 1 \\  \midrule
+3 & Male & Young & 1 \\
+4 & Male & Young & 0 \\ \midrule
+5 & Female & Old & 1 \\
+6 & Female & Old & 0 \\ \midrule
+7 & Female & Young & 0 \\
+8 & Female & Young & 1 \\ \bottomrule
+\end{tabular}
+\end{center}
+
+}
+
+\frame[label=blocking2]{
+
+\frametitle{Block Randomization II}
+
+\begin{itemize}
+\item Blocking ensures ignorability of all covariates used to construct the blocks
+\item Incorporates covariates explicitly into the \textit{design}
+\item<2-> When is blocking \textit{statistically} useful?
+	\begin{itemize}
+	\item<3-> If those covariates affect values of potential outcomes, blocking reduces the variance of the SATE
+	\item<4-> Most valuable in small samples
+	\item<5-> Not valuable if all blocks have similar potential outcomes
+	\end{itemize}
+\end{itemize}
+
+}
 
 
 
+\frame{
+
+\frametitle{Statistical Properties I}
+
+\small
+
+Complete randomization:\\
+$$SATE = \frac{1}{n_1}\sum Y_{1i} - \frac{1}{n_0}\sum Y_{0i}$$
+
+\vspace{2em}
+
+Block randomization:\\
+$$SATE_{blocked} = \sum_{1}^{J} \left( \dfrac{n_j}{n} \right)  (\widehat{CATE}_j)$$
+
+}
 
 
+\frame{
+
+\begin{center}
+
+\begin{tabular}{rrrrrr}
+Obs. & $X_{1i}$ & $X_{2i}$ & $D_i$ & $Y_i$ & CATE \\ \midrule
+1 & Male & Old & 0 & 5 & \multirow{2}{*}{\onslide<2->{5}} \\
+2 & Male & Old & 1 & 10 \\  \midrule
+3 & Male & Young & 1 & 4 & \multirow{2}{*}{\onslide<3->{3}} \\
+4 & Male & Young & 0 & 1 \\ \midrule
+5 & Female & Old & 1 & 6 & \multirow{2}{*}{\onslide<4->{4}} \\
+6 & Female & Old & 0 & 2 \\ \midrule
+7 & Female & Young & 0 & 6 & \multirow{2}{*}{\onslide<5->{3}} \\
+8 & Female & Young & 1 & 9 \\ \bottomrule
+\end{tabular}
+\end{center}
+
+}
+
+\frame{
+
+\frametitle{SATE Estimation}
+
+\begin{align*}
+SATE &= \left(\dfrac{2}{8}*5\right) + \left(\dfrac{2}{8}*3\right) + \left(\dfrac{2}{8}*4\right) + \left(\dfrac{2}{8}*3\right) \\ \vspace{1em}
+&= 3.75
+\end{align*}
+
+\onslide<2->{The blocked and unblocked estimates are the same here because $Pr(Treatment)$ is constant across blocks and blocks are all the same size.}
+
+}
+
+\frame{
+
+\frametitle{SATE Estimation}
+
+\small
+
+\begin{itemize}
+\item We can use weighted regression to estimate this in an OLS framework
+\item Weights are the inverse prob. of being treated w/in block
+\begin{itemize}
+\item Pr(Treated) by block: $p_{ij} = Pr(D_i = 1 | J=j) $
+\item Weight (Treated): $ w_{ij} = \dfrac{1}{p_{ij}} $
+\item Weight (Control): $ w_{ij} = \dfrac{1}{1-p_{ij}} $
+\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Statistical Properties II}
+
+\small
+
+Complete randomization:\\
+$$\widehat{SE}_{SATE} = \sqrt{\dfrac{\widehat{Var}(Y_0)}{n_0} + \dfrac{\widehat{Var}(Y_1)}{n_1}}$$
+
+\vspace{1em}
+
+Block randomization:\\
+$$\widehat{SE}_{SATE_{blocked}} = \sqrt{\sum_{1}^{J} \left( \dfrac{n_j}{n} \right)^2  \widehat{Var}{(SATE_j)}}$$
+
+\only<2->{When is the blocked design more efficient?}
+
+}
+
+
+\frame{
+
+\frametitle{Practicalities}
+
+\begin{itemize}\itemsep0.5em
+\item Blocked randomization only works in exactly the same situations where stratified sampling works
+	\begin{itemize}
+	\item Need to observe covariates pre-treatment in order to block on them
+	\item Work best in a panel context
+	\end{itemize}
+\item In a single cross-sectional design that might be challenging
+	\begin{itemize}
+	\item Some software can block ``on the fly''
+	\end{itemize}
+\end{itemize}
+
+
+}
+
+\questions
 
 \frame{}
+
+
+
+
 
 
 \section[Theory$\rightarrow$Design]{From Theory to Design}
@@ -1527,7 +1529,7 @@ These days, Democrats and Republicans differ from one another considerably. The 
 \begin{quote}\large
 The best criterion for evaluating the quality of an experiment is whether it manipulated the intended independent variable and controlled everything else by design.
 \end{quote}
-\onslide<2->{\small\hspace{5em} --Thomas J. Leeper (18 January 2017)}
+\onslide<2->{\small\hspace{5em} --Thomas J. Leeper (29 January 2017)}
 
 }
 
@@ -1611,7 +1613,7 @@ The best criterion for evaluating the quality of an experiment is whether it man
 \frametitle{{\normalsize Some Best Practices}}
 
 
-\begin{itemize}\itemsep0.5em
+\begin{itemize}\itemsep1em
 \item<2-> Manipulation checks should be innocuous
 	\begin{itemize}
 	\item Shouldn't modify independent variable
@@ -1672,6 +1674,7 @@ The best criterion for evaluating the quality of an experiment is whether it man
 	\begin{itemize}\footnotesize
 	\item Design experimental treatments that are non-obvious
 	\item Do not disclose the purpose of the study up front\footnote{But, consider the ethics of not doing so (more Friday)}
+	\item Be careful about using manipulation checks and pre-outcome measures
 	\end{itemize}
 \end{itemize}
 
@@ -1882,7 +1885,7 @@ You will earn \$1 for every correct answer you give. So, if you answer 3 of the 
 	\frametitle{{\normalsize Ex. Question-as-treatment\footnote{Transue. 2007. ``Identity Salience, Identity Acceptance, and Racial Policy Attitudes: {American} National Identity as a Uniting Force.'' \textit{American Journal of Political Science} 51(1): 78--91.}}}
 	
 
-\begin{itemize}
+\begin{itemize}\itemsep1em
 \item \only<1,3>{How close do you feel to your ethnic or racial group?}\only<2,4>{How close do you feel to other Americans?}
 \item \only<1-2>{Some people have said that taxes need to be raised to take care of pressing national needs. How willing would you be to have your taxes raised to improve education in public schools?}\only<3-4>{Some people have said that taxes need to be raised to take care of pressing national needs. How willing would you be to have your taxes raised to improve educational opportunities for minorities?}
 \end{itemize}
@@ -2159,7 +2162,7 @@ With the passage of the Patriot Act in 2001, the FBI can now enter your home, se
 
 \frametitle{Sensitive Item Designs}
 
-\begin{itemize}
+\begin{itemize}\itemsep0.5em
 \item Experiments can also be used to measure something
 \item Goal here is not necessarily causal inference, though the causal insight of the experiment provides \textit{descriptively} useful information
 \item Paradigms
@@ -2221,7 +2224,7 @@ A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping refor
 
 \frametitle{Homework!}
 
-\begin{itemize}
+\begin{itemize}\itemsep1em
 \item Get a sense of what can be studied survey-experimentally
 \item Visit Time-Sharing Experiments for the Social Sciences
 	\begin{itemize}
@@ -2268,7 +2271,7 @@ A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping refor
 	
 	\Large
 	\begin{center}
-	What does it mean for a ``sample'' (set of cases) to be representative of a population?
+	What does it mean for a ``sample'' to be representative of a population?
 	\end{center}
 }
 

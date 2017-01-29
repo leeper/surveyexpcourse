@@ -228,9 +228,12 @@ Form groups of 3 and share the survey-experiment examples you found on TESS.
 
 \frame{
 \frametitle{Noncompliance}
+
+\small
+
 \begin{itemize}
 \item Compliance is when individuals receive and accept the treatment to which they are assigned
-\item Non-compliance is when participants receive the wrong treatment (cross-over) or simply fail to receive the treatment to which they are assigned
+\item Noncompliance:\\{\small ``when subjects who were assigned to receive the treatment go untreated or when subjects assigned to the control group are treated'' \footnote{Gerber \& Green. 2012. \textit{Field Experiments}, p.132.}}
 \item This causes problems for our analysis because factors other than randomization explain why individuals receive their treatment
 \item Lots of methods for dealing with this, but the consequence is generally reduced power
 \end{itemize}
@@ -241,14 +244,31 @@ Form groups of 3 and share the survey-experiment examples you found on TESS.
 
 \small
 
-\begin{itemize}\itemsep0.5em
-\item If noncompliance only occurs in one group, it is \textit{asymmetric}
+\begin{itemize}\itemsep0.25em
+\item Noncompliance \textit{asymmetric} if only in one group
 \item We can ignore non-compliance and analyze the ``intention to treat'' effect, which will underestimate our effects because some people were not treated as assigned\\
 	$ITT = \overline{Y}_1 - \overline{Y}_0$
 \item We can use ``instrumental variables'' to estimate the ``local average treatment effect'' (LATE) for those that complied with treatment:\\
 	$LATE = \frac{ITT}{Percent Compliant}$
 \item We can ignore randomization and analyze data ``as-treated'', but this makes our study no longer an experiment
 \end{itemize}
+}
+
+\frame{
+	\frametitle{{\large Local Average Treatment Effect}}
+	\small
+	\begin{itemize}\itemsep0.2em
+	\item IV estimate is \textit{local} to the variation in $X$ that is due to variation in $D$
+	\item LATE is effect for those who \textit{comply}
+	\item Four subpopulations:
+		\begin{itemize}\footnotesize
+		\item Compliers: $X = 1$ only if $D = 1$
+		\item Always-takers: $X = 1$ regardless of $D$
+		\item Never-takers: $X = 0$ regardless of $D$
+		\item Defiers: $X = 1$ only if $D = 0$
+		\end{itemize}
+	\item Exclusion restriction! Monotonicity!
+	\end{itemize}
 }
 
 \frame{
@@ -295,7 +315,6 @@ Form groups of 3 and share the survey-experiment examples you found on TESS.
 \frametitle{{\normalsize Treatment Noncompliance}}
 
 \begin{itemize}\itemsep0.5em
-\item Definition:\\{\small ``when subjects who were assigned to receive the treatment go untreated or when subjects assigned to the control group are treated'' \footnote{Gerber \& Green. 2012. \textit{Field Experiments}, p.132.}}
 \item<2-> Several strategies
 	\begin{itemize}
 	\item ``As treated'' analysis
@@ -304,36 +323,6 @@ Form groups of 3 and share the survey-experiment examples you found on TESS.
 	\end{itemize}
 \end{itemize}
 
-}
-
-\frame{
-\frametitle{{\normalsize Analyzing Noncompliance}}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-\item If noncompliance only occurs in one group, it is \textit{asymmetric} or \textit{one-sided}
-\item We can ignore non-compliance and analyze the ``intention to treat'' effect, which will underestimate our effects because some people were not treated as assigned: $ITT = \overline{Y}_1 - \overline{Y}_0$
-\item<2-> We can use ``instrumental variables'' to estimate the ``local average treatment effect'' (LATE) for those that complied with treatment: $LATE = \frac{ITT}{\% Compliant}$
-\end{itemize}
-}
-
-\frame{
-	\frametitle{{\large Local Average Treatment Effect}}
-	\small
-	\begin{itemize}\itemsep0.2em
-	\item IV estimate is \textit{local} to the variation in $X$ that is due to variation in $D$
-	\item This matters if effects are \textit{heterogeneous}
-	\item LATE is effect for those who \textit{comply}
-	\item Four subpopulations:
-		\begin{itemize}\footnotesize
-		\item Compliers: $X = 1$ only if $D = 1$
-		\item Always-takers: $X = 1$ regardless of $D$
-		\item Never-takers: $X = 0$ regardless of $D$
-		\item Defiers: $X = 1$ only if $D = 0$
-		\end{itemize}
-	\item Exclusion restriction! Monotonicity!
-	\end{itemize}
 }
 
 \questions
@@ -509,7 +498,7 @@ Form groups of 3 and share the survey-experiment examples you found on TESS.
 
 
 
-
+\frame{}
 
 
 \subsection{Mediation}
@@ -517,15 +506,17 @@ Form groups of 3 and share the survey-experiment examples you found on TESS.
 \frame{
 \frametitle{Effect Mediation}
 \begin{itemize}\itemsep0.5em
-\item Sometimes we care about \textit{why} an effect comes about (i.e., what is the mechanism?)
-\item This is called \textit{mediation}
+\item Sometimes we care about \textit{why} an effect comes about (i.e., what is the mechanism, or mediator?)
 \item If we suspect this happens and we care about the mediation process, we should try to manipulate the treatment and the suspected mediator
 \item If we cannot manipulate the mediator, there is basically no credible way of estimating the ``mediation effect'' of the treatment group a given mediator
+	\begin{itemize}
+	\item Have to assume exclusion restriction
+	\end{itemize}
 \end{itemize}
 }
 
 
-
+\frame{}
 
 \section[SUTO]{Sources of Heterogeneity}
 \frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
@@ -618,7 +609,7 @@ Form groups of 3 and share the survey-experiment examples you found on TESS.
 
 \frame{
 
-\frametitle{Settings}
+\frametitle{Heterogeneity due to \textit{S}ettings}
 
 \begin{itemize}\itemsep1em
 \item We should expect heterogeneity related to settings!
@@ -684,7 +675,7 @@ Form groups of 3 and share the survey-experiment examples you found on TESS.
 
 \frame{
 
-\frametitle{Units}
+\frametitle{Heterogeneity due to \textit{U}nits}
 
 Most commonly studied source of heterogeneity is covariate-related (i.e., characteristics of units).\\
 
@@ -1068,17 +1059,21 @@ Schools & $Y_{0,0}$ & $Y_{0,1}$ \\ \bottomrule
 
 \frame{
 
-\frametitle{Two ways to estimate this}
+\frametitle{Two ways to \textit{parameterize} this}
 
-Dummy variable regression:
+Dummy variable regression (i.e., treatment--control CATEs):
 
 $Y = \beta_0 + \beta_1 X_{0,1} + \beta_2 X_{1,0} + \beta_3 X_{1,1} + \epsilon$
 
 \vspace{1em}
 
-Interaction effect:
+Interaction effects (i.e., treatment--treatment CATEs):
 
 $Y = \beta_0 + \beta_1 X1_{1} + \beta_2 X2_{1} + \beta_3 X1_1 * X2_1 + \epsilon$
+
+\vspace{1em}
+
+Use \texttt{margins} to extract marginal effects
 
 }
 
@@ -1094,6 +1089,7 @@ $Y = \beta_0 + \beta_1 X1_{1} + \beta_2 X2_{1} + \beta_3 X1_1 * X2_1 + \epsilon$
 	\begin{itemize}
 	\item Treatment--control
 	\item Treatment--treatment
+	\item Marginal effects, averaging across other factors
 	\end{itemize}
 \end{itemize}
 
@@ -1135,6 +1131,8 @@ Factors & Conditions per factor & Total Conditions & $n$ \\ \midrule
 \subsubsection{Treatment Self-Selection}
 
 \frame{
+
+\frametitle{Treatment Preferences/Self-Selection}
 
 Bennett and Iyengar:\footnote{p.724 from Bennett \& Iyengar. 2008. ``A new era of minimal effects? The changing foundations of political communication.'' \textit{Journal of Communication} 58(4): 707--31.}
 
@@ -1191,10 +1189,10 @@ It should be possible to assess what demographic and personality factors predisp
 
 \frame{
 
-\includegraphics[height=\textheight]{images/leeper2017}
+\includegraphics[width=\textwidth]{images/leeper2017}
 \vspace{2em}
 
-{\tiny Leeper. 2017. ``How Does Treatment Self-Selection Affect Inferences About Political Communication?'' Available at \url{http://thomasleeper.com/research.html}\par}
+{\tiny Leeper. 2017. ``How Does Treatment Self-Selection Affect Inferences About Political Communication?'' \textit{Journal of Experimental Political Science}: In Press. Available at \url{http://thomasleeper.com/research.html}\par}
 
 }
 
@@ -1223,19 +1221,36 @@ Note: $\alpha = Pr(T | Choice)$
 
 \frame{
 
-One final issue with unit-related sources of heterogeneity is how we handle or analyze survey-experimental data where we think participants misbehaved.
+\frametitle{Attention and Satisficing}
+
+One final issue with unit-related sources of heterogeneity is how we handle or analyze survey-experimental data where we think participants ``misbehaved''.
 
 \vspace{1em}
 
 \only<2->{This falls into a couple of broad categories:
 
-\begin{itemize}
-\item Noncompliance
-\item Inattention
+\begin{enumerate}
+\item Noncompliance (discussed earlier)
 \item Survey Satisficing
+\item Apparent Inattention
+\end{enumerate}
+}
+}
+
+
+\frame{
+\frametitle{Substantive Manipulation Check}
+\begin{itemize}\itemsep1em
+\item Two common approaches:
+	\begin{itemize}
+	\item Information recall or understanding
+	\item Measure level of manipulated treatment variable
+	\end{itemize}
+\item Risky to remove cases based on this because it is a form of conditioning on post-treatment variables
+\item May be useful to consider either a mediator of effects
 \end{itemize}
 }
-}
+
 
 
 % attention checks
@@ -1300,19 +1315,6 @@ One final issue with unit-related sources of heterogeneity is how we handle or a
 \end{itemize}
 }
 
-
-\frame{
-\frametitle{Substantive Manipulation Check}
-\begin{itemize}\itemsep1em
-\item Two common approaches:
-	\begin{itemize}
-	\item Information recall or understanding
-	\item Measure level of manipulated treatment variable
-	\end{itemize}
-\item Risky to remove cases based on this because it is a form of conditioning on post-treatment variables
-\item May be useful to consider either a mediator of effects
-\end{itemize}
-}
 
 \frame{
 \frametitle{Instructional Manipulation Check}
@@ -1496,7 +1498,7 @@ This is much more problematic because it involves controlling for a \textit{post
 
 \frame{
 
-\frametitle{Treatments}
+\frametitle{Heterogeneity due to \textit{T}reatments}
 
 \begin{itemize}\itemsep1em
 \item We should expect this! Why?
@@ -1609,7 +1611,7 @@ Why is this useful?
 
 \frame{
 
-\frame{Outcomes}
+\frametitle{Heterogeneity due to \textit{O}utcomes}
 
 \begin{itemize}\itemsep1em
 \item This is expected!
@@ -1895,7 +1897,7 @@ With a partner, brainstorm how one or more these behavioural measures might be a
 
 \frame{
 
-\frametitle{``SUTO'' Punchline: Replication!}
+\frametitle{\textit{SUTO} Punchline 1: Replication!}
 
 \small
 
@@ -1915,7 +1917,7 @@ With a partner, brainstorm how one or more these behavioural measures might be a
 
 \frame{
 
-\frametitle{Heterogeneity Take-aways}
+\frametitle{\textit{SUTO} Punchline 2:\\What do you want to know?}
 
 \begin{itemize}\itemsep0.5em
 \item Do we want to know SATE, CATE(s), or both?
@@ -1944,7 +1946,7 @@ With a partner, brainstorm how one or more these behavioural measures might be a
 
 \frame{
 \frametitle{Recruitment Considerations}
-\begin{itemize}\itemsep0.75em
+\begin{itemize}
 \item Recruitment
 	\begin{itemize}
 	\item Sampling
@@ -2282,6 +2284,9 @@ By the end of the day, you should be able to\dots
 
 \frame{}
 
+\appendix
+
+
 \section{References}
 
 \frame{
@@ -2313,80 +2318,5 @@ By the end of the day, you should be able to\dots
 
 
 \frame{}
-
-
-\appendix
-
-\section{Satisficing}
-
-
-\frame[label=satisficing]{
-\frametitle{Apparent Satisficing}
-\begin{itemize}\itemsep0.5em
-\item Some common measures:
-	\begin{itemize}
-	\item ``Straightlining''
-	\item Non-differentiation
-	\item Acquiescence
-	\item Nonresponse
-	\item DK responding
-	\item Speeding
-	\end{itemize}
-\item Difficult to detect and distinguish from ``real'' responses
-\end{itemize}
-}
-
-\frame{
-\frametitle{Metadata/Paradata}
-\begin{itemize}\itemsep1em
-\item<1-> Timing
-	\begin{itemize}
-	\item Some survey tools will allow you to time page
-	\item Make a prior rules about dropping participants for speeding
-	\end{itemize}
-\item<2-> Mousetracking or eyetracking
-	\begin{itemize}
-	\item Mousetracking is unobtrusive
-	\item Eyetracking requires participants opt-in
-	\end{itemize}
-\item<3-> Record focus/blur browser events
-\end{itemize}
-}
-
-\frame{
-\frametitle{Direct Measures}
-\begin{itemize}\itemsep1em
-\item How closely have you been paying attention to what the questions on this survey actually mean?
-\item<2-> While taking this survey, did you engage in any of the following behaviors? Please check all that apply.
-	\begin{itemize}
-	\item Use your mobile phone
-	\item Browse the internet
-	\item \dots
-	\end{itemize}
-\end{itemize}
-}
-
-
-
-\frame{
-\frametitle{{\normalsize Instructional Manipulation Check}}
-
-\small
-
-\only<2>{Do you agree or disagree with the decision to send British forces to fight ISIL in Syria? }We would like to know if you are reading the questions on this survey. If you are reading carefully, please ignore this question, do not select any answer below, and click ``next'' to proceed with the survey.\\
-
-\vspace{0.5em}
-
-\footnotesize
-Strongly disagree\\
-Somewhat disagree\\
-Neither agree nor disagree\\
-Somewhat agree\\
-Strongly agree\\
-
-\vspace{1em}
-\only<2>{\hyperlink{exclusion}{\beamerbutton{Return}}}
-}
-
 
 \end{document}
