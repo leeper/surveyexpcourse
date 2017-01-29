@@ -1,16 +1,36 @@
 # http://www.tessexperiments.org/data/holbrook120.html
 
-install.packages(c("ghit", "rio", "ggplot2", "list"))
-
 library("stats")
-library("ghit")    # installing github packages
-library("rio")     # data loading
-library("list")    # alternative list experiment estimators
-ghit::install_github("leeper/mcode")
-library("mcode")   # convenience functions for working with data recoding
-ghit::install_github(c("leeper/prediction", "leeper/margins"), build_vignettes = FALSE)
-library("margins") # marginal effects
-
+if (!require("ghit")) {
+    # installing github packages
+    install.packages("ghit")
+    library("ghit")
+}
+if (!require("rio")) {
+    # data loading
+    install.packages("rio")
+    library("rio")
+}
+if (!require("ggplot2")) {
+    # visualization
+    install.packages("ggplot2")
+    library("ggplot2")
+}
+if (!require("list")) {
+    # alternative list experiment estimators
+    install.packages("list")
+    library("list")
+}
+if (!require("mcode")) {
+    # convenience functions for working with data recoding
+    ghit::install_github("leeper/mcode")
+    library("mcode")
+}
+if (!require("margins")) {
+    # marginal effects
+    ghit::install_github(c("leeper/prediction", "leeper/margins"), build_vignettes = FALSE)
+    library("margins")
+}
 
 # load data
 if ("data.dta" %in% dir()) {
