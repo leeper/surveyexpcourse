@@ -1,7 +1,7 @@
 // Analysis of Experiment Activity from Day 1
 
 // import data
-import delimited activity01.tsv
+import delimited activity01.tsv, varnames(1)
 
 // anayze experiment
 // t-test
