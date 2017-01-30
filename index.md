@@ -23,6 +23,8 @@ Feel free to contact me if you would like me to put on workshop about survey exp
 
 ## NTNU
 
+[ZIP directory containing all materials](https://github.com/leeper/surveyexpcourse/)
+
 The next iteration of this will be a two-day workshop at NTNU, Norwegian University of Science and Technology (Trondheim, Norway; 30-31 January 2017). The schedule for the course is as follows:
 
 ### Monday 30 January - *Morning*
