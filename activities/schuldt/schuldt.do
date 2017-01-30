@@ -18,10 +18,13 @@ table outcome
 table Q3A outcome
 table Q3B outcome
 
+drop if outcome == -1
+
 tabstat outcome, by(gw)
 ttest outcome, by(gw)
-ttest outcome, by(gw) unequal
 reg outcome gw
+ttest outcome, by(gw) unequal
+reg outcome gw, r
 
 * standardized effect size and post-hoc power
 esize twosample outcome, by(gw)
