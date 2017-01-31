@@ -51,6 +51,13 @@ marginsplot
 
 ** effect heterogeneity?
 
+** equality of variance test
+sdtest outcome, by(gw)
+** quantile-quantile plot
+gen outcome1 = outcome if gw == 1
+gen outcome0 = outcome if gw == 0
+qqplot outcome1 outcome0
+
 reg outcome i.gw##i.republican i.gw##c.IDEO i.gw##i.PPGENDER i.gw##c.PPAGE i.gw##c.PPEDUC
 margins, dydx(gw)
 

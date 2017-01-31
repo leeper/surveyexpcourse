@@ -4,10 +4,12 @@ cd johnston
 quietly include "johnston.do"
 cd ../
 
-gen outcome1 = outcome if tr == 1
-gen outcome0 = outcome if tr == 0
+* equality of variance test
+sdtest outcome, by(tr)
 
 * Quantile-Quantile plot
+gen outcome1 = outcome if tr == 1
+gen outcome0 = outcome if tr == 0
 qqplot outcome1 outcome0
 
 
