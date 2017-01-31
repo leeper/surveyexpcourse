@@ -60,6 +60,7 @@ Materials for participants:
    - [Holland, PW. 1986. "Statistics and Causal Inference." *Journal of the American Statistical Association* 81(396): 945-960.](activities/Holland1986.pdf)
    - [Leeper, TJ. 2011. "The Oft-Neglected Role of Protocol in the Design and Reporting of Experiments"](activities/protocol.pdf)
    - [An example protocol document](activities/protocol_example.pdf)
+   - [An example conjoint setup in Qualtrics](https://github.com/leeper/conjoint-example)
  
  - Empirical Example 1: Holbrook and Krosnick
    - [Paper](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf), [TESS Record](http://www.tessexperiments.org/data/holbrook120.html), [Questionnaire](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
