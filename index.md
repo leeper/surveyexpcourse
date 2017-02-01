@@ -14,93 +14,15 @@ Survey experiments have emerged as one of the most powerful methodological tools
 
 This course will use published examples of experimental research to demonstrate a variety of ways to leverage survey experiments for testing social science theories. The course will teach participants how to use different survey experimental designs and how to address challenges related to sampling, survey mode, ethics, effect heterogeneity, and more. Students leave the course with a thorough understanding of how survey experiments can provide useful causal inferences, knowledge of how to design and analyze simple and complex experiments, and the ability to evaluate experimental research and apply these methods in their own research.
 
+---
+
+## Instructor Bio
+
+[Thomas J. Leeper](http://www.thomasleeper.com) is an Assistant Professor in Political Behaviour in the [Department of Government](http://www.lse.ac.uk/government/home.aspx) at the [London School of Economics and Political Science](http://www.lse.ac.uk/). He studies public opinion dynamics using survey and experimental methods, with a focus on citizens' information acquisition, elite issue framing, and party endorsements within the United States and Western Europe. His research has been published in leading journals, including *American Political Science Review*, *American Journal of Political Science*, *Public Opinion Quarterly*, and *Political Psychology* among others.
+
 ### Host a workshop/course/seminar!
 
 Feel free to contact me if you would like me to put on workshop about survey experiments. I'm willing to travel and can teach this material in workshops varying from 1-2 hours to several days!
-
-
----
-
-## NTNU
-
-[ZIP directory containing all materials](https://github.com/leeper/surveyexpcourse/)
-
-The next iteration of this will be a two-day workshop at NTNU, Norwegian University of Science and Technology (Trondheim, Norway; 30-31 January 2017). The schedule for the course is as follows:
-
-### Monday 30 January - *Morning*
-
- - Introduction to surveys, experiments, and the survey-experiment nexus
- - History of survey experimentation
- - Scientific and statistical logic of survey experiments
-
-### Monday 30 January - *Afternoon*
-
- - Translating theories into experimental designs
- - Common survey experimental paradigms
- - Discussion of applied examples
-
-### Tuesday 31 January - *Morning*
-
- - Generalizability and external validity
- - Advanced statistical considerations (mediation, effect heterogeneity, etc.)
-
-### Tuesday 31 January - *Afternoon*
-
- - Practical considerations and handling "broken" experiments
- - Workshop and discussion of participants' designs and experiments
- - Conclusion
-
-Materials for participants:
- 
- - Slides
-   - [Day 1](slides/NTNU2017-1.pdf)
-   - [Day 2](slides/NTNU2017-2.pdf)
-
- - Readings
-   - [Holland, PW. 1986. "Statistics and Causal Inference." *Journal of the American Statistical Association* 81(396): 945-960.](activities/Holland1986.pdf)
-   - [Leeper, TJ. 2011. "The Oft-Neglected Role of Protocol in the Design and Reporting of Experiments"](activities/protocol.pdf)
-   - [An example protocol document](activities/protocol_example.pdf)
-   - [An example conjoint setup in Qualtrics](https://github.com/leeper/conjoint-example)
- 
- - Empirical Example 1: Holbrook and Krosnick
-   - [Paper](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf), [TESS Record](http://www.tessexperiments.org/data/holbrook120.html), [Questionnaire](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
-   - Data: [SPSS (.sav)](activities/holbrook/data.sav), [Stata (.dta)](activities/holbrook/data.dta)
-   - Code: [Stata](activities/holbrook/holbrook.R), [R](activities/holbrook/holbrook.R)
- 
- - Empirical Example 2: Schuldt et al.
-   - [Paper](activities/schuldt/Schuldt, Konrath, Schwarz (POQ, 2011).pdf), [TESS Record](http://www.tessexperiments.org/data/schuldt301.html), [Questionnaire](activities/schuldt/Questionnaire.doc)
-   - Data: [SPSS (.sav)](activities/schuldt/data.sav), [Stata (.dta)](activities/schuldt/data.dta)
-   - Code: [Stata](activities/schuldt/schuldt.do), [R](activities/schuldt/schuldt.R)
- 
- - Empirical Example 3: Johnston, Newman, and Velez
-   - (Unpublished), [TESS Record](http://www.tessexperiments.org/data/newman508.html), [Questionnaire](activities/johnston/questionnaire.doc)
-   - Data: [SPSS (.sav)](activities/johnston/data.sav), [Stata (.dta)](activities/johnston/data.dta)
-   - Code: [Stata](activities/johnston/johnston.do), [R Code](activities/johnston/johnston.R)
- 
- - Other Activities
-   - Opening Activity: [Data](activities/activity01.tsv), [Stata (.do)](activities/activity01.do), [R (.R)](activities/activity01.R)
-   - Power calculations: [Stata (.do)](activities/power.do), [R (.R)](activities/power.R)
-   - Effect heterogeneity: [Stata (.do)](activities/heterogeneity.do), [R (.R)](activities/heterogeneity.R)
-   - Mediation and Manipulation Checks: [Stata (.do)](activities/ivreg.do), [R (.R)](activities/ivreg.R)
-   - Balance testing: [Stata (.do)](activities/balance.do), [R (.R)](activities/balance.R)
-   - Survey Weighting: [Stata (.do)](activities/weighting.do), [R (.R)](activities/weighting.R)
- 
-Note: This version of the workshop includes activities using Stata, but R examples are also provided.
-
-
----
-
-# EUI, 2017
-
-A one-day workshop at the Europen University Institute (Florence, Italy; 18 January 2017).
-
- - [Slides](slides/EUI2017.pdf)
- - [R Code for Activites](activities/EUI2017.R)
- - Papers
-   - [Holbrook and Krosnick](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
-   - [Schuldt et al.](activities/schuldt/Schuldt, Konrath, Schwarz (POQ, 2011).pdf)
-
-This version of the workshop includes activities using R.
 
 
 ---
@@ -210,30 +132,131 @@ Though not assigned for the course, the following texts may serve as useful back
 
 ### Books
 
- * Mutz, D. C. 2011. *Population-Based Survey Experiments*. Princeton, NJ: Princeton University Press.
- * Gerber, A. S. and Green, D. P. 2012. *Field Experiments: Design, Analysis, and Interpretation*. New York: W.W. Norton.
+ * Gerber, A.S. and Green, D.P. 2012. *Field Experiments: Design, Analysis, and Interpretation*. New York: W.W. Norton.
+ * Groves, R.M., et al. 2009. *Survey Methodology*. Wiley-Interscience.
+ * Morgan, S.L. and Winship, C. 2015. *Counterfactuals and Causal Inference*. 2nd Edition. New York: Cambridge.
+ * Mutz, D.C. 2011. *Population-Based Survey Experiments*. Princeton, NJ: Princeton University Press.
  * Schuman, H. and Presser, S. 1981. *Questions and Answers in Attitude Surveys: Experiments on Question Form, Wording, and Context*. SAGE Publications.
- * Groves, R. M., Fowler, F. J., Couper, M. P., Lepkowski, J. M., Singer, E., and Tourangeau, R. 2009. *Survey Methodology*. Wiley-Interscience.
+ * Glennerster R. and Takavarasha, K. 2013. *Running Randomized Evaluations: A Practical Guide*. Princeton, NJ: Princeton.
+ * Auspurg, K. and Hinz, T. 2015. *Factorial Survey Experiments*. SAGE Publications.
  
 ### Survey, Experimental, and Survey-Experimental Methodology
 
+**Sensitive Items**
+
+ * Tourangeau, R. and Smith, T. W. 1996. "Asking Sensitive Questions: The Impact of Data Collection Mode, Question Format, and Question Context." *Public Opinion Quarterly* 60: 275-304.
  * Blair, G. and Imai, K. 2012. "Statistical Analysis of List Experiments." *Political Analysis* 20: 47-77.
+ * Kreuter, F., Presser, S., and Tourangeau, R. 2009. "Social Desirability Bias in CATI, IVR, and Web Surveys: The Effects of Mode and Question Sensitivity." *Public Opinion Quarterly* 72: 847-865.
+
+**Mediation**
+
  * Jamieson, J. P. and Harkins, S. G. 2011. "The Intervening Task Method: Implications for Measuring Mediation." *Personality & Social Psychology Bulletin* 37: 652-661.
  * Green, D. P., Ha, S. E., and Bullock, J. G. 2009. "Enough Already about 'Black Box' Experiments: Studying Mediation is More Difficult than Most Scholars Suppose." *The ANNALS of the American Academy of Political and Social Science* 628: 200-208.
  * Imai, K., Keele, L. Tingley, D., and Yamamoto, T. 2011. "Unpacking the Black Box: Learning about Causal Mechanisms from Experimental and Observational Studies." *American Political Science Review* 105(4): 765-789.
+
+**Sampling and Representativeness**
+
  * Wang, W., Rothschild, D., Goel, S., and Gelman, A. 2015. "Forecasting Elections with Non-representative Polls." *International Journal of Forecasting*: In press.
  * Chandler, J., Paolacci, G., Peer, E., Mueller, P., and Ratliff, K. A. 2015. "Using Nonnaive Participants Can Reduce Effect Sizes." *Psychological Science*: In press.
  * Banducci, S. and Stevens, D. 2015. "Surveys in Context: How Timing in the Electoral Cycle Influences Response Propensity and Satisficing." *Public Opinion Quarterly* 79: 214-243.
+
+**Factorial Experiments**
+
  * Hainmueller, J., Hopkins, D. J., and Yamamoto, T. 2014. "Causal Inference in Conjoint Analysis: Understanding Multi-Dimensional Choices via Stated Preference Experiments." *Political Analysis* 22: 1-30.
- * Tourangeau, R. and Smith, T. W. 1996. "Asking Sensitive Questions: The Impact of Data Collection Mode, Question Format, and Question Context." *Public Opinion Quarterly* 60: 275-304.
- * Kreuter, F., Presser, S., and Tourangeau, R. 2009. "Social Desirability Bias in CATI, IVR, and Web Surveys: The Effects of Mode and Question Sensitivity." *Public Opinion Quarterly* 72: 847-865.
+
+**Treatment Preferences**
+
  * Hovland, C. I. 1959. "Reconciling Conflicting Results Derived from Experimental and Survey Studies of Attitude Change." *American Psychologist* 14: 8-17.
+
+**Ethics**
+
  * Sterling, T. D., Rosenbaum, W. L., and Weinkam, J. 1995. "Publication Decisions Revisited: The Effect of the Outcome of Statistical Tests on the Decision to Publish and Vice Versa." *The American Statistician* 49: 108-112.
  * Franco, A., Malhotra, N., and Simonovits, G. 2015. "Underreporting in Political Science Survey Experiments: Comparing Questionnaires to Published Results." *Political Analysis* 23: 306-312.
+
+**General Statistics**
+
  * Gelman, A., and Stern, H. 2006. "The Difference Between 'Significant' and 'Not Significant' is Not Itself Statistically Significant." *The American Statistician* 60(4): 328-331.
 
 ---
 
-## Instructor Bio
+## NTNU
 
-[Thomas J. Leeper](http://www.thomasleeper.com) is an Assistant Professor in Political Behaviour in the [Department of Government](http://www.lse.ac.uk/government/home.aspx) at the [London School of Economics and Political Science](http://www.lse.ac.uk/). He studies public opinion dynamics using survey and experimental methods, with a focus on citizens' information acquisition, elite issue framing, and party endorsements within the United States and Western Europe. His research has been published in leading journals, including *American Political Science Review*, *American Journal of Political Science*, *Public Opinion Quarterly*, and *Political Psychology* among others.
+[ZIP directory containing all materials](https://github.com/leeper/surveyexpcourse/)
+
+The next iteration of this will be a two-day workshop at NTNU, Norwegian University of Science and Technology (Trondheim, Norway; 30-31 January 2017). The schedule for the course is as follows:
+
+### Monday 30 January - *Morning*
+
+ - Introduction to surveys, experiments, and the survey-experiment nexus
+ - History of survey experimentation
+ - Scientific and statistical logic of survey experiments
+
+### Monday 30 January - *Afternoon*
+
+ - Translating theories into experimental designs
+ - Common survey experimental paradigms
+ - Discussion of applied examples
+
+### Tuesday 31 January - *Morning*
+
+ - Generalizability and external validity
+ - Advanced statistical considerations (mediation, effect heterogeneity, etc.)
+
+### Tuesday 31 January - *Afternoon*
+
+ - Practical considerations and handling "broken" experiments
+ - Workshop and discussion of participants' designs and experiments
+ - Conclusion
+
+Materials for participants:
+ 
+ - Slides
+   - [Day 1](slides/NTNU2017-1.pdf)
+   - [Day 2](slides/NTNU2017-2.pdf)
+
+ - Readings
+   - [Holland, PW. 1986. "Statistics and Causal Inference." *Journal of the American Statistical Association* 81(396): 945-960.](activities/Holland1986.pdf)
+   - [Leeper, TJ. 2011. "The Oft-Neglected Role of Protocol in the Design and Reporting of Experiments"](activities/protocol.pdf)
+   - [An example protocol document](activities/protocol_example.pdf)
+   - [An example conjoint setup in Qualtrics](https://github.com/leeper/conjoint-example)
+ 
+ - Empirical Example 1: Holbrook and Krosnick
+   - [Paper](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf), [TESS Record](http://www.tessexperiments.org/data/holbrook120.html), [Questionnaire](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
+   - Data: [SPSS (.sav)](activities/holbrook/data.sav), [Stata (.dta)](activities/holbrook/data.dta)
+   - Code: [Stata](activities/holbrook/holbrook.R), [R](activities/holbrook/holbrook.R)
+ 
+ - Empirical Example 2: Schuldt et al.
+   - [Paper](activities/schuldt/Schuldt, Konrath, Schwarz (POQ, 2011).pdf), [TESS Record](http://www.tessexperiments.org/data/schuldt301.html), [Questionnaire](activities/schuldt/Questionnaire.doc)
+   - Data: [SPSS (.sav)](activities/schuldt/data.sav), [Stata (.dta)](activities/schuldt/data.dta)
+   - Code: [Stata](activities/schuldt/schuldt.do), [R](activities/schuldt/schuldt.R)
+ 
+ - Empirical Example 3: Johnston, Newman, and Velez
+   - (Unpublished), [TESS Record](http://www.tessexperiments.org/data/newman508.html), [Questionnaire](activities/johnston/questionnaire.doc)
+   - Data: [SPSS (.sav)](activities/johnston/data.sav), [Stata (.dta)](activities/johnston/data.dta)
+   - Code: [Stata](activities/johnston/johnston.do), [R Code](activities/johnston/johnston.R)
+ 
+ - Other Activities
+   - Opening Activity: [Data](activities/activity01.tsv), [Stata (.do)](activities/activity01.do), [R (.R)](activities/activity01.R)
+   - Power calculations: [Stata (.do)](activities/power.do), [R (.R)](activities/power.R)
+   - Effect heterogeneity: [Stata (.do)](activities/heterogeneity.do), [R (.R)](activities/heterogeneity.R)
+   - Mediation and Manipulation Checks: [Stata (.do)](activities/ivreg.do), [R (.R)](activities/ivreg.R)
+   - Balance testing: [Stata (.do)](activities/balance.do), [R (.R)](activities/balance.R)
+   - Survey Weighting: [Stata (.do)](activities/weighting.do), [R (.R)](activities/weighting.R)
+ 
+Note: This version of the workshop includes activities using Stata, but R examples are also provided.
+
+
+---
+
+# EUI, 2017
+
+A one-day workshop at the Europen University Institute (Florence, Italy; 18 January 2017).
+
+ - [Slides](slides/EUI2017.pdf)
+ - [R Code for Activites](activities/EUI2017.R)
+ - Papers
+   - [Holbrook and Krosnick](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
+   - [Schuldt et al.](activities/schuldt/Schuldt, Konrath, Schwarz (POQ, 2011).pdf)
+
+This version of the workshop includes activities using R.
+
