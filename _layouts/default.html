@@ -1,47 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="twitter:card" content="{% if page.twittercardtype == nil or page.twittercardtype == "" %}summary{% else %}{{ page.twittercardtype }}{% endif %}" />
+	<meta charset="utf-8">
+	    <meta name="twitter:card" content='{% if page.twittercardtype == nil or page.twittercardtype == "" %}summary{% else %}{{ page.cardtype }}{% endif %}' />
     <meta name="twitter:site" content="@thosjleeper" />
     <meta name="twitter:creator" content="@thosjleeper" />
-    <meta property="twitter:image" content="{% if page.twitterimage == nil or page.twitterimage == "" %}http://thomasleeper.com/images/thomas2016.jpg{% else %}{{ page.twitterimage }}{% endif %}" />
-    <meta property="twitter:image:alt" content="{% if page.twitterimagealt == nil or page.twitterimagealt == "" %}Headshot of Thomas J. Leeper, PhD{% else %}{{ page.twitterimagealt }}{% endif %}" />
+    <meta property="twitter:image" content='{% if page.twitterimage == nil or page.twitterimage == "" %}http://thomasleeper.com/images/thomas2016.jpg{% else %}{{ page.twitterimage }}{% endif %}' />
+    <meta property="twitter:image:alt" content='{% if page.twitterimagealt == nil or page.twitterimagealt == "" %}Headshot of Thomas J. Leeper, PhD{% else %}{{ page.twitterimagealt }}{% endif %}' />
     <meta property="og:url" content="http://thomasleeper.com{{ page.url }}" />
-    <meta property="og:title" content="Survey Experiments Course" />
-    <meta property="og:description" content="{% if page.description == nil or page.description == "" %}{{ page.title }}{% else %}{{ page.description }}{% endif %}" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:description" content='{% if page.description == nil or page.description == "" %}{{ page.title }}{% else %}{{ page.description }}{% endif %}' />
     <meta property="og:image" content="http://thomasleeper.com/images/thomas2016.jpg" />
-    <title>Thomas J. Leeper</title>
-    <meta name="description" content="Survey Experiments in Practice">
-    <meta name="keywords" content="political science, social science, research, data, open science, R, social science computing, statistics, surveys, experiments, survey experiments, public opinion, political behavior, political behaviour, american politics, us politics, british politics, R, rstats">
-    <meta name="author" content="Thomas J. Leeper">
-    <link rel="stylesheet" type="text/css" href="http://thomasleeper.com/assets/css/style.css" />
-    	<script>
-		function printDate() {
-			var d = new Date();
-			var x = document.getElementById("years");
-			x.innerHTML = "2009-" + d.getFullYear();
-		}
-	</script>
+	<title>Thomas J. Leeper</title>
+	<link rel="stylesheet" type="text/css" href="http://thomasleeper.com/assets/css/style.css" />
 </head>
-<body onload="printDate()">
-  <header>
-    <a href="http://www.thomasleeper.com"><p class="thomas">Thomas J. Leeper</p></a>
-  </header>
-  <nav>
-  	<a href="http://www.thomasleeper.com">Home</a>
-	<a href="http://leeper.github.io/cv/cv.pdf">CV</a>
-  	<a href="http://leeper.github.io/research.html">Research</a>
-  	<a href="http://leeper.github.io/software.html">Software</a>
-  	<a href="http://leeper.github.io/teaching.html">Teaching</a>
-  	<a href="https://dataverse.harvard.edu/dataverse/leeper">Data</a>
-  	<a href="http://leeper.github.io/blog.html">Posts</a>
-  	<a href="http://leeper.github.io/contact.html">Connect</a>
-  </nav>
+<body>
   <div style="margin-top: 0.08in; margin-bottom: 0.08in; color:#4c4c4c; ">
     <div class="wrapper">
       <div class="entry-content">
-      	<h3><a href="http://leeper.github.io/teaching.html">Teaching</a> > <a href='.'>Survey Experiments Course</a> > {{ page.title }}</h3>
+      	<h3><a href="http://leeper.github.io/">Thomas J. Leeper</a> > <a href="http://leeper.github.io/teaching.html">Teaching</a> > <a href='http://leeper.github.io/surveyexpcourse'>Survey Experiments Course</a> > {{ page.title }}</h3>
         {{ content }}
       </div>
     </div>
