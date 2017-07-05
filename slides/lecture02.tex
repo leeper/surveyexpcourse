@@ -11,65 +11,9 @@
 \frame{\tableofcontents}
 
 
-\frame{
-
-\frametitle{Analysis}
-
-See website for
-\begin{itemize}
-\item Data from yesterday's activity
-\item R code for basic experimental analysis
-\item Stata code for basic experimental analysis
-\end{itemize}
-}
-
-
-\frame{
-
-\frametitle{{\normalsize Aside: Complex Designs}}
-
-\small
-
-\begin{itemize}
-\item An experiment can have any number of conditions
-	\begin{itemize}\footnotesize
-	\item Up to the limits of sample size
-	\item More than 8--10 conditions is typically unwieldy
-	\end{itemize}
-\item Still analyze complex designs using regression, but focus on pairwise comparisons to estimates SATEs
-	\begin{itemize}\footnotesize
-	\item Treatment--treatment, or treatment-control
-	\item Without control group, we don't know which treatment(s) affected the outcome
-	\end{itemize}
-\end{itemize}
-
-}
-
-
-
-
 \section[Theory]{From Theory to Design}
 \frame{\tableofcontents[currentsection]}
 % deriving hypotheses from theory and manipulations from hypotheses
-
-
-\frame{
-
-\frametitle{{\large What makes a good research question?}}
-
-\small
-
-KKV's two criteria:
-
-\begin{enumerate}
-\item Politically important
-\item Contribute to scientific literature
-\vspace{0.25em}
-\item<2-> Personally interesting
-\item<2-> Unresolved
-\item<3-> For experiments, \textit{forward} in nature
-\end{enumerate}
-}
 
 
 \frame{
@@ -253,23 +197,6 @@ These days, Democrats and Republicans differ from one another considerably. The 
 
 \questions
 
-\frame{
-
-\frametitle{Share your TESS Examples}
-
-In groups of 4--5, share your TESS examples
-\begin{itemize}
-\item What was the researcher's question?
-\item How did they test it experimentally?
-\item What was interesting or surprising about the designs?
-\end{itemize}
-
-Take about 7--8 minutes.
-
-}
-
-
-
 
 
 % Talk about protocol and preregistration
@@ -321,6 +248,533 @@ Protocol is the complete planning document for how to design, implement, and ana
 \questions
 
 
+
+
+
+
+\subsection[Examples]{Common Paradigms and Examples}
+\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
+
+
+\frame{
+
+\frametitle{Question Wording Designs}
+
+\begin{itemize}
+\item Kahneman and Tversky used a lot of ``question wording'' experiments
+\item Hypothesized difference in outcomes according to the decision being faced
+	\begin{itemize}
+	\item Risky or not risky
+	\item Gains or losses
+	\end{itemize}
+\item Manipulation operationalizes this by asking two different questions
+\item Outcome is the answer to the question
+\end{itemize}
+
+}
+
+
+
+
+\frame{
+
+\frametitle{``Framing'' or ``Priming'' Experiments}
+
+Example: Schuldt et al. ```Global Warming' or `Climate Change'? Whether the Planet is Warming Depends on Question Wording.''
+
+\vspace{1em}
+
+What's this study about?
+}
+
+
+\frame{
+
+\small
+
+You may have heard about the idea that the world's temperature may have been \textbf{\only<1>{going up}\only<2>{changing}} over the past 100 years, a phenomenon sometimes called \textbf{\only<1>{global warming}\only<2>{climate change}}. What is your personal opinion regarding whether or not this has been happening?
+	\begin{itemize}\itemsep-0.25em\footnotesize
+	\item Definitely has not been happening
+	\item Probably has not been happening
+	\item Unsure, but leaning toward it has not been happening
+	\item Not sure either way
+	\item Unsure, but leaning toward it has been happening
+	\item Probably has been happening
+	\item Definitely has been happening
+	\end{itemize}
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Another framing example\footnote{Singer \& Couper. 2014. ``The Effect of Question Wording on Attitudes toward Prenatal Testing and Abortion.'' \textit{Public Opinion Quarterly} 78(3): 751--760.}}}
+
+\footnotesize
+
+Today, tests are being developed that make it possible to detect serious genetic defects \textbf{\only<1>{before a baby is born}\only<2>{in the fetus during pregnancy}}. But so far, it is impossible either to treat or to correct most of them. If (you/your partner) were pregnant, would you want (her) to have a test to find out if the \textbf{\only<1>{baby}\only<2>{fetus}} has any serious genetic defects? (Yes/No)\\
+
+\vspace{0.5em}
+
+Suppose a test shows the \textbf{\only<1>{baby}\only<2>{fetus}} has a serious genetic defect. Would you, yourself, want (your partner) to have an abortion if a test shows the \textbf{\only<1>{baby}\only<2>{fetus}} has a serious genetic defect? (Yes/No)
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Another framing example\footnote{Bobo \& Johnson. 2004. ``A Taste for Punishment: Black and White Americans' Views on the Death Penalty and the War on Drugs.'' Du Bois Review 1(1): 151--180.}}}
+
+\only<2>{Blacks are about 12\% of the U.S. population, but they were half of the homicide offenders last year. }Do you favor or oppose the death penalty for persons convicted of murder?
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Another framing example\footnote{Haider-Markel \& Joslyn. 2001. ``Gun Policy, Opinion, Tragedy, and Blame Attribution: The Conditional Influence of Issue Frames.'' \textit{Journal of Politics} 63(2): 520--543.}}}
+
+\only<1>{Concealed handgun laws have recently received national attention. Some people have argued that law-abiding citizens have the right to protect themselves.}\only<2>{Concealed handgun laws have recently received national attention. Some people have argued that laws allowing citizens to carry concealed handguns threaten public safety because they would allow almost anyone to carry a gun almost anywhere, even onto school grounds.} What do you think about concealed handgun laws?
+
+}
+
+
+\frame{
+
+\frametitle{Question testing}
+
+Use question wording designs to select which survey measures we want to use
+
+\begin{itemize}
+\item Select possible question wordings
+\item Select some criterion(-ia) for assessing which is better
+\item Pilot test and then use the item that performs better
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Aside: Experimentation vs. Other Pretesting Methods}}
+
+\small
+
+\begin{itemize}\itemsep0.25em
+\item<2-> Experiments are complementary to other pretesting methods
+\item<3-> Specific value added of an experiment: optimize questions or other survey features against a specific criterion, e.g.:
+	\begin{itemize}\footnotesize
+	\item (Non-)Response or drop-off rates
+	\item ``Don't know'' rates
+	\item Item characteristics
+	\item Reading times or response latencies
+	\end{itemize}
+\item<4-> But! Power considerations\dots
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Classic question testing experiment\footnote{Bishop, G.F., Tuchfarber, A. \& Oldendick, R.W. 1986. ``Opinions on Fictitious Issues: The Pressure to Answer Survey Questions.'' \textit{Public Opinion Quarterly} 50(2): 240--250.}}}
+
+Some people feel that The 1975 Public Affairs Act should be repealed-do you agree or disagree with this idea\only<1>{?}\only<2>{, or haven't you thought much about this issue?}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize An example\footnote{Holbrook \& Krosnick. 2013. ``A New Question Sequence to Measure Voter Turnout in Telephone Surveys: Results of an Experiment in the 2006 {ANES} Pilot Study.'' \textit{Public Opinion Quarterly} 77: 106--123.}}}
+
+\small
+
+In talking to people about elections, we often find that a lot of people were not able to vote because they weren't registered, they were sick, or they just didn't have time. \only<1>{How about you--did you vote in the elections this November?}\only<2>{Which of the following statements best describes you?
+    \begin{itemize}\footnotesize
+    \item One, I did not vote in the November 3 election
+    \item two, I thought about voting this time but didn't
+    \item three, I usually vote but didn't this time
+    \item four, I am sure I voted
+    \end{itemize}}
+
+}
+
+\frame{
+
+\frametitle{{\normalsize An Instructional Manipulation\footnote{Sturgis, Allum \& Smith. 2008. ``An Experiment on the Measurement of Political Knowledge in Surveys.'' \textit{Public Opinion Quarterly} 72(1): 90--102.}}}
+
+\small
+
+For the next few questions, I am going to read out some statements, and for each one, please tell me if it is true or false. If you don't know, \only<1>{just say so and we will skip to the next one}\only<2>{please just give me your best guess}.
+
+\begin{enumerate}\footnotesize
+\item Britain's electoral system is based on proportional representation.
+\item MPs from different parties are on parliamentary committees.
+\item The Conservatives are opposed to the ratification of a constitution for the European Union.
+\end{enumerate}
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize An Instructional Manipulation + \footnote{Prior \& Lupia. 2008. ``Money, Time, and Political Knowledge: Distinguishing Quick Recall and Political Learning Skills.'' \textit{American journal of Political Science} 52(1): 169--183.}}}
+
+\small
+
+\only<1>{In the next part of this study, you will be asked 14 questions about politics, public policy, and economics. Many people don't know the answers to these questions, but it is helpful for us if you answer, even if you're not sure what the correct answer is. We encourage you to take a guess on every question. At the end of this study, you will see a summary of how many questions you answered correctly.}\only<2>{We will pay you for answering questions correctly.
+You will earn \$1 for every correct answer you give. So, if you answer 3 of the 14 questions correctly, you will earn \$3. If you answer 7 of the 14 questions correctly, you will earn \$7. The more questions you answer correctly, the more you will earn.}
+
+}
+
+
+
+\frame{
+
+\frametitle{{\normalsize Question Order Designs}}
+
+\small
+
+\begin{itemize}
+\item Manipulation of pre-outcome questionnaire
+\item<2-> Example:
+	\begin{itemize}
+	\item Goal: assess influence of value salience on support for a policy
+	\item Manipulate by asking different questions:
+		\begin{itemize}
+		\item Battery of 5 ``rights'' questions, or
+		\item Battery of 5 ``life'' questions
+		\end{itemize}
+	\item Measure support for legalized abortion
+	\end{itemize}
+\item<3-> If answers to manipulated questions matter, can measure rest post-outcome
+\end{itemize}
+
+}
+
+\frame{
+	\frametitle{{\normalsize Ex. Question-as-treatment\footnote{Transue. 2007. ``Identity Salience, Identity Acceptance, and Racial Policy Attitudes: {American} National Identity as a Uniting Force.'' \textit{American Journal of Political Science} 51(1): 78--91.}}}
+	
+
+\begin{itemize}\itemsep1em
+\item \only<1,3>{How close do you feel to your ethnic or racial group?}\only<2,4>{How close do you feel to other Americans?}
+\item \only<1-2>{Some people have said that taxes need to be raised to take care of pressing national needs. How willing would you be to have your taxes raised to improve education in public schools?}\only<3-4>{Some people have said that taxes need to be raised to take care of pressing national needs. How willing would you be to have your taxes raised to improve educational opportunities for minorities?}
+\end{itemize}
+	
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Ex.: Knowledge and Political Interest}}
+
+\footnotesize
+
+\begin{enumerate}
+\item Do you happen to remember anything special that your U.S. Representative has done for your district or for the people in your district while he has been in Congress?
+\item Is there any legislative bill that has come up in the House of Representatives, on which you remember how your congressman has voted in the last couple of years?
+\item Now, some people seem to follow what's going on in government and public affairs most of the time, whether there's an election going on or not. Others aren't that interested. Would you say that you follow what's going on in government and public affairs most of the time, some of the time, only now and then, or hardly at all?
+\end{enumerate}
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Ex.: Knowledge and Political Interest}}
+
+\footnotesize
+
+\begin{enumerate}
+\item Now, some people seem to follow what's going on in government and public affairs most of the time, whether there's an election going on or not. Others aren't that interested. Would you say that you follow what's going on in government and public affairs most of the time, some of the time, only now and then, or hardly at all?
+\item Do you happen to remember anything special that your U.S. Representative has done for your district or for the people in your district while he has been in Congress?
+\item Is there any legislative bill that has come up in the House of Representatives, on which you remember how your congressman has voted in the last couple of years?
+\end{enumerate}
+
+}
+
+
+
+\frame{
+
+\frametitle{Vignettes}
+
+\begin{itemize}
+\item A ``vignette'' is a short paragraph of text describing a situation
+\item Vignettes are probably the most common survey experimental paradigm, after question wording designs
+\item Take many forms and increasingly encompass non-textual stimuli
+\item Basically limited to web-based mode
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{A classic vignette\footnote{Gilens, M. 1996. ```Race coding' and white opposition to welfare. \textit{American Political Science Review} 90(3): 593--604.}}
+
+\small
+
+Now think about a \textbf{(black/white)} woman in her early thirties. She is a high school \textbf{(graduate/drop out)} with a ten-year-old child, and she has been on welfare for the past year.
+
+\begin{itemize}\footnotesize
+\item How likely is it that she will have more children in order to get a bigger welfare check? (1 = Very likely, \dots, 7 = Not at all likely)
+\item How likely do you think it is that she will really try hard to find a job in the next year? (1 = Very likely, \dots, 7 = Not at all likely)
+\end{itemize}
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Newer vignette\footnote{Banerjee et al. 2012. ``Are Poor Voters Indifferent to Whether Elected Leaders are Criminal or Corrupt? A Vignette Experiment in Rural India.'' Working paper.}}}
+
+\footnotesize
+
+Imagine that you were living in a village in another district in Uttar Pradesh and that you were voting for candidates in \textbf{(village/state/national)} election. Here are the two candidates who are running against each other: The first candidate is named \textbf{(caste name)} and is running as the \textbf{(BJP/SP/BSP)} party candidate. \textbf{(Corrupt/criminality allegation)}. His opponent is named \textbf{(caste name)} and is running as the \textbf{(BJP/SP/BSP)} party candidate. \textbf{(Opposite corrupt/criminality allegation)}. From this information, please indicate which candidate you would vote for in the \textbf{(village/state/national)} election. 
+
+}
+
+
+\frame{
+
+\frametitle{{\normalsize Longer texts\footnote{Druckman \& Leeper. 2012. ``Learning More from Political Communication Experiments: Pretreatment and Its Effects.'' \textit{American Journal of Political Science} 56(4): 875--896.}}}
+
+\small
+
+We are testing materials for use in a study \textbf{\only<1>{of the structure of sentences people use when writing news editorials}\only<2>{that is related to the kinds of opinions people form about public policies}}. Along these lines, we would like you to read a series of paragraphs, taken from recent major newspaper editorials.
+
+}
+
+\frame{
+
+\small
+
+Please read the following paragraphs and, for each, rate \textbf{\only<1>{how \textit{dynamic} you think it is. A paragraph is more ``dynamic'' when it uses more vivid action words. For example, a statement like, ``He sped up and raced through the light before crashing into the swerving truck,'' seems more dynamic than, ``He went faster to get through the light before having an accident.'' The action words in the first sentence (which we have highlighted in bold) seem more dynamic or vivid than those contained in the second sentence.}\only<2>{the extent to which it decreases or increases your support for the Patriot Act. In subsequent surveys we will ask you for your overall opinion about the state-run casino (i.e., the extent to which you oppose or support the state-run casino).}} There are no right or wrong opinions and your responses to all questions are completely confidential.
+
+}
+
+\frame{
+
+\small
+
+Please read the paragraphs carefully and, after each one, rate \textbf{\only<1>{the extent to which you think it is \textit{dynamic}}\only<2>{the extent to which it decreases or increases your support for the Patriot Act}}.\\
+
+\vspace{1em}
+
+\footnotesize
+
+With the passage of the Patriot Act in 2001, the FBI can now enter your home, search around, and doesn't ever have to tell you it was there. You could be perfectly innocent, yet federal agents can go through your most personal effects. When considering new laws, a test of the impact on liberty should be required. On that test, the Patriot Act fails. At a massive 342 pages, it potentially violates at least six of the ten original amendments known as the Bill of Rights --- the First, Fourth, Fifth, Sixth, Seventh and Eighth Amendments --- and possibly the Thirteenth and Fourteenth as well.
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Example\footnote{Merolla \& Zechmeister. 2013. ``Evaluating Political Leaders in Times of Terror and Economic Threat: The Conditioning Influence of Politician Partisanship.'' \textit{Journal of Politics} 75(3): 599--712.}}}
+
+\begin{center}
+\includegraphics<1>[width=.85\textwidth]{images/merollazechmeister1}
+\includegraphics<2>[width=.85\textwidth]{images/merollazechmeister2}
+\end{center}
+
+}
+
+
+\frame{
+
+\frametitle{{\large Some vignette considerations}}
+
+\begin{itemize}\small
+\item<2-> Comparability across conditions
+	\begin{itemize}
+	\item Length
+	\item Readability
+	\end{itemize}
+\item<3-> Language proficiency
+\item<4-> Length
+	\begin{itemize}\small
+	\item Timers
+	\item Forced exposure
+	\item Mouse trackers
+	\end{itemize}
+\item<5-> Devices
+	\begin{itemize}\small
+	\item Browser-specificity
+	\item Device sizes (e.g., mobile)
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\begin{center}
+\includegraphics[height=\textheight]{images/devicesizes.png}
+\end{center}
+}
+
+\frame{
+
+\frametitle{{\normalsize Aside: Unique features of online studies}}
+
+\begin{itemize}
+\item<2-> Capacity for audio-visual treatments and measurements
+\item<3-> Paradata collection
+	\begin{itemize}
+	\item Implicit outcomes like response times, answer switching, mouse click behavior, browser focus, eye tracking, etc.
+	\end{itemize}
+\item<4-> Complex randomization
+\item<5-> Panel data
+\item<5-> Synchronous, multi-person designs
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Non-textual Manipulations}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item Images can work well
+\item Standalone or embedded in a text or question
+\item<2-> Examples
+	\begin{itemize}\footnotesize
+	\item<2-> Kalmoe \& Gross\footnote{``Cueing Patriotism, Prejudice, and Partisanship in the Age of Obama: Experimental Tests of U.S. Flag Imagery Effects in Presidential Elections.'' \textit{Political Psychology}: in press.} measure impact of patriotic cues on candidate support by showing images of candidates with and without flags
+	\item<3-> Subliminal primes possible, depending on software
+	\item<4-> Lots of recent examples of facial manipulation
+	\end{itemize}
+
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Example\footnote{Iyengar et al. 2010. ``Do Explicit Racial Cues Influence Candidate Preference? The Case of Skin Complexion in the 2008 Campaign.'' Working paper.}}
+
+\includegraphics[width=\textwidth]{images/IyengarMessingBailenson}
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Example\footnote{Laustsen \& Petersen. 2016. ``Winning Faces vary by Ideology.'' \textit{Political Communication} 33(2): 188--211.}}}
+
+\begin{center}
+\includegraphics[width=\textwidth, trim={0cm 0cm 0cm 9cm}, clip]{images/laustsen}
+\end{center}
+}
+
+\frame{
+\frametitle{{\normalsize Example\footnote{Bailenson et al. 2006. ``Transformed Facial Similarity as a Political Cue: A Preliminary Investigation.'' \textit{Political Psychology} 27(3): 373--385.}}}
+
+\begin{center}
+\includegraphics[width=\textwidth, trim={0cm 7.7cm 0cm 0cm}, clip]{images/BailensonGarlandIyengar}
+\end{center}
+}
+
+
+
+
+\frame{
+
+\frametitle{{\normalsize Audio \& Video manipulations}}
+
+\small
+
+\begin{itemize}\itemsep-0.2em
+\item Problematic for same reasons as long texts
+\item<2-> Best practices
+	\begin{itemize}\footnotesize
+	\item Keep it short
+	\item Have the video play automatically
+	\item Disallow survey progression
+	\item Control and validate
+	\end{itemize}
+\item<3->Examples
+	\begin{itemize}
+	\item Television Advertisements\footnote{Vavreck. 2007 ``The Exaggerated Effects of Advertising on Turnout: The Dangers of Self-Reports.'' \textit{Quarterly Journal of Political Science} 2: 325--343.} 
+	\item News Programs\footnote{Mutz. 2007. ``Effects of `In-Your-Face' Television Discourse on Perceptions of a Legitimate Opposition.'' \textit{American Political Science Review} 101(4): 621--635.}
+	\end{itemize}	
+\end{itemize}
+
+}
+
+
+
+
+\frame{
+\frametitle{``Task'' Designs}
+
+\begin{itemize}\itemsep0.5em
+\item Task designs ask respondents to perform a task
+\item Often developed for laboratory settings
+\item<2-> Most common example: writing something
+\item<3-> Can be problematic:
+	\begin{itemize}
+	\item Time-intensive
+	\item Invites drop-off
+	\item Compliance problems
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+\againframe{ambivalentpartisan}
+
+
+
+\questions
+
+
+\frame{
+
+\frametitle{Sensitive Item Designs}
+
+\begin{itemize}\itemsep0.5em
+\item Experiments can also be used to measure something
+\item Goal here is not necessarily causal inference, though the causal insight of the experiment provides \textit{descriptively} useful information
+\item Paradigms
+	\begin{itemize}
+	\item List experiments
+	\item Endorsement experiments
+	\end{itemize}
+\end{itemize}
+}
+
+\frame{
+
+\frametitle{{\normalsize List Experiments \footnote{Kuklinski et al. 1997. ``Racial Prejudice and Attitudes Toward Affirmative Action.'' \textit{American Journal of Political Science} 41(2): 402--419.}}}
+
+\small
+
+Now I'm going to read you three things that sometimes make people angry or upset. After I read all \only<1>{three}\only<2>{four}, just tell me \textit{how many} of them upset you. I don't want to know which ones. just \textit{how many}.
+
+\footnotesize
+
+\begin{enumerate}
+\item the federal government increasing the tax on gasoline
+\item professional athletes getting million-dollar salaries
+\item large corporations polluting the environment
+\item<2-> \textbf{a black family moving in next door}
+\end{enumerate}
+
+
+}
+
+\frame{
+
+\frametitle{{\normalsize Endorsement experiments\footnote{Lyall, Blair, \& Imai. 2013. ``Explaining Support for Combatants during Wartime: A Survey Experiment in Afghanistan.'' \textit{American Political Science Review} 107(4): 679--705.}}}
+
+\small
+
+A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping reform of the Afghan prison system, including the construction of new prisons in every district to help alleviate overcrowding in existing facilities. Though expensive, new programs for inmates would also be offered, and new judges and prosecutors would be trained. How do you feel about this proposal?
+}
+
+
+
+
+\questions
 
 
 \section{Assessing Treatments}
@@ -517,550 +971,6 @@ The best criterion for evaluating the quality of an experiment is whether it man
 }
 
 
-
-
-
-\section[Examples]{Common Paradigms and Examples}
-\frame{\tableofcontents[currentsection]}
-
-
-\frame{
-
-\frametitle{Question Wording Designs}
-
-\begin{itemize}
-\item Kahneman and Tversky is a ``question wording'' experiment
-\item Hypothesized difference in outcomes according to the decision being faced
-	\begin{itemize}
-	\item Risky or not risky
-	\item Gains or losses
-	\end{itemize}
-\item Manipulation operationalizes this by asking two different questions
-\item Outcome is the answer to the question
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{Activity!}
-
-\begin{itemize}
-\item With a partner, identify each of the protocol elements of the experiment described by Kahneman and Tversky
-\begin{enumerate}
-\item Theory/hypotheses
-\item Instrumentation
-\item Sampling
-\item Implementation
-\item Analysis
-\end{enumerate}
-\item Report back in about 4 minutes
-\end{itemize}
-
-}
-
-
-
-\frame{
-
-\frametitle{``Framing'' or ``Priming'' Experiments}
-
-Example: Schuldt et al. ```Global Warming' or `Climate Change'? Whether the Planet is Warming Depends on Question Wording.''
-
-\vspace{1em}
-
-What's this study about?
-}
-
-
-\frame{
-
-\small
-
-You may have heard about the idea that the world's temperature may have been \textbf{\only<1>{going up}\only<2>{changing}} over the past 100 years, a phenomenon sometimes called \textbf{\only<1>{global warming}\only<2>{climate change}}. What is your personal opinion regarding whether or not this has been happening?
-	\begin{itemize}\itemsep-0.25em\footnotesize
-	\item Definitely has not been happening
-	\item Probably has not been happening
-	\item Unsure, but leaning toward it has not been happening
-	\item Not sure either way
-	\item Unsure, but leaning toward it has been happening
-	\item Probably has been happening
-	\item Definitely has been happening
-	\end{itemize}
-}
-
-
-\frame{
-
-\frametitle{{\normalsize Another framing example\footnote{Singer \& Couper. 2014. ``The Effect of Question Wording on Attitudes toward Prenatal Testing and Abortion.'' \textit{Public Opinion Quarterly} 78(3): 751--760.}}}
-
-\footnotesize
-
-Today, tests are being developed that make it possible to detect serious genetic defects \textbf{\only<1>{before a baby is born}\only<2>{in the fetus during pregnancy}}. But so far, it is impossible either to treat or to correct most of them. If (you/your partner) were pregnant, would you want (her) to have a test to find out if the \textbf{\only<1>{baby}\only<2>{fetus}} has any serious genetic defects? (Yes/No)\\
-
-\vspace{0.5em}
-
-Suppose a test shows the \textbf{\only<1>{baby}\only<2>{fetus}} has a serious genetic defect. Would you, yourself, want (your partner) to have an abortion if a test shows the \textbf{\only<1>{baby}\only<2>{fetus}} has a serious genetic defect? (Yes/No)
-
-}
-
-
-\frame{
-
-\frametitle{{\normalsize Another framing example\footnote{Bobo \& Johnson. 2004. ``A Taste for Punishment: Black and White Americans' Views on the Death Penalty and the War on Drugs.'' Du Bois Review 1(1): 151--180.}}}
-
-\only<2>{Blacks are about 12\% of the U.S. population, but they were half of the homicide offenders last year. }Do you favor or oppose the death penalty for persons convicted of murder?
-
-}
-
-\frame{
-
-\frametitle{{\normalsize Another framing example\footnote{Haider-Markel \& Joslyn. 2001. ``Gun Policy, Opinion, Tragedy, and Blame Attribution: The Conditional Influence of Issue Frames.'' \textit{Journal of Politics} 63(2): 520--543.}}}
-
-\only<1>{Concealed handgun laws have recently received national attention. Some people have argued that law-abiding citizens have the right to protect themselves.}\only<2>{Concealed handgun laws have recently received national attention. Some people have argued that laws allowing citizens to carry concealed handguns threaten public safety because they would allow almost anyone to carry a gun almost anywhere, even onto school grounds.} What do you think about concealed handgun laws?
-
-}
-
-
-\frame{
-
-\frametitle{Question testing}
-
-Use question wording designs to select which survey measures we want to use
-
-\begin{itemize}
-\item Select possible question wordings
-\item Select some criterion(-ia) for assessing which is better
-\item Pilot test and then use the item that performs better
-\end{itemize}
-
-}
-
-
-\frame{
-
-\frametitle{{\normalsize Aside: Experimentation vs. Other Pretesting Methods}}
-
-\small
-
-\begin{itemize}\itemsep0.25em
-\item<2-> Experiments are complementary to other pretesting methods
-\item<3-> Specific value added of an experiment: optimize questions or other survey features against a specific criterion, e.g.:
-	\begin{itemize}\footnotesize
-	\item (Non-)Response or drop-off rates
-	\item ``Don't know'' rates
-	\item Item characteristics
-	\item Reading times or response latencies
-	\end{itemize}
-\item<4-> But! Power considerations\dots
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{{\normalsize Classic question testing experiment\footnote{Bishop, G.F., Tuchfarber, A. \& Oldendick, R.W. 1986. ``Opinions on Fictitious Issues: The Pressure to Answer Survey Questions.'' \textit{Public Opinion Quarterly} 50(2): 240--250.}}}
-
-Some people feel that The 1975 Public Affairs Act should be repealed-do you agree or disagree with this idea\only<1>{?}\only<2>{, or haven't you thought much about this issue?}
-
-}
-
-
-\frame{
-
-\frametitle{{\normalsize An example\footnote{Holbrook \& Krosnick. 2013. ``A New Question Sequence to Measure Voter Turnout in Telephone Surveys: Results of an Experiment in the 2006 {ANES} Pilot Study.'' \textit{Public Opinion Quarterly} 77: 106--123.}}}
-
-\small
-
-In talking to people about elections, we often find that a lot of people were not able to vote because they weren't registered, they were sick, or they just didn't have time. \only<1>{How about you--did you vote in the elections this November?}\only<2>{Which of the following statements best describes you?
-    \begin{itemize}\footnotesize
-    \item One, I did not vote in the November 3 election
-    \item two, I thought about voting this time but didn't
-    \item three, I usually vote but didn't this time
-    \item four, I am sure I voted
-    \end{itemize}}
-
-}
-
-\frame{
-
-\frametitle{{\normalsize An Instructional Manipulation\footnote{Sturgis, Allum \& Smith. 2008. ``An Experiment on the Measurement of Political Knowledge in Surveys.'' \textit{Public Opinion Quarterly} 72(1): 90--102.}}}
-
-\small
-
-For the next few questions, I am going to read out some statements, and for each one, please tell me if it is true or false. If you don't know, \only<1>{just say so and we will skip to the next one}\only<2>{please just give me your best guess}.
-
-\begin{enumerate}\footnotesize
-\item Britain's electoral system is based on proportional representation.
-\item MPs from different parties are on parliamentary committees.
-\item The Conservatives are opposed to the ratification of a constitution for the European Union.
-\end{enumerate}
-
-}
-
-
-\frame{
-
-\frametitle{{\normalsize An Instructional Manipulation + \footnote{Prior \& Lupia. 2008. ``Money, Time, and Political Knowledge: Distinguishing Quick Recall and Political Learning Skills.'' \textit{American journal of Political Science} 52(1): 169--183.}}}
-
-\small
-
-\only<1>{In the next part of this study, you will be asked 14 questions about politics, public policy, and economics. Many people don't know the answers to these questions, but it is helpful for us if you answer, even if you're not sure what the correct answer is. We encourage you to take a guess on every question. At the end of this study, you will see a summary of how many questions you answered correctly.}\only<2>{We will pay you for answering questions correctly.
-You will earn \$1 for every correct answer you give. So, if you answer 3 of the 14 questions correctly, you will earn \$3. If you answer 7 of the 14 questions correctly, you will earn \$7. The more questions you answer correctly, the more you will earn.}
-
-}
-
-
-
-\frame{
-
-\frametitle{{\normalsize Question Order Designs}}
-
-\small
-
-\begin{itemize}
-\item Manipulation of pre-outcome questionnaire
-\item<2-> Example:
-	\begin{itemize}
-	\item Goal: assess influence of value salience on support for a policy
-	\item Manipulate by asking different questions:
-		\begin{itemize}
-		\item Battery of 5 ``rights'' questions, or
-		\item Battery of 5 ``life'' questions
-		\end{itemize}
-	\item Measure support for legalized abortion
-	\end{itemize}
-\item<3-> If answers to manipulated questions matter, can measure rest post-outcome
-\end{itemize}
-
-}
-
-\frame{
-	\frametitle{{\normalsize Ex. Question-as-treatment\footnote{Transue. 2007. ``Identity Salience, Identity Acceptance, and Racial Policy Attitudes: {American} National Identity as a Uniting Force.'' \textit{American Journal of Political Science} 51(1): 78--91.}}}
-	
-
-\begin{itemize}
-\item \only<1,3>{How close do you feel to your ethnic or racial group?}\only<2,4>{How close do you feel to other Americans?}
-\item \only<1-2>{Some people have said that taxes need to be raised to take care of pressing national needs. How willing would you be to have your taxes raised to improve education in public schools?}\only<3-4>{Some people have said that taxes need to be raised to take care of pressing national needs. How willing would you be to have your taxes raised to improve educational opportunities for minorities?}
-\end{itemize}
-	
-}
-
-
-\frame{
-
-\frametitle{{\normalsize Ex.: Knowledge and Political Interest}}
-
-\footnotesize
-
-\begin{enumerate}
-\item Do you happen to remember anything special that your U.S. Representative has done for your district or for the people in your district while he has been in Congress?
-\item Is there any legislative bill that has come up in the House of Representatives, on which you remember how your congressman has voted in the last couple of years?
-\item Now, some people seem to follow what's going on in government and public affairs most of the time, whether there's an election going on or not. Others aren't that interested. Would you say that you follow what's going on in government and public affairs most of the time, some of the time, only now and then, or hardly at all?
-\end{enumerate}
-
-}
-
-\frame{
-
-\frametitle{{\normalsize Ex.: Knowledge and Political Interest}}
-
-\footnotesize
-
-\begin{enumerate}
-\item Now, some people seem to follow what's going on in government and public affairs most of the time, whether there's an election going on or not. Others aren't that interested. Would you say that you follow what's going on in government and public affairs most of the time, some of the time, only now and then, or hardly at all?
-\item Do you happen to remember anything special that your U.S. Representative has done for your district or for the people in your district while he has been in Congress?
-\item Is there any legislative bill that has come up in the House of Representatives, on which you remember how your congressman has voted in the last couple of years?
-\end{enumerate}
-
-}
-
-
-
-\frame{
-
-\frametitle{Vignettes}
-
-\begin{itemize}
-\item A ``vignette'' is a short paragraph of text describing a situation
-\item Vignettes are probably the most common survey experimental paradigm, after question wording designs
-\item Take many forms and increasingly encompass non-textual stimuli
-\item Basically limited to web-based mode
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{A classic vignette\footnote{Gilens, M. 1996. ```Race coding' and white opposition to welfare. \textit{American Political Science Review} 90(3): 593--604.}}
-
-\small
-
-Now think about a \textbf{(black/white)} woman in her early thirties. She is a high school \textbf{(graduate/drop out)} with a ten-year-old child, and she has been on welfare for the past year.
-
-\begin{itemize}\footnotesize
-\item How likely is it that she will have more children in order to get a bigger welfare check? (1 = Very likely, \dots, 7 = Not at all likely)
-\item How likely do you think it is that she will really try hard to find a job in the next year? (1 = Very likely, \dots, 7 = Not at all likely)
-\end{itemize}
-}
-
-
-\frame{
-
-\frametitle{{\normalsize Newer vignette\footnote{Banerjee et al. 2012. ``Are Poor Voters Indifferent to Whether Elected Leaders are Criminal or Corrupt? A Vignette Experiment in Rural India.'' Working paper.}}}
-
-\footnotesize
-
-Imagine that you were living in a village in another district in Uttar Pradesh and that you were voting for candidates in \textbf{(village/state/national)} election. Here are the two candidates who are running against each other: The first candidate is named \textbf{(caste name)} and is running as the \textbf{(BJP/SP/BSP)} party candidate. \textbf{(Corrupt/criminality allegation)}. His opponent is named \textbf{(caste name)} and is running as the \textbf{(BJP/SP/BSP)} party candidate. \textbf{(Opposite corrupt/criminality allegation)}. From this information, please indicate which candidate you would vote for in the \textbf{(village/state/national)} election. 
-
-}
-
-
-\frame{
-
-\frametitle{{\normalsize Longer texts\footnote{Druckman \& Leeper. 2012. ``Learning More from Political Communication Experiments: Pretreatment and Its Effects.'' \textit{American Journal of Political Science} 56(4): 875--896.}}}
-
-\small
-
-We are testing materials for use in a study \textbf{\only<1>{of the structure of sentences people use when writing news editorials}\only<2>{that is related to the kinds of opinions people form about public policies}}. Along these lines, we would like you to read a series of paragraphs, taken from recent major newspaper editorials.
-
-}
-
-\frame{
-
-\small
-
-Please read the following paragraphs and, for each, rate \textbf{\only<1>{how \textit{dynamic} you think it is. A paragraph is more ``dynamic'' when it uses more vivid action words. For example, a statement like, ``He sped up and raced through the light before crashing into the swerving truck,'' seems more dynamic than, ``He went faster to get through the light before having an accident.'' The action words in the first sentence (which we have highlighted in bold) seem more dynamic or vivid than those contained in the second sentence.}\only<2>{the extent to which it decreases or increases your support for the Patriot Act. In subsequent surveys we will ask you for your overall opinion about the state-run casino (i.e., the extent to which you oppose or support the state-run casino).}} There are no right or wrong opinions and your responses to all questions are completely confidential.
-
-}
-
-\frame{
-
-\small
-
-Please read the paragraphs carefully and, after each one, rate \textbf{\only<1>{the extent to which you think it is \textit{dynamic}}\only<2>{the extent to which it decreases or increases your support for the Patriot Act}}.\\
-
-\vspace{1em}
-
-\footnotesize
-
-With the passage of the Patriot Act in 2001, the FBI can now enter your home, search around, and doesn't ever have to tell you it was there. You could be perfectly innocent, yet federal agents can go through your most personal effects. When considering new laws, a test of the impact on liberty should be required. On that test, the Patriot Act fails. At a massive 342 pages, it potentially violates at least six of the ten original amendments known as the Bill of Rights --- the First, Fourth, Fifth, Sixth, Seventh and Eighth Amendments --- and possibly the Thirteenth and Fourteenth as well.
-
-}
-
-\frame{
-
-\frametitle{{\normalsize Example\footnote{Merolla \& Zechmeister. 2013. ``Evaluating Political Leaders in Times of Terror and Economic Threat: The Conditioning Influence of Politician Partisanship.'' \textit{Journal of Politics} 75(3): 599--712.}}}
-
-\begin{center}
-\includegraphics<1>[width=.85\textwidth]{images/merollazechmeister1}
-\includegraphics<2>[width=.85\textwidth]{images/merollazechmeister2}
-\end{center}
-
-}
-
-
-\frame{
-
-\frametitle{{\large Some vignette considerations}}
-
-\begin{itemize}\small
-\item<2-> Comparability across conditions
-	\begin{itemize}
-	\item Length
-	\item Readability
-	\end{itemize}
-\item<3-> Language proficiency
-\item<4-> Length
-	\begin{itemize}\small
-	\item Timers
-	\item Forced exposure
-	\item Mouse trackers
-	\end{itemize}
-\item<5-> Devices
-	\begin{itemize}\small
-	\item Browser-specificity
-	\item Device sizes (e.g., mobile)
-	\end{itemize}
-\end{itemize}
-
-}
-
-
-\frame{
-
-\begin{center}
-\includegraphics[height=\textheight]{images/devicesizes.png}
-\end{center}
-}
-
-\frame{
-
-\frametitle{{\normalsize Aside: Unique features of online studies}}
-
-\begin{itemize}
-\item<2-> Capacity for audio-visual treatments and measurements
-\item<3-> Paradata collection
-	\begin{itemize}
-	\item Implicit outcomes like response times, answer switching, mouse click behavior, browser focus, eye tracking, etc.
-	\end{itemize}
-\item<4-> Complex randomization (Thursday)
-\item<5-> Panel data
-\item<5-> Synchronous, multi-person designs
-\end{itemize}
-
-}
-
-
-\frame{
-
-\frametitle{Non-textual Manipulations}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-\item Images can work well
-\item Standalone or embedded in a text or question
-\item<2-> Examples
-	\begin{itemize}\footnotesize
-	\item<2-> Kalmoe \& Gross\footnote{``Cueing Patriotism, Prejudice, and Partisanship in the Age of Obama: Experimental Tests of U.S. Flag Imagery Effects in Presidential Elections.'' \textit{Political Psychology}: in press.} measure impact of patriotic cues on candidate support by showing images of candidates with and without flags
-	\item<3-> Subliminal primes possible, depending on software
-	\item<4-> Lots of recent examples of facial manipulation
-	\end{itemize}
-
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{Example\footnote{Iyengar et al. 2010. ``Do Explicit Racial Cues Influence Candidate Preference? The Case of Skin Complexion in the 2008 Campaign.'' Working paper.}}
-
-\includegraphics[width=\textwidth]{images/IyengarMessingBailenson}
-
-}
-
-\frame{
-
-\frametitle{{\normalsize Example\footnote{Laustsen \& Petersen. 2016. ``Winning Faces vary by Ideology.'' \textit{Political Communication} 33(2): 188--211.}}}
-
-\begin{center}
-\includegraphics[width=\textwidth, trim={0cm 0cm 0cm 9cm}, clip]{images/laustsen}
-\end{center}
-}
-
-\frame{
-\frametitle{{\normalsize Example\footnote{Bailenson et al. 2006. ``Transformed Facial Similarity as a Political Cue: A Preliminary Investigation.'' \textit{Political Psychology} 27(3): 373--385.}}}
-
-\begin{center}
-\includegraphics[width=\textwidth, trim={0cm 7.7cm 0cm 0cm}, clip]{images/BailensonGarlandIyengar}
-\end{center}
-}
-
-
-
-
-\frame{
-
-\frametitle{{\normalsize Audio \& Video manipulations}}
-
-\small
-
-\begin{itemize}\itemsep-0.2em
-\item Problematic for same reasons as long texts
-\item<2-> Best practices
-	\begin{itemize}\footnotesize
-	\item Keep it short
-	\item Have the video play automatically
-	\item Disallow survey progression
-	\item Control and validate
-	\end{itemize}
-\item<3->Examples
-	\begin{itemize}
-	\item Television Advertisements\footnote{Vavreck. 2007 ``The Exaggerated Effects of Advertising on Turnout: The Dangers of Self-Reports.'' \textit{Quarterly Journal of Political Science} 2: 325--343.} 
-	\item News Programs\footnote{Mutz. 2007. ``Effects of `In-Your-Face' Television Discourse on Perceptions of a Legitimate Opposition.'' \textit{American Political Science Review} 101(4): 621--635.}
-	\end{itemize}	
-\end{itemize}
-
-}
-
-
-
-
-\frame{
-\frametitle{``Task'' Designs}
-
-\begin{itemize}\itemsep0.5em
-\item Task designs ask respondents to perform a task
-\item Often developed for laboratory settings
-\item<2-> Most common example: writing something
-\item<3-> Can be problematic:
-	\begin{itemize}
-	\item Time-intensive
-	\item Invites drop-off
-	\item Compliance problems
-	\end{itemize}
-\end{itemize}
-
-}
-
-
-\againframe{ambivalentpartisan}
-
-
-
-
-
-\questions
-
-
-\frame{
-
-\frametitle{Sensitive Item Designs}
-
-\begin{itemize}
-\item Experiments can also be used to measure something
-\item Goal here is not necessarily causal inference, though the causal insight of the experiment provides \textit{descriptively} useful information
-\item Paradigms
-	\begin{itemize}
-	\item List experiments
-	\item Endorsement experiments
-	\end{itemize}
-\end{itemize}
-}
-
-\frame{
-
-\frametitle{{\normalsize List Experiments \footnote{Kuklinski et al. 1997. ``Racial Prejudice and Attitudes Toward Affirmative Action.'' \textit{American Journal of Political Science} 41(2): 402--419.}}}
-
-\small
-
-Now I'm going to read you three things that sometimes make people angry or upset. After I read all three, just tell me \textit{how many} of them upset you. I don't want to know which ones. just \textit{how many}.
-
-\footnotesize
-
-\begin{enumerate}
-\item the federal government increasing the tax on gasoline
-\item professional athletes getting million-dollar salaries
-\item large corporations polluting the environment
-\item<2-> \textbf{a black family moving in next door}
-\end{enumerate}
-
-
-}
-
-\frame{
-
-\frametitle{{\normalsize Endorsement experiments\footnote{Lyall, Blair, \& Imai. 2013. ``Explaining Support for Combatants during Wartime: A Survey Experiment in Afghanistan.'' \textit{American Political Science Review} 107(4): 679--705.}}}
-
-\small
-
-A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping reform of the Afghan prison system, including the construction of new prisons in every district to help alleviate overcrowding in existing facilities. Though expensive, new programs for inmates would also be offered, and new judges and prosecutors would be trained. How do you feel about this proposal?
-}
-
-
-
-
 \questions
 
 
@@ -1068,14 +978,14 @@ A recent proposal \only<2>{\textbf{by the Taliban}} calls for the sweeping refor
 
 \frametitle{Homework!}
 
-\begin{itemize}\itemsep0.25em
-\item Working alone, with a partner, or in a small group, start thinking about a possible experiment
-\item Start writing a protocol:
-	\begin{enumerate}
-	\item Theory/hypotheses
-	\item Instrumentation
-	\end{enumerate}
-\item Time on Friday to share and get feedback
+\begin{itemize}\itemsep1em
+\item Get a sense of what can be studied survey-experimentally
+\item Visit Time-Sharing Experiments for the Social Sciences
+	\begin{itemize}
+	\item \url{http://tessexperiments.org}
+	\end{itemize}
+\item Pick two studies from TESS
+\item We will share them tomorrow
 \end{itemize}
 
 }

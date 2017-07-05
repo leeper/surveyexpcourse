@@ -309,12 +309,12 @@ There are some TESS-like initiatives outside the United States:
 
 
 
-\section[Logic]{Logic of Experiments}
-\frame{\tableofcontents[currentsection]}
+\section[Logic]{Logic and Analysis}
+\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
 
 
 \frame{
-\includegraphics[width=\textwidth]{images/correlation.png}
+	\includegraphics[width=\textwidth]{images/xkcdcorrelation.png}
 }
 
 
@@ -327,7 +327,7 @@ In observational research\dots
 \begin{enumerate}\itemsep0.5em
 \item<2-> Correlate a ``putative'' cause ($X$) and an outcome ($Y$)
 \item<3-> Identify all possible confounds (\textbf{Z})
-\item<4-> ``Condition'' on all confounds
+\item<4-> ``Condition'' on all possibl econfounds
 	\begin{itemize}
 	\item Calculate correlation between $X$ and $Y$ at each combination of levels of \textbf{Z}
 	\end{itemize}
@@ -403,10 +403,6 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 
 
 
-
-
-
-
 % Individual-level effects versus ATEs
 
 
@@ -419,6 +415,30 @@ If an instance in which the phenomenon under investigation occurs, and an instan
  		\end{quote}
  	This is Holland's ``statistical solution'' to the fundamental problem of causal inference
 }
+
+
+\frame{
+\frametitle{Two solutions!\footnote{From Holland}}
+
+\begin{enumerate}\itemsep1em
+\item Scientific Solution
+	\begin{itemize}
+	\item All units are identical
+	\item Each can provide a perfect counterfactual
+	\item Common in, e.g., agriculture, biology
+	\end{itemize}
+\item<2-> Statistical Solution
+	\begin{itemize}
+	\item Units are not identical
+	\item Random exposure to a potential cause
+	\item Effects measured on average across units
+	\item Known as the ``Experimental ideal''
+	\end{itemize}
+\end{enumerate}
+
+}
+
+
 
 \frame{
 \frametitle{The Experimental Ideal}
@@ -436,7 +456,7 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 
 \frame{
 
-\frametitle{Neyman-Rubin Potential Outcomes Framework}
+\frametitle{Neyman--Rubin Potential Outcomes Framework}
 
 If we are interested in some outcome $Y$, then for every unit $i$, there are numerous ``potential outcomes'' $Y*$ only one of which is visible in a given reality. Comparisons of (partially unobservable) potential outcomes indicate causality.
 
@@ -444,7 +464,7 @@ If we are interested in some outcome $Y$, then for every unit $i$, there are num
 
 \frame{
 
-\frametitle{Neyman-Rubin Potential Outcomes Framework}
+\frametitle{Neyman--Rubin Potential Outcomes Framework}
 
 Concisely, we typically discuss two potential outcomes:
 
@@ -563,8 +583,7 @@ Concisely, we typically discuss two potential outcomes:
 
 \frame{
 	\frametitle{Experimental Inference VI}
-	
-	
+
 	\normalsize
 	\begin{itemize}\itemsep0.5em
     	\item This holds in experiments because of a \textit{physical process of randomization}\footnote{Random means ``known probability of treatment'' not ``haphazard''.}
@@ -603,14 +622,56 @@ Concisely, we typically discuss two potential outcomes:
 \end{center}
 \end{frame}
 
-
-
 \questions
 
 
 
 \frame{
-\frametitle{Experimental Analysis I}
+
+\large
+\centering
+Does randomization \textit{guarantee balance}? Does it work every time?
+
+\vspace{1em}
+
+\only<2->{What happens if there is imbalance? How would we know?}
+}
+
+
+\frame{
+
+\frametitle{Balance Testing I}
+
+\begin{itemize}\itemsep0.5em
+\item Analysis of experiments assumes that randomization produces covariate balance
+\item<2-> But this is only true \textit{in expectation}
+\item<3-> If we find covariate imbalance, we can:
+	\begin{itemize}
+	\item Ignore it
+	\item Condition on imbalanced covariates
+	\end{itemize}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Balance Testing II}
+
+There are three basic ways to detect covariate imbalance:
+
+\begin{enumerate}\itemsep1em
+\item Regressing treatment assignment on covariates
+\item Conducting t-tests for each covariate across experimental groups
+\item Examining covariate means visually
+\end{enumerate}
+
+}
+
+
+
+\frame{
+\frametitle{Experimental Analysis}
 \small
 \begin{itemize}
 \item The statistic of interest in an experiment is the \textit{sample average treatment effect} (SATE)
@@ -619,6 +680,7 @@ Concisely, we typically discuss two potential outcomes:
 	\begin{equation}
 	SATE = \frac{1}{n_1}\sum Y_{1i} - \frac{1}{n_0}\sum Y_{0i}
 	\end{equation}
+\item<2->The Neyman--Rubin logic only works for \textit{means}\footnote{But not medians, etc.}
 \end{itemize}
 }
 
@@ -626,7 +688,7 @@ Concisely, we typically discuss two potential outcomes:
 
 \frame{
 
-\frametitle{Computation of Effects I}
+\frametitle{Computation of Effects}
 
 \begin{itemize}\itemsep0.5em
 \item In practice we often estimate SATE using t-tests, ANOVA, or OLS regression
@@ -643,9 +705,9 @@ Concisely, we typically discuss two potential outcomes:
 
 }
 
-\frame{
+\frame[label=tidy]{
 
-\frametitle{Computation of Effects II}
+\frametitle{Experimental Data Tidying}
 
 An experimental data structure looks like:
 
@@ -667,17 +729,99 @@ An experimental data structure looks like:
 
 }
 
+\frame{
+
+\frametitle{Experimental Data Tidying}
+
+Sometimes it looks like this instead, which is bad:
+
+\small
+
+\begin{center}
+\begin{tabular}{cccc}
+\texttt{unit} & \texttt{treatment} & \texttt{outcome0}  & \texttt{outcome1} \\ \hline 
+1 & 0 & 13 & . \\
+2 & 0 & 6 & . \\
+3 & 0 & 4 & . \\
+4 & 0 & 5 & . \\
+5 & 1 & . & 3 \\
+6 & 1 & . & 1 \\
+7 & 1 & . & 10 \\
+8 & 1 & . & 9 \\ \hline
+\end{tabular}
+\end{center}
+
+}
+
+\againframe{tidy}
+
+
+\frame{
+
+\frametitle{Experimental Data Tidying}
+
+Sometimes it looks like this instead, which is even worse:
+
+\small
+
+\begin{center}
+\begin{tabular}{cccc}
+\texttt{unit} & \texttt{treatment} & \texttt{outcome0}  & \texttt{outcome1} \\ \hline 
+1 & . & 13 & . \\
+2 & . & 6 & . \\
+3 & . & 4 & . \\
+4 & . & 5 & . \\
+5 & . & . & 3 \\
+6 & . & . & 1 \\
+7 & . & . & 10 \\
+8 & . & . & 9 \\ \hline
+\end{tabular}
+\end{center}
+
+}
+
+\againframe{tidy}
+
+\frame{
+
+\frametitle{Experimental Data Tidying}
+
+Sometimes it looks like this instead, which is even more worse:
+
+\small
+
+\begin{center}
+\begin{tabular}{ccccc}
+\texttt{unit} & \texttt{treatment} & \texttt{outcome0}  & \texttt{outcome1} & \texttt{order} \\ \hline 
+1 & . & 13 & 6 & 0,1\\
+2 & . & 6 & 8 & 0,1\\
+3 & . & 4 & 2 & 0,1\\
+4 & . & 5 & 1 & 0,1\\
+5 & . & 9 & 3 & 1,0\\
+6 & . & 4 & 1 & 1,0\\
+7 & . & 2 & 10 & 1,0\\
+8 & . & 8 & 9 & 1,0\\ \hline
+\end{tabular}
+\end{center}
+
+}
+
+\againframe{tidy}
+
+
+
+
+
 
 \begin{frame}[fragile]
 
-\frametitle{Computation of Effects III}
+\frametitle{Computation of Effects in Stata}
 
 Stata:\small
 \begin{verbatim}
 ttest outcome, by(treatment)
 reg outcome i.treatment
 \end{verbatim}
-
 
 R:\small
 \begin{verbatim}
@@ -691,8 +835,10 @@ lm(outcome ~ factor(treatment), data = data)
 \questions
 
 
+
+
 \frame{
-\frametitle{Experimental Analysis II}
+\frametitle{SATE Variance Estimation}
 	\small
 \begin{itemize}\itemsep0.5em
 \item We don't just care about the size of the SATE. We also want to know whether it is significantly different from zero (i.e., different from no effect/difference)
@@ -708,7 +854,7 @@ lm(outcome ~ factor(treatment), data = data)
 
 
 \frame{
-\frametitle{Experimental Analysis III}
+\frametitle{SATE Variance Estimation}
 	\small
 \begin{itemize}\itemsep0.5em
 \item Formula for the variance of the SATE is:\\
@@ -739,16 +885,46 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{n_0} + \frac{\widehat{Var
 	\end{itemize}
 \end{itemize}
 
-
 }
 
+
+\frame{
+	\frametitle{Important considerations}
+	\begin{itemize}\itemsep0.5em
+		\item Required sample size depends on $SATE$ and $Var(Y)$
+		\item<2-> In large populations, population size is irrelevant
+		\item<3-> In small populations, precision is influenced by the proportion of population sampled
+		\item<4-> In anything other than an SRS, sample size calculation is more difficult
+		\item<5-> Most research assumes SRS even though a more complex design is actually used
+		\item<6-> Sample size needed to obtain a precise estimate of SATE is always going to be twice as large as needed to obtain an precise estimate of $\bar{Y}$
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Estimating sample size}
+	What precision (margin of error) do we want?
+	\begin{itemize}
+		\item $p$ +/- 5 percentage points: $SE = 0.025$
+			\begin{equation}
+			n = \frac{0.25}{0.000625} = 400
+			\end{equation}
+		\item<2-> $p$ +/- 2 percentage points: $SE = 0.01$
+			\begin{equation}
+			n = \frac{0.25}{0.01^2} = \frac{0.25}{0.0001} = 2500
+			\end{equation}
+		\item<3-> $p$ +/- 0.5 percentage points: $SE = 0.0025$
+			\begin{equation}
+			n = \frac{0.25}{0.00000625} = 40,000
+			\end{equation}
+	\end{itemize}
+}
 
 
 \frame{
 
 \frametitle{Statistical Power}
 
-\begin{itemize}
+\begin{itemize}\itemsep0.5em
 \item Power analysis to determine sample size
 \item Type I and Type II Errors
 	\begin{itemize}
@@ -757,6 +933,7 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{n_0} + \frac{\widehat{Var
 	\end{itemize}
 \end{itemize}
 
+\centering
 \begin{tabular}{lrr}
 \toprule
 & $H_0$ True & $H_0$ False \\ \midrule
@@ -824,8 +1001,6 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 
 }
 
-
-
 \frame{
 
 \frametitle{Aside: Complex Designs}
@@ -892,24 +1067,6 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 \questions
 
 
-\frame{
-
-\frametitle{Homework!}
-
-\begin{itemize}
-\item Get a sense of what can be studied experimentally
-\item Visit Time-Sharing Experiments for the Social Sciences
-	\begin{itemize}
-	\item \url{http://tessexperiments.org}
-	\end{itemize}
-\item Pick two studies from TESS
-\item We will share them in class tomorrow
-\end{itemize}
-
-}
-
-
-
 \appendix
 \frame{}
 
@@ -942,6 +1099,197 @@ abline(v=-2, lwd=3, col='red') # true effect
 \end{verbatim}
 
 \end{frame}
+
+
+\frame{}
+
+
+\frame{
+
+\large\centering
+One way to avoid covariate imbalance and improve statistical power is \textbf{block randomization}.
+
+}
+
+\frame{
+
+\frametitle{Block Randomization I}
+
+{\small \textbf{Stratification:Sampling::Blocking:Experiments}}
+
+\small
+
+\begin{itemize}\itemsep0.5em
+\item<2-> Basic idea: randomization occurs within strata defined before treatment assignment
+\item<3-> CATE is estimate for each stratum; aggregated to SATE
+\item<4-> Why?
+	\begin{itemize}
+	\item Eliminate chance imbalances
+	\item Optimized for estimating CATEs
+	\item More precise SATE estimate
+	\end{itemize}
+\end{itemize}
+
+}
+
+\begin{frame}[fragile]
+
+\begin{center}
+\begin{tabular}{lcccccccc}
+Exp. & \multicolumn{4}{c}{Control} & \multicolumn{4}{c}{Treatment} \\ \midrule
+1 & M & M & M & M & F & F & F & F \\
+2 & M & M & M & F & M & F & F & F \\
+3 & M & M & F & F & M & M & F & F \\
+4 & M & F & F & F & M & M & M & F \\
+5 & F & F & F & F & M & M & M & M \\ \bottomrule
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+\frame{
+
+\begin{center}
+
+\begin{tabular}{rrrr}
+Obs. & $X_{1i}$ & $X_{2i}$ & $D_i$ \\ \midrule
+1 & Male & Old & 0 \\
+2 & Male & Old & 1 \\  \midrule
+3 & Male & Young & 1 \\
+4 & Male & Young & 0 \\ \midrule
+5 & Female & Old & 1 \\
+6 & Female & Old & 0 \\ \midrule
+7 & Female & Young & 0 \\
+8 & Female & Young & 1 \\ \bottomrule
+\end{tabular}
+\end{center}
+
+}
+
+\frame[label=blocking2]{
+
+\frametitle{Block Randomization II}
+
+\begin{itemize}
+\item Blocking ensures ignorability of all covariates used to construct the blocks
+\item Incorporates covariates explicitly into the \textit{design}
+\item<2-> When is blocking \textit{statistically} useful?
+	\begin{itemize}
+	\item<3-> If those covariates affect values of potential outcomes, blocking reduces the variance of the SATE
+	\item<4-> Most valuable in small samples
+	\item<5-> Not valuable if all blocks have similar potential outcomes
+	\end{itemize}
+\end{itemize}
+
+}
+
+
+
+\frame{
+
+\frametitle{Statistical Properties I}
+
+\small
+
+Complete randomization:\\
+$$SATE = \frac{1}{n_1}\sum Y_{1i} - \frac{1}{n_0}\sum Y_{0i}$$
+
+\vspace{2em}
+
+Block randomization:\\
+$$SATE_{blocked} = \sum_{1}^{J} \left( \dfrac{n_j}{n} \right)  (\widehat{CATE}_j)$$
+
+}
+
+
+\frame{
+
+\begin{center}
+
+\begin{tabular}{rrrrrr}
+Obs. & $X_{1i}$ & $X_{2i}$ & $D_i$ & $Y_i$ & CATE \\ \midrule
+1 & Male & Old & 0 & 5 & \multirow{2}{*}{\onslide<2->{5}} \\
+2 & Male & Old & 1 & 10 \\  \midrule
+3 & Male & Young & 1 & 4 & \multirow{2}{*}{\onslide<3->{3}} \\
+4 & Male & Young & 0 & 1 \\ \midrule
+5 & Female & Old & 1 & 6 & \multirow{2}{*}{\onslide<4->{4}} \\
+6 & Female & Old & 0 & 2 \\ \midrule
+7 & Female & Young & 0 & 6 & \multirow{2}{*}{\onslide<5->{3}} \\
+8 & Female & Young & 1 & 9 \\ \bottomrule
+\end{tabular}
+\end{center}
+
+}
+
+\frame{
+
+\frametitle{SATE Estimation}
+
+\begin{align*}
+SATE &= \left(\dfrac{2}{8}*5\right) + \left(\dfrac{2}{8}*3\right) + \left(\dfrac{2}{8}*4\right) + \left(\dfrac{2}{8}*3\right) \\ \vspace{1em}
+&= 3.75
+\end{align*}
+
+\onslide<2->{The blocked and unblocked estimates are the same here because $Pr(Treatment)$ is constant across blocks and blocks are all the same size.}
+
+}
+
+\frame{
+
+\frametitle{SATE Estimation}
+
+\small
+
+\begin{itemize}
+\item We can use weighted regression to estimate this in an OLS framework
+\item Weights are the inverse prob. of being treated w/in block
+\begin{itemize}
+\item Pr(Treated) by block: $p_{ij} = Pr(D_i = 1 | J=j) $
+\item Weight (Treated): $ w_{ij} = \dfrac{1}{p_{ij}} $
+\item Weight (Control): $ w_{ij} = \dfrac{1}{1-p_{ij}} $
+\end{itemize}
+\end{itemize}
+
+}
+
+
+\frame{
+
+\frametitle{Statistical Properties II}
+
+\small
+
+Complete randomization:\\
+$$\widehat{SE}_{SATE} = \sqrt{\dfrac{\widehat{Var}(Y_0)}{n_0} + \dfrac{\widehat{Var}(Y_1)}{n_1}}$$
+
+\vspace{1em}
+
+Block randomization:\\
+$$\widehat{SE}_{SATE_{blocked}} = \sqrt{\sum_{1}^{J} \left( \dfrac{n_j}{n} \right)^2  \widehat{Var}{(SATE_j)}}$$
+
+\only<2->{When is the blocked design more efficient?}
+
+}
+
+
+\frame{
+
+\frametitle{Practicalities}
+
+\begin{itemize}\itemsep0.5em
+\item Blocked randomization only works in exactly the same situations where stratified sampling works
+	\begin{itemize}
+	\item Need to observe covariates pre-treatment in order to block on them
+	\item Work best in a panel context
+	\end{itemize}
+\item In a single cross-sectional design that might be challenging
+	\begin{itemize}
+	\item Some software can block ``on the fly''
+	\end{itemize}
+\end{itemize}
+
+
+}
 
 
 \end{document}

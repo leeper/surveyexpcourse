@@ -100,12 +100,11 @@ Experiments are typically performed at one point in time, on a specific sample o
  - Warren, J. R. and Halpern-Manners, A. 2012. "Panel Conditioning in Longitudinal Social Science Surveys." *Sociological Research & Methods* 41: 491-534.
 
 
-### Session 4: Practical Issues in Survey Experimental Research (July 7, 11:00-13:00)
+### Session 4: Practical Issues (July 7, 11:00-13:00)
 
 This session will cover a number of remaining issues, especially related to the practical implementation of survey experiments.
 
  - [Slides](slides/lecture04.pdf)
- - [Slides](slides/lecture05.pdf)
 
 #### Class Schedule
 
