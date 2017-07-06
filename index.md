@@ -14,6 +14,11 @@ Survey experiments have emerged as one of the most powerful methodological tools
 
 This course will use published examples of experimental research to demonstrate a variety of ways to leverage survey experiments for testing social science theories. The course will teach participants how to use different survey experimental designs and how to address challenges related to sampling, survey mode, ethics, effect heterogeneity, and more. Students leave the course with a thorough understanding of how survey experiments can provide useful causal inferences, knowledge of how to design and analyze simple and complex experiments, and the ability to evaluate experimental research and apply these methods in their own research.
 
+Information on previous workshops are available at the following links:
+
+ - [NTNU (2017)](2017-ntnu.html)
+ - [EUI (2017)](2017-eui.html)
+
 ---
 
 ## Instructor Bio
@@ -122,6 +127,35 @@ This session will cover a number of remaining issues, especially related to the 
  - Hertwig, R. and Ortmann, A. 2008. "Deception in Experiments: Revisiting the Arguments in Its Defense." *Ethics & Behavior* 18: 59-92.
 
 
+---
+
+## Exercises
+
+ - Empirical Example 1: Holbrook and Krosnick
+   - [Paper](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf), [TESS Record](http://www.tessexperiments.org/data/holbrook120.html), [Questionnaire](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
+   - Data: [SPSS (.sav)](activities/holbrook/data.sav), [Stata (.dta)](activities/holbrook/data.dta)
+   - Code: [Stata](activities/holbrook/holbrook.R), [R](activities/holbrook/holbrook.R)
+ 
+ - Empirical Example 2: Schuldt et al.
+   - [Paper](activities/schuldt/Schuldt, Konrath, Schwarz (POQ, 2011).pdf), [TESS Record](http://www.tessexperiments.org/data/schuldt301.html), [Questionnaire](activities/schuldt/Questionnaire.doc)
+   - Data: [SPSS (.sav)](activities/schuldt/data.sav), [Stata (.dta)](activities/schuldt/data.dta)
+   - Code: [Stata](activities/schuldt/schuldt.do), [R](activities/schuldt/schuldt.R)
+ 
+ - Empirical Example 3: Johnston, Newman, and Velez
+   - (Unpublished), [TESS Record](http://www.tessexperiments.org/data/newman508.html), [Questionnaire](activities/johnston/questionnaire.doc)
+   - Data: [SPSS (.sav)](activities/johnston/data.sav), [Stata (.dta)](activities/johnston/data.dta)
+   - Code: [Stata](activities/johnston/johnston.do), [R Code](activities/johnston/johnston.R)
+ 
+ - Other Activities
+   - Opening Activity: [Data](activities/activity01.tsv), [Stata (.do)](activities/activity01.do), [R (.R)](activities/activity01.R)
+   - Power calculations: [Stata (.do)](activities/power.do), [R (.R)](activities/power.R)
+   - Effect heterogeneity: [Stata (.do)](activities/heterogeneity.do), [R (.R)](activities/heterogeneity.R)
+   - Mediation and Manipulation Checks: [Stata (.do)](activities/ivreg.do), [R (.R)](activities/ivreg.R)
+   - Balance testing: [Stata (.do)](activities/balance.do), [R (.R)](activities/balance.R)
+   - Survey Weighting: [Stata (.do)](activities/weighting.do), [R (.R)](activities/weighting.R)
+ 
+
+
 
 ---
 
@@ -175,87 +209,4 @@ Though not assigned for the course, the following texts may serve as useful back
 **General Statistics**
 
  * Gelman, A., and Stern, H. 2006. "The Difference Between 'Significant' and 'Not Significant' is Not Itself Statistically Significant." *The American Statistician* 60(4): 328-331.
-
----
-
-## NTNU
-
-[ZIP directory containing all materials](https://github.com/leeper/surveyexpcourse/)
-
-The next iteration of this will be a two-day workshop at NTNU, Norwegian University of Science and Technology (Trondheim, Norway; 30-31 January 2017). The schedule for the course is as follows:
-
-### Monday 30 January - *Morning*
-
- - Introduction to surveys, experiments, and the survey-experiment nexus
- - History of survey experimentation
- - Scientific and statistical logic of survey experiments
-
-### Monday 30 January - *Afternoon*
-
- - Translating theories into experimental designs
- - Common survey experimental paradigms
- - Discussion of applied examples
-
-### Tuesday 31 January - *Morning*
-
- - Generalizability and external validity
- - Advanced statistical considerations (mediation, effect heterogeneity, etc.)
-
-### Tuesday 31 January - *Afternoon*
-
- - Practical considerations and handling "broken" experiments
- - Workshop and discussion of participants' designs and experiments
- - Conclusion
-
-Materials for participants:
- 
- - Slides
-   - [Day 1](slides/NTNU2017-1.pdf)
-   - [Day 2](slides/NTNU2017-2.pdf)
-
- - Readings
-   - [Holland, PW. 1986. "Statistics and Causal Inference." *Journal of the American Statistical Association* 81(396): 945-960.](activities/Holland1986.pdf)
-   - [Leeper, TJ. 2011. "The Oft-Neglected Role of Protocol in the Design and Reporting of Experiments"](activities/protocol.pdf)
-   - [An example protocol document](activities/protocol_example.pdf)
-   - [An example conjoint setup in Qualtrics](https://github.com/leeper/conjoint-example)
- 
- - Empirical Example 1: Holbrook and Krosnick
-   - [Paper](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf), [TESS Record](http://www.tessexperiments.org/data/holbrook120.html), [Questionnaire](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
-   - Data: [SPSS (.sav)](activities/holbrook/data.sav), [Stata (.dta)](activities/holbrook/data.dta)
-   - Code: [Stata](activities/holbrook/holbrook.R), [R](activities/holbrook/holbrook.R)
- 
- - Empirical Example 2: Schuldt et al.
-   - [Paper](activities/schuldt/Schuldt, Konrath, Schwarz (POQ, 2011).pdf), [TESS Record](http://www.tessexperiments.org/data/schuldt301.html), [Questionnaire](activities/schuldt/Questionnaire.doc)
-   - Data: [SPSS (.sav)](activities/schuldt/data.sav), [Stata (.dta)](activities/schuldt/data.dta)
-   - Code: [Stata](activities/schuldt/schuldt.do), [R](activities/schuldt/schuldt.R)
- 
- - Empirical Example 3: Johnston, Newman, and Velez
-   - (Unpublished), [TESS Record](http://www.tessexperiments.org/data/newman508.html), [Questionnaire](activities/johnston/questionnaire.doc)
-   - Data: [SPSS (.sav)](activities/johnston/data.sav), [Stata (.dta)](activities/johnston/data.dta)
-   - Code: [Stata](activities/johnston/johnston.do), [R Code](activities/johnston/johnston.R)
- 
- - Other Activities
-   - Opening Activity: [Data](activities/activity01.tsv), [Stata (.do)](activities/activity01.do), [R (.R)](activities/activity01.R)
-   - Power calculations: [Stata (.do)](activities/power.do), [R (.R)](activities/power.R)
-   - Effect heterogeneity: [Stata (.do)](activities/heterogeneity.do), [R (.R)](activities/heterogeneity.R)
-   - Mediation and Manipulation Checks: [Stata (.do)](activities/ivreg.do), [R (.R)](activities/ivreg.R)
-   - Balance testing: [Stata (.do)](activities/balance.do), [R (.R)](activities/balance.R)
-   - Survey Weighting: [Stata (.do)](activities/weighting.do), [R (.R)](activities/weighting.R)
- 
-Note: This version of the workshop includes activities using Stata, but R examples are also provided.
-
-
----
-
-# EUI, 2017
-
-A one-day workshop at the Europen University Institute (Florence, Italy; 18 January 2017).
-
- - [Slides](slides/EUI2017.pdf)
- - [R Code for Activites](activities/EUI2017.R)
- - Papers
-   - [Holbrook and Krosnick](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
-   - [Schuldt et al.](activities/schuldt/Schuldt, Konrath, Schwarz (POQ, 2011).pdf)
-
-This version of the workshop includes activities using R.
 
