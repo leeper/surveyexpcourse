@@ -1,5 +1,6 @@
 # subdirectories to ignore #
 misc/
+_site/
 
 # filetypes to ignore #
 *.aux

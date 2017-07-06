@@ -8,27 +8,11 @@ description: "Survey experiments have emerged as one of the most powerful method
 
 This page holds materials for a short course called "Survey Experiments in Practice", which I teach from time to time in various places. This course was first taught at the RECSM (Universitat Pompeu Fabra) Barcelona Summer School in Survey Methodology. Materials for the 2017 version of that course are below. 
 
-### Overview
+## Overview
 
 Survey experiments have emerged as one of the most powerful methodological tools in the social sciences. By combining experimental design that provides clear causal inference with the flexibility of the survey context as a site for behavioral research, survey experiments can be used in almost any field to study almost any question. Conducting survey experiments can appear fairly simple but doing them well is hard. 
 
 This course will use published examples of experimental research to demonstrate a variety of ways to leverage survey experiments for testing social science theories. The course will teach participants how to use different survey experimental designs and how to address challenges related to sampling, survey mode, ethics, effect heterogeneity, and more. Students leave the course with a thorough understanding of how survey experiments can provide useful causal inferences, knowledge of how to design and analyze simple and complex experiments, and the ability to evaluate experimental research and apply these methods in their own research.
-
-Information on previous workshops are available at the following links:
-
- - [NTNU (2017)](2017-ntnu.html)
- - [EUI (2017)](2017-eui.html)
-
----
-
-## Instructor Bio
-
-[Thomas J. Leeper](http://www.thomasleeper.com) is an Assistant Professor in Political Behaviour in the [Department of Government](http://www.lse.ac.uk/government/home.aspx) at the [London School of Economics and Political Science](http://www.lse.ac.uk/). He studies public opinion dynamics using survey and experimental methods, with a focus on citizens' information acquisition, elite issue framing, and party endorsements within the United States and Western Europe. His research has been published in leading journals, including *American Political Science Review*, *American Journal of Political Science*, *Public Opinion Quarterly*, and *Political Psychology* among others.
-
-### Host a workshop/course/seminar!
-
-Feel free to contact me if you would like me to put on workshop about survey experiments. I'm willing to travel and can teach this material in workshops varying from 1-2 hours to several days!
-
 
 ---
 
@@ -209,4 +193,23 @@ Though not assigned for the course, the following texts may serve as useful back
 **General Statistics**
 
  * Gelman, A., and Stern, H. 2006. "The Difference Between 'Significant' and 'Not Significant' is Not Itself Statistically Significant." *The American Statistician* 60(4): 328-331.
+
+---
+
+## Instructor Bio
+
+[Thomas J. Leeper](http://www.thomasleeper.com) is an Assistant Professor in Political Behaviour in the [Department of Government](http://www.lse.ac.uk/government/home.aspx) at the [London School of Economics and Political Science](http://www.lse.ac.uk/). He studies public opinion dynamics using survey and experimental methods, with a focus on citizens' information acquisition, elite issue framing, and party endorsements within the United States and Western Europe. His research has been published in leading journals, including *American Political Science Review*, *American Journal of Political Science*, *Public Opinion Quarterly*, and *Political Psychology* among others.
+
+---
+
+## Host a workshop/course/seminar!
+
+Feel free to contact me if you would like me to put on workshop about survey experiments. I'm willing to travel and can teach this material in workshops varying from 1-2 hours to several days!
+
+### Past Workshops
+
+Information on previous workshops are available at the following links:
+
+ - [NTNU (2017)](2017-ntnu.html)
+ - [EUI (2017)](2017-eui.html)
 
