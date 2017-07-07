@@ -30,7 +30,7 @@ An outline of the course is given below. All of the readings [are available here
 
 The first session will provide an overview of the course, discuss the history of survey experiments and experiments in general, and provide a conceptual and notational framework for design, analyzing, and discussing experiments.
 
- - [Slides](slides/lecture01.pdf)
+ - [Slides](slides/lecture01.pdf) ([Handout version](slides/lecture01-handout.pdf))
  - Materials from Anchoring Experiment Activity
    - [Data](activities/activity01.tsv) (tab-separated values)
    - [R script](activities/activity01.R)
@@ -53,7 +53,7 @@ The first session will provide an overview of the course, discuss the history of
 
 While the first session demonstrated the advantages of experimentation as a research design, designing experiments can be challenging without a solid grounding in a relevant theoretical literature. This session will discuss common paradigms for survey experimental research and discuss how to design experiments to test social science theories.
 
- - [Slides](slides/lecture02.pdf)
+ - [Slides](slides/lecture02.pdf) ([Handout version](slides/lecture02-handout.pdf))
  - [Description of Experimental Protocol](activities/protocol.pdf)
 
 #### Class Schedule
@@ -72,7 +72,7 @@ While the first session demonstrated the advantages of experimentation as a rese
 
 Experiments are typically performed at one point in time, on a specific sample or set of respondents, on a limited range of issues or topic, using a finite set of measurement techniques. Yet researchers' ambitions are often broader, with aims to make claims that extrapolate beyond the particular study's context, sample, and focus. This session will address various forms of external validity, how to maximize generalizability, and the trade-offs involved with such efforts. 
 
- - [Slides](slides/lecture03.pdf)
+ - [Slides](slides/lecture03.pdf) ([Handout version](slides/lecture03-handout.pdf))
 
 #### Class Schedule
 
@@ -93,7 +93,7 @@ Experiments are typically performed at one point in time, on a specific sample o
 
 This session will cover a number of remaining issues, especially related to the practical implementation of survey experiments.
 
- - [Slides](slides/lecture04.pdf)
+ - [Slides](slides/lecture04.pdf) ([Handout version](slides/lecture04-handout.pdf))
 
 #### Class Schedule
 
