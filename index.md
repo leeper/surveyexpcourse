@@ -210,6 +210,7 @@ Feel free to contact me if you would like me to put on workshop about survey exp
 
 Information on previous workshops are available at the following links:
 
+ - [KU Leuven (2018)](2018-leuven.html)
  - [NTNU (2017)](2017-ntnu.html)
  - [EUI (2017)](2017-eui.html)
 

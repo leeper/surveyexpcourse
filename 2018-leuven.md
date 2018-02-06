@@ -1,0 +1,23 @@
+---
+layout: default
+title: KU Leuven Workshop (2018)
+description: "Survey experiments have emerged as one of the most powerful methodological tools in the social sciences. This workshop introduces ways of thinking about and designing web-based survey experiments and presents a number of the challenges of implementing and analyzing them."
+---
+
+# {{ page.title }}
+
+A one-day workshop at KU Leuven (6 February 2018).
+
+ - [Slides](slides/Leuven2018.pdf)
+ - Opening Activity:
+    - [Enter your response](http://bit.ly/297vEdd)
+    - [Data](activities/activity01.tsv)
+    - [Stata (.do)](activities/activity01.do)
+    - [R (.R)](activities/activity01.R)
+ - [Power analysis in R](activities/power.R)
+ - Conjoint designs
+    - [Conjoint Example in Qualtrics](https://github.com/leeper/conjoint-example)
+    - [Strezhnev Conjoint Design Tool](https://scholar.harvard.edu/astrezhnev/conjoint-survey-design-tool)
+    - [**cjoint** R package](https://cran.r-project.org/package=cjoint)
+    - [**cregg** R package](https://cran.r-project.org/package=cregg)
+
