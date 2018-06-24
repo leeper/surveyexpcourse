@@ -16,9 +16,9 @@ This course will use published examples of experimental research to demonstrate 
 
 ---
 
-# UPF-RECSM Seminar, 2017
+# UPF-RECSM Seminar, 2018
 
-The next full iteration of this course will be taught at the [Barcelona Summer School in Survey Methodology](http://www.upf.edu/survey/Summer/) at Universitat Pompeu Fabra in Barcelona. The short course involves two 4-hour sessions, scheduled to run from 9:00-13:00 each morning July 6-7, 2017. Slides, readings, and materials for each session of the course are available here.
+The next full iteration of this course will be taught at the [Barcelona Summer School in Survey Methodology](http://www.upf.edu/survey/Summer/) at Universitat Pompeu Fabra in Barcelona. The short course involves two 4-hour sessions, scheduled to run from 14:00-18:00 each afternoon June 28-29, 2018. Slides, readings, and materials for each session of the course are available here.
 
 
 ## Syllabus and Schedule
@@ -26,7 +26,7 @@ The next full iteration of this course will be taught at the [Barcelona Summer S
 An outline of the course is given below. All of the readings [are available here](https://drive.google.com/open?id=0Bwxjj0JIn0KoYkNIUXhtWFp5OTg).
 
 
-### Session 1: Survey Experiments in Context (July 6, 9:00-11:00)
+### Session 1: Survey Experiments in Context (June 28, 14:00-16:00)
 
 The first session will provide an overview of the course, discuss the history of survey experiments and experiments in general, and provide a conceptual and notational framework for design, analyzing, and discussing experiments.
 
@@ -38,18 +38,18 @@ The first session will provide an overview of the course, discuss the history of
 
 #### Class Schedule
 
- - 9:00-9:30 - Introductions and Course Overview
- - 9:30-10:00 - History of the Survey Experiment (and Experiments, generally)
- - 10:00-10:50 - Potential Outcomes Framework of Causality
+ - 14:00-14:30 - Introductions and Course Overview
+ - 14:30-15:00 - History of the Survey Experiment (and Experiments, generally)
+ - 15:00-16:50 - Potential Outcomes Framework of Causality
 
 #### Readings
 
+ - **Required**: Holland, P. W. 1986. "Statistics and Causal Inference." *Journal of the American Statistical Association* 81: 945-960.
  - Druckman, J. N., Green, D. P., Kuklinski, J. H., and Lupia, A. 2006. "The Growth and Development of Experimental Research in Political Science." *American Political Science Review* 100: 627-635.
  - Kuklinski, J. H. and Hurley, N. L. 1994. "On Hearing and Interpreting Political Messages: A Cautionary Tale of Citizen Cue-Taking" *The Journal of Politics* 56: 729-751.
- - Holland, P. W. 1986. "Statistics and Causal Inference." *Journal of the American Statistical Association* 81: 945-960.
 
 
-### Session 2: Examples and Paradigms (July 6, 11:00-13:00)
+### Session 2: Examples and Paradigms (June 28, 16:00-18:00)
 
 While the first session demonstrated the advantages of experimentation as a research design, designing experiments can be challenging without a solid grounding in a relevant theoretical literature. This session will discuss common paradigms for survey experimental research and discuss how to design experiments to test social science theories.
 
@@ -58,38 +58,35 @@ While the first session demonstrated the advantages of experimentation as a rese
 
 #### Class Schedule
 
- - 11:05-11:30 - Translating Theories into Experiments
- - 11:30-13:00 - Paradigms (Question Wording, Vignettes, Sensitive items, etc.)
+ - 16:05-16:30 - Translating Theories into Experiments
+ - 16:30-18:00 - Paradigms (Question Wording, Vignettes, Sensitive items, etc.)
 
 #### Readings
 
- - Schuldt, J. P., Konrath, S. H., and Schwarz, N. 2011. "'Global Warming' or 'Climate Change'?: Whether the Planet is Warming Depends on Question Wording." *Public Opinion Quarterly* 75: 115-124.
+ - **Required**: Schuldt, J. P., Konrath, S. H., and Schwarz, N. 2011. "'Global Warming' or 'Climate Change'?: Whether the Planet is Warming Depends on Question Wording." *Public Opinion Quarterly* 75: 115-124.
+ - **Required**: Banerjee, A., Green, D. P., McManus, J., and Pande, R. (2014). "Are poor voters indifferent to whether elected leaders are criminal or corrupt? A vignette experiment in rural India." *Political Communication* 31(3): 391-407.
  - Glynn, A. N. 2013. "What Can We Learn with Statistical Truth Serum?: Design and Analysis of the List Experiment." *Public Opinion Quarterly* 77: 159-172.
  - Albertson, B. L. and Lawrence, A. 2009. "After the Credits Roll: The Long-Term Effects of Educational Television on Public Knowledge and Attitudes." *American Politics Research* 37: 275-300.
+ - Hainmueller, J., and Hopkins, D. J. (2015). The hidden American immigration consensus: A conjoint analysis of attitudes toward immigrants. *American Journal of Political Science*, 59(3): 529-548.
 
 
-### Session 3: External Validity (July 7, 9:00-11:00)
+### Session 3: Hands-On Practice Session (June 29, 14:00-16:00)
 
-Experiments are typically performed at one point in time, on a specific sample or set of respondents, on a limited range of issues or topic, using a finite set of measurement techniques. Yet researchers' ambitions are often broader, with aims to make claims that extrapolate beyond the particular study's context, sample, and focus. This session will address various forms of external validity, how to maximize generalizability, and the trade-offs involved with such efforts. 
+This session will involve the application of course material to development of survey experiments relevant to students' own research.
 
  - [Slides](slides/lecture03.pdf) ([Handout version](slides/lecture03-handout.pdf))
 
 #### Class Schedule
 
- - 9:00-9:30 - External Validity
- - 9:30-10:00 - Model-based and Design-based Representativeness
- - 10:00-11:50 - SUTO; Effect Heterogeneity due to Settings and Respondents
- 
+ - 14:00-14:45 - Students develop experimental designs in small groups
+ - 14:45-15:45 - Presentations
+ - 15:45-16:00 - Large group discussion of experimental design
+
 #### Readings
 
- - Gaines, B. J., Kuklinski, J. H., and Quirk, P. J. 2007. "The Logic of the Survey Experiment Reexamined." *Political Analysis* 15: 1-20.
- - Druckman, J. N. and Leeper, T. J. 2012. "Learning More from Political Communication Experiments: Pretreatment and Its Effects." *American Journal of Political Science* 56: 875-896.
- - Mullinix, K. J., Leeper, T. J., Druckman, J. N., and Freese, J. 2015. "The Generalizability of Survey Experiments." *Journal of Experimental Political Science*: In press.
- - Green, D. P. and Kern, H. L. 2012. "Modeling Heterogeneous Treatment Effects in Survey Experiments with Bayesian Additive Regression Trees." *Public Opinion Quarterly* 76: 491-511.
- - Warren, J. R. and Halpern-Manners, A. 2012. "Panel Conditioning in Longitudinal Social Science Surveys." *Sociological Research & Methods* 41: 491-534.
+None
 
-
-### Session 4: Practical Issues (July 7, 11:00-13:00)
+### Session 4: Practical Issues (June 29, 16:00-18:00)
 
 This session will cover a number of remaining issues, especially related to the practical implementation of survey experiments.
 
@@ -97,18 +94,21 @@ This session will cover a number of remaining issues, especially related to the 
 
 #### Class Schedule
 
- - 11:00-11:30 - Effect Heterogeneity due to Treatments and Outcomes
- - 11:30-12:00 - Lingering Issues (Attention, Satisficing, Self-Selection, Ethics)
- - 12:00-12:45 - Handling of "Broken Experiments"
- - 12:45-13:00 - Summary and Conclusion
+ - 16:00-16:30 - External Validity and the SUTO Framework
+ - 16:30-17:00 - Lingering Issues (Attention, Satisficing, Self-Selection, Ethics)
+ - 17:00-17:45 - Handling of "Broken Experiments"
+ - 17:45-18:00 - Summary and Conclusion
 
 #### Readings
 
+ - **Required**: Gaines, B. J., Kuklinski, J. H., and Quirk, P. J. 2007. "The Logic of the Survey Experiment Reexamined." Political Analysis 15: 1-20.
  - Clifford, S. and Jerit, J. 2015. "Do Attempts to Improve Respondent Attention Increase Social Desirability Bias?" *Public Opinion Quarterly* 79: 790-802.
  - Bolsen, T. 2013. "A Light Bulb Goes On: Norms, Rhetoric, and Actions for the Public Good." *Political Behavior* 35: 1-20.
  - Hainmueller, J., Hangartner, D., and Yamamoto, T. 2015. "Validating Vignette and Conjoint Survey Experiments Against Real-World Behavior." *Proceedings of the National Academy of Sciences*: In press.
+ - Druckman, J. N. and Leeper, T. J. 2012. "Learning More from Political Communication Experiments: Pretreatment and Its Effects." *American Journal of Political Science* 56: 875-896.
  - Leeper, T. J. ["The Role of Media Choice and Media Effects in Political Knowledge Gaps."](https://dl.dropboxusercontent.com/u/414906/KnowledgeGaps.pdf) Working paper, London School of Economics and Political Science.
  - Hertwig, R. and Ortmann, A. 2008. "Deception in Experiments: Revisiting the Arguments in Its Defense." *Ethics & Behavior* 18: 59-92.
+ • Mullinix, K. J., Leeper, T. J., Druckman, J. N., and Freese, J. 2015. "The Generalizability of Survey Experiments." *Journal of Experimental Political Science*.
 
 
 ---
@@ -137,7 +137,6 @@ This session will cover a number of remaining issues, especially related to the 
    - Mediation and Manipulation Checks: [Stata (.do)](activities/ivreg.do), [R (.R)](activities/ivreg.R)
    - Balance testing: [Stata (.do)](activities/balance.do), [R (.R)](activities/balance.R)
    - Survey Weighting: [Stata (.do)](activities/weighting.do), [R (.R)](activities/weighting.R)
- 
 
 
 

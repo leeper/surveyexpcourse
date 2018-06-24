@@ -926,23 +926,28 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{n_0} + \frac{\widehat{Var
 \frametitle{Statistical Power}
 
 \begin{itemize}\itemsep0.5em
-\item Power analysis to determine sample size
+\item Power analysis is used to determine sample size before conducting an experiment
+
 \item Type I and Type II Errors
-	\begin{itemize}
-	\item True positive rate is power
-	\item False negative rate is the significance threshold ($\alpha$)
-	\end{itemize}
-\end{itemize}
 
-\centering
-\begin{tabular}{lrr}
+\begin{center}
+\begin{tabular}{lcc}
 \toprule
-& $H_0$ True & $H_0$ False \\ \midrule
-Reject $H_0$ & Type 1 Error & \textbf{True positive} \\
-Accept $H_0$ & False negative & Type II error \\ \bottomrule
+& $H_0$ False & $H_0$ True \\ 
+& ($|ATE| > 0$) & ($ATE = 0$) \\ \midrule
+Reject $H_0$ & \textbf{True positive} & Type I Error \\
+Accept $H_0$ & Type II Error & True zero \\ \bottomrule
 \end{tabular}
+\end{center}
 
+	\begin{itemize}
+	\item True positive rate ($1-\kappa$) is power
+	\item False positive rate is the significance threshold ($\alpha$)
+	\end{itemize}
+
+\end{itemize}
 }
+
 
 
 \frame{
@@ -966,11 +971,15 @@ $Power = \phi\left( \frac{|\mu_1 - \mu_0|\sqrt{N}}{2\sigma} - \phi^{-1}\left( 1 
 \frame{
 \frametitle{Intuition about Power}
 
-Minimum detectable effect is the smallest effect we could detect given sample size, ``true'' effect size, variance of outcome, power, and $\alpha$.\\
+Minimum detectable effect is the smallest effect we could detect given sample size, ``true'' ATE, variance of outcome measure, power ($1-\kappa$), and $\alpha$.\\
 
-\vspace{0.5em}
+\vspace{1em}
 
-In essence: some non-zero effect sizes are not detectable by a study of a given sample size.\footnote{Gelman, A. and Weakliem, D. 2009. ``Of Beauty, Sex and Power.'' \textit{American Scientist} 97(4): 310--16}
+\only<2->{In essence: some non-zero effect sizes are not detectable by a study of a given sample size.}
+
+\vspace{1em}
+
+\only<3->{In underpowered study, we will be unlikely to detect true small effects. And most effects are small! \footnote{Gelman, A. and Weakliem, D. 2009. ``Of Beauty, Sex and Power.'' \textit{American Scientist} 97(4): 310--16}}
 
 }
 
@@ -979,16 +988,16 @@ In essence: some non-zero effect sizes are not detectable by a study of a given 
 
 \frametitle{Intuition about Power}
 
-\begin{itemize}\itemsep0.5em
+\begin{itemize}\itemsep1em
 \item It can help to think in terms of ``standardized effect sizes''
-\item Cohen's $d$:\\ $d = \frac{\bar{x}_1 - \bar{x}_0}{s}$, where
-$s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 \item Intuition: How large is the effect in standard deviations of the outcome?
 	\begin{itemize}
 	\item Know if effects are large or small
 	\item Compare effects across studies
 	\end{itemize}
-\item Small: 0.2; Medium: 0.5; Large: 0.8
+\item<2-> Cohen's $d$:\\ $d = \frac{\bar{x}_1 - \bar{x}_0}{s}$, where
+$s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
+\item<3-> Small: 0.2; Medium: 0.5; Large: 0.8
 \end{itemize}
 
 }
@@ -1001,6 +1010,80 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 \end{center}
 
 }
+
+
+\begin{frame}[fragile]
+
+\frametitle{Power analysis in R}
+\small
+\begin{verbatim}
+power.t.test(
+  # sample size (leave blank!)
+  n = ,
+  
+  # minimum detectable effect size
+  delta = 0.4, sd = 1,
+  
+  # alpha and power (1-kappa)
+  sig.level = 0.05, power = 0.8,
+  
+  # two-tailed vs. one-tailed test
+  alternative = "two.sided"
+)
+\end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]
+
+\frametitle{Power analysis in Stata}
+\small
+\begin{verbatim}
+power twomeans 0, diff(0.2)
+
+// for multiple values of 
+forvalues i = 0.1 (0.1) 1.0 {
+    power twomeans 0, diff(`i')
+}
+
+// using raw effect sizes and standard deviations
+power twomeans 0 0.5, sd1(.5) sd2(.7)
+
+// adjusting alpha or power
+power twomeans 0, diff(0.2) alpha(0.10) power(0.7)
+\end{verbatim}
+\end{frame}
+
+
+
+\begin{frame}
+
+\frametitle{Increasing/Decreasing Power}
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{block}{Increases Power}
+\begin{itemize}\itemsep1em
+\item Bigger sample
+\item Precise measures
+\item Covariates?
+\end{itemize}
+\end{block}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\begin{block}{Decreases Power}
+\begin{itemize}\itemsep1em
+\item Attrition
+\item Noncompliance
+\item Clustering
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+
+\end{frame}
+
 
 \frame{
 
@@ -1039,30 +1122,158 @@ $s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_0 - 1)s_0^2}{n_1 + n_0 - 2}}$
 	\item As opposed to in the field or in a laboratory
 	\end{itemize}
 \item<3-> Sometimes a distinction is made between survey and online experiments
-\item<4-> Lots of common paradigms for survey experiments (tomorrow)
+\item<4-> Lots of common paradigms for survey experiments (later)
 \end{itemize}
+}
+
+\questions
+
+\frame{
+
+\frametitle{Factorial Designs}
+
+\begin{itemize}\itemsep1em
+\item The two-condition experiment is a stylized ideal
+
+\item An experiment can have any number of conditions
+	\begin{itemize}\footnotesize
+	\item Up to the limits of sample size
+	\item More than 8--10 conditions is typically unwieldy
+	\end{itemize}
+
+\item Three ``flavors'':
+	\begin{itemize}
+	\item Multiple conditions in a single factor
+	\item Multiple fully \textit{crossed} factors
+	\item Partially crossed (``fractional factorial'') designs
+	\end{itemize}
+
+\item Regression methods provide a generalizable tool for causal inference in such designs
+\end{itemize}
+}
+
+\begin{frame}
+\begin{center}
+\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
+    \draw (0,0) node[left, text width=3cm, align=center] (X) {Policy\\Beneficiaries};
+    \draw[->] (X) -- (3,0) node[right, text width=2cm, align=center] (Y) {Policy\\Opinion};
+    \draw[->] (-3,2) node[above] (Z) {Ideology} -- (X);
+    \draw[->] (Z) -- (Y);
+    \draw[->] (2,-3) node[below, text width=3cm, align=center] (E) {Etc.} -- (Y);
+    \draw[->] (-3, -3) node[below, text width=2.5cm, align=center] (W) {Identity Salience} -- (Y);
+    \draw[->] (W) -- (X);
+    \draw<2->[->,thick,red] (-5,1) node[above] (T1) {Treatment 1} -- (X);
+    \draw<2->[->,thick,red] (-5,-2) node[above] (T1) {Treatment 2} -- (W);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+\frame{
+	\frametitle{{\normalsize Example\footnote{Transue. 2007. ``Identity Salience, Identity Acceptance, and Racial Policy Attitudes: {American} National Identity as a Uniting Force.'' \textit{American Journal of Political Science} 51(1): 78--91.}}}
+	
+
+\begin{itemize}\itemsep1em
+\item \only<1,3>{How close do you feel to your ethnic or racial group?}\only<2,4>{How close do you feel to other Americans?}
+\item \only<1-2>{Some people have said that taxes need to be raised to take care of pressing national needs. How willing would you be to have your taxes raised to improve education in public schools?}\only<3-4>{Some people have said that taxes need to be raised to take care of pressing national needs. How willing would you be to have your taxes raised to improve educational opportunities for minorities?}
+\end{itemize}
+	
 }
 
 
 \frame{
 
-\frametitle{{\large Combining Survey Design and\\ Experimental Design}}
+\frametitle{2x2 Factorial Design}
 
-\small
+\only<1>{
+\begin{center}
+\begin{tabular}{lr}
+Condition &  \\ \midrule
+Educ. for Minorities & $Y_1$ \\
+Schools & $Y_0$ \\ \bottomrule
+\end{tabular}
+\end{center}
+}
 
-\begin{itemize}\itemsep0.25em
-\item Sample is representative of population in every respect (in expectation)
-\item Sample Average Treatment Effect (SATE) is the average of the sample's individual-level treatment effects
+\only<2>{
+\begin{center}
+\begin{tabular}{lrr}
+Condition & Americans & Own Race \\ \midrule
+Educ. for Minorities & $Y_{1,0}$ & $Y_{1,1}$ \\
+Schools & $Y_{0,0}$ & $Y_{0,1}$ \\ \bottomrule
+\end{tabular}
+\end{center}
+}
+
+}
+
+
+\frame{
+
+\frametitle{Two ways to \textit{parameterize} this}
+
+Dummy variable regression (i.e., treatment--control CATEs):
+
+$Y = \beta_0 + \beta_1 X_{0,1} + \beta_2 X_{1,0} + \beta_3 X_{1,1} + \epsilon$
+
+\vspace{1em}
+
+Interaction effects (i.e., treatment--treatment CATEs):
+
+$Y = \beta_0 + \beta_1 X1_{1} + \beta_2 X2_{1} + \beta_3 X1_1 * X2_1 + \epsilon$
+
+\vspace{1em}
+
+Use \texttt{margins} to extract marginal effects
+
+}
+
+
+\frame<1>[label=factorialconsiderations]{
+
+\frametitle{Considerations}
+
+\begin{itemize}\itemsep0.5em
+\item Factorial designs can quickly become unwieldy and expensive
+\item<2-> Need to consider what CATEs are of theoretical interest
 	\begin{itemize}
-	\item Unbiased estimate of PATE
-	\end{itemize}
-\item<2-> Says nothing about effect heterogeneity
-	\begin{itemize}
-	\item Design is optimized for estimating SATE
-	\item Discuss this on Wednesday
+	\item Treatment--control, pairwise
+	\item Treatment--treatment, pairwise
+	\item Marginal effects, averaging across other factors
+	\item Comparison of merged conditions
 	\end{itemize}
 \end{itemize}
+
 }
+
+\frame{
+
+\frametitle{Probably obvious, but\dots}
+
+\footnotesize
+
+\begin{center}
+\begin{tabular}{cccc}
+Factors & Conditions per factor & Total Conditions & $n$ \\ \midrule
+1 & 2 & 2 & 400 \\ 
+1 & 3 & 3 & 600 \\
+1 & 4 & 4 & 800 \\
+2 & 2 & 4 & 800 \\
+2 & 3 & 6 & 1200 \\
+2 & 4 & 8 & 1600 \\
+3 & 3 & 9 & 1800 \\
+3 & 4 & 12 & 2400 \\
+4 & 4 & 16 & 3200 \\ \bottomrule
+\end{tabular}
+\end{center}
+
+{\footnotesize Assumes power to detect a relatively small effect, but no consideration of multiple comparisons.}
+
+}
+
+\againframe{factorialconsiderations}
+
+% marginal effects of factors are marginal across the set of levels of the other factors; if those factors aren't complete, then external validity problem
 
 
 \questions
