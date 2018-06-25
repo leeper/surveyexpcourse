@@ -84,7 +84,11 @@ This session will involve the application of course material to development of s
 
 #### Readings
 
-None
+The readings for this portion consist of applied examples from Time-Sharing Experiments for the Social Sciences (TESS)
+
+ - Whillans, A. "The Barriers of Buying Happier Time." Available from: http://tessexperiments.org/data/whillans626.html
+ - Malhotra, N., Levendusky, M., and Margalit, Y. "Economic Spillovers of Political Polarization." Available from: http://tessexperiments.org/data/malhotra634.html
+ - Nair, G. "Misperceptions of the Global Income Distribution and Preferences for Cross-National Redistribution in the United States." Available from: http://tessexperiments.org/data/nair644.html
 
 ### Session 4: Practical Issues (June 29, 16:00-18:00)
 
@@ -148,50 +152,51 @@ Though not assigned for the course, the following texts may serve as useful back
 
 ### Books
 
- * Gerber, A.S. and Green, D.P. 2012. *Field Experiments: Design, Analysis, and Interpretation*. New York: W.W. Norton.
- * Groves, R.M., et al. 2009. *Survey Methodology*. Wiley-Interscience.
- * Morgan, S.L. and Winship, C. 2015. *Counterfactuals and Causal Inference*. 2nd Edition. New York: Cambridge.
- * Mutz, D.C. 2011. *Population-Based Survey Experiments*. Princeton, NJ: Princeton University Press.
- * Schuman, H. and Presser, S. 1981. *Questions and Answers in Attitude Surveys: Experiments on Question Form, Wording, and Context*. SAGE Publications.
- * Glennerster R. and Takavarasha, K. 2013. *Running Randomized Evaluations: A Practical Guide*. Princeton, NJ: Princeton.
- * Auspurg, K. and Hinz, T. 2015. *Factorial Survey Experiments*. SAGE Publications.
+ - Gerber, A.S. and Green, D.P. 2012. *Field Experiments: Design, Analysis, and Interpretation*. New York: W.W. Norton.
+ - Groves, R.M., et al. 2009. *Survey Methodology*. Wiley-Interscience.
+ - Morgan, S.L. and Winship, C. 2015. *Counterfactuals and Causal Inference*. 2nd Edition. New York: Cambridge.
+ - Mutz, D.C. 2011. *Population-Based Survey Experiments*. Princeton, NJ: Princeton University Press.
+ - Schuman, H. and Presser, S. 1981. *Questions and Answers in Attitude Surveys: Experiments on Question Form, Wording, and Context*. SAGE Publications.
+ - Glennerster R. and Takavarasha, K. 2013. *Running Randomized Evaluations: A Practical Guide*. Princeton, NJ: Princeton.
+ - Auspurg, K. and Hinz, T. 2015. *Factorial Survey Experiments*. SAGE Publications.
  
 ### Survey, Experimental, and Survey-Experimental Methodology
 
 **Sensitive Items**
 
- * Tourangeau, R. and Smith, T. W. 1996. "Asking Sensitive Questions: The Impact of Data Collection Mode, Question Format, and Question Context." *Public Opinion Quarterly* 60: 275-304.
- * Blair, G. and Imai, K. 2012. "Statistical Analysis of List Experiments." *Political Analysis* 20: 47-77.
- * Kreuter, F., Presser, S., and Tourangeau, R. 2009. "Social Desirability Bias in CATI, IVR, and Web Surveys: The Effects of Mode and Question Sensitivity." *Public Opinion Quarterly* 72: 847-865.
+ - Tourangeau, R. and Smith, T. W. 1996. "Asking Sensitive Questions: The Impact of Data Collection Mode, Question Format, and Question Context." *Public Opinion Quarterly* 60: 275-304.
+ - Blair, G. and Imai, K. 2012. "Statistical Analysis of List Experiments." *Political Analysis* 20: 47-77.
+ - Kreuter, F., Presser, S., and Tourangeau, R. 2009. "Social Desirability Bias in CATI, IVR, and Web Surveys: The Effects of Mode and Question Sensitivity." *Public Opinion Quarterly* 72: 847-865.
 
 **Mediation**
 
- * Jamieson, J. P. and Harkins, S. G. 2011. "The Intervening Task Method: Implications for Measuring Mediation." *Personality & Social Psychology Bulletin* 37: 652-661.
- * Green, D. P., Ha, S. E., and Bullock, J. G. 2009. "Enough Already about 'Black Box' Experiments: Studying Mediation is More Difficult than Most Scholars Suppose." *The ANNALS of the American Academy of Political and Social Science* 628: 200-208.
- * Imai, K., Keele, L. Tingley, D., and Yamamoto, T. 2011. "Unpacking the Black Box: Learning about Causal Mechanisms from Experimental and Observational Studies." *American Political Science Review* 105(4): 765-789.
+ - Jamieson, J. P. and Harkins, S. G. 2011. "The Intervening Task Method: Implications for Measuring Mediation." *Personality & Social Psychology Bulletin* 37: 652-661.
+ - Green, D. P., Ha, S. E., and Bullock, J. G. 2009. "Enough Already about 'Black Box' Experiments: Studying Mediation is More Difficult than Most Scholars Suppose." *The ANNALS of the American Academy of Political and Social Science* 628: 200-208.
+ - Imai, K., Keele, L. Tingley, D., and Yamamoto, T. 2011. "Unpacking the Black Box: Learning about Causal Mechanisms from Experimental and Observational Studies." *American Political Science Review* 105(4): 765-789.
 
 **Sampling and Representativeness**
 
- * Wang, W., Rothschild, D., Goel, S., and Gelman, A. 2015. "Forecasting Elections with Non-representative Polls." *International Journal of Forecasting*: In press.
- * Chandler, J., Paolacci, G., Peer, E., Mueller, P., and Ratliff, K. A. 2015. "Using Nonnaive Participants Can Reduce Effect Sizes." *Psychological Science*: In press.
- * Banducci, S. and Stevens, D. 2015. "Surveys in Context: How Timing in the Electoral Cycle Influences Response Propensity and Satisficing." *Public Opinion Quarterly* 79: 214-243.
+ - Wang, W., Rothschild, D., Goel, S., and Gelman, A. 2015. "Forecasting Elections with Non-representative Polls." *International Journal of Forecasting*: In press.
+ - Chandler, J., Paolacci, G., Peer, E., Mueller, P., and Ratliff, K. A. 2015. "Using Nonnaive Participants Can Reduce Effect Sizes." *Psychological Science*: In press.
+ - Banducci, S. and Stevens, D. 2015. "Surveys in Context: How Timing in the Electoral Cycle Influences Response Propensity and Satisficing." *Public Opinion Quarterly* 79: 214-243.
 
 **Factorial Experiments**
 
- * Hainmueller, J., Hopkins, D. J., and Yamamoto, T. 2014. "Causal Inference in Conjoint Analysis: Understanding Multi-Dimensional Choices via Stated Preference Experiments." *Political Analysis* 22: 1-30.
+ - Hainmueller, J., Hopkins, D. J., and Yamamoto, T. 2014. "Causal Inference in Conjoint Analysis: Understanding Multi-Dimensional Choices via Stated Preference Experiments." *Political Analysis* 22: 1-30.
 
 **Treatment Preferences**
 
- * Hovland, C. I. 1959. "Reconciling Conflicting Results Derived from Experimental and Survey Studies of Attitude Change." *American Psychologist* 14: 8-17.
+ - Hovland, C. I. 1959. "Reconciling Conflicting Results Derived from Experimental and Survey Studies of Attitude Change." *American Psychologist* 14: 8-17.
+ - Leeper, T. J. 2017. "“How Does Treatment Self-Selection Affect Inferences About Political Communication?" *Journal of Experimental Political Science* 4(1): 21–33.
 
 **Ethics**
 
- * Sterling, T. D., Rosenbaum, W. L., and Weinkam, J. 1995. "Publication Decisions Revisited: The Effect of the Outcome of Statistical Tests on the Decision to Publish and Vice Versa." *The American Statistician* 49: 108-112.
- * Franco, A., Malhotra, N., and Simonovits, G. 2015. "Underreporting in Political Science Survey Experiments: Comparing Questionnaires to Published Results." *Political Analysis* 23: 306-312.
+ - Sterling, T. D., Rosenbaum, W. L., and Weinkam, J. 1995. "Publication Decisions Revisited: The Effect of the Outcome of Statistical Tests on the Decision to Publish and Vice Versa." *The American Statistician* 49: 108-112.
+ - Franco, A., Malhotra, N., and Simonovits, G. 2015. "Underreporting in Political Science Survey Experiments: Comparing Questionnaires to Published Results." *Political Analysis* 23: 306-312.
 
 **General Statistics**
 
- * Gelman, A., and Stern, H. 2006. "The Difference Between 'Significant' and 'Not Significant' is Not Itself Statistically Significant." *The American Statistician* 60(4): 328-331.
+ - Gelman, A., and Stern, H. 2006. "The Difference Between 'Significant' and 'Not Significant' is Not Itself Statistically Significant." *The American Statistician* 60(4): 328-331.
 
 ---
 
