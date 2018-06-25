@@ -6,7 +6,7 @@ description: "Survey experiments have emerged as one of the most powerful method
 
 # "Survey Experiments in Practice" Short Course
 
-This page holds materials for a short course called "Survey Experiments in Practice", which I teach from time to time in various places. This course was first taught at the RECSM (Universitat Pompeu Fabra) Barcelona Summer School in Survey Methodology. Materials for the 2017 version of that course are below. 
+This page holds materials for a short course called "Survey Experiments in Practice", which I teach from time to time in various places. This course was first taught at the RECSM (Universitat Pompeu Fabra) Barcelona Summer School in Survey Methodology. Materials for the 2018 version of that course are below. 
 
 ## Overview
 
@@ -63,8 +63,8 @@ While the first session demonstrated the advantages of experimentation as a rese
 
 #### Readings
 
- - **Required**: Schuldt, J. P., Konrath, S. H., and Schwarz, N. 2011. "'Global Warming' or 'Climate Change'?: Whether the Planet is Warming Depends on Question Wording." *Public Opinion Quarterly* 75: 115-124.
- - **Required**: Banerjee, A., Green, D. P., McManus, J., and Pande, R. (2014). "Are poor voters indifferent to whether elected leaders are criminal or corrupt? A vignette experiment in rural India." *Political Communication* 31(3): 391-407.
+ - Schuldt, J. P., Konrath, S. H., and Schwarz, N. 2011. "'Global Warming' or 'Climate Change'?: Whether the Planet is Warming Depends on Question Wording." *Public Opinion Quarterly* 75: 115-124.
+ - Banerjee, A., Green, D. P., McManus, J., and Pande, R. (2014). "Are poor voters indifferent to whether elected leaders are criminal or corrupt? A vignette experiment in rural India." *Political Communication* 31(3): 391-407.
  - Glynn, A. N. 2013. "What Can We Learn with Statistical Truth Serum?: Design and Analysis of the List Experiment." *Public Opinion Quarterly* 77: 159-172.
  - Albertson, B. L. and Lawrence, A. 2009. "After the Credits Roll: The Long-Term Effects of Educational Television on Public Knowledge and Attitudes." *American Politics Research* 37: 275-300.
  - Hainmueller, J., and Hopkins, D. J. (2015). The hidden American immigration consensus: A conjoint analysis of attitudes toward immigrants. *American Journal of Political Science*, 59(3): 529-548.
@@ -105,19 +105,20 @@ This session will cover a number of remaining issues, especially related to the 
 
 #### Readings
 
- - **Required**: Gaines, B. J., Kuklinski, J. H., and Quirk, P. J. 2007. "The Logic of the Survey Experiment Reexamined." Political Analysis 15: 1-20.
+ - Gaines, B. J., Kuklinski, J. H., and Quirk, P. J. 2007. "The Logic of the Survey Experiment Reexamined." Political Analysis 15: 1-20.
  - Clifford, S. and Jerit, J. 2015. "Do Attempts to Improve Respondent Attention Increase Social Desirability Bias?" *Public Opinion Quarterly* 79: 790-802.
+ - Miratrix, L.W., Sekhon, J.S., Theodoridis, A.G., and Campus, L.F. 2018. "Worth Weighting? How to Think About and Use Weights in Survey Experiments." *Political Analysis*: in press.
  - Bolsen, T. 2013. "A Light Bulb Goes On: Norms, Rhetoric, and Actions for the Public Good." *Political Behavior* 35: 1-20.
  - Hainmueller, J., Hangartner, D., and Yamamoto, T. 2015. "Validating Vignette and Conjoint Survey Experiments Against Real-World Behavior." *Proceedings of the National Academy of Sciences*: In press.
  - Druckman, J. N. and Leeper, T. J. 2012. "Learning More from Political Communication Experiments: Pretreatment and Its Effects." *American Journal of Political Science* 56: 875-896.
- - Leeper, T. J. ["The Role of Media Choice and Media Effects in Political Knowledge Gaps."](https://dl.dropboxusercontent.com/u/414906/KnowledgeGaps.pdf) Working paper, London School of Economics and Political Science.
  - Hertwig, R. and Ortmann, A. 2008. "Deception in Experiments: Revisiting the Arguments in Its Defense." *Ethics & Behavior* 18: 59-92.
- • Mullinix, K. J., Leeper, T. J., Druckman, J. N., and Freese, J. 2015. "The Generalizability of Survey Experiments." *Journal of Experimental Political Science*.
+ - Mullinix, K. J., Leeper, T. J., Druckman, J. N., and Freese, J. 2015. "The Generalizability of Survey Experiments." *Journal of Experimental Political Science*.
+ - Leeper, T. J. ["The Role of Media Choice and Media Effects in Political Knowledge Gaps."](https://dl.dropboxusercontent.com/u/414906/KnowledgeGaps.pdf) Working paper, London School of Economics and Political Science.
 
-
+ 
 ---
 
-## Exercises
+## Example Exercises
 
  - Empirical Example 1: Holbrook and Krosnick
    - [Paper](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf), [TESS Record](http://www.tessexperiments.org/data/holbrook120.html), [Questionnaire](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf)

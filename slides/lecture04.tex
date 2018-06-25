@@ -137,7 +137,7 @@
 
 \questions
 
-\subsection{Attention and Satisficing}
+\subsection{Attention, Satisficing, and Noncompliance}
 \frame{\tableofcontents[currentsection,currentsubsection,subsubsectionstyle=hide]}
 
 \frame{
@@ -407,6 +407,8 @@ Strongly agree\\
 	\end{itemize}
 }
 
+
+
 \questions
 
 
@@ -414,6 +416,38 @@ Strongly agree\\
 
 \subsection{Use of Covariates}
 \frame{\tableofcontents[currentsection,currentsubsection,subsubsectionstyle=hide]}
+
+
+\frame{
+
+\frametitle{Discussion}
+
+Consider the following:
+
+\begin{itemize}
+\item When \textbf{are we required to} include covariates in the analysis of an experiment?
+\item When \textbf{are we allowed to} include covariates in the analysis of an experiment?
+\item When \textbf{are we not allowed to} include covariates in the analysis of an experiment?
+\end{itemize}
+
+Discuss with a partner for 2 minutes.
+
+}
+
+\frame{
+
+\begin{itemize}\itemsep1em
+\item We never have to use covariates!
+\item<2-> We may want to for:
+	\begin{itemize}
+	\item Subgroup comparisons
+	\item Repeated/panel designs
+	\item In case of noncompliance or attrition
+	\end{itemize}
+\item<3-> Any use of covariates should be planned!
+\end{itemize}
+
+}
 
 \frame{
 
@@ -591,7 +625,7 @@ $$\widehat{SE}_{SATE_{blocked}} = \sqrt{\sum_{1}^{J} \left( \dfrac{n_j}{n} \righ
 
 \frametitle{Practicalities}
 
-\begin{itemize}\itemsep0.5em
+\begin{itemize}\itemsep1em
 \item Blocked randomization only works in exactly the same situations where stratified sampling works
 	\begin{itemize}
 	\item Need to observe covariates pre-treatment in order to block on them
@@ -603,596 +637,189 @@ $$\widehat{SE}_{SATE_{blocked}} = \sqrt{\sum_{1}^{J} \left( \dfrac{n_j}{n} \righ
 	\end{itemize}
 \end{itemize}
 
-
 }
-
 
 \questions
 
 
-\section[Challenges]{Challenges and Criticisms}
-\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
-
-
-\subsection{Participant Recruitment}
+\subsection{Effect Heterogeneity}
 \frame{\tableofcontents[currentsection,currentsubsection,subsubsectionstyle=hide]}
 
 \frame{
+\frametitle{{\large Detecting Effect Heterogeneity}}
 
-\frametitle{How do we find participants?}
-
-\begin{itemize}\itemsep1em
-\item Volunteers
-	\begin{itemize}
-	\item Volunteer Science
-	\item In-house subject pool
-	\end{itemize}
-
-\item Paid crowdworkers
-	\begin{itemize}
-	\item Prolific Academic
-	\item Mechanical Turk
-	\item Crowdflower
-	\end{itemize}
-
-\item ``Representative'' samples
-	\begin{itemize}
-	\item Big players: YouGov, TNS, Gallup, Nielsen, GfK
-	\item Others: Kantar, SSI, Lucid
-	\end{itemize}
-\end{itemize}
-
-}
-
-\frame{
-\frametitle{SUTO Framework}
-\begin{itemize}\itemsep0.5em
-\item Cronbach (1986) talks about generalizability in terms of UTO
-\item Shadish, Cook, and Campbell (2001) speak similarly of:
-	\begin{itemize}
-	\item \textbf{S}ettings
-	\item \textbf{U}nits
-	\item \textbf{T}reatments
-	\item \textbf{O}utcomes
-	\end{itemize}
-\item External validity depends on all of these
-\end{itemize}
-}
-
-
-\frame{
-\begin{columns}[t]
-\begin{column}{0.5\textwidth}
-	\begin{block}{Population}
-		\begin{itemize}
-		\item Setting
-		\item Units
-		\item Treatments
-		\item Outcomes
-		\end{itemize}
-	\end{block}
-\end{column}
-\begin{column}{0.5\textwidth}
-	\begin{block}{Your Study}
-		\begin{itemize}
-		\item Setting
-		\item Units
-		\item Treatments
-		\item Outcomes
-		\end{itemize}
-	\end{block}
-\end{column}
-\end{columns}
-
-\vspace{0.5em}
-
-\small
-
-\only<2->{In your study, how do these correspond?\\}
-\only<3->{\hspace{5.7em} how do these differ?\\}
-\only<4->{\hspace{5.7em} do these differences matter?\\}
-
-}
-
-\frame{
-\frametitle{Common Differences}
-\begin{itemize}\itemsep1em
-\item Most common thing to focus on is demographic representativeness
-	\begin{itemize}
-	\item Sears (1986): ``students aren't real people''
-	\item \href{http://www.slate.com/articles/health_and_science/science/2013/05/weird_psychology_social_science_researchers_rely_too_much_on_western_college.html}{Western, educated, industrialized, rich, democratic (WEIRD) psychology participants}
-	\end{itemize}
-\item<2-> But do those characteristics actually matter?
-\item<3-> Shadish, Cook, and Campbell tell us to think about:
-	\begin{itemize}
-	\item Surface similarities
-	\item Ruling out irrelevancies
-	\item Making discriminations
-	\item Interpolation/extrapolation
-	\end{itemize}
-\end{itemize}
-}
-
-\frame{
-\begin{center}
-\includegraphics[height=\textheight]{images/coppock_et_al-1}
-\end{center}
-}
-
-\frame{
-\begin{center}
-\includegraphics[height=\textheight]{images/coppock_et_al-2}
-\end{center}
-}
-
-\questions
-
-\subsection{Attention and Satisficing}
-\frame{\tableofcontents[currentsection,currentsubsection,subsubsectionstyle=hide]}
-
-\frame{
-
-One final issue with unit-related sources of heterogeneity is how we handle or analyze survey-experimental data where we think participants misbehaved.
-
-\vspace{1em}
-
-\only<2->{This falls into a couple of broad categories:
-
-\begin{itemize}
-\item Noncompliance
-\item Inattention
-\item Survey Satisficing
-\end{itemize}
-}
-}
-
-\frame{
-
-How should we deal with respondents that appear to not be paying attention, not ``taking'' the treatment, or not responding to outcome measures?
-
-\begin{enumerate}
-\item Keep them
-\item Throw them away
-\end{enumerate}
-
-}
-
-\frame{
-
-\frametitle{Best Practice: Pre-Analysis Protocol}
+Always block if you expect heterogeneity!
 
 \begin{itemize}\itemsep0.5em
-\item Excluding respondents based on survey behavior is one of the easiest ways to ``p-hack'' an experimental dataset
-	\begin{itemize}
-	\item Inattention, satisficing, etc. will tend to reduce the size of the SATE
-	\end{itemize}
-\item So regardless of how you handle these respondents, these should be decisions that are made \textit{pre-analysis}
+\item QQ-plots: Suggestive evidence
+\item Regression using treatment-by-covariate interactions
+\item<2-> (Replication and meta-analysis)
 \end{itemize}
 
 }
 
 
-\frame[label=exclusion]{
-
-\frametitle{{\normalsize When are you excluding participants?}}
-
-    \begin{columns}[T]
-    \begin{column}[T]{5cm}
-        \begin{block}{\rule[-0.6ex]{0pt}{2.5ex}Pre-Treatment}
-            \begin{itemize}\itemsep0.2em
-                \item<2-> \hyperlink{satisficing}{Satisficing behaviors}
-                \item<3-> Inattention
-                \item<4-> Covariate-based selection
-                \item<5-> Pretreated
-            \end{itemize}
-        \end{block}
-    \end{column}
-    \begin{column}[T]{5cm}
-        \begin{block}{\rule[-0.6ex]{0pt}{2.5ex}Post-Treatment}
-            \begin{itemize}\itemsep0.5em
-                \item<6-> Speeding on treatment
-                \item<7-> ``Failing'' a manipulation check
-                \item<8-> Drop-off
-            \end{itemize}
-        \end{block}
-    \end{column}
-    \end{columns}
-
-}
-
 
 \frame{
 
-\frametitle{Pre-Treatment Exclusion}
+\frametitle{Suggestive Evidence}
+
+We can never know $Var(TE_i)$! \onslide<2->{But\dots}
 
 \begin{itemize}\itemsep0.5em
-\item This is totally fine from a causal inference perspective
-\item<2-> Advantages:
+\item<2-> Quantile-quantile plots
 	\begin{itemize}
-	\item Focused on engaged respondents
-	\item Likely increase impact of treatment
+	\item<3-> Compare the distribution of $Y_0$'s to distribution of $Y_1$'s
+	\item<3-> If homogeneity, a vertical shift in $Y_1$'s
+	\item<3-> If heterogeneity, a slope $\neq$ 1
 	\end{itemize}
-\item<3-> Disadvantages:
+\item<4-> Equality of variance tests
 	\begin{itemize}
-	\item Changing definition of sample (and thus population)
+	\item<4-> If homogeneity, variance should be equal
+	\item<4-> If heterogeneity, variances should differ
 	\end{itemize}
 \end{itemize}
 
 }
 
+\begin{frame}[fragile]
 
-\frame{
+\frametitle{QQ Plots}
 
-\frametitle{Post-Treatment Exclusion}
+{\scriptsize
+\begin{verbatim}
+# y_0 data
+set.seed(1)
+n <- 200
+y0 <- rnorm(n) + rnorm(n, 0.2)
 
-This is much more problematic because it involves controlling for a \textit{post-treatment} variable
+# y_1 data (homogeneous effects)
+y1a <- y0 + 2 + rnorm(n, 0.2)
+# y_1 data (heterogeneous effects)
+y1b <- y0 + rep(0:1, each = n/2) + rnorm(n, 0.2)
+
+qqplot(y0, y1a, pch=19, xlim=c(-3,5), ylim=c(-3,5), asp=1)
+curve((x), add = TRUE)
+qqplot(y0, y1b, pch=19, xlim=c(-3,5), ylim=c(-3,5), asp=1)
+curve((x), add = TRUE)
+\end{verbatim}
 
 }
 
-\frame<1-3>[label=posttreatment]{
+\end{frame}
+
+
+\frame{
 
 \begin{center}
-\begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
-    \draw (0,0) node[left, text width=3cm, align=center] (X) {Information};
-    \draw (5,0) node[right, text width=2cm, align=center] (Y) {Opinion};
-    \draw<1-3>[->] (X) -- (Y);
-    \draw[->] (4,-4) node[below, text width=3cm, align=center] (E) {Etc.} -- (Y);
-	\draw<2-> (1,-2) node[text width=3cm, align=center] (M) {Manipulation Check};
-	\draw<2-4>[->,thick,red] (X) -- (M);
-    \draw<2-4>[->,thick,red] (M) -- (Y);
-    \draw<3>[->] (E) -- (M);
-\end{tikzpicture}
+\only<1>{\includegraphics[height=\textheight]{images/qqplot1}}
+\only<2>{\includegraphics[height=\textheight]{images/qqplot2}}
 \end{center}
 
-\small 
-\only<2>{Risk that estimate of $\beta_1$ is diminished because effect is being carried through the manipulation check.}
-\only<3>{Introduction of ``collider bias'' wherein values of the manipulation check are affected by other factors.}
 }
 
+\begin{frame}[fragile]
 
-
-
-
-\frame[label=posttreatment2]{
-
-\frametitle{Post-Treatment Exclusion}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-\item Any post-treatment exclusion is problematic and should be avoided
-\item<2-> Can estimate a LATE
-	\begin{itemize}\footnotesize
-	\item Interpretation: Effect of manipulation check among those whose value of the check can be changed by the treatment manipulation
-	\end{itemize}
-\item<3-> Non-response or attrition is the same as researcher-imposed exclusion
-	\begin{itemize}\footnotesize
-	\item Not problematic if MCAR
-	\item Nothing really to be done if caused by treatment
-	\end{itemize}
-\end{itemize}
-
-}
-
-\againframe<3-4>{posttreatment}
-
-\againframe<2->{posttreatment2}
-
-
-\questions
-
-\frame[label=satisficing]{
-\frametitle{Apparent Satisficing}
-\begin{itemize}\itemsep0.5em
-\item Some common measures:
-	\begin{itemize}
-	\item ``Straightlining''
-	\item Non-differentiation
-	\item Acquiescence
-	\item Nonresponse
-	\item DK responding
-	\item Speeding
-	\end{itemize}
-\item Difficult to detect and distinguish from ``real'' responses
-\end{itemize}
-}
-
-\frame{
-\frametitle{Metadata/Paradata}
-\begin{itemize}\itemsep1em
-\item<1-> Timing
-	\begin{itemize}
-	\item Some survey tools will allow you to time page
-	\item Make a prior rules about dropping participants for speeding
-	\end{itemize}
-\item<2-> Mousetracking or eyetracking
-	\begin{itemize}
-	\item Mousetracking is unobtrusive
-	\item Eyetracking requires participants opt-in
-	\end{itemize}
-\item<3-> Record focus/blur browser events
-\end{itemize}
-}
-
-\frame{
-\frametitle{Direct Measures}
-\begin{itemize}\itemsep1em
-\item How closely have you been paying attention to what the questions on this survey actually mean?
-\item<2-> While taking this survey, did you engage in any of the following behaviors? Please check all that apply.
-	\begin{itemize}
-	\item Use your mobile phone
-	\item Browse the internet
-	\item \dots
-	\end{itemize}
-\end{itemize}
-}
-
-
-
-\frame{
-\frametitle{{\normalsize Instructional Manipulation Check}}
-
-\small
-
-\only<2>{Do you agree or disagree with the decision to send British forces to fight ISIL in Syria? }We would like to know if you are reading the questions on this survey. If you are reading carefully, please ignore this question, do not select any answer below, and click ``next'' to proceed with the survey.\\
-
-\vspace{0.5em}
+\frametitle{Equality of Variance tests}
 
 \footnotesize
-Strongly disagree\\
-Somewhat disagree\\
-Neither agree nor disagree\\
-Somewhat agree\\
-Strongly agree\\
 
-\vspace{1em}
-\only<2>{\hyperlink{exclusion}{\beamerbutton{Return}}}
-}
+\begin{verbatim}
+> var.test(y0, y1a)
 
+        F test to compare two variances
 
+data:  y0 and y1a
+F = 0.60121, num df = 199, denom df = 199, 
+  p-value = 0.0003635
+alternative hypothesis: 
+  true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.4549900 0.7944289
+sample estimates:
+ratio of variances 
+         0.6012131 
+\end{verbatim}
 
-\frame{
+\end{frame}
 
-\frametitle{{\normalsize Treatment Noncompliance}}
+\begin{frame}[fragile]
 
-\begin{itemize}\itemsep0.5em
-\item Definition:\\{\small ``when subjects who were assigned to receive the treatment go untreated or when subjects assigned to the control group are treated'' \footnote{Gerber \& Green. 2012. \textit{Field Experiments}, p.132.}}
-\item<2-> Several strategies
-	\begin{itemize}
-	\item ``As treated'' analysis
-	\item ``Intention to treat'' analysis
-	\item Estimate a LATE
-	\end{itemize}
-\end{itemize}
+\frametitle{Equality of Variance tests}
 
-}
+\footnotesize
 
-\frame{
-\frametitle{{\normalsize Analyzing Noncompliance}}
+\begin{verbatim}
+> var.test(y0, y1b)
 
-\small
+        F test to compare two variances
 
-\begin{itemize}\itemsep0.5em
-\item If noncompliance only occurs in one group, it is \textit{asymmetric} or \textit{one-sided}
-\item We can ignore non-compliance and analyze the ``intention to treat'' effect, which will underestimate our effects because some people were not treated as assigned: $ITT = \overline{Y}_1 - \overline{Y}_0$
-\item<2-> We can use ``instrumental variables'' to estimate the ``local average treatment effect'' (LATE) for those that complied with treatment: $LATE = \frac{ITT}{\% Compliant}$
-\end{itemize}
-}
+data:  y0 and y1b
+F = 0.53483, num df = 199, denom df = 199,
+  p-value = 1.224e-05
+alternative hypothesis:
+  true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.4047531 0.7067133
+sample estimates:
+ratio of variances 
+         0.5348312
+\end{verbatim}
 
-\frame{
-	\frametitle{{\large Local Average Treatment Effect}}
-	\small
-	\begin{itemize}\itemsep0.2em
-	\item IV estimate is \textit{local} to the variation in $X$ that is due to variation in $D$
-	\item This matters if effects are \textit{heterogeneous}
-	\item LATE is effect for those who \textit{comply}
-	\item Four subpopulations:
-		\begin{itemize}\footnotesize
-		\item Compliers: $X = 1$ only if $D = 1$
-		\item Always-takers: $X = 1$ regardless of $D$
-		\item Never-takers: $X = 0$ regardless of $D$
-		\item Defiers: $X = 1$ only if $D = 0$
-		\end{itemize}
-	\item Exclusion restriction! Monotonicity!
-	\end{itemize}
-}
+\end{frame}
+
 
 \questions
 
 
-
-
-\subsection{Use of Covariates}
-\frame{\tableofcontents[currentsection,currentsubsection,subsubsectionstyle=hide]}
+\frame{\frametitle{Regression Estimation}}
 
 \frame{
 
-\frametitle{Block Randomization I}
-
-{\small \textbf{Stratification:Sampling::Blocking:Experiments}}
-
-\small
+\frametitle{{\normalsize Aside: Regression Adjustment in Experiments, Generally}}
 
 \begin{itemize}\itemsep0.5em
-\item<2-> Basic idea: randomization occurs within strata defined before treatment assignment
-\item<3-> CATE is estimate for each stratum; aggregated to SATE
-\item<4-> Why?
-	\begin{itemize}
-	\item Eliminate chance imbalances
-	\item Optimized for estimating CATEs
-	\item More precise SATE estimate
-	\end{itemize}
+\item Recall the general advice that we do not need covariates in the regression to ``control'' for omitted variables (because there are none)
+\item Including covariates can reduce variance of our SATE by explaining more of the variation in $Y$
 \end{itemize}
 
 }
 
-\begin{frame}[fragile]
+\frame{
 
-\begin{center}
-\begin{tabular}{lcccccccc}
-Exp. & \multicolumn{4}{c}{Control} & \multicolumn{4}{c}{Treatment} \\ \midrule
-1 & M & M & M & M & F & F & F & F \\
-2 & M & M & M & F & M & F & F & F \\
-3 & M & M & F & F & M & M & F & F \\
-4 & M & F & F & F & M & M & M & F \\
-5 & F & F & F & F & M & M & M & M \\ \bottomrule
-\end{tabular}
-\end{center}
+\frametitle{Scenario}
 
+Imagine two regression models. Which is correct?
 
-{\scriptsize
-\begin{verbatim}
-# population of men and women
-pop <- rep(c("Male", "Female"), each = 4)
+\begin{enumerate}
+\item Mean-difference estimate of SATE is ``not significant''
+\item Regression estimate of SATE, controlling for sex, age, and education, is ``significant''
+\end{enumerate}
 
-# randomly assign into treatment and control
-split(sample(pop, 8, FALSE), c(rep(0,4), rep(1,4)))
-\end{verbatim}
+\onslide<2->{This is a small-sample dynamic, so make these decisions pre-analysis!}
+
 }
-
-\end{frame}
 
 \frame{
 
-\begin{center}
+\frametitle{{\normalsize Treatment-Covariate Interactions}}
 
-\begin{tabular}{rrrr}
-Obs. & $X_{1i}$ & $X_{2i}$ & $D_i$ \\ \midrule
-1 & Male & Old & 0 \\
-2 & Male & Old & 1 \\  \midrule
-3 & Male & Young & 1 \\
-4 & Male & Young & 0 \\ \midrule
-5 & Female & Old & 1 \\
-6 & Female & Old & 0 \\ \midrule
-7 & Female & Young & 0 \\
-8 & Female & Young & 1 \\ \bottomrule
-\end{tabular}
-\end{center}
-
-}
-
-\frame[label=blocking2]{
-
-\frametitle{Block Randomization II}
+\normalsize
 
 \begin{itemize}
-\item Blocking ensures ignorability of all covariates used to construct the blocks
-\item Incorporates covariates explicitly into the \textit{design}
-\item<2-> When is blocking \textit{statistically} useful?
+\item The regression paradigm allows us to estimate CATEs using interaction terms
 	\begin{itemize}
-	\item<3-> If those covariates affect values of potential outcomes, blocking reduces the variance of the SATE
-	\item<4-> Most valuable in small samples
-	\item<5-> Not valuable if all blocks have similar potential outcomes
+	\item $X$ is an indicator for treatment
+	\item $M$ is an indicator for possible moderator
 	\end{itemize}
-\end{itemize}
-
-}
-
-
-
-\frame{
-
-\frametitle{Statistical Properties I}
-
-\small
-
-Complete randomization:\\
-$$SATE = \frac{1}{n_1}\sum Y_{1i} - \frac{1}{n_0}\sum Y_{0i}$$
-
-\vspace{2em}
-
-Block randomization:\\
-$$SATE_{blocked} = \sum_{1}^{J} \left( \dfrac{n_j}{n} \right)  (\widehat{CATE}_j)$$
-
-}
-
-
-\frame{
-
-\begin{center}
-
-\begin{tabular}{rrrrrr}
-Obs. & $X_{1i}$ & $X_{2i}$ & $D_i$ & $Y_i$ & CATE \\ \midrule
-1 & Male & Old & 0 & 5 & \multirow{2}{*}{\onslide<2->{5}} \\
-2 & Male & Old & 1 & 10 \\  \midrule
-3 & Male & Young & 1 & 4 & \multirow{2}{*}{\onslide<3->{3}} \\
-4 & Male & Young & 0 & 1 \\ \midrule
-5 & Female & Old & 1 & 6 & \multirow{2}{*}{\onslide<4->{4}} \\
-6 & Female & Old & 0 & 2 \\ \midrule
-7 & Female & Young & 0 & 6 & \multirow{2}{*}{\onslide<5->{3}} \\
-8 & Female & Young & 1 & 9 \\ \bottomrule
-\end{tabular}
-\end{center}
-
-}
-
-\frame{
-
-\frametitle{SATE Estimation}
-
-\begin{align*}
-SATE &= \left(\dfrac{2}{8}*5\right) + \left(\dfrac{2}{8}*3\right) + \left(\dfrac{2}{8}*4\right) + \left(\dfrac{2}{8}*3\right) \\ \vspace{1em}
-&= 3.75
-\end{align*}
-
-\onslide<2->{The blocked and unblocked estimates are the same here because $Pr(Treatment)$ is constant across blocks and blocks are all the same size.}
-
-}
-
-\frame{
-
-\frametitle{SATE Estimation}
-
-\small
-
-\begin{itemize}
-\item We can use weighted regression to estimate this in an OLS framework
-\item Weights are the inverse prob. of being treated w/in block
-\begin{itemize}
-\item Pr(Treated) by block: $p_{ij} = Pr(D_i = 1 | J=j) $
-\item Weight (Treated): $ w_{ij} = \dfrac{1}{p_{ij}} $
-\item Weight (Control): $ w_{ij} = \dfrac{1}{1-p_{ij}} $
-\end{itemize}
-\end{itemize}
-
-}
-
-
-\frame{
-
-\frametitle{Statistical Properties II}
-
-\small
-
-Complete randomization:\\
-$$\widehat{SE}_{SATE} = \sqrt{\dfrac{\widehat{Var}(Y_0)}{n_0} + \dfrac{\widehat{Var}(Y_1)}{n_1}}$$
-
-\vspace{1em}
-
-Block randomization:\\
-$$\widehat{SE}_{SATE_{blocked}} = \sqrt{\sum_{1}^{J} \left( \dfrac{n_j}{n} \right)^2  \widehat{Var}{(SATE_j)}}$$
-
-\only<2->{When is the blocked design more efficient?}
-
-}
-
-
-\frame{
-
-\frametitle{Practicalities}
-
-\begin{itemize}\itemsep0.5em
-\item Blocked randomization only works in exactly the same situations where stratified sampling works
+\item<2-> SATE: $Y = \beta_0 + \beta_1 X + e$
+\item<3-> CATEs: $$Y = \beta_0 + \beta_1 X + \beta_2 M + \beta_3 X*M + e$$
 	\begin{itemize}
-	\item Need to observe covariates pre-treatment in order to block on them
-	\item Work best in a panel context
+	\item<4-> Homogeneity: $\beta_3 = 0$
+	\item<4-> Heterogeneity: $\beta_3 \neq 0$
 	\end{itemize}
-\item In a single cross-sectional design that might be challenging
-	\begin{itemize}
-	\item Some software can block ``on the fly''
-	\end{itemize}
-\end{itemize}
 
+\end{itemize}
 
 }
 
@@ -1445,6 +1072,7 @@ Quiz time!
 		\item Data are used for a ``legitimate'' purpose
 		\item Anonymous or confidential
 		\end{itemize}
+	\item These rules have become more expansive under GDPR (in force as of 2018)
 	\item Data cannot leave the EU except under conditions
 	\end{itemize}
 
@@ -1542,6 +1170,16 @@ By the end of the week, you should be able to\dots
 	\item Good luck with your research!
 	\end{itemize}
 }
+
+
+
+
+
+
+
+
+
+
 
 
 \appendix
@@ -1798,225 +1436,7 @@ By the end of the week, you should be able to\dots
 \questions
 
 
-\section{Protocols}
 
-\frame{
-
-\frametitle{{\normalsize TESS has ``Open Protocols''}}
-
-Protocol is the complete planning document for how to design, implement, and analyze an experiment.\footnote{Thomas J. Leeper. 2011. ``The Use of Protocol in the Design and Reporting of Experiments.'' \textit{The Experimental Political Scientist}.}
-
-\small
-
-\begin{enumerate}\itemsep-0.2em
-\item Theory/hypotheses
-\item Instrumentation
-	\begin{itemize}
-	\item Manipulation(s)
-	\item Outcome(s)
-	\item Covariate(s)
-	\item Manipulation check(s)
-	\end{itemize}
-\item Sampling
-\item Implementation
-\item Analysis
-\end{enumerate}
-}
-
-\frame{
-
-\frametitle{Why bother writing a protocol?}
-
-\begin{itemize}\itemsep0.5em
-\item<2-> Be clear to yourself what you're trying to do before you do it
-\item<3-> Assess the literature for best practices
-\item<4-> Highlight areas in need of pilot testing
-\item<5-> Economize questionnaire development
-\item<6-> Study preregistration
-\end{itemize}
-
-}
-
-
-\section{Effect Heterogeneity}
-
-\frame{
-\frametitle{{\large Detecting Effect Heterogeneity}}
-
-Always block if you expect heterogeneity!
-
-\begin{itemize}\itemsep0.5em
-\item QQ-plots: Suggestive evidence
-\item Regression using treatment-by-covariate interactions
-\item<2-> (Replication and meta-analysis)
-\end{itemize}
-
-}
-
-
-
-\frame{
-
-\frametitle{Suggestive Evidence}
-
-We can never know $Var(TE_i)$! \onslide<2->{But\dots}
-
-\begin{itemize}\itemsep0.5em
-\item<2-> Quantile-quantile plots
-	\begin{itemize}
-	\item<3-> Compare the distribution of $Y_0$'s to distribution of $Y_1$'s
-	\item<3-> If homogeneity, a vertical shift in $Y_1$'s
-	\item<3-> If heterogeneity, a slope $\neq$ 1
-	\end{itemize}
-\item<4-> Equality of variance tests
-	\begin{itemize}
-	\item<4-> If homogeneity, variance should be equal
-	\item<4-> If heterogeneity, variances should differ
-	\end{itemize}
-\end{itemize}
-
-}
-
-\begin{frame}[fragile]
-
-\frametitle{QQ Plots}
-
-{\scriptsize
-\begin{verbatim}
-# y_0 data
-set.seed(1)
-n <- 200
-y0 <- rnorm(n) + rnorm(n, 0.2)
-
-# y_1 data (homogeneous effects)
-y1a <- y0 + 2 + rnorm(n, 0.2)
-# y_1 data (heterogeneous effects)
-y1b <- y0 + rep(0:1, each = n/2) + rnorm(n, 0.2)
-
-qqplot(y0, y1a, pch=19, xlim=c(-3,5), ylim=c(-3,5), asp=1)
-curve((x), add = TRUE)
-qqplot(y0, y1b, pch=19, xlim=c(-3,5), ylim=c(-3,5), asp=1)
-curve((x), add = TRUE)
-\end{verbatim}
-
-}
-
-\end{frame}
-
-
-\frame{
-
-\begin{center}
-\only<1>{\includegraphics[height=\textheight]{images/qqplot1}}
-\only<2>{\includegraphics[height=\textheight]{images/qqplot2}}
-\end{center}
-
-}
-
-\begin{frame}[fragile]
-
-\frametitle{Equality of Variance tests}
-
-\footnotesize
-
-\begin{verbatim}
-> var.test(y0, y1a)
-
-        F test to compare two variances
-
-data:  y0 and y1a
-F = 0.60121, num df = 199, denom df = 199, 
-  p-value = 0.0003635
-alternative hypothesis: 
-  true ratio of variances is not equal to 1
-95 percent confidence interval:
- 0.4549900 0.7944289
-sample estimates:
-ratio of variances 
-         0.6012131 
-\end{verbatim}
-
-\end{frame}
-
-\begin{frame}[fragile]
-
-\frametitle{Equality of Variance tests}
-
-\footnotesize
-
-\begin{verbatim}
-> var.test(y0, y1b)
-
-        F test to compare two variances
-
-data:  y0 and y1b
-F = 0.53483, num df = 199, denom df = 199,
-  p-value = 1.224e-05
-alternative hypothesis:
-  true ratio of variances is not equal to 1
-95 percent confidence interval:
- 0.4047531 0.7067133
-sample estimates:
-ratio of variances 
-         0.5348312
-\end{verbatim}
-
-\end{frame}
-
-
-\questions
-
-
-\frame{\frametitle{Regression Estimation}}
-
-\frame{
-
-\frametitle{{\normalsize Aside: Regression Adjustment in Experiments, Generally}}
-
-\begin{itemize}\itemsep0.5em
-\item Recall the general advice that we do not need covariates in the regression to ``control'' for omitted variables (because there are none)
-\item Including covariates can reduce variance of our SATE by explaining more of the variation in $Y$
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{Scenario}
-
-Imagine two regression models. Which is correct?
-
-\begin{enumerate}
-\item Mean-difference estimate of SATE is ``not significant''
-\item Regression estimate of SATE, controlling for sex, age, and education, is ``significant''
-\end{enumerate}
-
-\onslide<2->{This is a small-sample dynamic, so make these decisions pre-analysis!}
-
-}
-
-\frame{
-
-\frametitle{{\normalsize Treatment-Covariate Interactions}}
-
-\normalsize
-
-\begin{itemize}
-\item The regression paradigm allows us to estimate CATEs using interaction terms
-	\begin{itemize}
-	\item $X$ is an indicator for treatment
-	\item $M$ is an indicator for possible moderator
-	\end{itemize}
-\item<2-> SATE: $Y = \beta_0 + \beta_1 X + e$
-\item<3-> CATEs: $$Y = \beta_0 + \beta_1 X + \beta_2 M + \beta_3 X*M + e$$
-	\begin{itemize}
-	\item<4-> Homogeneity: $\beta_3 = 0$
-	\item<4-> Heterogeneity: $\beta_3 \neq 0$
-	\end{itemize}
-
-\end{itemize}
-
-}
 
 
 
