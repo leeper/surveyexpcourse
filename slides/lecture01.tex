@@ -77,7 +77,7 @@
 
 \item Thomas Leeper
 
-\item Assistant Professor in Political Behaviour at London School of Economics
+\item Associate Professor in Political Behaviour at London School of Economics
 
 \begin{itemize}
 \item 2013--15: Aarhus University (Denmark)
@@ -170,7 +170,7 @@ By the end of the week, you should be able to\dots
 \begin{enumerate}\itemsep0.5em
 \item Survey Experiments in Context
 \item Examples and Paradigms
-\item External Validity
+\item Hands-on Session
 \item Practical Issues
 \end{enumerate}
 
@@ -181,12 +181,12 @@ By the end of the week, you should be able to\dots
 
 
 
-\section[History]{History of Experiments}
+\section[History/Logic]{History and Logic}
 \frame{\tableofcontents[currentsection]}
 
 \frame{
 
-\frametitle{Experiments}
+\frametitle{Experiments: History I}
 
 Oxford English Dictionary defines ``experiment'' as:
 
@@ -198,41 +198,22 @@ Oxford English Dictionary defines ``experiment'' as:
 
 \frame{
 
-\frametitle{Experiments}
+\frametitle{Experiments: History II}
 
 \begin{itemize}\itemsep0.75em
 \item ``Experiments'' have a very long history
 
-\item Major advances in design and analysis of experiments based on agricultural and later biostatistical research in the 19th century
+\item Major advances in design and analysis of experiments based on agricultural and later biostatistical research in the 19th century (Fisher, Neyman, Pearson, etc.)
+
+\item<2-> Multiple origins in the social sciences
+
 	\begin{itemize}
-	\item R.A. Fisher
-	\item Jerzy Neyman
-	\item Karl Pearson
-	\item Oscar Kempthorne
+	\item<3-> First randomized experiment by Peirce and Jastrow (1884)
+	\item<3-> Gosnell (1924)
+	\item<3-> LaLonde (1986)
+	\item<3-> Gerber and Green (2000)
 	\end{itemize}
 
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{In Social Sciences}
-
-\small
-
-\begin{itemize}
-\item ``Experiments'' emerged in psychology 19th century
-	\begin{itemize}\footnotesize
-	\item Not randomized -- more like ``What if?'' studies
-	\item Heavily laboratory-based or clinical
-	\end{itemize}
-\item<2-> First randomized, controlled trial (RCT) by Peirce and Jastrow in 1884
-\item<3-> RCTs came later to medicine (circa 1950)
-\item<4-> And have been a major part of the ``credibility revolution'' in economics
-	\begin{itemize}
-	\item See, especially, LaLonde (1986)
-	\end{itemize}
 \end{itemize}
 
 }
@@ -240,33 +221,18 @@ Oxford English Dictionary defines ``experiment'' as:
 
 \frame{
 
-\frametitle{In Social Science I}
-
-\begin{itemize}\itemsep0.5em
-\item APSA Pres. A. Lawrence Lowell (1922):\\
-{\small
-\textit{``We are limited by the impossibility of experiment. Politics is an observational, not an experimental science\dots''}
-}
-\item<2-> First experiment by Gosnell (1924)
-\item<3-> Gerber and Green (2000) first major \textit{field} experiment
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{{\large In Social Science II}}
+\frametitle{Experiments: History III}
 
 \small
 
 \begin{itemize}
 \item Rise of surveys in the behavioral revolution
-\item Survey research was not experimental because interviewing was still mostly paper-based
 	\begin{itemize}
-	\item ``Split Ballots'' (Schuman \& Presser; Bishop)
+	\item Survey research not heavily experimental because interviewing was mostly paper-based
+	\item ``Split ballots'' (e.g., Schuman \& Presser; Bishop)
 	\end{itemize}
 \item<2-> 1983: Merrill Shanks and the Berkeley Survey Research Center develop CATI
-\item<3-> Mid-1980s: Paul Sniderman \& Tom Piazza performed the first survey experiment\only<3->{\footnote{Sniderman, Paul M., and Thomas Piazza. 1993. \textit{The Scar of Race}. Cambridge, MA: Harvard University Press.}}
+\item<3-> Mid-1980s: Paul Sniderman \& Tom Piazza performed the first \textit{modern} survey experiment\only<3->{\footnote{Sniderman, Paul M., and Thomas Piazza. 1993. \textit{The Scar of Race}. Cambridge, MA: Harvard University Press.}}
 	\begin{itemize}\footnotesize
 	\item Then: the ``first multi-investigator''
 	\item Later: Skip Lupia and Diana Mutz created TESS
@@ -285,23 +251,158 @@ Oxford English Dictionary defines ``experiment'' as:
 \begin{itemize}
 \item Time-Sharing Experiments for the Social Sciences
 \item Multi-disciplinary initiative that provides infrastructure for survey experiments on nationally representative samples of the United States population
+\item Great resource for survey experimental materials, designs, and data
 \item Funded by the U.S. National Science Foundation
 \item Anyone anywhere in the world can apply
+\item See also: \href{https://www.lissdata.nl/lissdata/}{LISS}, \href{http://www.uib.no/en/citizen}{Bergen's Citizen Panel}, \href{http://lore.gu.se/surveys/citizen}{Gothenburg's Citizen Panel}
 \end{itemize}
 
 }
 
+
+
+
+
 \frame{
 
-\frametitle{TESS-like Projects}
+\frametitle{The First Survey Experiment}
 
-There are some TESS-like initiatives outside the United States:
+Hadley Cantril (1940) asks 3000 Americans either:
 
-\begin{itemize}\itemsep1em
-\item Netherlands: \href{https://www.lissdata.nl/lissdata/}{LISS}
-\item Norway: \href{http://www.uib.no/en/citizen}{Bergen's Citizen Panel}
-\item Sweden: \href{http://lore.gu.se/surveys/citizen}{Gothenburg's Citizen Panel}
+\vspace{1em}
+
+\begin{columns}
+\begin{column}[t]{.5\textwidth}
+\onslide<2->{Do you think the U.S. should do more than it is now doing to help England and France?}
+\vspace{1em}
+\begin{itemize}
+\item Yes\onslide<4->{: 13\%}
+\item No
 \end{itemize}
+\end{column}
+\begin{column}[t]{.5\textwidth}
+\onslide<3->{Do you think the U.S. should do more than it is now doing to help England and France \textcolor{red}{in their fight against Hitler}?
+\begin{itemize}
+\item Yes\onslide<5->{: 22\%}
+\item No
+\end{itemize}
+}
+\end{column}
+\end{columns}
+
+\vspace{1em}
+
+\onslide<6->{The ``Hitler effect'' was 22\% - 13\% = 9\%}
+
+}
+
+
+
+\frame{
+
+\frametitle{Definitions I}
+
+\begin{itemize}\itemsep0.75em
+\item<1-> A randomized experiment is:
+\end{itemize}
+	\begin{quote}\small
+		The observation of units after, and possibly before, a randomly assigned intervention in a controlled setting, which tests one or more precise causal expectations
+	\end{quote}
+\begin{itemize}\itemsep0.75em
+\item<2-> If we manipulate the thing we want to know the effect of ($X$), and control (i.e., hold constant) everything we do not want to know the effect of ($Z$), the only thing that can affect the outcome ($Y$) is $X$.
+\end{itemize}
+
+}
+
+
+\frame{
+\frametitle{Definitions II}
+
+\small
+
+\begin{itemize}
+\item<2-> A survey experiment is just an experiment that occurs in a survey context
+	\begin{itemize}
+	\item As opposed to in the field or in a laboratory
+	\end{itemize}
+\item<3-> Can be in any mode (face-to-face, CATI, IVR, CASI, etc.)
+\item<4-> May or may not involve a representative population
+	\begin{itemize}
+	\item Mutz (2011): ``population-based survey experiments''
+	\end{itemize}
+\end{itemize}
+}
+
+\frame{
+
+\frametitle{Definitions II}
+
+\only<2>{\textbf{Unit}: A physical object at a particular point in time}
+
+\only<3>{\textbf{Treatment}: An intervention, whose effect(s) we wish to assess relative to some other (non-)intervention
+
+\vspace{1em}
+
+Synonyms: manipulation, intervention, factor, condition, cell
+
+}
+
+\only<4>{\textbf{Outcome}: The variable we are trying to explain}
+
+\only<5>{
+\textbf{Potential outcomes}: The outcome value for each unit that we \textit{would observe} if that unit received each treatment\\
+
+\vspace{1em}
+
+Multiple potential outcomes for each unit, but we only observe one of them
+
+}
+
+\only<6>{\textbf{Causal effect}: The comparisons between the unit-level potential outcomes under each intervention\\
+
+\vspace{1em}
+
+\textit{This is what we want to know!}
+}
+
+\only<7>{\textbf{Average causal effect}: Difference in mean outcomes between treatment groups\\
+
+\vspace{1em}
+
+\textit{This is \textit{almost} what we want to know!}
+}
+
+
+}
+
+
+\frame{
+
+\frametitle{Example}
+
+\onslide<2->{\textbf{Unit}: Americans in 1940}
+
+\onslide<3->{\textbf{Outcome}: Support for military intervention}
+
+\onslide<4->{\textbf{Treatment}: Mentioning Hitler versus not}
+
+\onslide<5->{
+\textbf{Potential outcomes}:
+
+\begin{enumerate}
+\item Support in ``Hitler'' condition
+\item Support in control condition
+\end{enumerate}
+
+}
+
+\onslide<6->{\textbf{Causal effect}: Difference in support between the two question wordings for each respondent
+
+\begin{itemize}
+\item<7-> Individual treatment effect not observable!
+\item<8-> Average effect (ATE) is the mean-difference
+\end{itemize}
+}
 
 }
 
@@ -309,13 +410,15 @@ There are some TESS-like initiatives outside the United States:
 \questions
 
 
-
-\section[Logic]{Logic and Analysis}
-\frame{\tableofcontents[currentsection,subsubsectionstyle=hide]}
-
-
 \frame{
-	\includegraphics[width=\textwidth]{images/xkcdcorrelation.png}
+
+\frametitle{Why are experiments useful?}
+
+\begin{center}
+\Large
+\onslide<2->{Causal inference!}
+\end{center}
+
 }
 
 
@@ -326,13 +429,13 @@ There are some TESS-like initiatives outside the United States:
 In observational research\dots
 
 \begin{enumerate}\itemsep0.5em
-\item<2-> Correlate a ``putative'' cause ($X$) and an outcome ($Y$)
+\item<2-> Correlate a ``putative'' cause ($X$) and an outcome ($Y$), where $X$ temporally precedes $Y$
 \item<3-> Identify all possible confounds (\textbf{Z})
-\item<4-> ``Condition'' on all possible confounds
+\item<4-> ``Condition'' on all confounds
 	\begin{itemize}
 	\item Calculate correlation between $X$ and $Y$ at each combination of levels of \textbf{Z}
 	\end{itemize}
-\item<5-> Basically: $Y = \beta_0 + \beta_1 X + \beta Z + \epsilon $
+\item<5-> Basically: $Y = \beta_0 + \beta_1 X + \beta_{2-k} \mathbf{Z} + \epsilon $
 \end{enumerate}
 
 }
@@ -341,20 +444,18 @@ In observational research\dots
 \begin{frame}
 \begin{center}
 \begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
-    \draw (0,0) node[left] (X) {\textcolor<2->{red}{Smoking}};
-    \draw[->] (X) -- (5,0) node[right] (Y) {Cancer};
-    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw (0,0) node[left, text width=3cm, align=center] (X) {Salience of\\Hitler};
+    \draw[->] (X) -- (3,0) node[right, text width=3cm, align=center] (Y) {Support for\\Military\\Intervention};
+    \draw (-2,2) node[above, text width=3cm, align=center] (Z) {Media Coverage};
     \draw[->] (Z) -- (Y);
-    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
-    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
-    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
-    \draw[->] (W) -- (Y);
-    \draw<2->[->, dashed, very thick] (E) -- (X);
+    \draw[->] (3,2) node[above] (A) {Demographics} -- (Y);
+    \draw[->] (4,-2) node[below] (B) {Ideology} -- (Y);
+    \draw[->] (1,-2) node[below, text width=3cm, align=center] (E) {Political\\Sophistication} -- (Y);
+	\draw<2->[->, dashed, very thick] (Z) -- (X);
+	\draw<3->[->, dashed, very thick] (E) -- (X);
 \end{tikzpicture}
 \end{center}
 \end{frame}
-
-
 
 
 \frame{
@@ -362,10 +463,15 @@ In observational research\dots
 \frametitle{Experiments are different}
 
 \begin{enumerate}\itemsep0.75em
-\item<2-> Draw causal inferences through \textit{design} not \textit{analysis}
-\item<3-> Randomization breaks selection bias
-\item<4-> We don't need to ``control'' for anything
-\item<5-> We see ``causal effects'' in the comparison of experimental groups
+\item<2-> Causal inferences from \textit{design} not \textit{analysis}
+\item<3-> Solves both temporal ordering and confounding
+	\begin{itemize}
+   		\item Treatment ($X$)  applied by researcher before outcome ($Y$)
+   		\item Randomization eliminates confounding ($\mathbf{Z}$)
+   		\item We don't need to ``control'' for anything
+	\end{itemize}
+\item<4-> Basically: $Y = \beta_0 + \beta_1 X + \epsilon $
+\item<5-> Thus experiments are a ``gold standard''
 \end{enumerate}
 
 }
@@ -381,83 +487,12 @@ If an instance in which the phenomenon under investigation occurs, and an instan
 }
 
 
-
-\frame{
-
-\frametitle{Definitions}
-
-\only<2>{\textbf{Unit}: A physical object at a particular point in time}
-
-\only<3>{\textbf{Treatment}: An intervention, whose effect(s) we wish to assess relative to some other (non-)intervention}
-
-\only<4>{
-\textbf{Potential outcomes}: The outcome for each unit that we would observe if that unit received each treatment
-\begin{itemize}
-\item Multiple potential outcomes for each unit, but we only observe one of them
-\end{itemize}
-}
-
-\only<5>{\textbf{Causal effect}: The comparisons between the unit-level potential outcomes under each intervention}
-
-}
-
-
-
-
-% Individual-level effects versus ATEs
-
-
-\frame{
-	\frametitle{The Experimental Ideal}
-	\small
-	A randomized experiment, or randomized control trial is:
- 		\begin{quote}\small
- 			The observation of units after, and possibly before, a randomly assigned intervention in a controlled setting, which tests one or more precise causal expectations
- 		\end{quote}
- 	This is Holland's ``statistical solution'' to the fundamental problem of causal inference
-}
-
-
-\frame{
-\frametitle{Two solutions!\footnote{From Holland}}
-
-\begin{enumerate}\itemsep1em
-\item Scientific Solution
-	\begin{itemize}
-	\item All units are identical
-	\item Each can provide a perfect counterfactual
-	\item Common in, e.g., agriculture, biology
-	\end{itemize}
-\item<2-> Statistical Solution
-	\begin{itemize}
-	\item Units are not identical
-	\item Random exposure to a potential cause
-	\item Effects measured on average across units
-	\item Known as the ``Experimental ideal''
-	\end{itemize}
-\end{enumerate}
-
-}
-
-
-
-\frame{
-\frametitle{The Experimental Ideal}
-\begin{itemize}\itemsep0.5em
-\item It solves both the temporal ordering and confounding problems of observational causal inference
-	\begin{itemize}
-   		\item Treatment ($X$) is applied by the researcher before outcome ($Y$)
-   		\item Randomization means there are no confounding ($Z$) variables
-	\end{itemize}
-\item<2-> Thus experiments are a ``gold standard'' of causal inference
-\item<3-> Basically: $Y = \beta_0 + \beta_1 X + \epsilon $
-\end{itemize}
-}
+\questions
 
 
 \frame{
 
-\frametitle{Neyman--Rubin Potential Outcomes Framework}
+\frametitle{Neyman-Rubin Potential Outcomes Framework}
 
 If we are interested in some outcome $Y$, then for every unit $i$, there are numerous ``potential outcomes'' $Y*$ only one of which is visible in a given reality. Comparisons of (partially unobservable) potential outcomes indicate causality.
 
@@ -465,7 +500,7 @@ If we are interested in some outcome $Y$, then for every unit $i$, there are num
 
 \frame{
 
-\frametitle{Neyman--Rubin Potential Outcomes Framework}
+\frametitle{Neyman-Rubin Potential Outcomes Framework}
 
 Concisely, we typically discuss two potential outcomes:
 
@@ -475,26 +510,6 @@ Concisely, we typically discuss two potential outcomes:
 \end{itemize}
 
 }
-
-
-\frame{
-
-\frametitle{Historical Aside}
-
-\small
-
-\begin{itemize}
-\item The history of the potential outcomes framework is contested
-\item Most people attribute it to Donald Rubin
-\item Paul Holland was the first to link to the philosophical discussions of causality
-\item Donald Rubin attributes this to Jerzy Neyman (1923)
-\item James Heckman denies all of this and attributes it Andrew Roy (1951)
-\end{itemize}
-}
-
-
-
-
 
 
 
@@ -526,7 +541,7 @@ Concisely, we typically discuss two potential outcomes:
     	\item<1-> We cannot see individual-level causal effects
     	\item<2-> We can see \textit{average causal effects}
     		\begin{itemize}
-        		\item<2-> Ex.: Average difference in cancer between those who do and do not smoke
+        		\item<2-> Ex.: Average difference in military support among those thinking of Hitler versus not
     		\end{itemize}
     	\item<3-> We want to know: $TE_i = Y_{1i} - Y_{0i}$
 	\end{itemize}
@@ -584,9 +599,8 @@ Concisely, we typically discuss two potential outcomes:
 
 \frame{
 	\frametitle{Experimental Inference VI}
-
-	\normalsize
-	\begin{itemize}\itemsep0.5em
+	
+	\begin{itemize}\itemsep1em
     	\item This holds in experiments because of a \textit{physical process of randomization}\footnote{Random means ``known probability of treatment'' not ``haphazard''.}
    		\item<2-> Units differ only in side of coin that was up
 	   		\begin{itemize}\footnotesize
@@ -605,110 +619,50 @@ Concisely, we typically discuss two potential outcomes:
 
 
 \begin{frame}
-\small 
 \begin{center}
 \begin{tikzpicture}[>=latex',circ/.style={draw, shape=circle, node distance=5cm, line width=1.5pt}]
-    \draw[->] (0,0) node[left] (X) {Smoking} -- (5,0) node[right] (Y) {Cancer};
-    \draw[->] (-3,3) node[above] (Z) {Sex} -- (X);
+    \draw (0,0) node[left, text width=3cm, align=center] (X) {Salience of\\Hitler};
+    \draw[->] (X) -- (3,0) node[right, text width=3cm, align=center] (Y) {Support for\\Military\\Intervention};
+    \draw (-2,2) node[above, text width=3cm, align=center] (Z) {Media Coverage};
     \draw[->] (Z) -- (Y);
-    \draw[->] (5,2) node[above] (A) {Environment} -- (Y);
-    \draw[->] (4,-3) node[below, text width=3cm, align=center] (E) {Genetic\\Predisposition} -- (Y);
-    \draw[->] (-2, -2) node[below, text width=2.5cm, align=center] (W) {Parental\\Smoking} -- (X);
-    \draw[->] (W) -- (Y);
-    \draw[->, dashed] (E) -- (X);
-    
-    \draw<2->[->, very thick, color=red] (-2.5,1) node[left, color=red, text width=2cm, align=center] (Tr) {Random\\Assignment} -- (X);
-    \draw<2->[->, very thick, color=red] (X) -- (Y);
+    \draw[->] (3,2) node[above] (A) {Demographics} -- (Y);
+    \draw[->] (4,-2) node[below] (B) {Ideology} -- (Y);
+    \draw[->] (1,-2) node[below, text width=3cm, align=center] (E) {Political\\Sophistication} -- (Y);
+	\draw[->, dashed] (E) -- (X);
+	\draw[->, dashed] (Z) -- (X);
+	\draw<2-> (-2,-2) node[left, color=red, text width=2cm, align=center] (T) {Randomly\\Assigned\\Prime};
+	\draw<2->[->, very thick, color=red] (T) -- (X);
 \end{tikzpicture}
 \end{center}
 \end{frame}
+
 
 \questions
 
 
 
 \frame{
-
-\large
-\centering
-Does randomization \textit{guarantee balance}? Does it work every time?
-
-\vspace{1em}
-
-\only<2->{What happens if there is imbalance? How would we know?}
-}
-
-
-\frame{
-
-\frametitle{Balance Testing I}
-
-\begin{itemize}\itemsep0.5em
-\item Analysis of experiments assumes that randomization produces covariate balance
-\item<2-> But this is only true \textit{in expectation}
-\item<3-> If we find covariate imbalance, we can:
-	\begin{itemize}
-	\item Ignore it
-	\item Condition on imbalanced covariates
-	\end{itemize}
-\end{itemize}
-
-}
-
-\frame{
-
-\frametitle{Balance Testing II}
-
-There are three basic ways to detect covariate imbalance:
-
-\begin{enumerate}\itemsep1em
-\item Regressing treatment assignment on covariates
-\item Conducting t-tests for each covariate across experimental groups
-\item Examining covariate means visually
-\end{enumerate}
-
-}
-
-
-
-\frame{
-\frametitle{Experimental Analysis}
+\frametitle{Experimental Analysis I}
 \small
 \begin{itemize}
 \item The statistic of interest in an experiment is the \textit{sample average treatment effect} (SATE)
 \item If our sample is \textit{representative}, then this provides an estimate of the population average treatment (PATE)
-\item This boils down to being a mean-difference between two groups:
+	\begin{itemize}
+	\item Design-based random sampling
+	\item Model-based re-weighting
+	\end{itemize}
+\item<2-> This boils down to being a mean-difference between two groups:
 	\begin{equation}
 	SATE = \frac{1}{n_1}\sum Y_{1i} - \frac{1}{n_0}\sum Y_{0i}
 	\end{equation}
-\item<2->The Neyman--Rubin logic only works for \textit{means}\footnote{But not medians, etc.}
 \end{itemize}
 }
 
 
-
-\frame{
-
-\frametitle{Computation of Effects}
-
-\begin{itemize}\itemsep0.5em
-\item In practice we often estimate SATE using t-tests, ANOVA, or OLS regression
-\item These are all basically equivalent
-\item<2-> Reasons to choose one procedure over another:
-	\begin{itemize}
-	\item<2-> Disciplinary norms
-	\item<3-> Ease of interpretation
-	\item<4-> Flexibility for >2 treatment conditions
-	\end{itemize}
-\end{itemize}
-
-
-
-}
 
 \frame[label=tidy]{
 
-\frametitle{Experimental Data Tidying}
+\frametitle{Tidy Experimental Data}
 
 An experimental data structure looks like:
 
@@ -732,7 +686,7 @@ An experimental data structure looks like:
 
 \frame{
 
-\frametitle{Experimental Data Tidying}
+\frametitle{Tidy Experimental Data}
 
 Sometimes it looks like this instead, which is bad:
 
@@ -741,14 +695,14 @@ Sometimes it looks like this instead, which is bad:
 \begin{center}
 \begin{tabular}{cccc}
 \texttt{unit} & \texttt{treatment} & \texttt{outcome0}  & \texttt{outcome1} \\ \hline 
-1 & 0 & 13 & . \\
-2 & 0 & 6 & . \\
-3 & 0 & 4 & . \\
-4 & 0 & 5 & . \\
-5 & 1 & . & 3 \\
-6 & 1 & . & 1 \\
-7 & 1 & . & 10 \\
-8 & 1 & . & 9 \\ \hline
+1 & 0 & 13 & NA \\
+2 & 0 & 6 & NA \\
+3 & 0 & 4 & NA \\
+4 & 0 & 5 & NA \\
+5 & 1 & NA & 3 \\
+6 & 1 & NA & 1 \\
+7 & 1 & NA & 10 \\
+8 & 1 & NA & 9 \\ \hline
 \end{tabular}
 \end{center}
 
@@ -759,70 +713,26 @@ Sometimes it looks like this instead, which is bad:
 
 \frame{
 
-\frametitle{Experimental Data Tidying}
+\frametitle{Computation of Effects I}
 
-Sometimes it looks like this instead, which is even worse:
-
-\small
-
-\begin{center}
-\begin{tabular}{cccc}
-\texttt{unit} & \texttt{treatment} & \texttt{outcome0}  & \texttt{outcome1} \\ \hline 
-1 & . & 13 & . \\
-2 & . & 6 & . \\
-3 & . & 4 & . \\
-4 & . & 5 & . \\
-5 & . & . & 3 \\
-6 & . & . & 1 \\
-7 & . & . & 10 \\
-8 & . & . & 9 \\ \hline
-\end{tabular}
-\end{center}
+\begin{itemize}\itemsep0.5em
+\item In practice we often estimate SATE using t-tests, ANOVA, or OLS regression
+\item These are all basically equivalent
+\item<2-> Reasons to choose one procedure over another:
+	\begin{itemize}
+	\item<2-> Disciplinary norms
+	\item<3-> Ease of interpretation
+	\item<4-> Flexibility for >2 treatment conditions
+	\end{itemize}
+\end{itemize}
 
 }
-
-\againframe{tidy}
-
-\frame{
-
-\frametitle{Experimental Data Tidying}
-
-Sometimes it looks like this instead, which is even more worse:
-
-\small
-
-\begin{center}
-\begin{tabular}{ccccc}
-\texttt{unit} & \texttt{treatment} & \texttt{outcome0}  & \texttt{outcome1} & \texttt{order} \\ \hline 
-1 & . & 13 & 6 & 0,1\\
-2 & . & 6 & 8 & 0,1\\
-3 & . & 4 & 2 & 0,1\\
-4 & . & 5 & 1 & 0,1\\
-5 & . & 9 & 3 & 1,0\\
-6 & . & 4 & 1 & 1,0\\
-7 & . & 2 & 10 & 1,0\\
-8 & . & 8 & 9 & 1,0\\ \hline
-\end{tabular}
-\end{center}
-
-}
-
-\againframe{tidy}
-
-
-
 
 
 
 \begin{frame}[fragile]
 
-\frametitle{Computation of Effects in Stata}
-
-Stata:\small
-\begin{verbatim}
-ttest outcome, by(treatment)
-reg outcome i.treatment
-\end{verbatim}
+\frametitle{Computation of Effects II}
 
 R:\small
 \begin{verbatim}
@@ -830,35 +740,42 @@ t.test(outcome ~ treatment, data = data)
 lm(outcome ~ factor(treatment), data = data)
 \end{verbatim}
 
+\vspace{1em}
+
+Stata:\small
+\begin{verbatim}
+ttest outcome, by(treatment)
+reg outcome i.treatment
+\end{verbatim}
+
 \end{frame}
 
 
 \questions
 
-
-
-
 \frame{
-\frametitle{SATE Variance Estimation}
+\frametitle{Experimental Analysis II}
 	\small
 \begin{itemize}\itemsep0.5em
 \item We don't just care about the size of the SATE. We also want to know whether it is significantly different from zero (i.e., different from no effect/difference)
-\item To know that, we need to estimate the \textit{variance} of the SATE
+\item Thus we need to estimate the \textit{variance} of the SATE
 \item The variance is influenced by:
 	\begin{itemize}
 	\item Total sample size
-	\item Variance of the outcome, $Y$
+	\item Element variance of the outcome, $Y$
 	\item Relative size of each treatment group
+	\item (Some other factors)
 	\end{itemize}
 \end{itemize}
 }
 
 
 \frame{
-\frametitle{SATE Variance Estimation}
+\frametitle{Experimental Analysis III}
 	\small
 \begin{itemize}\itemsep0.5em
 \item Formula for the variance of the SATE is:\\
+
 $\widehat{Var}(SATE) = \dfrac{\widehat{Var}(Y_0)}{n_0} + \dfrac{\widehat{Var}(Y_1)}{n_1}$
 
 	\begin{itemize}
@@ -876,7 +793,7 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{n_0} + \frac{\widehat{Var
 
 \frametitle{Intuition about Variance}
 
-\begin{itemize}\itemsep0.5em
+\begin{itemize}\itemsep1em
 \item Bigger sample $\rightarrow$ smaller SEs
 \item Smaller variance $\rightarrow$ smaller SEs
 \item Efficient use of sample size:
@@ -886,39 +803,9 @@ $\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{n_0} + \frac{\widehat{Var
 	\end{itemize}
 \end{itemize}
 
+
 }
 
-
-\frame{
-	\frametitle{Important considerations}
-	\begin{itemize}\itemsep0.5em
-		\item Required sample size depends on $SATE$ and $Var(Y)$
-		\item<2-> In large populations, population size is irrelevant
-		\item<3-> In small populations, precision is influenced by the proportion of population sampled
-		\item<4-> In anything other than an SRS, sample size calculation is more difficult
-		\item<5-> Most research assumes SRS even though a more complex design is actually used
-		\item<6-> Sample size needed to obtain a precise estimate of SATE is always going to be twice as large as needed to obtain an precise estimate of $\bar{Y}$
-	\end{itemize}
-}
-
-\frame{
-	\frametitle{Estimating sample size}
-	What precision (margin of error) do we want?
-	\begin{itemize}
-		\item $p$ +/- 5 percentage points: $SE = 0.025$
-			\begin{equation}
-			n = \frac{0.25}{0.000625} = 400
-			\end{equation}
-		\item<2-> $p$ +/- 2 percentage points: $SE = 0.01$
-			\begin{equation}
-			n = \frac{0.25}{0.01^2} = \frac{0.25}{0.0001} = 2500
-			\end{equation}
-		\item<3-> $p$ +/- 0.5 percentage points: $SE = 0.0025$
-			\begin{equation}
-			n = \frac{0.25}{0.00000625} = 40,000
-			\end{equation}
-	\end{itemize}
-}
 
 
 \frame{
@@ -947,7 +834,6 @@ Accept $H_0$ & Type II Error & True zero \\ \bottomrule
 
 \end{itemize}
 }
-
 
 
 \frame{
@@ -1085,48 +971,10 @@ power twomeans 0, diff(0.2) alpha(0.10) power(0.7)
 \end{frame}
 
 
-\frame{
-
-\frametitle{Aside: Complex Designs}
-
-\small
-
-\begin{itemize}
-\item An experiment can have any number of conditions
-	\begin{itemize}\footnotesize
-	\item Up to the limits of sample size
-	\item More than 8--10 conditions is typically unwieldy
-	\end{itemize}
-\item Typically analyze complex designs using ANOVA or regression, but we are still ultimately interested in pairwise comparisons to estimates SATEs
-	\begin{itemize}\footnotesize
-	\item Treatment--treatment, or treatment-control
-	\item Without control group, we don't know which treatment(s) affected the outcome
-	\end{itemize}
-\end{itemize}
-
-}
 
 
 \frame{}
 
-
-\frame{
-\frametitle{{\large \textit{Survey}-experiments, specifically}}
-
-\small
-
-\begin{itemize}
-\item Everything so far applies to any kind of experiment
-\item<2-> A survey experiment is just an experiment that occurs in a survey context
-	\begin{itemize}
-	\item As opposed to in the field or in a laboratory
-	\end{itemize}
-\item<3-> Sometimes a distinction is made between survey and online experiments
-\item<4-> Lots of common paradigms for survey experiments (later)
-\end{itemize}
-}
-
-\questions
 
 \frame{
 
@@ -1278,230 +1126,6 @@ Factors & Conditions per factor & Total Conditions & $n$ \\ \midrule
 
 \questions
 
-
-\appendix
-\frame{}
-
-\begin{frame}[fragile]
-
-\frametitle{{\large Randomization Distribution}}
-
-\tiny
-
-\begin{verbatim}
-# theoretical randomizations
-onedraw <- function(eff=FALSE, dat = d) {
-  r <- replicate(nrow(dat), sample(1:2,1))
-  dat[cbind(1:nrow(dat),r)] <- NA
-  if (eff) {
-    return(mean(dat[,'y1'], na.rm=TRUE) -
-           mean(dat[,'y0'], na.rm=TRUE) )
-  } else {
-    return(dat)
-  }
-}
-
-onedraw() # one randomization
-onedraw(TRUE) # one effect estimate
-
-# simulate 2000 experiments from these data
-x1 <- replicate(2000, onedraw(TRUE))
-hist(x1, col=rgb(1,0,0,.5), border='white')
-abline(v=-2, lwd=3, col='red') # true effect
-\end{verbatim}
-
-\end{frame}
-
-
-\frame{}
-
-
-\frame{
-
-\large\centering
-One way to avoid covariate imbalance and improve statistical power is \textbf{block randomization}.
-
-}
-
-\frame{
-
-\frametitle{Block Randomization I}
-
-{\small \textbf{Stratification:Sampling::Blocking:Experiments}}
-
-\small
-
-\begin{itemize}\itemsep0.5em
-\item<2-> Basic idea: randomization occurs within strata defined before treatment assignment
-\item<3-> CATE is estimate for each stratum; aggregated to SATE
-\item<4-> Why?
-	\begin{itemize}
-	\item Eliminate chance imbalances
-	\item Optimized for estimating CATEs
-	\item More precise SATE estimate
-	\end{itemize}
-\end{itemize}
-
-}
-
-\begin{frame}[fragile]
-
-\begin{center}
-\begin{tabular}{lcccccccc}
-Exp. & \multicolumn{4}{c}{Control} & \multicolumn{4}{c}{Treatment} \\ \midrule
-1 & M & M & M & M & F & F & F & F \\
-2 & M & M & M & F & M & F & F & F \\
-3 & M & M & F & F & M & M & F & F \\
-4 & M & F & F & F & M & M & M & F \\
-5 & F & F & F & F & M & M & M & M \\ \bottomrule
-\end{tabular}
-\end{center}
-
-\end{frame}
-
-\frame{
-
-\begin{center}
-
-\begin{tabular}{rrrr}
-Obs. & $X_{1i}$ & $X_{2i}$ & $D_i$ \\ \midrule
-1 & Male & Old & 0 \\
-2 & Male & Old & 1 \\  \midrule
-3 & Male & Young & 1 \\
-4 & Male & Young & 0 \\ \midrule
-5 & Female & Old & 1 \\
-6 & Female & Old & 0 \\ \midrule
-7 & Female & Young & 0 \\
-8 & Female & Young & 1 \\ \bottomrule
-\end{tabular}
-\end{center}
-
-}
-
-\frame[label=blocking2]{
-
-\frametitle{Block Randomization II}
-
-\begin{itemize}
-\item Blocking ensures ignorability of all covariates used to construct the blocks
-\item Incorporates covariates explicitly into the \textit{design}
-\item<2-> When is blocking \textit{statistically} useful?
-	\begin{itemize}
-	\item<3-> If those covariates affect values of potential outcomes, blocking reduces the variance of the SATE
-	\item<4-> Most valuable in small samples
-	\item<5-> Not valuable if all blocks have similar potential outcomes
-	\end{itemize}
-\end{itemize}
-
-}
-
-
-
-\frame{
-
-\frametitle{Statistical Properties I}
-
-\small
-
-Complete randomization:\\
-$$SATE = \frac{1}{n_1}\sum Y_{1i} - \frac{1}{n_0}\sum Y_{0i}$$
-
-\vspace{2em}
-
-Block randomization:\\
-$$SATE_{blocked} = \sum_{1}^{J} \left( \dfrac{n_j}{n} \right)  (\widehat{CATE}_j)$$
-
-}
-
-
-\frame{
-
-\begin{center}
-
-\begin{tabular}{rrrrrr}
-Obs. & $X_{1i}$ & $X_{2i}$ & $D_i$ & $Y_i$ & CATE \\ \midrule
-1 & Male & Old & 0 & 5 & \multirow{2}{*}{\onslide<2->{5}} \\
-2 & Male & Old & 1 & 10 \\  \midrule
-3 & Male & Young & 1 & 4 & \multirow{2}{*}{\onslide<3->{3}} \\
-4 & Male & Young & 0 & 1 \\ \midrule
-5 & Female & Old & 1 & 6 & \multirow{2}{*}{\onslide<4->{4}} \\
-6 & Female & Old & 0 & 2 \\ \midrule
-7 & Female & Young & 0 & 6 & \multirow{2}{*}{\onslide<5->{3}} \\
-8 & Female & Young & 1 & 9 \\ \bottomrule
-\end{tabular}
-\end{center}
-
-}
-
-\frame{
-
-\frametitle{SATE Estimation}
-
-\begin{align*}
-SATE &= \left(\dfrac{2}{8}*5\right) + \left(\dfrac{2}{8}*3\right) + \left(\dfrac{2}{8}*4\right) + \left(\dfrac{2}{8}*3\right) \\ \vspace{1em}
-&= 3.75
-\end{align*}
-
-\onslide<2->{The blocked and unblocked estimates are the same here because $Pr(Treatment)$ is constant across blocks and blocks are all the same size.}
-
-}
-
-\frame{
-
-\frametitle{SATE Estimation}
-
-\small
-
-\begin{itemize}
-\item We can use weighted regression to estimate this in an OLS framework
-\item Weights are the inverse prob. of being treated w/in block
-\begin{itemize}
-\item Pr(Treated) by block: $p_{ij} = Pr(D_i = 1 | J=j) $
-\item Weight (Treated): $ w_{ij} = \dfrac{1}{p_{ij}} $
-\item Weight (Control): $ w_{ij} = \dfrac{1}{1-p_{ij}} $
-\end{itemize}
-\end{itemize}
-
-}
-
-
-\frame{
-
-\frametitle{Statistical Properties II}
-
-\small
-
-Complete randomization:\\
-$$\widehat{SE}_{SATE} = \sqrt{\dfrac{\widehat{Var}(Y_0)}{n_0} + \dfrac{\widehat{Var}(Y_1)}{n_1}}$$
-
-\vspace{1em}
-
-Block randomization:\\
-$$\widehat{SE}_{SATE_{blocked}} = \sqrt{\sum_{1}^{J} \left( \dfrac{n_j}{n} \right)^2  \widehat{Var}{(SATE_j)}}$$
-
-\only<2->{When is the blocked design more efficient?}
-
-}
-
-
-\frame{
-
-\frametitle{Practicalities}
-
-\begin{itemize}\itemsep0.5em
-\item Blocked randomization only works in exactly the same situations where stratified sampling works
-	\begin{itemize}
-	\item Need to observe covariates pre-treatment in order to block on them
-	\item Work best in a panel context
-	\end{itemize}
-\item In a single cross-sectional design that might be challenging
-	\begin{itemize}
-	\item Some software can block ``on the fly''
-	\end{itemize}
-\end{itemize}
-
-
-}
 
 
 \end{document}
