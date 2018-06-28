@@ -226,10 +226,10 @@ Oxford English Dictionary defines ``experiment'' as:
 \small
 
 \begin{itemize}
+\item ``Question testing'' split ballots (e.g., Cantril)
 \item Rise of surveys in the behavioral revolution
 	\begin{itemize}
-	\item Survey research not heavily experimental because interviewing was mostly paper-based
-	\item ``Split ballots'' (e.g., Schuman \& Presser; Bishop)
+	\item Split ballots (e.g., Schuman \& Presser; Bishop)
 	\end{itemize}
 \item<2-> 1983: Merrill Shanks and the Berkeley Survey Research Center develop CATI
 \item<3-> Mid-1980s: Paul Sniderman \& Tom Piazza performed the first \textit{modern} survey experiment\only<3->{\footnote{Sniderman, Paul M., and Thomas Piazza. 1993. \textit{The Scar of Race}. Cambridge, MA: Harvard University Press.}}
@@ -265,7 +265,7 @@ Oxford English Dictionary defines ``experiment'' as:
 
 \frame{
 
-\frametitle{The First Survey Experiment}
+\frametitle{The First Survey Experiment?}
 
 Hadley Cantril (1940) asks 3000 Americans either:
 
@@ -553,9 +553,9 @@ Concisely, we typically discuss two potential outcomes:
 	\small
 	\begin{itemize}\itemsep0.5em
 		\item<1-> We want to know: $TE_i = Y_{1i} - Y_{0i}$ for every $i$ in the population
-		\item<2-> We can average: $E[TE_i] = E[Y_{1i} - Y_{0i}] = E[Y_{1i}] - E[Y_{0i}]$
+		\item<2-> We can average: $E[TE] = E[Y_{1} - Y_{0}] = E[Y_{1}] - E[Y_{0}]$
 		\item<3-> But we still only see one potential outcome for each unit:\\ \vspace{1em}
-    		$ATE_{naive} = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0]$
+    		$ATE_{naive} = E[Y_{1} | X = 1] - E[Y_{0} | X = 0]$
     	\item<4-> Is this what we want to know?
 	\end{itemize}
 }
@@ -567,13 +567,13 @@ Concisely, we typically discuss two potential outcomes:
 	\begin{itemize}\itemsep0.5em
 	\item What we want and what we have:
 		\begin{align}
-		ATE & = E[Y_{1i}] - E[Y_{0i}] \\[1em]
-		ATE_{naive} & = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0]
+		ATE & = E[Y_{1}] - E[Y_{0}] \\[1em]
+		ATE_{naive} & = E[Y_{1} | X = 1] - E[Y_{0} | X = 0]
 		\end{align}		
 	\item<2-> Are the following statements true?\\
   		\begin{itemize}\itemsep0.5em
-      		\item<2-> $E[Y_{1i}] = E[Y_{1i} | X = 1]$
-      		\item<2-> $E[Y_{0i}] = E[Y_{0i} | X = 0]$
+      		\item<2-> $E[Y_{1}] = E[Y_{1} | X = 1]$
+      		\item<2-> $E[Y_{0}] = E[Y_{0} | X = 0]$
   		\end{itemize}
   	\item<3-> Not in general!
   	\end{itemize}
@@ -585,14 +585,14 @@ Concisely, we typically discuss two potential outcomes:
 	\begin{itemize}\itemsep0.5em
     	\item Only true when both of the following hold:
     	\begin{align}
-    	E[Y_{1i}] = E[Y_{1i} | X = 1] = E[Y_{1i} | X = 0]\\
-    	E[Y_{0i}] = E[Y_{0i} | X = 1] = E[Y_{0i} | X = 0]
+    	E[Y_{1}] = E[Y_{1} | X = 1] = E[Y_{1} | X = 0]\\
+    	E[Y_{0}] = E[Y_{0} | X = 1] = E[Y_{0} | X = 0]
     	\end{align}
     	\item In that case, potential outcomes are \textit{independent} of treatment assignment
 		\item If true (e.g., due to randomization of $X$), then:
     	\begin{align*}
-    	ATE_{naive} & = E[Y_{1i} | X = 1] - E[Y_{0i} | X = 0] \tag{5}\\
-    	& = E[Y_{1i}] - E[Y_{0i}]\\
+    	ATE_{naive} & = E[Y_{1} | X = 1] - E[Y_{0} | X = 0] \tag{5}\\
+    	& = E[Y_{1}] - E[Y_{0}]\\
     	& = ATE
     	\end{align*}
 	\end{itemize}
@@ -777,15 +777,15 @@ reg outcome i.treatment
 \begin{itemize}\itemsep0.5em
 \item Formula for the variance of the SATE is:\\
 
-$\widehat{Var}(SATE) = \dfrac{\widehat{Var}(Y_0)}{n_0} + \dfrac{\widehat{Var}(Y_1)}{n_1}$
+$\widehat{Var}(SATE) = \widehat{Var}\left(\bar{Y}_0\right) + \widehat{Var}\left(\bar{Y}_1\right)$
 
 	\begin{itemize}
-	\item $\widehat{Var}(Y_0)$ is control group variance
-	\item $\widehat{Var}(Y_1)$ is treatment group variance
+	\item $\widehat{Var}(\bar{Y}_0)$ is control group variance
+	\item $\widehat{Var}(\bar{Y}_1)$ is treatment group variance
 	\end{itemize}
 
 \item We often express this as the \textit{standard error} of the estimate:\\
-$\widehat{SE}_{SATE} = \sqrt{\frac{\widehat{Var}(Y_0)}{n_0} + \frac{\widehat{Var}(Y_1)}{n_1}}$
+$\widehat{SE}_{SATE} = \sqrt{\widehat{Var}\left(\bar{Y}_0\right) + \widehat{Var}\left(\bar{Y}_1\right)}$
 \end{itemize}
 }
 
