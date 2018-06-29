@@ -11,11 +11,6 @@ if (!require("rio")) {
     install.packages("rio")
     library("rio")
 }
-if (!require("ggplot2")) {
-    # visualization
-    install.packages("ggplot2")
-    library("ggplot2")
-}
 if (!require("list")) {
     # alternative list experiment estimators
     install.packages("list")
