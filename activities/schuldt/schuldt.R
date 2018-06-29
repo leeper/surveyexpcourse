@@ -1,10 +1,10 @@
 # http://www.tessexperiments.org/data/schuldt301.html
 
 library("stats")
-if (!require("ghit")) {
+if (!require("remotes")) {
     # installing github packages
-    install.packages("ghit")
-    library("ghit")
+    install.packages("remotes")
+    library("remotes")
 }
 if (!require("rio")) {
     # data loading
@@ -18,12 +18,12 @@ if (!require("ggplot2")) {
 }
 if (!require("mcode")) {
     # convenience functions for working with data recoding
-    ghit::install_github("leeper/mcode")
+    remotes::install_github("leeper/mcode")
     library("mcode")
 }
 if (!require("margins")) {
     # marginal effects
-    ghit::install_github(c("leeper/prediction", "leeper/margins"), build_vignettes = FALSE)
+    install.packages("margins")
     library("margins")
 }
 
