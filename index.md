@@ -136,7 +136,7 @@ This session will cover a number of remaining issues, especially related to the 
    - Code: [Stata](activities/johnston/johnston.do), [R Code](activities/johnston/johnston.R)
  
  - Empirical Example 4: McConnell, Margalit, Mahlotra, and Levendusky
-    - [Paper](activities/malhotra/McConnell, Margalit, Malhotra, Levendusky (AJPS, 2018).pdf), [TESS Record](http://tessexperiments.org/data/malhotra634.html)
+    - [Paper](activities/malhotra/McConnell, Margalit, Malhotra, Levendusky (AJPS, 2018).pdf), [TESS Record](http://tessexperiments.org/data/malhotra634.html), [Questionnaire](activities/malhotra/questionnaire.doc)
    - Data: [SPSS (.sav)](activities/malhotra/data.sav), [Stata (.dta)](activities/malhotra/data.dta)
    - Code: [Stata](activities/malhotra/malhotra.do), [R](activities/malhotra/malhotra.R)
  
