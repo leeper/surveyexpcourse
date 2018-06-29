@@ -135,6 +135,11 @@ This session will cover a number of remaining issues, especially related to the 
    - Data: [SPSS (.sav)](activities/johnston/data.sav), [Stata (.dta)](activities/johnston/data.dta)
    - Code: [Stata](activities/johnston/johnston.do), [R Code](activities/johnston/johnston.R)
  
+ - Empirical Example 4: McConnell, Margalit, Mahlotra, and Levendusky
+    - [Paper](activities/malhotra/McConnell, Margalit, Malhotra, Levendusky (AJPS, 2018).pdf), [TESS Record](http://tessexperiments.org/data/malhotra634.html)
+   - Data: [SPSS (.sav)](activities/malhotra/data.sav), [Stata (.dta)](activities/malhotra/data.dta)
+   - Code: [Stata](activities/malhotra/malhotra.do), [R](activities/malhotra/malhotra.R)
+ 
  - Other Activities
    - Opening Activity: [Data](activities/activity01.tsv), [Stata (.do)](activities/activity01.do), [R (.R)](activities/activity01.R)
    - Power calculations: [Stata (.do)](activities/power.do), [R (.R)](activities/power.R)
