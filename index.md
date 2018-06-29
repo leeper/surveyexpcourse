@@ -86,9 +86,9 @@ This session will involve the application of course material to development of s
 
 The readings for this portion consist of applied examples from Time-Sharing Experiments for the Social Sciences (TESS)
 
- - Whillans, A. "The Barriers of Buying Happier Time." Available from: http://tessexperiments.org/data/whillans626.html
- - Malhotra, N., Levendusky, M., and Margalit, Y. "Economic Spillovers of Political Polarization." Available from: http://tessexperiments.org/data/malhotra634.html
- - Nair, G. "Misperceptions of the Global Income Distribution and Preferences for Cross-National Redistribution in the United States." Available from: http://tessexperiments.org/data/nair644.html
+ - [Whillans, A. "The Barriers of Buying Happier Time." TESS Proposal 626.](http://tessexperiments.org/data/whillans626.html)
+ - [Malhotra, N., Levendusky, M., and Margalit, Y. "Economic Spillovers of Political Polarization." TESS Proposal 634.](http://tessexperiments.org/data/malhotra634.html_)
+ - [Nair, G. "Misperceptions of the Global Income Distribution and Preferences for Cross-National Redistribution in the United States." TESS Proposal 644.](http://tessexperiments.org/data/nair644.html)
 
 ### Session 4: Practical Issues (June 29, 16:00-18:00)
 
@@ -121,22 +121,22 @@ This session will cover a number of remaining issues, especially related to the 
 ## Example Exercises
 
  - Empirical Example 1: Holbrook and Krosnick
-   - [Paper](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf), [TESS Record](http://www.tessexperiments.org/data/holbrook120.html), [Questionnaire](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf)
+   - [Paper](activities/holbrook/Holbrook, Krosnick (POQ, 2010).pdf), [TESS Record](http://www.tessexperiments.org/data/holbrook120.html), [Questionnaire](activities/holbrook/questionnaire.docx)
    - Data: [SPSS (.sav)](activities/holbrook/data.sav), [Stata (.dta)](activities/holbrook/data.dta)
    - Code: [Stata](activities/holbrook/holbrook.R), [R](activities/holbrook/holbrook.R)
  
  - Empirical Example 2: Schuldt et al.
-   - [Paper](activities/schuldt/Schuldt, Konrath, Schwarz (POQ, 2011).pdf), [TESS Record](http://www.tessexperiments.org/data/schuldt301.html), [Questionnaire](activities/schuldt/Questionnaire.doc)
+   - [Paper](activities/schuldt/Schuldt, Konrath, Schwarz (POQ, 2011).pdf), [TESS Record](http://www.tessexperiments.org/data/schuldt301.html), [Questionnaire](activities/schuldt/questionnaire.docx)
    - Data: [SPSS (.sav)](activities/schuldt/data.sav), [Stata (.dta)](activities/schuldt/data.dta)
    - Code: [Stata](activities/schuldt/schuldt.do), [R](activities/schuldt/schuldt.R)
  
  - Empirical Example 3: Johnston, Newman, and Velez
-   - (Unpublished), [TESS Record](http://www.tessexperiments.org/data/newman508.html), [Questionnaire](activities/johnston/questionnaire.doc)
+   - (Unpublished), [TESS Record](http://www.tessexperiments.org/data/newman508.html), [Questionnaire](activities/johnston/questionnaire.docx)
    - Data: [SPSS (.sav)](activities/johnston/data.sav), [Stata (.dta)](activities/johnston/data.dta)
    - Code: [Stata](activities/johnston/johnston.do), [R Code](activities/johnston/johnston.R)
  
  - Empirical Example 4: McConnell, Margalit, Mahlotra, and Levendusky
-    - [Paper](activities/malhotra/McConnell, Margalit, Malhotra, Levendusky (AJPS, 2018).pdf), [TESS Record](http://tessexperiments.org/data/malhotra634.html)
+    - [Paper](activities/malhotra/McConnell, Margalit, Malhotra, Levendusky (AJPS, 2018).pdf), [TESS Record](http://tessexperiments.org/data/malhotra634.html), [Questionnaire](activities/malhotra/questionnaire.docx)
    - Data: [SPSS (.sav)](activities/malhotra/data.sav), [Stata (.dta)](activities/malhotra/data.dta)
    - Code: [Stata](activities/malhotra/malhotra.do), [R](activities/malhotra/malhotra.R)
  
