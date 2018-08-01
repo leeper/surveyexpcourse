@@ -1,25 +1,42 @@
 # http://www.tessexperiments.org/data/schuldt301.html
 
 library("stats")
-if (!require("remotes")) {
+if (!requireNamespace("remotes")) {
     # installing github packages
     install.packages("remotes")
-    library("remotes")
+    requireNamespace("remotes")
 }
-if (!require("rio")) {
+if (!requireNamespace("rio")) {
     # data loading
     install.packages("rio")
-    library("rio")
+    requireNamespace("rio")
 }
-if (!require("mcode")) {
+if (!requireNamespace("dplyr")) {
     # convenience functions for working with data recoding
-    remotes::install_github("leeper/mcode")
-    library("mcode")
+    install.packages("dplyr")
+    requireNamespace("dplyr")
 }
-if (!require("margins")) {
+if (!requireNamespace("margins")) {
     # marginal effects
     install.packages("margins")
-    library("margins")
+    requireNamespace("margins")
+}
+
+# Calculation of Cohen's d standardized mean-difference
+cohensd <- function(x, y) {
+    # x treatment group indicator vector
+    # y outcome vector
+    if (nlevels(factor(x)) != 2) {
+        stop("Number of group levels not equal to 2.")
+    }
+    # calculate mean-difference
+    dif <- diff(tapply(y, x, mean, na.rm = TRUE))
+    # calculate sigma
+    ngroups <- tapply(y, x, length)
+    v <- tapply(y, x, var, na.rm = TRUE)
+    sigma <- sqrt(sum((ngroups - 1L) * v, na.rm = TRUE)/(sum(ngroups, na.rm = TRUE) - 2L))
+    # return
+    return(unname(dif/sigma))
 }
 
 # load data
@@ -47,7 +64,7 @@ schuldt[["Q3A"]] <- ifelse(is.nan(schuldt[["Q3A"]]), NA_real_, schuldt[["Q3A"]])
 schuldt[["Q3B"]] <- ifelse(is.nan(schuldt[["Q3B"]]), NA_real_, schuldt[["Q3B"]])
 
 # tidy these using mcode:
-schuldt[["outcome"]] <- mergeNA(schuldt[["Q3A"]], schuldt[["Q3B"]])
+schuldt[["outcome"]] <- dplyr::coalesce(schuldt[["Q3A"]], schuldt[["Q3B"]])
 schuldt[["outcome"]] <- ifelse(schuldt[["outcome"]] == -1, NA_real_, schuldt[["outcome"]])
 table(schuldt[["outcome"]])
 mean(schuldt[["outcome"]], na.rm = TRUE)
@@ -83,16 +100,16 @@ with(schuldt[schuldt[["republican"]] == 0L,], cohensd(x = gw, y = outcome))
 
 
 summary(m_by_party <- lm(outcome ~ gw * republican, data = schuldt))
-summary(margins(m_by_party))
-cplot(m_by_party, x = "republican", dx = "gw", what = "effect")
+summary(margins::margins(m_by_party))
+margins::cplot(m_by_party, x = "republican", dx = "gw", what = "effect")
 
 summary(m_by_party2 <- lm(outcome ~ gw * PARTY7, data = schuldt))
-cplot(m_by_party2, x = "PARTY7", dx = "gw")
-cplot(m_by_party2, x = "PARTY7", dx = "gw", what = "effect")
+margins::cplot(m_by_party2, x = "PARTY7", dx = "gw")
+margins::cplot(m_by_party2, x = "PARTY7", dx = "gw", what = "effect")
 
 schuldt[["pfactor"]] <- as.factor(schuldt[["PARTY7"]])
-cplot(lm(outcome ~ gw * pfactor, data = schuldt), x = "pfactor", dx = "gw")
-cplot(lm(outcome ~ gw * pfactor, data = schuldt), x = "pfactor", dx = "gw", what = "effect")
+margins::cplot(lm(outcome ~ gw * pfactor, data = schuldt), x = "pfactor", dx = "gw")
+margins::cplot(lm(outcome ~ gw * pfactor, data = schuldt), x = "pfactor", dx = "gw", what = "effect")
 
 
 
@@ -100,12 +117,12 @@ cplot(lm(outcome ~ gw * pfactor, data = schuldt), x = "pfactor", dx = "gw", what
 covariates <- c("gw", "republican", "PPGENDER", "PPAGE", "IDEO", "PPEDUC")
 mhetero <- lm(outcome ~ gw * (. + I(IDEO^2)), data = schuldt[, c(covariates, "outcome"), drop = FALSE])
 summary(mhetero)
-summary(margins(mhetero))
-cplot(mhetero, x = "republican", dx = "gw", what = "effect")
-cplot(mhetero, x = "PPGENDER", dx = "gw", what = "effect")
-cplot(mhetero, x = "PPAGE", dx = "gw", what = "effect")
-cplot(mhetero, x = "IDEO", dx = "gw", what = "effect")
-cplot(mhetero, x = "PPEDUC", dx = "gw", what = "effect")
+summary(margins::margins(mhetero))
+margins::cplot(mhetero, x = "republican", dx = "gw", what = "effect")
+margins::cplot(mhetero, x = "PPGENDER", dx = "gw", what = "effect")
+margins::cplot(mhetero, x = "PPAGE", dx = "gw", what = "effect")
+margins::cplot(mhetero, x = "IDEO", dx = "gw", what = "effect")
+margins::cplot(mhetero, x = "PPEDUC", dx = "gw", what = "effect")
 
 
 # also possible using "bartMachine", but super clunky at the moment

@@ -1,30 +1,25 @@
 # http://www.tessexperiments.org/data/holbrook120.html
 
 library("stats")
-if (!require("remotes")) {
+if (!requireNamespace("remotes")) {
     # installing github packages
     install.packages("remotes")
-    library("remotes")
+    requireNamespace("remotes")
 }
-if (!require("rio")) {
+if (!requireNamespace("rio")) {
     # data loading
     install.packages("rio")
-    library("rio")
+    requireNamespace("rio")
 }
-if (!require("list")) {
+if (!requireNamespace("dplyr")) {
+    # convenience functions for working with data recoding
+    install.packages("dplyr")
+    requireNamespace("dplyr")
+}
+if (!requireNamespace("list")) {
     # alternative list experiment estimators
     install.packages("list")
-    library("list")
-}
-if (!require("mcode")) {
-    # convenience functions for working with data recoding
-    remotes::install_github("leeper/mcode")
-    library("mcode")
-}
-if (!require("margins")) {
-    # marginal effects
-    install.packages("margins")
-    library("margins")
+    requireNamespace("list")
 }
 
 # load data
@@ -39,7 +34,7 @@ dim(holbrook)
 
 ## main experiment (not list experiment)
 holbrook[["tr"]] <- ifelse(!is.na(holbrook[["TESSQ1"]]), 1, ifelse(!is.na(holbrook[["TESSQ2"]]), 0, NA_real_))
-holbrook[["voted"]] <- mergeNA(holbrook[["TESSQ1"]], holbrook[["TESSQ2"]])
+holbrook[["voted"]] <- dplyr::coalesce(holbrook[["TESSQ1"]], holbrook[["TESSQ2"]])
 holbrook[["voted"]] <- ifelse(holbrook[["voted"]] == 1, 1, ifelse(holbrook[["voted"]] == 2, 0, NA_real_))
 
 t.test(voted ~ tr, data = holbrook)
@@ -48,7 +43,7 @@ summary(lm(voted ~ tr, data = holbrook))
 
 ## list experiment (treatment effect is estimate of behaviour)
 holbrook[["trlist"]] <- ifelse(!is.na(holbrook[["TESSQ3"]]), 0, ifelse(!is.na(holbrook[["TESSQ4"]]), 1, NA_real_))
-holbrook[["listcount"]] <- mergeNA(holbrook[["TESSQ3"]], holbrook[["TESSQ4"]])
+holbrook[["listcount"]] <- dplyr::coalesce(holbrook[["TESSQ3"]], holbrook[["TESSQ4"]])
 
 aggregate(listcount ~ trlist, data = holbrook, FUN = mean, na.rm = TRUE)
 
@@ -59,5 +54,5 @@ summary(lm(listcount ~ trlist, data = holbrook))
 aggregate(voted ~ tr, data = holbrook, FUN = mean, na.rm = TRUE)
 
 
-summary(ictreg(listcount ~ trlist, data = holbrook, treat = "trlist", method = "lm"))
+summary(list::ictreg(listcount ~ trlist, data = holbrook, treat = "trlist", method = "lm"))
 

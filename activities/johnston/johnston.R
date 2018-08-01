@@ -1,25 +1,25 @@
 # http://www.tessexperiments.org/data/newman508.html
 
 library("stats")
-if (!require("remotes")) {
+if (!requireNamespace("remotes")) {
     # installing github packages
     install.packages("remotes")
-    library("remotes")
+    requireNamespace("remotes")
 }
-if (!require("rio")) {
+if (!requireNamespace("rio")) {
     # data loading
     install.packages("rio")
-    library("rio")
+    requireNamespace("rio")
 }
-if (!require("mcode")) {
+if (!requireNamespace("dplyr")) {
     # convenience functions for working with data recoding
-    remotes::install_github("leeper/mcode")
-    library("mcode")
+    install.packages("dplyr")
+    requireNamespace("dplyr")
 }
-if (!require("margins")) {
+if (!requireNamespace("margins")) {
     # marginal effects
     install.packages("margins")
-    library("margins")
+    requireNamespace("margins")
 }
 
 # load data
@@ -51,7 +51,7 @@ johnston[["args"]] <- factor(ifelse(johnston[["XTESS171"]] %in% c(2,5,9,12), 0,
 # outcome (Q6A-Q6F; measured on 1-5 scale)
 outcome <- johnston[, paste0("Q6", LETTERS[1:6])]
 outcome[] <- lapply(outcome, function(x) ifelse(is.nan(x), NA_real_, x))
-johnston[["outcome"]] <- mergeNA(outcome[, 1:6])
+johnston[["outcome"]] <- dplyr::coalesce(outcome[[1]], outcome[[2]], outcome[[3]], outcome[[4]], outcome[[5]], outcome[[6]])
 johnston[["outcome"]] <- ifelse(johnston[["outcome"]] == -1, NA_real_, johnston[["outcome"]])
 rm(outcome)
 
@@ -69,10 +69,10 @@ summary(lm(check ~ tr, data = johnston))
 
 # full design
 summary(m_factorial <- lm(outcome ~ tr * cues * args, data = johnston))
-summary(margins(m_factorial))
+summary(margins::margins(m_factorial))
 ## alternative parameterization
 johnston[["tr_all"]] <- interaction(johnston[["tr"]], johnston[["cues"]], johnston[["args"]])
 summary(lm(outcome ~ tr_all, data = johnston))
 
-cplot(m_factorial, x = "args", dx = "tr", data = johnston[!is.na(johnston$args), ], what = "effect")
+margins::cplot(m_factorial, x = "args", dx = "tr", data = johnston[!is.na(johnston$args), ], what = "effect")
 

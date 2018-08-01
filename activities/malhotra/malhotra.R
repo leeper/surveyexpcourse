@@ -1,25 +1,20 @@
 # http://tessexperiments.org/data/malhotra634.html
 
 library("stats")
-if (!require("remotes")) {
+if (!requireNamespace("remotes")) {
     # installing github packages
     install.packages("remotes")
-    library("remotes")
+    requireNamespace("remotes")
 }
-if (!require("rio")) {
+if (!requireNamespace("rio")) {
     # data loading
     install.packages("rio")
-    library("rio")
+    requireNamespace("rio")
 }
-if (!require("list")) {
-    # alternative list experiment estimators
-    install.packages("list")
-    library("list")
-}
-if (!require("mcode")) {
+if (!requireNamespace("dplyr")) {
     # convenience functions for working with data recoding
-    remotes::install_github("leeper/mcode")
-    library("mcode")
+    install.packages("dplyr")
+    requireNamespace("dplyr")
 }
 
 # load data
@@ -37,7 +32,7 @@ dim(malhotra)
 ### treatment condition
 malhotra[["tr"]] <- factor(malhotra[["XTESS182"]], levels = 1:4, labels = c("Baseline", "Higher Payment", "Religion", "Geography"))
 ## outcome: whether respondent accepts nonpartisan offer
-malhotra[["option_a"]] <- mcode::mergeNA(malhotra[["Q8A"]], malhotra[["Q8B"]], malhotra[["Q8C"]], malhotra[["Q8D"]])
+malhotra[["option_a"]] <- dplyr::coalesce(malhotra[["Q8A"]], malhotra[["Q8B"]], malhotra[["Q8C"]], malhotra[["Q8D"]])
 malhotra[["option_a"]][malhotra[["option_a"]] == -1] <- NA_integer_
 malhotra[["option_a"]][malhotra[["option_a"]] == 2] <- 0L
 
