@@ -160,6 +160,11 @@ This session will cover a number of remaining issues, especially related to the 
    - Data: [SPSS (.sav)](activities/lavine/data.sav), [Stata (.dta)](activities/lavine/data.dta)
    - Code: [Stata](activities/lavine/lavine.do), [R](activities/lavine/lavine.R)
 
+ - Empirical Example 9: Jerit
+    - [Paper](activities/jerit/Jerit (AJPS, 2009).pdf), [TESS Record](https://www.tessexperiments.org/data/jerit523.html), [Questionnaire](activities/jerit/questionnaire.docx)
+   - Data: [SPSS (.sav)](activities/jerit/data.sav), [Stata (.dta)](activities/jerit/data.dta)
+   - Code: [Stata](activities/jerit/jerit.do), [R](activities/jerit/jerit.R)
+
  - Other Activities
    - Opening Activity: [Data](activities/activity01.tsv), [Stata (.do)](activities/activity01.do), [R (.R)](activities/activity01.R)
    - Power calculations: [Stata (.do)](activities/power.do), [R (.R)](activities/power.R)
