@@ -155,6 +155,11 @@ This session will cover a number of remaining issues, especially related to the 
    - Data: [SPSS (.sav)](activities/singer/data.sav), [Stata (.dta)](activities/singer/data.dta)
    - Code: [Stata](activities/singer/singer.do), [R](activities/singer/singer.R)
 
+ - Empirical Example 8: Lavine
+    - Paper, [TESS Record](https://www.tessexperiments.org/data/lavine760.html), [Questionnaire](activities/lavine/questionnaire.docx)
+   - Data: [SPSS (.sav)](activities/lavine/data.sav), [Stata (.dta)](activities/lavine/data.dta)
+   - Code: [Stata](activities/lavine/lavine.do), [R](activities/lavine/lavine.R)
+
  - Other Activities
    - Opening Activity: [Data](activities/activity01.tsv), [Stata (.do)](activities/activity01.do), [R (.R)](activities/activity01.R)
    - Power calculations: [Stata (.do)](activities/power.do), [R (.R)](activities/power.R)
