@@ -142,8 +142,13 @@ This session will cover a number of remaining issues, especially related to the 
  
  - Empirical Example 5: Brader, Valentino, and Suhay
     - [Paper](activities/brader/Brader, Valentino, Suhay (AJPS, 2008).pdf), [TESS Record](https://www.tessexperiments.org/data/brader173.html), [Questionnaire](activities/brader/questionnaire.docx)
-   - Data: [SPSS (.sav)](activities/brader/data.sav), [Stata (.dta)](activities/malhotra/data.dta)
-   - Code: [Stata](activities/malhotra/brader.do), [R](activities/malhotra/brader.R)
+   - Data: [SPSS (.sav)](activities/brader/data.sav), [Stata (.dta)](activities/brader/data.dta)
+   - Code: [Stata](activities/brader/brader.do), [R](activities/brader/brader.R)
+ 
+ - Empirical Example 6: Teele, Kalla, and Rosenbluth
+    - [Paper](activities/teele/Teele, Kalla, and Rosenbluth (AJPS, 2008).pdf), [TESS Record](https://www.tessexperiments.org/data/kallaBR42.html), [Questionnaire](activities/teele/questionnaire.docx)
+   - Data: [SPSS (.sav)](activities/teele/data.sav), [Stata (.dta)](activities/teele/data.dta)
+   - Code: [Stata](activities/teele/teele.do), [R](activities/teele/teele.R)
  
  - Other Activities
    - Opening Activity: [Data](activities/activity01.tsv), [Stata (.do)](activities/activity01.do), [R (.R)](activities/activity01.R)
