@@ -140,6 +140,11 @@ This session will cover a number of remaining issues, especially related to the 
    - Data: [SPSS (.sav)](activities/malhotra/data.sav), [Stata (.dta)](activities/malhotra/data.dta)
    - Code: [Stata](activities/malhotra/malhotra.do), [R](activities/malhotra/malhotra.R)
  
+ - Empirical Example 5: Brader, Valentino, and Suhay
+    - [Paper](activities/brader/Brader, Valentino, Suhay (AJPS, 2008).pdf), [TESS Record](https://www.tessexperiments.org/data/brader173.html), [Questionnaire](activities/brader/questionnaire.docx)
+   - Data: [SPSS (.sav)](activities/brader/data.sav), [Stata (.dta)](activities/malhotra/data.dta)
+   - Code: [Stata](activities/malhotra/brader.do), [R](activities/malhotra/brader.R)
+ 
  - Other Activities
    - Opening Activity: [Data](activities/activity01.tsv), [Stata (.do)](activities/activity01.do), [R (.R)](activities/activity01.R)
    - Power calculations: [Stata (.do)](activities/power.do), [R (.R)](activities/power.R)
